@@ -1,0 +1,26 @@
+{% extends "master.html" %}
+{% load static %}
+{% block content %}
+<body>
+
+<div style="text-align: center; border: 1px solid grey; border-radius: 10px; background-color: lightgrey; width:75%; margin: 0 auto; margin-top: 20%;">
+      <div >
+        <p>Choose an image to upload (first give it a proper filename), name it, then click upload.</p>
+      </div>
+
+        <form style="text-align:center;" method="post" enctype="multipart/form-data" method="post" action="/upload/">
+            <input placeholder="Portrait Title" name="portraitname">
+            <input placeholder="Date Drawn" type="date" name="date">
+            <input type="file" name="newfile">
+            <button type="submit" class="btn btn-primary">Upload</button>
+        </form>
+
+
+      <div>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+</div>
+</div>
+</body>
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "master.html" %}
+{% load static %}
+{% block content %}
+    <div id="topbar">
+        <a href="/"><i class="fa fa-home"></i></a>
+    </div>
+    <body>
+
+    <div class="loginformcontainer">
+        <br/><br/><br/>
+        <div class="blackcontainer">
+        <h1 style="font-size:4vh; margin-bottom: 3px;">Log In</h1>
+
+        <form class="loginform" method="post" action="/login/">
+            {% csrf_token %}
+            {{ form.as_table }}
+            <input style="background:red; color: white;" type="submit" value="Submit">
+        </form>
+            </div>
+
+
+    </div><!-- END COLORLIB-PAGE -->
+
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen">
+        <svg class="circular" width="48px" height="48px">
+            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/>
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+                    stroke="#F96D00"/>
+        </svg>
+    </div>
+    </body>
+<script>
+var page = "login";
+</script>
+{% endblock %}
