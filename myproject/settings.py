@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+import django_heroku
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -51,6 +53,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'myproject.urls'
@@ -78,15 +81,20 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'sketchyactivitydb',
-        'USER': 'sketchyactivity',
-        'PASSWORD': 'Ahunt103?!',
-        'HOST': 'web545.webfaction.com',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'd10dclbdpcriqg',
+#         'USER': 'gzpgbkerdqzzzm',
+#         'PASSWORD': '4aab4367879fc84288d2338c18fc5e441628053eb9f664786aa9e8426866cc47',
+#         'HOST': 'ec2-184-73-249-9.compute-1.amazonaws.com',
+#     }
+# }
+
+# To use remote Heroku db
+
+DATABASES = {}
+DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
 
 # Password validation
@@ -124,12 +132,25 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
-
+# BEGIN OLD WEBFACTION CONFIG
 STATIC_URL = '/static/'
 STATIC_ROOT = '/home/huntajoseph/webapps/sketchyactivity_static'
 #STATICFILES_DIRS = [
 #os.path.join(BASE_DIR, 'sketchyactivity/static'),
 #]
+# END OLD WEBFACTION CONFIG 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.9/howto/static-files/
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'
+
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
@@ -145,3 +166,5 @@ COMPRESS_CSS_FILTERS = ["compressor.filters.cssmin.CSSMinFilter"]
 MEDIA_URL = '/media/'
 MEDIA_ROOT = '/home/huntajoseph/webapps/sketchyactivity_media' #  os.path.join(BASE_DIR, 'sketchyactivity/media')
 print(MEDIA_ROOT)
+
+django_heroku.settings(locals())
