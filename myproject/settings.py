@@ -173,7 +173,7 @@ if USE_S3:
     AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
     
     PUBLIC_MEDIA_LOCATION = 'media'
-    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
+    MEDIA_URL = '/media/'
     DEFAULT_FILE_STORAGE = 'sketchyactivity.storage_backends.PublicMediaStorage'
 #MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
 #MEDIA_ROOT = '/home/huntajoseph/webapps/sketchyactivity_media' #  os.path.join(BASE_DIR, 'sketchyactivity/media')
