@@ -24,3 +24,5 @@ gunicorn
 django-heroku
 whitenoise
 dj-database-url
+boto3
+django-storages
