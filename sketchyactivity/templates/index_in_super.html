@@ -25,7 +25,7 @@
     </div>
     <button class="who_am_i_button whoami1" onclick="who_am_i();">Who am I?</button>
     {% include 'emailbutton.html' %}
-    <img src="/media/menobg.png" alt="picture" class="me_foreground">
+    <img src="{{base_media_url}}menobg.png" alt="picture" class="me_foreground">
 
   </aside> <!-- END COLORLIB-ASIDE -->
   <div id="colorlib-main">
@@ -33,9 +33,9 @@
       <div class="photograhy">
         <div class="row no-gutters">
             {% for p in portfolio %}
-        	<div class="col-md-4 ftco-animate"><a href="/media/drawings/{{ p.filename }}"
+        	<div class="col-md-4 ftco-animate"><a href="{{base_media_url}}drawings/{{ p.filename }}"
                                                 class="photography-entry img image-popup d-flex justify-content-center align-items-center"
-                                                style="background-image: url(http://sketchyactivity.com/media/copied_smaller_drawings/{{ p.filename }});">
+                                                style="background-image: url({{base_media_url}}copied_smaller_drawings/{{ p.filename }});">
             <div class="overlay">
             </div>
                 <button class="btn btn-danger btn-lg delete-item-button" onclick="remove_portfolio_item('{{ p.filename }}');">REMOVE</button>

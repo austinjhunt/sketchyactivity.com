@@ -15,7 +15,6 @@ html {
   color: #222;
   font-size: 1em;
   line-height: 1.4;
-  cursor: url(http://sketchyactivity.com/media/pencursor.png), auto !important;
 }
 
 /*
@@ -365,7 +364,6 @@ textarea {
 }
 
 .loginformcontainer, .signupformcontainer{
-  background: url(http://sketchyactivity.com/media/drawings/loginlayout.png);
   text-align:center;
   background-size:contain;
 }
@@ -622,7 +620,6 @@ p.welcome_msg{
   }
 
 .loginformcontainer, .signupformcontainer{
-  background: url(http://sketchyactivity.com/media/drawings/loginlayout.png);
   text-align:center;
   background-size:contain;
 }
