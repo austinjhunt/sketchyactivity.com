@@ -155,7 +155,7 @@ def upload(request):
             # Save the regular image, but also save a 30% version to show in preview (smaller size = faster load)
             # Regular image
             myfile = request.FILES['newfile']
-            fs = FileSystemStorage(location=settings.MEDIA_ROOT+"/drawings/", file_permissions_mode=0o655)
+            fs = FileSystemStorage(location=settings.MEDIA_ROOT+"drawings/", file_permissions_mode=0o655)
             filename = fs.save(myfile.name, myfile)
             print("Filename: ")
             print(filename)
@@ -165,11 +165,11 @@ def upload(request):
 
             # Smaller Image
             try:
-                img = Image.open(settings.MEDIA_ROOT+"/drawings/"+myfile.name)
+                img = Image.open(settings.MEDIA_ROOT+"drawings/"+myfile.name)
                 smallW = int(img.size[0] * .3)
                 smallH = int(img.size[1] * .3)
                 smallcopy = img.resize((smallW,smallH), Image.ANTIALIAS)
-                smallcopy.save(settings.MEDIA_ROOT+'/copied_smaller_drawings/'+myfile.name)
+                smallcopy.save(settings.MEDIA_ROOT+'copied_smaller_drawings/'+myfile.name)
                 print(smallcopy)
             except Exception as e:
                 print("Couldn't copy image.")
@@ -190,9 +190,9 @@ def delete(request):
             name = rp(request,'name') # filename;
             PortfolioItem.objects.filter(filename=name).delete()
             try:
-                os.remove(settings.MEDIA_ROOT + "/drawings/" + name)
+                os.remove(settings.MEDIA_ROOT + "drawings/" + name)
                 # delete the smaller copy
-                os.remove(settings.MEDIA_ROOT + "/copied_smaller_drawings/" + name)
+                os.remove(settings.MEDIA_ROOT + "copied_smaller_drawings/" + name)
             except:
                 print("No image with that name.")
             return render_to_json_response({'msg':'success'})

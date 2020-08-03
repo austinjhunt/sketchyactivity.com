@@ -177,5 +177,5 @@ if USE_S3:
     PUBLIC_MEDIA_LOCATION = 'media'
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
     DEFAULT_FILE_STORAGE = 'sketchyactivity.storage_backends.PublicMediaStorage'
-    
+    MEDIA_ROOT = MEDIA_URL
 django_heroku.settings(locals())
