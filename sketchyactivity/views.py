@@ -42,6 +42,7 @@ from .forms import *
 from django.conf import settings
 from django.core.files.storage import FileSystemStorage
 from PIL import Image
+import boto3
 
 
 
@@ -148,24 +149,28 @@ def upload(request):
         if request.method == 'POST' and request.FILES['newfile']:
             # Save the regular image, but also save a 30% version to show in preview (smaller size = faster load)
             # Regular image
+            s3 = boto3.resource('s3', aws_access_key_id=settings.AWS_ACCESS_KEY_ID,aws_secret_access_key=settings.AWS_SECRET_ACCESS_KEY)
+            bucket = s3.Bucket('sketchyactivitys3')
             myfile = request.FILES['newfile']
-            fs = FileSystemStorage(location=settings.MEDIA_ROOT+"drawings/", file_permissions_mode=0o655)
-            filename = fs.save(myfile.name, myfile)
-            print("Filename: ")
-            print(filename)
-            print("myfile.name")
-            print(myfile.name)
+            #fs = FileSystemStorage(location=settings.MEDIA_ROOT+"drawings/", file_permissions_mode=0o655)
+            # filename = fs.save(myfile.name, myfile)
+            bucket.put_object(Key='media/drawings/{}'.format(myfile.name),Body=myfile)
+
 
 
             # Smaller Image
             try:
-                img = Image.open(settings.MEDIA_ROOT+"drawings/"+myfile.name)
+                from .pil_s3 import S3Images
+                images = S3Images(aws_access_key_id=settings.AWS_ACCESS_KEY_ID,aws_secret_access_key=settings.AWS_SECRET_ACCESS_KEY,region_name='us-east-2')
+                img = images.from_s3('sketchyactivitys3','media/drawings/{}'.format(myfile.name)) # returns an Image.open() object
+                #img = Image.open(settings.MEDIA_ROOT+"drawings/"+myfile.name)
                 smallW = int(img.size[0] * .3)
                 smallH = int(img.size[1] * .3)
                 smallcopy = img.resize((smallW,smallH), Image.ANTIALIAS)
-                smallcopy.save(settings.MEDIA_ROOT+'copied_smaller_drawings/'+myfile.name)
-                print(smallcopy)
+                # smallcopy.save(settings.MEDIA_ROOT+'copied_smaller_drawings/'+myfile.name)
+                images.to_s3(smallcopy, 'sketchyactivitys3','media/copied_smaller_drawings/{}'.format(myfile.name))
             except Exception as e:
+                print(e)
                 print("Couldn't copy image.")
             date = rp(request,'date')
             # create a new object in DB for naming
