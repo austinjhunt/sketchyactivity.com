@@ -1,0 +1,99 @@
+<style>
+    .header_container{
+        position:relative;
+    }
+    #bio_desktop{
+        display:grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 1fr;
+        height:fit-content;
+        padding-left:5%;
+        padding-right:5%;
+        padding-top:3%;
+        padding-bottom:3%;
+        background-color: black;
+    }
+    #bio_mobile{
+        display:grid;
+        grid-template-rows: 1fr 1fr 1fr ;
+        grid-template-columns: 1fr;
+        height:fit-content;
+        padding-left:4%;
+        padding-right:4%;
+        padding-top:2%;
+        padding-bottom:2%;
+        background-color: black;
+    }
+    .bio_header{
+        font-size:10em;
+        font-weight: 700;
+        color:white;
+        display: grid;
+        align-content: center;
+        max-height: 98vh;
+    }
+    .black_bio_header{
+        color:black;
+    }
+    .bio_content{
+        font-size:1.6em;
+        text-align: right;
+        color:white;
+    }
+    .section-divider{
+        border: 0.5px solid grey;
+        margin:0px;
+    }
+    .mobile_bio{
+        display:none;
+    }
+    @media only screen and (max-width: 600px){
+        .desktop_bio{
+            display:none;
+        }
+        .mobile_bio{
+            display:block;
+        }
+        #bio_mobile{
+            display:grid;
+            grid-template-rows: 1fr 1fr;
+            grid-template-columns: 1fr;
+        }
+        .bio_header{
+            font-size:3em;
+            font-weight: 700;
+        }
+        .bio_content{
+            font-size:.9em;
+        }
+    }
+</style>
+<div class="desktop_bio">
+    <div class="text-center header_container">
+        <div></div>
+        {% include 'include/svg.html' %}
+        <div></div>
+    </div>
+    <div id="bio_desktop">
+        <h1 id="bio_header" class="black_bio_header bio_header">who am i?</h1>
+        <div data-aos="fade-right" data-aos-offset="0" class="bio_content">
+            {{bio}}
+        </div>
+    </div>
+</div>
+<div class="mobile_bio">
+    <div class="text-center header_container">
+        <div></div>
+        {% include 'include/svg.html' %}
+        <div></div>
+    </div>
+    <div id="bio_mobile">
+        <h1 id="bio_header" class="black_bio_header bio_header">who am i?</h1>
+        <div data-aos="fade-right" data-aos-offset="0" class="bio_content">
+            {{bio_1}}
+        </div>
+        <div data-aos="fade-right" data-aos-offset="0" class="bio_content">
+            {{bio_2}}
+        </div>
+    </div>
+</div>

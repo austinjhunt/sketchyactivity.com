@@ -1,0 +1,75 @@
+<div class="container text-center">
+    <div id='set-height'>
+
+    </div>
+    <div id="scrollvideo" class="scrollvideo">
+        <video id="v0" tabindex="0", autobuffer preload >
+            <source type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"' src="{{base_media_url}}videos/mischvid.mp4"></source>
+        </video>
+    </div>
+</div>
+<script>
+    $(document).ready(function(){
+        var frameNumber = 0, // start video at frame 0
+        // lower numbers = faster playback
+        playbackConst = 100,
+        // get page height from video duration
+        setHeight = document.getElementById("set-height"),
+        // select video element
+        vid = document.getElementById('v0');
+        // var vid = $('#v0')[0]; // jquery option
+        initHeight =  Math.floor(vid.duration) * playbackConst + "px";
+
+        // dynamically set the page height according to video length
+        window.onscroll = function () {
+            setHeight.style.height = Math.floor(vid.duration) * playbackConst + "px";
+        }
+
+
+
+        // Use requestAnimationFrame for smooth playback
+        function scrollPlay(){
+        var frameNumber  = window.pageYOffset/playbackConst;
+        vid.currentTime  = frameNumber;
+        window.requestAnimationFrame(scrollPlay);
+        }
+
+        window.requestAnimationFrame(scrollPlay);
+
+        var followTo = function (pos) {
+
+            $(window).scroll(function (e) {
+                if ($(window).scrollTop() > pos) {
+                    $(this).css({
+                        position: 'absolute',
+                        top: pos
+                    });
+                } else {
+                    $(this).css({
+                        position: 'fixed',
+                        top: 0
+                    });
+                }
+            });
+        };
+
+        $('#scrollvideo').followTo(initHeight);
+    });
+</script>
+<style>
+    /* video animation */
+.scrollvideo{
+    max-height:95%;
+    right:0;
+    width:100%;
+    text-align: right;
+    top:60px;
+    z-index: 10;
+    background:white;
+}
+#set-height{
+    width:100%;
+    min-height:100%
+}
+/* end video animation */
+</style>

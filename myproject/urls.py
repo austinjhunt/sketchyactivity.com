@@ -23,7 +23,6 @@ urlpatterns = [
     url(r'^$', views.index),
     url(r'^notify/$', views.notify),
     url(r'^delete/$', views.delete),
-    url(r'^update/$', views.update),
     url(r'^upload/$', views.upload),
     url(r'^logout/$', views.site_logout),
     url(r'^login/$', views.site_login),
@@ -32,6 +31,6 @@ urlpatterns = [
     url(r'^messaging/(\d+)/$', views.messaging), # slack_msging_endpoint function filters out the user id then calls this function to direct response to correct user.
     path('admin/', admin.site.urls),
     url(r'^update_profile/', views.update_profile),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] #+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 

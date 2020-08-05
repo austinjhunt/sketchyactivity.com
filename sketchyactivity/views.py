@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-
 from builtins import Exception
-
 from django.db.models import Q, Count
 from django.forms.models import model_to_dict
 from django.shortcuts import render
@@ -11,9 +9,6 @@ from django.views.decorators.csrf import csrf_exempt
 from django.template import RequestContext, loader
 from django.http import HttpResponse, HttpResponseRedirect, Http404, JsonResponse
 from random import *
-# Create your views here.
-
-class Break_Nested_Loop(Exception): pass
 import datetime
 import pytz
 from django.core import serializers
@@ -69,9 +64,17 @@ def render_to_json_response(context, **response_kwargs):
 
 @csrf_exempt
 def index(request):
+    bio = MetaStuff.objects.all()[0].bio
+    bio_split = bio.split('\n\n')
+    if len(bio_split) < 2:
+        bio_split = bio.split("\r\r")
+        if len(bio_split) < 2:
+            bio_split = bio.split("\r\n\r\n")
     context = {
         'portfolio': PortfolioItem.objects.all().order_by('-date'),
-        'bio': MetaStuff.objects.all()[0].bio
+        'bio_1': bio_split[0],
+        'bio_2': bio_split[-1],
+        'bio': bio
         }
     if isauth(request):
         # post to slack with username
@@ -79,12 +82,8 @@ def index(request):
         text = {"text": request.user.first_name + " " + request.user.last_name + " is viewing your site!"}
         headers = {'Content-Type': 'application/json'}
         r = requests.post(webhook_url, data=json.dumps(text), headers=headers)
-        if request.user.is_superuser:
-            template = loader.get_template('index_in_super.html')
-        else:
-            template = loader.get_template('index_in.html')
-    else:
-        template = loader.get_template('index.html')
+
+    template = loader.get_template('index.html')
     return HttpResponse(template.render(context,request))
 
 # Account management.
@@ -109,7 +108,7 @@ def site_login(request):
             else:
                 return HttpResponseRedirect('/login/')
     form = LoginForm()
-    template = loader.get_template('login.html')
+    template = loader.get_template('auth/login.html')
     context = {'form': form, 'portfolio': PortfolioItem.objects.all()}
     return HttpResponse(template.render(context,request))
     # No backend authenticated the credentials
@@ -138,14 +137,9 @@ def site_signup(request):
     # if a GET (or any other method) we'll create a blank form
     else:
         form = SignUpForm()
-    template = loader.get_template("signup.html")
+    template = loader.get_template("auth/signup.html")
     context = {'form':form, 'portfolio': PortfolioItem.objects.all()}
     return HttpResponse(template.render(context, request))
-
-
-
-
-
 
 # Super mods.
 @csrf_exempt
@@ -177,7 +171,7 @@ def upload(request):
             # create a new object in DB for naming
             PortfolioItem(tag='Portrait',portrait_name=rp(request,"portraitname"),filename=myfile.name,date=date).save()
             return HttpResponseRedirect('/')
-        template = loader.get_template('upload.html')
+        template = loader.get_template('super/upload.html')
         context = {}
         return HttpResponse(template.render(context, request))
     else:
@@ -198,19 +192,6 @@ def delete(request):
             return render_to_json_response({'msg':'success'})
     else:
         return HttpResponseRedirect('/')
-
-@csrf_exempt
-def update(request):
-    print()
-
-
-'''
-def create_portfolio_items():
-    imgnames = [l.strip() for l in open('sketchyactivity/imgnames.txt','r').readlines()]
-    tags = ["Portrait"] * len(imgnames)
-    portraitnames = [l.strip() for l in open('sketchyactivity/portraitnames.txt','r').readlines()]
-    items = [PortfolioItem(tag=tags[i],portrait_name=portraitnames[i],filename=imgnames[i]).save() for i in range(35)]
-'''
 
 
 # SLACK
@@ -344,5 +325,5 @@ def update_profile(request):
     else:
         bio = MetaStuff.objects.all()[0].bio
         context = {'bio':bio}
-        template = loader.get_template('update_profile.html')
+        template = loader.get_template('super/update_profile.html')
         return HttpResponse(template.render(context,request))

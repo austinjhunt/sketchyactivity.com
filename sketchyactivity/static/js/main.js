@@ -29,13 +29,15 @@
 
 	// loader
 	var loader = function() {
-		setTimeout(function() { 
+		setTimeout(function() {
+            console.log("loader function");
 			if($('#ftco-loader').length > 0) {
+                console.log("removing show class");
 				$('#ftco-loader').removeClass('show');
 			}
 		}, 1);
 	};
-	loader(); //hide loader 
+    loader(); //hide loader
 
 	// Scrollax
    $.Scrollax();
@@ -49,10 +51,10 @@
 
 			if ($('body').hasClass('offcanvas')) {
 				$this.removeClass('active');
-				$('body').removeClass('offcanvas');	
+				$('body').removeClass('offcanvas');
 			} else {
 				$this.addClass('active');
-				$('body').addClass('offcanvas');	
+				$('body').addClass('offcanvas');
 			}
 		});
 	};
@@ -69,9 +71,9 @@
 
     			$('body').removeClass('offcanvas');
     			$('.js-colorlib-nav-toggle').removeClass('active');
-			
+
 	    	}
-	    	
+
 	    }
 		});
 
@@ -80,23 +82,23 @@
 
     			$('body').removeClass('offcanvas');
     			$('.js-colorlib-nav-toggle').removeClass('active');
-			
+
 	    	}
 		});
 
 	};
 	mobileMenuOutsideClick();
 
-	
 
-	
+
+
 
 	var contentWayPoint = function() {
 		var i = 0;
 		$('.ftco-animate').waypoint( function( direction ) {
 
 			if( direction === 'down' && !$(this.element).hasClass('ftco-animated') ) {
-				
+
 				i++;
 
 				$(this.element).addClass('item-animate');
@@ -118,9 +120,9 @@
 							el.removeClass('item-animate');
 						},  k * 50, 'easeInOutExpo' );
 					});
-					
+
 				}, 100);
-				
+
 			}
 
 		} , { offset: '95%' } );
@@ -180,7 +182,7 @@ function who_am_i() {
   }
 
  }
- 
+
 function remove_portfolio_item(name){
 
 	$.ajax({

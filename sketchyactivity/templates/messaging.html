@@ -1,35 +1,19 @@
 {% extends "master.html" %}
 {% load static %}
 {% block content %}
-<div id="topbar">
-    <p class="welcome_msg right">Welcome, {{ user.first_name }}!</p>
-    <a class="left"><i class="fa fa-comment"></i></a>
-    <a href="/"><i class="fa fa-home"></i></a>
-    <a href="\logout/"><i class="fa fa-sign-out"></i></a>
-</div>
-<body>
+
 <div class="container chat-container text-center">
-                <div id="chat-body" class="chat-body">
+    <div id="chat-body" class="chat-body">
 
-                </div>
-                <div class="chat-message-textarea-container">
-                            <textarea id="message" class="chat-message-textarea" placeholder="Send message..." onkeydown="if (window.event.keyCode == 13) send_message_to_slack({{ user.id }})"></textarea>
-                            <button id="send_message_button" onclick="send_message_to_slack({{ user.id }})">Send</button>
-                </div>
-
+    </div>
+    <div class="chat-message-textarea-container">
+                <textarea id="message" class="chat-message-textarea" placeholder="Send message..." onkeydown="if (window.event.keyCode == 13) send_message_to_slack({{ user.id }})"></textarea>
+                <button id="send_message_button" onclick="send_message_to_slack({{ user.id }})">Send</button>
+    </div>
 </div><!-- END COLORLIB-PAGE -->
-
-<!-- loader -->
-<div id="ftco-loader" class="show fullscreen">
-  <svg class="circular" width="48px" height="48px">
-    <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/>
-    <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/>
-  </svg>
-</div>
-</body>
-    <script>
+<script>
     var user_id = {{ user.id }};
     var page = "messaging";
-    </script>
+</script>
 
 {% endblock %}

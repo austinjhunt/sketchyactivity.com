@@ -4,7 +4,6 @@ import sys
 sys.path.append('/home/huntajoseph/webapps/sketchyactivity/lib/python3.6/compressor/filters/')
 sys.path.append('/home/huntajoseph/venvs/myvenv/lib/python3.6/')
 sys.path.append('/home/huntajoseph/venvs/myvenv/lib/python3.6/site-packages/')
-print(sys.path)
 os.environ['DJANGO_SETTINGS_MODULE'] = 'myproject.settings'
 try:
     import pymysql

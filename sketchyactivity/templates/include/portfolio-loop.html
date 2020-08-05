@@ -1,0 +1,12 @@
+{% for p in portfolio %}
+<div class="col-md-4 ftco-animate portfolioItem">
+    <a href="{{base_media_url}}drawings/{{ p.filename }}" class="photography-entry img image-popup d-flex justify-content-center align-items-center"
+        style="background-image: url({{base_media_url}}copied_smaller_drawings/{{ p.filename }});">
+    <div class="overlay">
+    </div>
+    <div class="text text-center">
+        <h3>{{ p.portrait_name }}</h3><span class="tag">{{ p.tag }}</span><br /><span
+            class="tag">{{ p.date }}</span>
+    </div>
+</a></div>
+{% endfor %}

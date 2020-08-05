@@ -1,0 +1,19 @@
+{% extends "master.html" %}
+{% load static %}
+{% block content %}
+<div class="signupformcontainer">
+    <br /><br /><br />
+    <div class="blackcontainer">
+        <h1>Sign Up</h1>
+        <h2>stay updated on new work</h2>
+        <form class="loginform" method="post" action="/signup/">
+            {% csrf_token %}
+            {{ form.as_table }}
+            <input style="background:red; color: white;" type="submit" value="Submit">
+        </form>
+    </div>
+</div><!-- END COLORLIB-PAGE -->
+<script>
+    var page = "signup";
+</script>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "master.html" %}
+{% load static %}
+{% block content %}
+<div class="loginformcontainer">
+    <br /><br /><br />
+    <div class="blackcontainer">
+        <h1 style="font-size:4vh; margin-bottom: 3px;">Update Profile</h1>
+
+        <form class="loginform" method="post" action="/update_profile/">
+            {% csrf_token %}
+
+            <textarea name="bio" class="w-100 m-2 text-center text-light bg-dark p-3"
+                style="height:500px;">{{bio}}</textarea>
+            <input style="background:red; color: white;" type="submit" value="Submit">
+        </form>
+    </div>
+</div><!-- END COLORLIB-PAGE -->
+<script>
+    var page = "login";
+</script>
+{% endblock %}

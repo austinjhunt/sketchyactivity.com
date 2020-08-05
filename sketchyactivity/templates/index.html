@@ -1,121 +1,51 @@
 {% extends "master.html" %}
 {% load static %}
 {% block content %}
-<div id="topbar">
-    <a class="signinbutton" href="\login/"><i class="fa fa-sign-in"></i></a>
-    <a class="signupbutton" href="\signup/"><i class="fa fa-user-plus"></i></a>
-</div>
-<script type='text/javascript' data-cfasync='false'>window.purechatApi = { l: [], t: [], on: function () { this.l.push(arguments); } }; (function () { var done = false; var script = document.createElement('script'); script.async = true; script.type = 'text/javascript'; script.src = 'https://app.purechat.com/VisitorWidget/WidgetScript'; document.getElementsByTagName('HEAD').item(0).appendChild(script); script.onreadystatechange = script.onload = function (e) { if (!done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete')) { var w = new PCWidget({c: '322ffb35-bc78-4895-b0c8-ca75175bacda', f: true }); done = true; } }; })();</script>
-<body>
 
-<div id="colorlib-page">
-  <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
-  <aside id="colorlib-aside" role="complementary" class="js-fullheight text-center"><br/>
-    <h1 id="colorlib-logo" style="font-size:4vh; margin-bottom: 3px;"><a href="/"><span
-      class="flaticon-sketchbook"></span>Austin Hunt</a></h1>
-    <h1 style="font-size:3vh; color:white; "><a href="/"><span class="flaticon-sketchbook"></span>PORTRAIT
-      ARTIST</a></h1>
+{% include 'include/purechatapi.html' %}
 
-    <div id="init_right_triangle" class="right_triangle"></div>
-    <div id="about">
-        {{bio}}
-    </div>
-    <button class="who_am_i_button whoami1" onclick="who_am_i();">Who am I?</button>
-    {% include 'emailbutton.html' %}
-    <img src="{{base_media_url}}menobg.png" alt="picture" class="me_foreground">
-
-  </aside> <!-- END COLORLIB-ASIDE -->
-  <div id="colorlib-main">
-    <section class="ftco-section-2">
-      <div class="photograhy">
-        <div class="row no-gutters">
-            {% for p in portfolio %}
-        	<div class="col-md-4 ftco-animate"><a href="{{base_media_url}}drawings/{{ p.filename }}"
-                                                class="photography-entry img image-popup d-flex justify-content-center align-items-center"
-                                                style="background-image: url({{base_media_url}}copied_smaller_drawings/{{ p.filename }});">
-            <div class="overlay">
-            </div>
-            <div class="text text-center"><h3>{{ p.portrait_name }}</h3><span class="tag">{{ p.tag }}</span><br/><span class="tag">{{ p.date }}</span></div>
-          </a></div>
-            {% endfor %}
-
-
-
-        </div>
-      </div>
-    </section>
-
-    <footer class="ftco-footer ftco-bg-dark ftco-section">
-      <div class="container px-md-5">
-        <div class="row mb-5">
-          <!--<div class="col-md">
-            <div class="ftco-footer-widget mb-4 ml-md-4">
-              <h2 class="ftco-heading-2">Category</h2>
-              <ul class="list-unstyled categories">
-                <li><a href="#">Photography <span>(6)</span></a></li>
-                <li><a href="#">Fashion <span>(8)</span></a></li>
-                <li><a href="#">Technology <span>(2)</span></a></li>
-                <li><a href="#">Travel <span>(2)</span></a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Archives</h2>
-              <ul class="list-unstyled categories">
-                <li><a href="#">November 2018 <span>(105)</span></a></li>
-                <li><a href="#">October 2018 <span>(212)</span></a></li>
-                <li><a href="#">September 2018 <span>(150)</span></a></li>
-                <li><a href="#">August 2018 <span>(100)</span></a></li>
-                <li><a href="#">July 2018 <span>(200)</span></a></li>
-              </ul>
-            </div>
-          </div>-->
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Have a question?</h2>
-              <div class="block-23 mb-3">
-                <ul>
-                  <li><a href="#"><span class="icon icon-map-marker"></span><span
-                    class="text">Downtown Charleston, SC</span></a>
-                  </li>
-                  <li><a href="tel:8643533171"><span class="icon icon-phone"></span><span class="text">+1 864 353 3171</span></a>
-                  </li>
-                  <li><a href="mailto:austinsketches@gmail.com"><span class="icon icon-envelope"></span><span
-                    class="text">austinsketches@gmail.com</span></a>
-                  </li>
-                </ul>
-              </div>
-                <h1 class="neverstopcreating">NEVER&nbsp;STOP&nbsp;CREATING.</h1>
-            </div>
-          </div>
-        </div>
-        <div class="row" style="font-size:3px; margin:0px auto; padding:0px;">
-          <div class="col-md-12">
-
-            <p style="color:#242423">
-              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-              Copyright &copy;<script>document.write(new Date().getFullYear());</script>
-              All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a
-              style="color:#242423"
-              href="https://colorlib.com" target="_blank">Colorlib</a>
-              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-          </div>
-        </div>
-      </div>
-    </footer>
-  </div><!-- END COLORLIB-MAIN -->
-</div><!-- END COLORLIB-PAGE -->
-
-<!-- loader -->
-<div id="ftco-loader" class="show fullscreen">
-  <svg class="circular" width="48px" height="48px">
-    <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/>
-    <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/>
-  </svg>
-</div>
-</body>
+{% include 'include/bio.html' %}
 <script>
-var page = "home";
+    $(window).on('scroll', function() {
+        $(".bio_header").each(function(){
+            if (isScrolledIntoView($(this))) {
+                $(this).addClass('text-flicker-in-glow').removeClass('black_bio_header');
+            }
+            else{
+                $(this).removeClass('text-flicker-in-glow').addClass('black_bio_header');
+            }
+        });
+    });
+
+function isScrolledIntoView(elem) {
+  var docViewTop = $(window).scrollTop();
+  var docViewBottom = docViewTop + $(window).height();
+
+  var elemTop = $(elem).offset().top;
+  var elemBottom = elemTop + $(elem).height();
+
+  return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+}
+</script>
+
+<!--{% include 'include/animate-vid.html' %}-->
+<!---->
+<div id="colorlib-page">
+    <div id="colorlib-main" class="w-100">
+        <section class="ftco-section-2">
+            <div class="photograhy">
+                <div class="row no-gutters">
+                    {% include 'include/portfolio-loop.html' %}
+                </div>
+            </div>
+        </section>
+
+        {% include 'include/footer.html' %}
+    </div>
+    <!-- END COLORLIB-MAIN -->
+</div>
+<!-- END COLORLIB-PAGE -->
+<script>
+    var page = "home";
 </script>
 {% endblock %}

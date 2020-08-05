@@ -98,7 +98,6 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 
 DATABASES = {}
 DATABASES['default'] = dj_database_url.config(conn_max_age=600)
-print(DATABASES['default'])
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -141,7 +140,7 @@ USE_TZ = True
 #STATICFILES_DIRS = [
 #os.path.join(BASE_DIR, 'sketchyactivity/static'),
 #]
-# END OLD WEBFACTION CONFIG 
+# END OLD WEBFACTION CONFIG
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Static files (CSS, JavaScript, Images)
@@ -163,8 +162,7 @@ COMPRESS_OUTPUT_DIR = 'sketchyactivity' # hashed output to main/static/main fold
 COMPRESS_CSS_FILTERS = ["compressor.filters.cssmin.CSSMinFilter"]
 
 USE_S3 = os.getenv('USE_S3') == 'TRUE'
-if USE_S3: 
-    print("USE s3")
+if USE_S3:
     # aws settings
     AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
     AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
@@ -172,7 +170,7 @@ if USE_S3:
     AWS_DEFAULT_ACL = 'public-read'
     AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
     AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
-    
+
 
     PUBLIC_MEDIA_LOCATION = 'media'
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'

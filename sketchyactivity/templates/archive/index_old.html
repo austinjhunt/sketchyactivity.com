@@ -2,11 +2,8 @@
 {% load static %}
 {% block content %}
 <div id="topbar">
-    <p class="welcome_msg right">Welcome, Austin!</p>
-    <a class="headerbutton" href="\upload/"><i class="fa fa-upload"></i></a>
-    <a class="headerbutton" href="\update_profile/"><i class="fa fa-edit"></i></a>
-    <a class="headerbutton" href="\messaging/"><i class="fa fa-comment"></i></a>
-    <a class="headerbutton" href="\logout/"><i class="fa fa-sign-out"></i></a>
+    <a class="signinbutton" href="\login/"><i class="fa fa-sign-in"></i></a>
+    <a class="signupbutton" href="\signup/"><i class="fa fa-user-plus"></i></a>
 </div>
 <script type='text/javascript' data-cfasync='false'>window.purechatApi = { l: [], t: [], on: function () { this.l.push(arguments); } }; (function () { var done = false; var script = document.createElement('script'); script.async = true; script.type = 'text/javascript'; script.src = 'https://app.purechat.com/VisitorWidget/WidgetScript'; document.getElementsByTagName('HEAD').item(0).appendChild(script); script.onreadystatechange = script.onload = function (e) { if (!done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete')) { var w = new PCWidget({c: '322ffb35-bc78-4895-b0c8-ca75175bacda', f: true }); done = true; } }; })();</script>
 <body>
@@ -21,10 +18,10 @@
 
     <div id="init_right_triangle" class="right_triangle"></div>
     <div id="about">
-       {{bio}}
+        {{bio}}
     </div>
     <button class="who_am_i_button whoami1" onclick="who_am_i();">Who am I?</button>
-    {% include 'emailbutton.html' %}
+    {% include 'include/emailbutton.html' %}
     <img src="{{base_media_url}}menobg.png" alt="picture" class="me_foreground">
 
   </aside> <!-- END COLORLIB-ASIDE -->
@@ -38,7 +35,6 @@
                                                 style="background-image: url({{base_media_url}}copied_smaller_drawings/{{ p.filename }});">
             <div class="overlay">
             </div>
-                <button class="btn btn-danger btn-lg delete-item-button" onclick="remove_portfolio_item('{{ p.filename }}');">REMOVE</button>
             <div class="text text-center"><h3>{{ p.portrait_name }}</h3><span class="tag">{{ p.tag }}</span><br/><span class="tag">{{ p.date }}</span></div>
           </a></div>
             {% endfor %}
@@ -52,29 +48,6 @@
     <footer class="ftco-footer ftco-bg-dark ftco-section">
       <div class="container px-md-5">
         <div class="row mb-5">
-          <!--<div class="col-md">
-            <div class="ftco-footer-widget mb-4 ml-md-4">
-              <h2 class="ftco-heading-2">Category</h2>
-              <ul class="list-unstyled categories">
-                <li><a href="#">Photography <span>(6)</span></a></li>
-                <li><a href="#">Fashion <span>(8)</span></a></li>
-                <li><a href="#">Technology <span>(2)</span></a></li>
-                <li><a href="#">Travel <span>(2)</span></a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Archives</h2>
-              <ul class="list-unstyled categories">
-                <li><a href="#">November 2018 <span>(105)</span></a></li>
-                <li><a href="#">October 2018 <span>(212)</span></a></li>
-                <li><a href="#">September 2018 <span>(150)</span></a></li>
-                <li><a href="#">August 2018 <span>(100)</span></a></li>
-                <li><a href="#">July 2018 <span>(200)</span></a></li>
-              </ul>
-            </div>
-          </div>-->
           <div class="col-md">
             <div class="ftco-footer-widget mb-4">
               <h2 class="ftco-heading-2">Have a question?</h2>
@@ -90,7 +63,7 @@
                   </li>
                 </ul>
               </div>
-                <h1 class="neverstopcreating" >NEVER&nbsp;STOP&nbsp;CREATING.</h1>
+                <h1 class="neverstopcreating">NEVER&nbsp;STOP&nbsp;CREATING.</h1>
             </div>
           </div>
         </div>
@@ -119,5 +92,7 @@
   </svg>
 </div>
 </body>
-
+<script>
+var page = "home";
+</script>
 {% endblock %}
