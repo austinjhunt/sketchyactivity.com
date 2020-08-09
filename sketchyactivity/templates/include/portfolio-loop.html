@@ -3,9 +3,11 @@
     <a href="{{p.s3_drawing_private_url}}" class="photography-entry img image-popup d-flex justify-content-center align-items-center"
         style="background-image: url({{p.s3_copied_smaller_drawing_private_url}});">
     <div class="overlay">
-        <button class="btn btn-danger float-right" onclick="remove_portfolio_item('{{p.filename}}');">
-            <i class='fa fa-trash'></i>
-        </button>
+        {% if user.is_superuser %}
+            <button class="btn btn-danger float-right" onclick="remove_portfolio_item('{{p.filename}}');">
+                <i class='fa fa-trash'></i>
+            </button>
+        {% endif %}
     </div>
     <div class="text text-center">
         <h3>{{ p.portrait_name }}</h3><span class="tag">{{ p.tag }}</span><br /><span
