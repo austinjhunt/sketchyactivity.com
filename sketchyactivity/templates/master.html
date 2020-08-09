@@ -8,6 +8,11 @@
     var page = ""; // initialize at beginning of master; each page will give its own value if necessary.
 </script>
 <!-- top navigation -->
+<style>
+    #topbar{
+        z-index: 20;
+    }
+</style>
 {% if request.user.is_authenticated and request.user.is_superuser %}
     {% include 'include/superuser_topbar.html' %}
 {% elif request.user.is_authenticated %}
