@@ -21,6 +21,7 @@ from django.conf.urls.static import static
 from sketchyactivity import views
 urlpatterns = [
     url(r'^$', views.index),
+    url(r'^media/<slug:path>/<slug:filename>/', views.media),
     url(r'^notify/$', views.notify),
     url(r'^delete/$', views.delete),
     url(r'^upload/$', views.upload),

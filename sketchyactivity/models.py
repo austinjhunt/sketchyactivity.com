@@ -11,6 +11,9 @@ class PortfolioItem(models.Model):
     filename = models.CharField(default='',max_length=100)
     portrait_name = models.CharField(default='',max_length=100)
     date = models.DateField(null=True)
+    # Each item stored twice. One big, one small copy for preview. Need private url for each.
+    s3_drawing_private_url = models.URLField(max_length=500,default="")
+    s3_copied_smaller_drawing_private_url = models.URLField(max_length=500,default="")
 
 class MetaStuff(models.Model):
     bio = models.TextField(default='')

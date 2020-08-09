@@ -26,3 +26,4 @@ whitenoise
 dj-database-url
 boto3
 django-storages
+pylibmc==1.5.2

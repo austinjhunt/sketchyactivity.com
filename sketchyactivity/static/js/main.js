@@ -287,6 +287,7 @@ function longpoll(uid){
 
 // only notify once when home page is reached
 if (page == "home") {
+    console.log("Notifying...");
 	jQuery.ajax({
 		dataType: 'json',
 		processData: false,

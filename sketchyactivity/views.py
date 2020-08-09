@@ -1,88 +1,64 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from builtins import Exception
+from sketchyactivity.upload.models import UploadPrivateThumbnail, UploadPrivateOriginal
 from django.db.models import Q, Count
-from django.forms.models import model_to_dict
-from django.shortcuts import render
 from django.contrib.auth import authenticate, login, logout
 from django.views.decorators.csrf import csrf_exempt
-from django.template import RequestContext, loader
-from django.http import HttpResponse, HttpResponseRedirect, Http404, JsonResponse
-from random import *
-import datetime
-import pytz
-from django.core import serializers
-from django.contrib.auth import update_session_auth_hash  # for enabling user to stay logged in after PW change
-from django.contrib import messages
-from django.contrib.auth.forms import PasswordChangeForm
-from django.shortcuts import render, redirect
-from django.contrib.auth.models import User
-from django.contrib.auth.tokens import default_token_generator
-from django.utils.encoding import force_bytes
-from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.template import loader
-from django.core.validators import validate_email
-from django.core.exceptions import ValidationError
-from django.core.mail import send_mail
-from django.utils.timezone import is_aware, is_naive
-from django.views.generic import *
-from django.contrib import messages
-from .models import *
-import re  # regex matching
-# for generating/downloading grades
-import csv
-# import all of the JSON serializable classes
-# separately define and import helper functions to improve modularity
-from django.core.mail import EmailMultiAlternatives
-from django.template.loader import render_to_string
-from django.utils.html import strip_tags
-from .customclasses import *
-import os,sys
-from .forms import *
+from django.http import HttpResponse, HttpResponseRedirect,JsonResponse
+from random import *
+from django.contrib.auth.models import User
+from django.template import loader
+import os
 from django.conf import settings
+from django.core.files.uploadedfile import SimpleUploadedFile
 from django.core.files.storage import FileSystemStorage
 from PIL import Image
 import boto3
-
-
-
-# DRY Utility Functions
-def rp(request, data):
-    return request.POST.get(data)
-def isauth(request):
-    return request.user.is_authenticated
-def fget(form,string):
-    return form.cleaned_data[string]
-def ajax(request):
-    return request.is_ajax()
-
-# for ajax requests, returning JSON to JS
-def render_to_json_response(context, **response_kwargs):
-    data = json.dumps(context)
-    response_kwargs['content_type'] = 'application/json'
-    return HttpResponse(data, **response_kwargs)
-
+from botocore.client import Config
+from boto3 import session
+from django.core.cache import cache
+# local imports
+from .models import *
+from .customclasses import *
+from .forms import *
+from .util import *
+from .pil_s3 import S3Images
+s3_client = boto3.client(
+    's3',
+    aws_access_key_id=settings.AWS_ACCESS_KEY_ID,
+    aws_secret_access_key=settings.AWS_SECRET_ACCESS_KEY,
+    region_name='us-east-2',
+    config=Config(signature_version='s3v4'))
 
 @csrf_exempt
 def index(request):
+
+
+    #https://sketchyactivitys3.s3.amazonaws.com/media/holes_dtnSzcm.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHT676CDUB%2F20200808%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20200808T214947Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=45c1aaa66548e62373988951ca41a21e15253ee44aff258847e5cadf23f93a49
+
+    # Set private URLs for each object.
+
+
     bio = MetaStuff.objects.all()[0].bio
     bio_split = bio.split('\n\n')
     if len(bio_split) < 2:
         bio_split = bio.split("\r\r")
         if len(bio_split) < 2:
             bio_split = bio.split("\r\n\r\n")
+    portfolio = PortfolioItem.objects.all().order_by('-date')
+    if not cache.get('updated_private_urls'):
+        update_private_urls_full_portfolio(portfolio,s3_client)
+        cache.set('updated_private_urls', 302400) # half the max expiration time of the private urls for the media files in s3.
+
+
     context = {
-        'portfolio': PortfolioItem.objects.all().order_by('-date'),
+        'portfolio': portfolio,
         'bio_1': bio_split[0],
         'bio_2': bio_split[-1],
         'bio': bio
         }
-    if isauth(request):
-        # post to slack with username
-        webhook_url = "https://hooks.slack.com/services/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"  # Webhook URL
-        text = {"text": request.user.first_name + " " + request.user.last_name + " is viewing your site!"}
-        headers = {'Content-Type': 'application/json'}
-        r = requests.post(webhook_url, data=json.dumps(text), headers=headers)
 
     template = loader.get_template('index.html')
     return HttpResponse(template.render(context,request))
@@ -142,39 +118,79 @@ def site_signup(request):
     context = {'form':form, 'portfolio': PortfolioItem.objects.all()}
     return HttpResponse(template.render(context, request))
 
+def media(request, path, filename):
+    s3 = boto3.resource('s3', aws_access_key_id=settings.AWS_ACCESS_KEY_ID,aws_secret_access_key=settings.AWS_SECRET_ACCESS_KEY)
+    return (
+        s3.get_object(
+            Bucket='sketchyactivitys3',
+            Key=f'{path}/{filename}'
+        )
+    )
+
+def s3callback(request):
+    if request.method == "POST":
+        print("post request from S3")
+        print(request)
+        print(request.POST)
+    elif request.method == "GET":
+        print("get request from S3")
+        print(request)
+        print(request.GET)
+    return JsonResponse({'response':'thanks for calling back'})
+
+
+def resize_image(image_path, resized_path):
+    with Image.open(image_path) as image:
+        image.thumbnail(tuple(x / 3 for x in image.size))
+        image.save(resized_path)
+
 # Super mods.
 @csrf_exempt
 def upload(request):
     if request.user.is_authenticated and request.user.is_superuser:
         if request.method == 'POST' and request.FILES['newfile']:
+            """ Have inmemoryuploadedfile. That's what uploadprivate expects as file arg. need to
+            1. save original with upload private in the 'drawings' """
             # Save the regular image, but also save a 30% version to show in preview (smaller size = faster load)
             # Regular image
-            s3 = boto3.resource('s3', aws_access_key_id=settings.AWS_ACCESS_KEY_ID,aws_secret_access_key=settings.AWS_SECRET_ACCESS_KEY)
-            bucket = s3.Bucket('sketchyactivitys3')
+
             myfile = request.FILES['newfile']
-            #fs = FileSystemStorage(location=settings.MEDIA_ROOT+"drawings/", file_permissions_mode=0o655)
-            # filename = fs.save(myfile.name, myfile)
-            bucket.put_object(Key='media/drawings/{}'.format(myfile.name),Body=myfile)
+            fs = FileSystemStorage(location='', file_permissions_mode=0o655)
+            filename = fs.save(myfile.name, myfile)
+            response1 = s3_client.upload_file(
+                filename,
+                'sketchyactivitys3',
+                f'media/drawings/{myfile.name}',
+                ExtraArgs={
+                    'ACL':'private'
+                }
+            )
+            resize_path = f'/tmp/{filename}'
+            resize_image(filename,  resize_path)
+            response2 = s3_client.upload_file(
+                resize_path,
+                'sketchyactivitys3',
+                f'media/copied_smaller_drawings/{myfile.name}',
+                ExtraArgs={'ACL':'private'}
+                )
+            os.remove(filename)
+            # Initialize private urls to empty strings
+            s3_drawing_private_url = ""
+            s3_copied_smaller_drawing_private_url = ""
 
-
-
-            # Smaller Image
-            try:
-                from .pil_s3 import S3Images
-                images = S3Images(aws_access_key_id=settings.AWS_ACCESS_KEY_ID,aws_secret_access_key=settings.AWS_SECRET_ACCESS_KEY,region_name='us-east-2')
-                img = images.from_s3('sketchyactivitys3','media/drawings/{}'.format(myfile.name)) # returns an Image.open() object
-                #img = Image.open(settings.MEDIA_ROOT+"drawings/"+myfile.name)
-                smallW = int(img.size[0] * .3)
-                smallH = int(img.size[1] * .3)
-                smallcopy = img.resize((smallW,smallH), Image.ANTIALIAS)
-                # smallcopy.save(settings.MEDIA_ROOT+'copied_smaller_drawings/'+myfile.name)
-                images.to_s3(smallcopy, 'sketchyactivitys3','media/copied_smaller_drawings/{}'.format(myfile.name))
-            except Exception as e:
-                print(e)
-                print("Couldn't copy image.")
             date = rp(request,'date')
             # create a new object in DB for naming
-            PortfolioItem(tag='Portrait',portrait_name=rp(request,"portraitname"),filename=myfile.name,date=date).save()
+            new_item = PortfolioItem(
+                tag='Portrait',
+                portrait_name=rp(request,"portraitname"),
+                filename=myfile.name,
+                date=date,
+                s3_drawing_private_url=s3_drawing_private_url,
+                s3_copied_smaller_drawing_private_url=s3_copied_smaller_drawing_private_url)
+            new_item.save()
+
+            update_private_url_single(new_item, s3_client)
+
             return HttpResponseRedirect('/')
         template = loader.get_template('super/upload.html')
         context = {}
@@ -188,12 +204,21 @@ def delete(request):
         if request.method == "POST":
             name = rp(request,'name') # filename;
             PortfolioItem.objects.filter(filename=name).delete()
-            try:
-                os.remove(settings.MEDIA_ROOT + "drawings/" + name)
-                # delete the smaller copy
-                os.remove(settings.MEDIA_ROOT + "copied_smaller_drawings/" + name)
-            except:
-                print("No image with that name.")
+            delete_session = boto3.Session(
+                aws_access_key_id=settings.AWS_ACCESS_KEY_ID,
+                aws_secret_access_key=settings.AWS_SECRET_ACCESS_KEY,
+                region_name='us-east-2').resource('s3')
+            orig = delete_session.Object(
+                'sketchyactivitys3', # bucket
+                f'media/drawings/{name}' # original drawing file
+                )
+            orig.delete()
+
+            thumb = delete_session.Object(
+                'sketchyactivitys3', # bucket
+                f'media/copied_smaller_drawings/drawings/{name}' # original drawing file
+                )
+            thumb.delete()
             return render_to_json_response({'msg':'success'})
     else:
         return HttpResponseRedirect('/')
@@ -203,11 +228,20 @@ def delete(request):
 import requests
 @csrf_exempt
 def notify(request):
-    webhook_url = "https://hooks.slack.com/services/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" #  Webhook URL
-    text = {"text": "Someone is viewing your site!"}
-    headers = {'Content-Type': 'application/json'}
-    r = requests.post(webhook_url, data=json.dumps(text), headers=headers)
+    """ Send a notification that someone is viewing site to Slack channel. If auth, include username. else, Someone."""
+    if not isauth(request):
+        webhook_url = "https://hooks.slack.com/services/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" #  Webhook URL
+        text = {"text": "Someone is viewing your site!"}
+        headers = {'Content-Type': 'application/json'}
+        r = requests.post(webhook_url, data=json.dumps(text), headers=headers)
+    elif isauth(request):
+        # post to slack with username
+        webhook_url = "https://hooks.slack.com/services/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"  # Webhook URL
+        text = {"text": request.user.first_name + " " + request.user.last_name + " is viewing your site!"}
+        headers = {'Content-Type': 'application/json'}
+        r = requests.post(webhook_url, data=json.dumps(text), headers=headers)
     return render_to_json_response({})
+
 
 
 # Have to use long polling for pushing API responses from Slack to front end without front end triggering updates.

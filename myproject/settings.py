@@ -170,10 +170,62 @@ if USE_S3:
     AWS_DEFAULT_ACL = 'public-read'
     AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
     AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
+    AWS_S3_REGION_NAME = 'us-east-2'
+    AWS_S3_SIGNATURE_VERSION = 's3v4'
 
+    #PUBLIC_MEDIA_LOCATION = 'media'
+    #PUBLIC_MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
+    #MEDIA_ROOT = MEDIA_URL
+    # Private S3 settings
+    PRIVATE_MEDIA_LOCATION = 'media'
+    PRIVATE_MEDIA_STORAGE = 'sketchyactivity.storage_backends.PrivateMediaStorage'
 
-    PUBLIC_MEDIA_LOCATION = 'media'
-    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
-    DEFAULT_FILE_STORAGE = 'sketchyactivity.storage_backends.PublicMediaStorage'
-    MEDIA_ROOT = MEDIA_URL
 django_heroku.settings(locals())
+
+
+def get_cache():
+  import os
+  try:
+    servers = os.environ['MEMCACHIER_SERVERS']
+    username = os.environ['MEMCACHIER_USERNAME']
+    password = os.environ['MEMCACHIER_PASSWORD']
+    return {
+      'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.PyLibMCCache',
+        # TIMEOUT is not the connection timeout! It's the default expiration
+        # timeout that should be applied to keys! Setting it to `None`
+        # disables expiration.
+        'TIMEOUT': None,
+        'LOCATION': servers,
+        'OPTIONS': {
+          'binary': True,
+          'username': username,
+          'password': password,
+          'behaviors': {
+            # Enable faster IO
+            'no_block': True,
+            'tcp_nodelay': True,
+            # Keep connection alive
+            'tcp_keepalive': True,
+            # Timeout settings
+            'connect_timeout': 2000, # ms
+            'send_timeout': 750 * 1000, # us
+            'receive_timeout': 750 * 1000, # us
+            '_poll_timeout': 2000, # ms
+            # Better failover
+            'ketama': True,
+            'remove_failed': 1,
+            'retry_timeout': 2,
+            'dead_timeout': 30,
+          }
+        }
+      }
+    }
+  except:
+    return {
+      'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache'
+      }
+    }
+
+CACHES = get_cache()
