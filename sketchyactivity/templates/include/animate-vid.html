@@ -29,17 +29,27 @@
     function scrollVideo() {
 
         if (elementInViewport_at_all(vid_container)) {
-            $("#video_scroll_animation_container").height($("#scrollvideo").height());
             // get the video
             var video = $('#scrollvideo').get(0),
+            //get the video duration 
+            videoLength = video.duration,
+            // get the vertical scrollbar position for the document. 
+            // animate video relative to the parent container, not the document/viewport.
 
-                //get the video duration 
-                videoLength = video.duration,
-                // get the vertical scrollbar position for the document. 
-                // animate video relative to the parent container, not the document/viewport. 
-                scrollPosition = $(document).scrollTop() - (vertical_offset_of_video_container)*3/4;
-
-            video.currentTime = (scrollPosition / ($("#video_scroll_animation_container").height() - $(window).height())) * videoLength;
+            scrollPosition = $(document).scrollTop() - (vertical_offset_of_video_container)*3/4;
+            if (scrollPosition < 0){
+                video.currentTime = 0;
+            }
+            else{
+                var frac = (scrollPosition / ($("#video_scroll_animation_container").height() - $(window).height()));
+                if (frac < 0){
+                    frac = frac*-1;
+                }
+                video.currentTime = frac * videoLength;
+            }
+            console.log("scrolll anim container height: " + $("#video_scroll_animation_container").height());
+            console.log("window height: " + $(window).height());
+            console.log("denominator: "+  ($("#video_scroll_animation_container").height() - $(window).height() * videoLength));
             console.log("Current time: " + video.currentTime);
             console.log("Scroll Position: " + scrollPosition);
             console.log("Video duration/length: " + videoLength);
@@ -56,6 +66,7 @@
         margin: 0 auto;
         min-height: 100%;
         width: auto;
+        max-width: 100%;
         height: auto;
         z-index: 10;
         background-size: cover;
