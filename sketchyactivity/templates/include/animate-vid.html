@@ -1,23 +1,49 @@
-
 <video id="scrollvideo" class="scrollvideo" tabindex="0" , autobuffer preload>
     <source type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"' src="{{private_video_url}}">
     </source>
 </video>
 <script>
-    function scrollVideo() {
-        $("#video_scroll_animation_container").height($("#scrollvideo").height());
-        var video = $('#scrollvideo').get(0),
-            videoLength = video.duration,
-            // get the vertical scrollbar position for the document. 
-            //scrollPosition = $(document).scrollTop();
-            // animate video relative to the parent container, not the document/viewport. 
-            scrollPosition = $(document).scrollTop();
-        
-        video.currentTime = (scrollPosition / ($("#video_scroll_animation_container").height() - $(window).height())) * videoLength;
-        console.log("Current time: " + video.currentTime);
-        console.log("Scroll Position: " + scrollPosition);
-        console.log("Video duration/length: " + videoLength);
+    function elementInViewport_at_all(el) {
+        var top = el.offsetTop;
+        var left = el.offsetLeft;
+        var width = el.offsetWidth;
+        var height = el.offsetHeight;
 
+        while (el.offsetParent) {
+            el = el.offsetParent;
+            top += el.offsetTop;
+            left += el.offsetLeft;
+        }
+
+        return (
+            top < (window.pageYOffset + window.innerHeight) &&
+            left < (window.pageXOffset + window.innerWidth) &&
+            (top + height) > window.pageYOffset &&
+            (left + width) > window.pageXOffset
+        );
+    }
+    // dont want document's top to be zero
+    // want video_scroll_animation_container's top to be zero 
+    var vertical_offset_of_video_container = $("#video_scroll_animation_container").offset().top;
+    var vid_container = document.getElementById("video_scroll_animation_container");
+    function scrollVideo() {
+
+        if (elementInViewport_at_all(vid_container)) {
+            $("#video_scroll_animation_container").height($("#scrollvideo").height());
+            // get the video
+            var video = $('#scrollvideo').get(0),
+
+                //get the video duration 
+                videoLength = video.duration,
+                // get the vertical scrollbar position for the document. 
+                // animate video relative to the parent container, not the document/viewport. 
+                scrollPosition = $(document).scrollTop() - (vertical_offset_of_video_container)*3/4;
+
+            video.currentTime = (scrollPosition / ($("#video_scroll_animation_container").height() - $(window).height())) * videoLength;
+            console.log("Current time: " + video.currentTime);
+            console.log("Scroll Position: " + scrollPosition);
+            console.log("Video duration/length: " + videoLength);
+        }
     }
 
     $(window).scroll(function (e) {
@@ -27,8 +53,7 @@
 <style>
     /* video animation */
     .scrollvideo {
-        position: absolute;
-        margin:0 auto;
+        margin: 0 auto;
         min-height: 100%;
         width: auto;
         height: auto;
