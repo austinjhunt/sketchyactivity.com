@@ -36,7 +36,7 @@
             // get the vertical scrollbar position for the document. 
             // animate video relative to the parent container, not the document/viewport.
 
-            scrollPosition = $(document).scrollTop() - (vertical_offset_of_video_container)*3/4;
+            scrollPosition = $(document).scrollTop() - (vertical_offset_of_video_container)*5/8;
             if (scrollPosition < 0){
                 video.currentTime = 0;
             }
@@ -45,7 +45,7 @@
                 if (frac < 0){
                     frac = frac*-1;
                 }
-                video.currentTime = frac * videoLength;
+                video.currentTime = frac * 0.1 * videoLength;
             }
             console.log("scrolll anim container height: " + $("#video_scroll_animation_container").height());
             console.log("window height: " + $(window).height());
