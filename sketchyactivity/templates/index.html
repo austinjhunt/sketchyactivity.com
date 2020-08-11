@@ -4,6 +4,23 @@
 
 {% include 'include/purechatapi.html' %}
 
+<div class="text-center header_container">
+    <div></div>
+    {% include 'include/svg.html' %}
+    <div></div>
+</div>
+
+<style>
+    #video_scroll_animation_container{
+        height:max-content;
+        position:static;
+        background:white;
+        text-align:center;
+    }
+</style>
+<div id="video_scroll_animation_container">
+{% include 'include/animate-vid.html' %}
+</div>
 {% include 'include/bio.html' %}
 <script>
     $(window).on('scroll', function() {
@@ -28,7 +45,7 @@ function isScrolledIntoView(elem) {
 }
 </script>
 
-<!--{% include 'include/animate-vid.html' %}-->
+
 <!---->
 {% include 'include/commission_me.html' %}
 <div id="colorlib-page">

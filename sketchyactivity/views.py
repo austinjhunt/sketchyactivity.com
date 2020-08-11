@@ -48,16 +48,22 @@ def index(request):
         if len(bio_split) < 2:
             bio_split = bio.split("\r\n\r\n")
     portfolio = PortfolioItem.objects.all().order_by('-date')
+
+    # update private urls if they need to be updated
+    if not cache.get('updated_private_video_url'):
+        private_video_url = update_private_video_url(s3_client)
+        cache.set('updated_private_video_url', private_video_url, 302400)# half the max expiration time of the private urls for the media files in s3.
     if not cache.get('updated_private_urls'):
         update_private_urls_full_portfolio(portfolio,s3_client)
-        cache.set('updated_private_urls', 302400) # half the max expiration time of the private urls for the media files in s3.
+        cache.set('updated_private_urls', True, 302400) # half the max expiration time of the private urls for the media files in s3.
 
 
     context = {
         'portfolio': portfolio,
         'bio_1': bio_split[0],
         'bio_2': bio_split[-1],
-        'bio': bio
+        'bio': bio,
+        'private_video_url': cache.get('updated_private_video_url')
         }
 
     template = loader.get_template('index.html')

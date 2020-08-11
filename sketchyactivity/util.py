@@ -32,6 +32,14 @@ def update_private_url_single(item,s3_client):
                                                 ExpiresIn=MAX_EXPIRATION_ONE_WEEK_SECS)
     item.save()
 
+def update_private_video_url(s3_client):
+    return s3_client.generate_presigned_url('get_object',
+                                                Params={
+                                                    'Bucket': 'sketchyactivitys3',
+                                                    'Key': f'media/videos/mischvid.mp4'},
+                                                ExpiresIn=MAX_EXPIRATION_ONE_WEEK_SECS)
+
+
 def update_private_urls_full_portfolio(portfolio=None,s3_client=None):
     if portfolio:
         for p in portfolio:
