@@ -57,7 +57,7 @@ def index(request):
         print("Updating private urls for portfolio...")
         update_private_urls_full_portfolio(portfolio,s3_client)
         print("Setting cache.updated_private_urls ")
-        cache.set('updated_private_urls', 302400) # half the max expiration time of the private urls for the media files in s3.
+        cache.set('updated_private_urls', 'is_updated',302400) # half the max expiration time of the private urls for the media files in s3.
     else:
         print("Cache updated_private_urls is set already")
 
