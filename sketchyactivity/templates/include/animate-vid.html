@@ -1,75 +1,101 @@
-<div class="container text-center">
-    <div id='set-height'>
-
-    </div>
-    <div id="scrollvideo" class="scrollvideo">
-        <video id="v0" tabindex="0", autobuffer preload >
-            <source type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"' src="{{base_media_url}}videos/mischvid.mp4"></source>
-        </video>
-    </div>
-</div>
+<video playsinline id="scrollvideo" class="scrollvideo" tabindex="0" , autobuffer preload>
+    <source type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"' src="{{private_video_url}}">
+    </source>
+</video>
 <script>
     $(document).ready(function(){
-        var frameNumber = 0, // start video at frame 0
-        // lower numbers = faster playback
-        playbackConst = 100,
-        // get page height from video duration
-        setHeight = document.getElementById("set-height"),
-        // select video element
-        vid = document.getElementById('v0');
-        // var vid = $('#v0')[0]; // jquery option
-        initHeight =  Math.floor(vid.duration) * playbackConst + "px";
+        var video = $('#scrollvideo').get(0);
+        video.addEventListener("loadeddata", function () {
+            if (video.readyState >= 3) {
+              video.currentTime = 0;
+              // video.play();
+            }
+          });
+          video.load();
+    })
+    function elementInViewport_at_all(el) {
+        var top = el.offsetTop;
+        var left = el.offsetLeft;
+        var width = el.offsetWidth;
+        var height = el.offsetHeight;
 
-        // dynamically set the page height according to video length
-        window.onscroll = function () {
-            setHeight.style.height = Math.floor(vid.duration) * playbackConst + "px";
+        while (el.offsetParent) {
+            el = el.offsetParent;
+            top += el.offsetTop;
+            left += el.offsetLeft;
         }
 
-
-
-        // Use requestAnimationFrame for smooth playback
-        function scrollPlay(){
-        var frameNumber  = window.pageYOffset/playbackConst;
-        vid.currentTime  = frameNumber;
-        window.requestAnimationFrame(scrollPlay);
+        return (
+            top < (window.pageYOffset + window.innerHeight) &&
+            left < (window.pageXOffset + window.innerWidth) &&
+            (top + height) > window.pageYOffset &&
+            (left + width) > window.pageXOffset
+        );
+    }
+    function portrait(){
+        return window.innerHeight > window.innerWidth;
+    }
+    // dont want document's top to be zero
+    // want video_scroll_animation_container's top to be zero 
+    var vertical_offset_of_video_container = $("#video_scroll_animation_container").offset().top;
+    var vid_container = document.getElementById("video_scroll_animation_container");
+    function set_video_current_time(frac,videoLength){
+        var currentTime;
+        if (portrait()){
+            currentTime = frac * .45 * videoLength;
         }
+        else{currentTime = frac * 1.1 * videoLength;}
+        if (currentTime > videoLength){
+            return videoLength;
+        }
+        else{
+            return currentTime;
+        }
+    }
+    function scrollVideo() {
 
-        window.requestAnimationFrame(scrollPlay);
-
-        var followTo = function (pos) {
-
-            $(window).scroll(function (e) {
-                if ($(window).scrollTop() > pos) {
-                    $(this).css({
-                        position: 'absolute',
-                        top: pos
-                    });
-                } else {
-                    $(this).css({
-                        position: 'fixed',
-                        top: 0
-                    });
+        if (elementInViewport_at_all(vid_container)) {
+            // get the video
+            var video = $('#scrollvideo').get(0),
+            //get the video duration 
+            videoLength = video.duration;
+            var scrollPosition = $(document).scrollTop() - (vertical_offset_of_video_container);
+            // get the vertical scrollbar position for the document. 
+            // animate video relative to the parent container, not the document/viewport.
+            
+            if (scrollPosition < 0){
+                video.currentTime = 0;
+            }
+            else{
+                var frac = (scrollPosition / ($("#video_scroll_animation_container").height() - $(window).height()));
+                if (frac < 0){
+                    frac = frac*-1;
                 }
-            });
-        };
+                video.currentTime = set_video_current_time(frac,videoLength);
+            }
+        }
+    }
 
-        $('#scrollvideo').followTo(initHeight);
+    $(window).scroll(function (e) {
+        scrollVideo();
     });
 </script>
 <style>
     /* video animation */
-.scrollvideo{
-    max-height:95%;
-    right:0;
-    width:100%;
-    text-align: right;
-    top:60px;
-    z-index: 10;
-    background:white;
-}
-#set-height{
-    width:100%;
-    min-height:100%
-}
-/* end video animation */
+    .scrollvideo {
+        margin: 0 auto;
+        min-height: 100%;
+        width: auto;
+        max-width: 100%;
+        height: auto;
+        z-index: 10;
+        background-size: cover;
+    }
+
+    #set-height {
+        width: 100%;
+        min-height: 100%
+    }
+
+    /* end video animation */
 </style>
