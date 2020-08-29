@@ -198,7 +198,7 @@ def get_cache():
         # TIMEOUT is not the connection timeout! It's the default expiration
         # timeout that should be applied to keys! Setting it to `None`
         # disables expiration.
-        'TIMEOUT': None,
+        'TIMEOUT': 302400,
         'LOCATION': servers,
         'OPTIONS': {
           'binary': True,
