@@ -34,7 +34,6 @@ s3_client = boto3.client(
 
 @csrf_exempt
 def index(request):
-    cache.clear()
 
     #https://sketchyactivitys3.s3.amazonaws.com/media/holes_dtnSzcm.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHT676CDUB%2F20200808%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20200808T214947Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=45c1aaa66548e62373988951ca41a21e15253ee44aff258847e5cadf23f93a49
 
