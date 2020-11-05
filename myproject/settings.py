@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'sketchyactivity',
+    'django_extensions',
     'compressor',
     'cssmin',
     'jsmin',
