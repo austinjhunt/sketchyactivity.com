@@ -1,12 +1,15 @@
 <div class="pricing-container">
     <h1 class="pricing-header">pricing</h1>
     <div class="prices-container">
-        {% for p in prices %}
-        <div class="price">
-            {{p.description}}
-            {{p.cost}}
-        </div>
-        {% endfor %}
+        {% autoescape off %} 
+            {% for p in prices %}
+                <div class="price">
+                    <div class="price-description">
+                        {{p.description}} - ${{p.amount}}
+                    </div>
+                </div>
+            {% endfor %}
+        {% endautoescape %}
     </div>
 </div> 
 <style>
@@ -21,13 +24,23 @@
         font-weight:600;
         text-decoration: underline;
     }
-    .prices-container{
-        display:grid; 
+    .prices-container{ 
         padding:10px;
-        grid-template-columns: repeat(1fr,minmax(3,auto));
-        grid-row-gap: 10px; 
+        text-align:center; 
     }
-    .prices-container * {
-        padding:10px;
+    .prices-container .price { 
+        font-size: 1.1em;
+        font-weight:400;
+        line-height: 1;
+        margin: 8px;
+    }
+    .price-description{
+        color:white;
+    } 
+    .price-description a {
+        color: lightblue;
+        font-size: 1.1em; 
+
+        font-weight:400; 
     }
 </style>

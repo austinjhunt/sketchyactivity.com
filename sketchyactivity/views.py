@@ -66,6 +66,7 @@ def index(request):
         'bio_1': bio_split[0],
         'bio_2': bio_split[-1],
         'bio': bio,
+        'prices': Price.objects.all(),
         'private_video_url': cache.get('updated_private_video_url')
         }
 
