@@ -1,46 +1,42 @@
-{% extends "master.html" %}
-{% load static %}
-{% block content %}
-
-{% include 'include/purechatapi.html' %}
+{% extends "master.html" %} {% load static %} {% block content %} {% include 'include/purechatapi.html' %}
 
 <div class="text-center header_container">
     <div></div>
     {% include 'include/svg.html' %}
     <div></div>
+    <iframe src="https://open.spotify.com/embed/track/7qw4F9ebIh2z1dSBpJMfdt" allowtransparency="true" allow="encrypted-media" width="300" height="380" frameborder="0"></iframe>
 </div>
 
 <style>
-    #video_scroll_animation_container{
-        height:max-content;
-        position:static;
-        background:white;
-        text-align:center;
+    #video_scroll_animation_container {
+        height: max-content;
+        position: static;
+        background: white;
+        text-align: center;
     }
 </style>
 
 {% include 'include/bio.html' %}
 <script>
     $(window).on('scroll', function() {
-        $(".bio_header").each(function(){
+        $(".bio_header").each(function() {
             if (isScrolledIntoView($(this))) {
                 $(this).addClass('text-flicker-in-glow').removeClass('black_bio_header');
-            }
-            else{
+            } else {
                 $(this).removeClass('text-flicker-in-glow').addClass('black_bio_header');
             }
         });
     });
 
-function isScrolledIntoView(elem) {
-  var docViewTop = $(window).scrollTop();
-  var docViewBottom = docViewTop + $(window).height();
+    function isScrolledIntoView(elem) {
+        var docViewTop = $(window).scrollTop();
+        var docViewBottom = docViewTop + $(window).height();
 
-  var elemTop = $(elem).offset().top;
-  var elemBottom = elemTop + $(elem).height();
+        var elemTop = $(elem).offset().top;
+        var elemBottom = elemTop + $(elem).height();
 
-  return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
-}
+        return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+    }
 </script>
 
 {% include 'include/pricing.html' %}
