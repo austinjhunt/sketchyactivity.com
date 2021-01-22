@@ -1,31 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-{% include 'include/head.html' %}
-{% load static %}
-
+{% include 'include/head.html' %} {% load static %}
 <script src="{% static 'js/jquery.min.js' %}"></script>
 <script>
     var page = ""; // initialize at beginning of master; each page will give its own value if necessary.
 </script>
 <!-- top navigation -->
 <style>
-    #topbar{
+    #topbar {
         z-index: 20;
     }
 </style>
-{% if request.user.is_authenticated and request.user.is_superuser %}
-    {% include 'include/superuser_topbar.html' %}
-{% elif request.user.is_authenticated %}
-    {% include 'include/auth_topbar.html' %}
-{% else %}
-    {% include 'include/unauth_topbar.html' %}
+{% if request.user.is_authenticated and request.user.is_superuser %} {% include 'include/superuser_topbar.html' %} {% elif request.user.is_authenticated %} {% include 'include/auth_topbar.html' %} {% else %} {% include 'include/unauth_topbar.html' %}
 {% endif %}
 
 <!-- body -->
+
 <body>
-{% block content %}
-{% endblock  %}
-{% include 'include/loader.html' %}
+    {% block content %} {% endblock %} {% include 'include/loader.html' %}
+    <iframe src="https://open.spotify.com/embed/track/7qw4F9ebIh2z1dSBpJMfdt" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 </body>
 <!-- end body -->
 {% include 'include/javascript.html' %}
