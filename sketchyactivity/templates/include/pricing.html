@@ -1,46 +1,116 @@
 <div class="pricing-container">
     <h1 class="pricing-header">commission pricing</h1>
-    <div class="prices-container">
-        {% autoescape off %} 
-            {% for p in prices %}
-                <div class="price">
-                    <div class="price-description">
-                        {{p.description}} - ${{p.amount}}
-                    </div>
-                </div>
-            {% endfor %}
-        {% endautoescape %}
+    <div class="prices-container text-center">
+        <!--
+            {% autoescape off %} {% for p in prices %}
+        <div class="price">
+            <div class="price-description">
+                {{p.description}} - ${{p.amount}}
+            </div>
+        </div> 
+        {% endfor %} {% endautoescape %}
+    -->
+        <table style="margin:2rem auto" class="m-0-auto table w-50 border-white table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th colspan="4">TRADITIONAL COSTS</th>
+                </tr>
+                <tr>
+
+                    <th>size</th>
+                    <th colspan="3"># subjects</th>
+                </tr>
+                <tr>
+                    <th></th>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>8.5x11in</td>
+                    <td>$100</td>
+                    <td>$160</td>
+                    <td>$220</td>
+                </tr>
+                <tr>
+                    <td>11x17in</td>
+                    <td>$150</td>
+                    <td>$220</td>
+                    <td>$290</td>
+                </tr>
+                <tr>
+                    <td>17x22in</td>
+                    <td>$200</td>
+                    <td>$280</td>
+                    <td>$360</td>
+                </tr>
+                <tr>
+                    <td>22x34in</td>
+                    <td>$250</td>
+                    <td>$340</td>
+                    <td>$430</td>
+                </tr>
+                <tr>
+                    <td>34x44in</td>
+                    <td>$300</td>
+                    <td>$400</td>
+                    <td>$500</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+        <table style="margin:2rem auto" class="m-0-auto table w-50 border-white table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th colspan="1">DIGITAL (PROCREATE) COSTS</th>
+                </tr>
+                <tr>
+                    <td>$60 * (# subjects)</td>
+                </tr>
+
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
     </div>
-</div> 
+</div>
 <style>
-    .pricing-container{
-        background:black; 
-        text-align:center;
-        padding:10px;
+    .pricing-container {
+        background: black;
+        text-align: center;
+        padding: 10px;
     }
-    .pricing-header{
-        color:white;
+    
+    .pricing-header {
+        color: white;
         font-size: 3em;
-        font-weight:600;
+        font-weight: 600;
         text-decoration: underline;
     }
-    .prices-container{ 
-        padding:10px;
-        text-align:center; 
+    
+    .prices-container {
+        padding: 10px;
+        text-align: center;
     }
-    .prices-container .price { 
+    
+    .prices-container .price {
         font-size: 1.1em;
-        font-weight:400;
+        font-weight: 400;
         line-height: 1;
         margin: 8px;
     }
-    .price-description{
-        color:white;
-    } 
+    
+    .price-description {
+        color: white;
+    }
+    
     .price-description a {
         color: lightblue;
-        font-size: 1.1em; 
-
-        font-weight:400; 
+        font-size: 1.1em;
+        font-weight: 400;
     }
 </style>
