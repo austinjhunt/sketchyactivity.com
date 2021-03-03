@@ -1,29 +1,27 @@
 {% for p in portfolio %}
 <div class="col-md-4 ftco-animate portfolioItem" data-aos="fade-down">
-    <a href="{{p.s3_drawing_private_url}}" class="photography-entry img image-popup d-flex justify-content-center align-items-center"
-        style="background-image: url({{p.s3_copied_smaller_drawing_private_url}});">
-    <div class="overlay">
-        {% if user.is_superuser %}
+    <a href="{{p.s3_copied_smaller_drawing_private_url}}" class="photography-entry img image-popup d-flex justify-content-center align-items-center" style="background-image: url({{p.s3_copied_smaller_drawing_private_url}});">
+        <div class="overlay">
+            {% if user.is_superuser %}
             <button class="btn btn-danger float-right" onclick="remove_portfolio_item('{{p.filename}}');">
                 <i class='fa fa-trash'></i>
-            </button>
-        {% endif %}
-    </div>
-    <div class="text text-center">
-        <h3>{{ p.portrait_name }}</h3><span class="tag">{{ p.tag }}</span><br /><span
-            class="tag">{{ p.date }}</span>
-    </div>
-</a></div>
+            </button> {% endif %}
+        </div>
+        <div class="text text-center">
+            <h3>{{ p.portrait_name }}</h3><span class="tag">{{ p.tag }}</span><br /><span class="tag">{{ p.date }}</span>
+        </div>
+    </a>
+</div>
 {% endfor %}
 <style>
     .portfolioItem .overlay .btn {
-        z-index:20;
-        width:25%;
-        border-radius:3px;
-        font-size:1.4em;
+        z-index: 20;
+        width: 25%;
+        border-radius: 3px;
+        font-size: 1.4em;
         opacity: 1.0;
-        position:absolute;
-        top:0;
-        right:0;
+        position: absolute;
+        top: 0;
+        right: 0;
     }
 </style>
