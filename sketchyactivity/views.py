@@ -32,22 +32,24 @@ s3_client = boto3.client(
     region_name='us-east-2',
     config=Config(signature_version='s3v4'))
 
-@csrf_exempt
-def index(request):
+def get_bio():
+    return MetaStuff.objects.all()[0].bio
 
-    #https://sketchyactivitys3.s3.amazonaws.com/media/holes_dtnSzcm.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHT676CDUB%2F20200808%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20200808T214947Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=45c1aaa66548e62373988951ca41a21e15253ee44aff258847e5cadf23f93a49
-
-    # Set private URLs for each object.
-
-
-    bio = MetaStuff.objects.all()[0].bio
+def get_bio_split(bio=None):  
     bio_split = bio.split('\n\n')
     if len(bio_split) < 2:
         bio_split = bio.split("\r\r")
         if len(bio_split) < 2:
             bio_split = bio.split("\r\n\r\n")
-    portfolio = PortfolioItem.objects.all().order_by('-date')
+    return bio_split,bio 
 
+@csrf_exempt
+def index(request):
+    #https://sketchyactivitys3.s3.amazonaws.com/media/holes_dtnSzcm.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHT676CDUB%2F20200808%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20200808T214947Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=45c1aaa66548e62373988951ca41a21e15253ee44aff258847e5cadf23f93a49
+    bio = get_bio()
+    bio_split = get_bio_split(bio=bio)
+
+    portfolio = PortfolioItem.objects.all().order_by('-date')
     # update private urls if they need to be updated
     if not cache.get('updated_private_video_url'):
         private_video_url = update_private_video_url(s3_client)
@@ -59,8 +61,6 @@ def index(request):
         cache.set('updated_private_urls', 'is_updated',timeout=302400) # half the max expiration time of the private urls for the media files in s3.
     else:
         print("Cache updated_private_urls is set already")
-
-
     context = {
         'portfolio': portfolio,
         'bio_1': bio_split[0],
@@ -103,8 +103,7 @@ def site_login(request):
 @csrf_exempt
 def site_signup(request):
     if request.method == "POST":
-        form = SignUpForm(request.POST)
-
+        form = SignUpForm(request.POST) 
         if form.is_valid():
             first_name = fget(form,"first_name")
             last_name = fget(form,"last_name")
