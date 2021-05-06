@@ -23,6 +23,7 @@ urlpatterns = [
     url(r'^$', views.index),
     url(r'^media/<slug:path>/<slug:filename>/', views.media),
     url(r'^notify/$', views.notify),
+    url(r'^dancing/$', views.dancing),
     url(r'^delete/$', views.delete),
     url(r'^upload/$', views.upload),
     url(r'^logout/$', views.site_logout),

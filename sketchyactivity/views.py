@@ -11,6 +11,7 @@ from random import *
 from django.contrib.auth.models import User
 from django.template import loader
 import os
+
 from django.conf import settings
 from django.core.files.uploadedfile import SimpleUploadedFile
 from django.core.files.storage import FileSystemStorage
@@ -24,7 +25,7 @@ from .models import *
 from .customclasses import *
 from .forms import *
 from .util import *
-from .pil_s3 import S3Images
+from .pil_s3 import S3Images 
 s3_client = boto3.client(
     's3',
     aws_access_key_id=settings.AWS_ACCESS_KEY_ID,
@@ -34,6 +35,13 @@ s3_client = boto3.client(
 
 def get_bio():
     return MetaStuff.objects.all()[0].bio
+
+def dancing(request): 
+    return HttpResponse( 
+        loader.get_template('dancing.html').render(
+            {}, request
+        ) 
+    )
 
 def get_bio_split(bio=None):  
     bio_split = bio.split('\n\n')
