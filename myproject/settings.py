@@ -29,7 +29,7 @@ SECRET_KEY = '__d%ysb=p9yjd2(zkn!fzlk95)swp&=lp!lr-ws+cqqxqx$6uk'
 DEBUG = False
 
 #ALLOWED_HOSTS = ['*']
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['www.sketchyactivity.com','sketchyactivity.com','127.0.0.1','localhost']
 
 # Application definition
 
