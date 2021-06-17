@@ -25,7 +25,7 @@ from .models import *
 from .customclasses import *
 from .forms import *
 from .util import *
-from .pil_s3 import S3Images 
+from .pil_s3 import S3Images
 s3_client = boto3.client(
     's3',
     aws_access_key_id=settings.AWS_ACCESS_KEY_ID,
@@ -36,20 +36,20 @@ s3_client = boto3.client(
 def get_bio():
     return MetaStuff.objects.all()[0].bio
 
-def dancing(request): 
-    return HttpResponse( 
+def dancing(request):
+    return HttpResponse(
         loader.get_template('dancing.html').render(
             {}, request
-        ) 
+        )
     )
 
-def get_bio_split(bio=None):  
+def get_bio_split(bio=None):
     bio_split = bio.split('\n\n')
     if len(bio_split) < 2:
         bio_split = bio.split("\r\r")
         if len(bio_split) < 2:
             bio_split = bio.split("\r\n\r\n")
-    return bio_split,bio 
+    return bio_split,bio
 
 @csrf_exempt
 def index(request):
@@ -111,7 +111,7 @@ def site_login(request):
 @csrf_exempt
 def site_signup(request):
     if request.method == "POST":
-        form = SignUpForm(request.POST) 
+        form = SignUpForm(request.POST)
         if form.is_valid():
             first_name = fget(form,"first_name")
             last_name = fget(form,"last_name")
