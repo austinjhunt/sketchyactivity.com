@@ -1,4 +1,4 @@
-<div class="pricing-container" id="commissions">
+<div class="container text-center" id="commissions">
     <h1 class="pricing-header">commission pricing</h1>
     <div class="prices-container text-center">
         <!--
@@ -7,10 +7,10 @@
             <div class="price-description">
                 {{p.description}} - ${{p.amount}}
             </div>
-        </div> 
+        </div>
         {% endfor %} {% endautoescape %}
     -->
-        <table style="margin:2rem auto" class="m-0-auto table w-50 border-white table-striped">
+        <table style="margin:2rem auto" class="m-0-auto table border-white table-striped">
             <thead class="thead-dark">
                 <tr>
                     <th colspan="4">TRADITIONAL DRAWING (pen &amp; paper) COMMISSION COSTS</th>
@@ -27,7 +27,7 @@
                     <th>3</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody class="bg-light">
                 <tr>
                     <td>8.5x11in</td>
                     <td>$100</td>
@@ -65,7 +65,7 @@
         <table style="margin:2rem auto" class="m-0-auto table w-50 border-white table-striped">
             <thead class="thead-dark">
                 <tr>
-                    <th colspan="1">DIGITAL (PROCREATE) COMMISSION COSTS (NEW)</th>
+                    <th colspan="1">DIGITAL (PROCREATE) COMMISSION COSTS</th>
                 </tr>
                 <tr>
                     <td>$60 * (# subjects)</td>
@@ -76,23 +76,7 @@
 
             </tbody>
         </table>
-        <table style="margin:2rem auto" class="m-0-auto table w-50 border-white table-striped">
-            <thead class="thead-dark">
-                <tr>
-                    <th colspan="1">DIGITAL PRINTS OF EXISTING DRAWINGS</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        I will send you the high-quality image via email if you request one of these. You can have it printed on any size/material you want once you have the high-quality image.
-                    </td>
-                </tr>
-                <tr>
-                    <td>$20 * (# subjects)</td>
-                </tr>
-            </tbody>
-        </table>
+
     </div>
 </div>
 <style>
@@ -101,30 +85,30 @@
         text-align: center;
         padding: 10px;
     }
-    
+
     .pricing-header {
         color: white;
         font-size: 3em;
         font-weight: 600;
         text-decoration: underline;
     }
-    
+
     .prices-container {
         padding: 10px;
         text-align: center;
     }
-    
+
     .prices-container .price {
         font-size: 1.1em;
         font-weight: 400;
         line-height: 1;
         margin: 8px;
     }
-    
+
     .price-description {
         color: white;
     }
-    
+
     .price-description a {
         color: lightblue;
         font-size: 1.1em;
