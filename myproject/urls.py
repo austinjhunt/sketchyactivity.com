@@ -20,19 +20,8 @@ from django.conf.urls import url, include
 from django.conf.urls.static import static
 from sketchyactivity import views
 urlpatterns = [
-    url(r'^$', views.index),
-    url(r'^media/<slug:path>/<slug:filename>/', views.media),
-    url(r'^notify/$', views.notify),
-    url(r'^dancing/$', views.dancing),
-    url(r'^delete/$', views.delete),
-    url(r'^upload/$', views.upload),
-    url(r'^logout/$', views.site_logout),
-    url(r'^login/$', views.site_login),
-    url(r'^signup/$', views.site_signup),
-    url(r'^messaging/$',views.slack_msging_endpoint), # messaging endpoint for slack api
-    url(r'^messaging/(\d+)/$', views.messaging), # slack_msging_endpoint function filters out the user id then calls this function to direct response to correct user.
+    path('', include('sketchyactivity.urls')),
     path('admin/', admin.site.urls),
-    url(r'^update_profile/', views.update_profile),
-] #+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
 
 

@@ -1,31 +1,26 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-from builtins import Exception
-from sketchyactivity.upload.models import UploadPrivateThumbnail, UploadPrivateOriginal
-from django.db.models import Q, Count
 from django.contrib.auth import authenticate, login, logout
 from django.views.decorators.csrf import csrf_exempt
+from django.shortcuts import get_object_or_404, redirect, render
 from django.template import loader
-from django.http import HttpResponse, HttpResponseRedirect,JsonResponse
+from django.http import HttpResponse, JsonResponse
 from random import *
 from django.contrib.auth.models import User
 from django.template import loader
 import os
-
 from django.conf import settings
-from django.core.files.uploadedfile import SimpleUploadedFile
 from django.core.files.storage import FileSystemStorage
 from PIL import Image
+from django.views import View
 import boto3
 from botocore.client import Config
-from boto3 import session
 from django.core.cache import cache
-# local imports
 from .models import *
 from .customclasses import *
 from .forms import *
 from .util import *
-from .pil_s3 import S3Images
+
 s3_client = boto3.client(
     's3',
     aws_access_key_id=settings.AWS_ACCESS_KEY_ID,
@@ -35,13 +30,6 @@ s3_client = boto3.client(
 
 def get_bio():
     return MetaStuff.objects.all()[0].bio
-
-def dancing(request):
-    return HttpResponse(
-        loader.get_template('dancing.html').render(
-            {}, request
-        )
-    )
 
 def get_bio_split(bio=None):
     bio_split = bio.split('\n\n')
@@ -73,7 +61,6 @@ def index(request):
         'bio_1': bio_split[0],
         'bio_2': bio_split[-1],
         'bio': bio,
-        'prices': Price.objects.all(),
         'private_video_url': cache.get('updated_private_video_url')
         }
 
@@ -84,7 +71,7 @@ def index(request):
 @csrf_exempt
 def site_logout(request):
     logout(request)
-    return HttpResponseRedirect('/')
+    return redirect('/')
 
 from django.contrib.auth import authenticate
 @csrf_exempt
@@ -98,9 +85,9 @@ def site_login(request):
             if user is not None:
                 # A backend authenticated the credentials
                 login(request,user)
-                return HttpResponseRedirect('/')
+                return redirect('/')
             else:
-                return HttpResponseRedirect('/login/')
+                return redirect('/login')
     form = LoginForm()
     template = loader.get_template('auth/login.html')
     context = {'form': form, 'portfolio': PortfolioItem.objects.all()}
@@ -125,7 +112,7 @@ def site_signup(request):
             text = {"text": newuser.first_name + " " + newuser.last_name + " just created an account!"}
             headers = {'Content-Type': 'application/json'}
             r = requests.post(webhook_url, data=json.dumps(text), headers=headers)
-            return HttpResponseRedirect("/")
+            return redirect("/")
 
     # if a GET (or any other method) we'll create a blank form
     else:
@@ -207,12 +194,12 @@ def upload(request):
 
             update_private_url_single(new_item, s3_client)
 
-            return HttpResponseRedirect('/')
+            return redirect('/')
         template = loader.get_template('super/upload.html')
         context = {}
         return HttpResponse(template.render(context, request))
     else:
-        return HttpResponseRedirect('/')
+        return redirect('/')
 
 @csrf_exempt
 def delete(request):
@@ -237,7 +224,7 @@ def delete(request):
             thumb.delete()
             return render_to_json_response({'msg':'success'})
     else:
-        return HttpResponseRedirect('/')
+        return redirect('/')
 
 
 # SLACK
@@ -294,13 +281,13 @@ def slack_msging_endpoint(request):
         print("Sending message: ", message)
         # Post to /messaging/uid with message.
         payload = {'text': message, 'slack': ''}
-        r = requests.post("http://sketchyactivity.com/messaging/"+uid+"/",data=payload)
+        r = requests.post(f"http://sketchyactivity.com/messaging/{uid}",data=payload)
 
     else:
         if request.user.is_authenticated: # redirect to /userid
-            return HttpResponseRedirect("/messaging/" + str(request.user.id) + "/")
+            return redirect(f"/messaging/{request.user.id}")
         else:
-            return HttpResponseRedirect("/")
+            return redirect("/")
 
 
 
@@ -366,7 +353,7 @@ def messaging(request,userid):
         context = {}
         return HttpResponse(template.render(context,request))
     else: # not authenticated
-        return HttpResponseRedirect("/")
+        return redirect("/")
 
 
 def update_profile(request):
@@ -376,9 +363,21 @@ def update_profile(request):
         ms = MetaStuff.objects.all()[0]
         ms.bio = bio
         ms.save()
-        return HttpResponseRedirect("/")
+        return redirect("/")
     else:
         bio = MetaStuff.objects.all()[0].bio
         context = {'bio':bio}
         template = loader.get_template('super/update_profile.html')
         return HttpResponse(template.render(context,request))
+
+
+
+class CommissionsView(View):
+    def get(self, request):
+        return render(
+            request,
+            'commissions.html',
+            context={
+                'prices': Price.objects.all()
+            }
+        )

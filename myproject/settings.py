@@ -11,27 +11,12 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os, dj_database_url
-
 import django_heroku
-
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '__d%ysb=p9yjd2(zkn!fzlk95)swp&=lp!lr-ws+cqqxqx$6uk'
-
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
-#ALLOWED_HOSTS = ['*']
 ALLOWED_HOSTS = ['www.sketchyactivity.com','sketchyactivity.com','127.0.0.1','localhost']
-
-# Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -40,7 +25,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'sketchyactivity', 
+    'sketchyactivity',
     'compressor',
     'cssmin',
     'jsmin',
@@ -62,6 +47,7 @@ MIDDLEWARE = [
 #SECURE_SSL_REDIRECT = True
 
 ROOT_URLCONF = 'myproject.urls'
+APPEND_SLASH = True
 
 TEMPLATES = [
     {
@@ -149,7 +135,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_URL = '/static/' 
+STATIC_URL = '/static/'
 # Extra places for collectstatic to find static files.
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
@@ -160,27 +146,26 @@ STATICFILES_FINDERS = (
 COMPRESS_ENABLED = True
 COMPRESS_ROOT = STATIC_ROOT
 COMPRESS_OFFLINE = True
-COMPRESS_OUTPUT_DIR = 'sketchyactivity' # hashed output to main/static/main folder instead of main/static/CACHE
+COMPRESS_OUTPUT_DIR = 'sketchyactivity'
 COMPRESS_CSS_FILTERS = ["compressor.filters.cssmin.CSSMinFilter"]
 
 USE_S3 = os.getenv('USE_S3') == 'TRUE'
-if USE_S3:
-    # aws settings
-    AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
-    AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
-    AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
-    AWS_DEFAULT_ACL = 'public-read'
-    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
-    AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
-    AWS_S3_REGION_NAME = 'us-east-2'
-    AWS_S3_SIGNATURE_VERSION = 's3v4'
+# aws settings
+AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID','')
+AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY','')
+AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME','')
+AWS_DEFAULT_ACL = 'public-read'
+AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
+AWS_S3_REGION_NAME = 'us-east-2'
+AWS_S3_SIGNATURE_VERSION = 's3v4'
 
-    #PUBLIC_MEDIA_LOCATION = 'media'
-    #PUBLIC_MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
-    #MEDIA_ROOT = MEDIA_URL
-    # Private S3 settings
-    PRIVATE_MEDIA_LOCATION = 'media'
-    PRIVATE_MEDIA_STORAGE = 'sketchyactivity.storage_backends.PrivateMediaStorage'
+#PUBLIC_MEDIA_LOCATION = 'media'
+#PUBLIC_MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
+#MEDIA_ROOT = MEDIA_URL
+# Private S3 settings
+PRIVATE_MEDIA_LOCATION = 'media'
+PRIVATE_MEDIA_STORAGE = 'sketchyactivity.storage_backends.PrivateMediaStorage'
 
 django_heroku.settings(locals())
 

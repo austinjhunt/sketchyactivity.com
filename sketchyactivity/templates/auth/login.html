@@ -4,7 +4,7 @@
         <br/><br/><br/>
         <div class="blackcontainer">
         <h1 style="font-size:4vh; margin-bottom: 3px;">Log In</h1>
-        <form class="loginform" method="post" action="/login/">
+        <form class="loginform" method="post" action="/login">
             {% csrf_token %}
             {{ form.as_table }}
             <input style="background:red; color: white;" type="submit" value="Submit">

@@ -6,7 +6,7 @@
     <div class="blackcontainer">
         <h1>Sign Up</h1>
         <h2>stay updated on new work</h2>
-        <form class="loginform" method="post" action="/signup/">
+        <form class="loginform" method="post" action="/signup">
             {% csrf_token %}
             {{ form.as_table }}
             <input style="background:red; color: white;" type="submit" value="Submit">
