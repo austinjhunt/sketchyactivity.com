@@ -107,7 +107,7 @@
                      }, 100);
                  }
 
-             }, { offset: '95%' });
+             }, { offset: '90%' });
          };
          contentWayPoint();
 
