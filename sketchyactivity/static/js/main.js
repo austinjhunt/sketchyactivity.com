@@ -30,9 +30,9 @@
              }, 5000);
          };
          var showBio = function() {
-             setTimeout(function() {
-                 $(".bio_text").addClass('text-flicker-in-glow').removeClass('black_text');
-             }, 1000);
+             //  setTimeout(function() {
+             //      $(".bio_text").addClass('text-flicker-in-glow').removeClass('black_text');
+             //  }, 1000);
          }
          loader(showBio);
 
