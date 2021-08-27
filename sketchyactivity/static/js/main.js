@@ -27,7 +27,7 @@
              setTimeout(function() {
                  $('.loader-container').fadeOut();
                  callback();
-             }, 5000);
+             }, 8000);
          };
          var showBio = function() {
              //  setTimeout(function() {
