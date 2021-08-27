@@ -1,5 +1,8 @@
 from django.urls import path
+from django.views.static import serve
+from django.conf.urls import url
 from . import views
+from django.conf import settings
 urlpatterns = [
     path('', views.index),
     path('media/<slug:path>/<slug:filename>', views.media),
@@ -14,3 +17,9 @@ urlpatterns = [
     path('messaging/(\d+)', views.messaging), # slack_msging_endpoint function filters out the user id then calls this function to direct response to correct user.
     path('update_profile', views.update_profile),
 ]
+if settings.DEBUG:
+    urlpatterns +=  [
+        url(r'^media/(?P<path>.*)$', serve, {
+            'document_root': settings.MEDIA_ROOT,
+        }),
+    ]

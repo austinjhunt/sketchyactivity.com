@@ -167,6 +167,8 @@ AWS_S3_SIGNATURE_VERSION = 's3v4'
 PRIVATE_MEDIA_LOCATION = 'media'
 PRIVATE_MEDIA_STORAGE = 'sketchyactivity.storage_backends.PrivateMediaStorage'
 
+
+MEDIA_ROOT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),'sketchyactivity','media')
 django_heroku.settings(locals())
 
 
