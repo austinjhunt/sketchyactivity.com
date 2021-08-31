@@ -7,11 +7,11 @@
     bottom: 0;
     right: 0;
     left: 0;
-    background-color: #a4a5a1;
+    background-color: black;
 }
 
 .loader {
-    background-color: #a4a5a1;
+    background-color: black;
 }
 
 .loader .line {

@@ -2,19 +2,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #100c08;
     position: fixed;
     top: 0;
     bottom: 0;
     right: 0;
     left: 0;
+    background-color: black;
 }
 
 .loader {
-    display: flex;
-    background: url('/media/animation_me.gif');
-    background-color: #7397af;
-    background-repeat: no-repeat
+    background-color: black;
 }
 
 .loader .line {
