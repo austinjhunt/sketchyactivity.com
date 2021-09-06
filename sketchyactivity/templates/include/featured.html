@@ -1,0 +1,18 @@
+{% load static %} {% block content %}
+
+<div class="container py-3 my-5 outer-border bg-dark border rounded">
+    <h2 class="text-light">Recent Work</h2>
+    <h3 class="text-light" >{{featured.portrait_name}}</h4>
+    <h4 class="text-light" >{{featured.tag}}</h4>
+    <h5 class="text-light" >{{featured.date}}</h5>
+    <hr/>
+    <a
+        href="{{featured.s3_copied_smaller_drawing_private_url}}"
+        title="{{featured.portrait_name}}">
+        <img
+            class="w-100 rounded"
+            src="{{featured.s3_copied_smaller_drawing_private_url}}"
+            alt="{{featured.portrait_name}} - {{featured.tag}}"/>
+    </a>
+</div>
+{% endblock %}

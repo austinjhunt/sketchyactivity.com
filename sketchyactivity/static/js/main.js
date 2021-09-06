@@ -23,12 +23,17 @@
          fullHeight();
 
          // loader
+         var loaderTimeout = 5000;
+         if (parseInt(page_load_count) > 1) {
+             loaderTimeout = 0;
+         }
          var loader = function(callback) {
              setTimeout(function() {
                  $('.loader-container').fadeOut();
                  callback();
-             }, 5000);
+             }, loaderTimeout);
          };
+
          var showBio = function() {
              //  setTimeout(function() {
              //      $(".bio_text").addClass('text-flicker-in-glow').removeClass('black_text');

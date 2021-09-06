@@ -3,6 +3,7 @@
 {% include 'include/head.html' %} {% load static %}
 <script>
     var page = ""; // initialize at beginning of master; each page will give its own value if necessary.
+    var page_load_count = "{{page_load_count}}";
 </script>
 {% include 'include/navigation.html' %}
 <body class="bg-black">

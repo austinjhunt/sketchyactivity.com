@@ -69,6 +69,7 @@ def index(request):
     else:
         print("Cache updated_private_urls is set already")
     context = {
+        'featured': portfolio[0],
         'title': 'Austin Hunt Portraiture',
         'portfolio': portfolio,
         'bio_1': bio_split[0],
