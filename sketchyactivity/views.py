@@ -45,7 +45,7 @@ def portfolio_item(request, id):
         request,
         template_name='pitem.html',
         context={
-            'title': f'AHP - {item.portrait_name}',
+            'title': f'Austin Hunt Portraiture - {item.portrait_name}',
             'preview_image': item.s3_drawing_private_url,
             'item': item
         }
@@ -391,6 +391,7 @@ class CommissionsView(View):
             request,
             'commissions.html',
             context={
+                'title': 'Austin Hunt Portraiture Commissions',
                 'prices': Price.objects.all()
             }
         )
