@@ -557,6 +557,14 @@ textarea {
 
 /* Bio */
 
+.bio-container {
+    background-color: black;
+}
+
+.bg-black {
+    background-color: black;
+}
+
 .header_container {
     position: relative;
 }

@@ -5,7 +5,10 @@
     var page = ""; // initialize at beginning of master; each page will give its own value if necessary.
 </script>
 {% include 'include/navigation.html' %}
-<body class="bg-dark">
+<body class="bg-black">
+<!-- For Facebook sharing -->
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v11.0" nonce="1N5FRI6Q"></script>
     {% block content %} {% endblock %}
     {% include 'include/loader.html' %}
     {% include 'include/javascript.html' %}
