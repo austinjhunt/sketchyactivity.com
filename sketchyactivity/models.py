@@ -16,6 +16,9 @@ class PortfolioItem(models.Model):
 
 class MetaStuff(models.Model):
     bio = models.TextField(default='')
+    website_title = models.CharField(max_length=128,default="")
+    website_description = models.TextField(default="")
+    website_keywords = models.TextField(default="")
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)

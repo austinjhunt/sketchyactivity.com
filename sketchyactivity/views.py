@@ -374,13 +374,20 @@ def update_profile(request):
     """ View for updating profile, starting for now just with bio """
     if request.method == "POST":
         bio = request.POST.get('bio','')
+        website_title = request.POST.get('website_title','')
+        website_description = request.POST.get('website_description','')
+        website_keywords = request.POST.get('website_keywords','')
+
         ms = MetaStuff.objects.all()[0]
+        ms.website_title = website_title
+        ms.website_description = website_description
+        ms.website_keywords = website_keywords
         ms.bio = bio
         ms.save()
         return redirect("/")
     else:
         bio = MetaStuff.objects.all()[0].bio
-        context = {'bio':bio, 'title': 'Update Profile'}
+        context = {'bio':bio, 'title': 'Update Website'}
         template = loader.get_template('super/update_profile.html')
         return HttpResponse(template.render(context,request))
 

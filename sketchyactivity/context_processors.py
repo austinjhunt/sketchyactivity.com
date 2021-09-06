@@ -8,5 +8,6 @@ def s3context(request):
     return {
         'base_media_url':'',
         'preview_image': main_preview_image,
-        'page_load_count': request.session.get('page_load_count')
+        'page_load_count': request.session.get('page_load_count'),
+        'meta': MetaStuff.objects.all()[0]
         }

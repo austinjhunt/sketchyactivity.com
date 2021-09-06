@@ -35,22 +35,6 @@ class Migration(migrations.Migration):
             ],
         ),
         migrations.CreateModel(
-            name='UploadPrivateOriginal',
-            fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('uploaded_at', models.DateTimeField(auto_now_add=True)),
-                ('file', models.FileField(storage=sketchyactivity.storage_backends.PrivateMediaStorageOriginal(), upload_to='')),
-            ],
-        ),
-        migrations.CreateModel(
-            name='UploadPrivateThumbnail',
-            fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('uploaded_at', models.DateTimeField(auto_now_add=True)),
-                ('file', models.FileField(storage=sketchyactivity.storage_backends.PrivateMediaStorageThumbnail(), upload_to='')),
-            ],
-        ),
-        migrations.CreateModel(
             name='UserProfile',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
