@@ -1,0 +1,23 @@
+{% extends "master.html" %} {% load static %} {% block content %}
+
+<div class="container py-3 outer-border">
+    <h2 class="text-light" >{{item.portrait_name}}</h2>
+    <h3 class="text-light" >{{item.tag}}</h3>
+    <h4 class="text-light" >{{item.date}}</h4>
+    <hr/>
+    <a
+        href="{{item.s3_copied_smaller_drawing_private_url}}"
+        title="{{item.portrait_name}}">
+        <img
+            class="w-100"
+            src="{{item.s3_copied_smaller_drawing_private_url}}"
+            alt="{{item.portrait_name}} - {{item.tag}}"/>
+    </a>
+</div>
+{% include 'include/footer.html' %}
+<script>
+    var page = "pitem";
+</script>
+
+
+{% endblock %}

@@ -39,6 +39,18 @@ def get_bio_split(bio=None):
             bio_split = bio.split("\r\n\r\n")
     return bio_split,bio
 
+def portfolio_item(request, id):
+    item = PortfolioItem.objects.get(id=id)
+    return render(
+        request,
+        template_name='pitem.html',
+        context={
+            'title': f'AHP - {item.portrait_name}',
+            'preview_image': item.s3_drawing_private_url,
+            'item': item
+        }
+    )
+
 @csrf_exempt
 def index(request):
     bio = get_bio()
@@ -57,6 +69,7 @@ def index(request):
     else:
         print("Cache updated_private_urls is set already")
     context = {
+        'title': 'Austin Hunt Portraiture',
         'portfolio': portfolio,
         'bio_1': bio_split[0],
         'bio_2': bio_split[-1],
@@ -90,7 +103,7 @@ def site_login(request):
                 return redirect('/login')
     form = LoginForm()
     template = loader.get_template('auth/login.html')
-    context = {'form': form, 'portfolio': PortfolioItem.objects.all()}
+    context = {'title': 'Login', 'form': form, 'portfolio': PortfolioItem.objects.all()}
     return HttpResponse(template.render(context,request))
     # No backend authenticated the credentials
 
@@ -118,7 +131,7 @@ def site_signup(request):
     else:
         form = SignUpForm()
     template = loader.get_template("auth/signup.html")
-    context = {'form':form, 'portfolio': PortfolioItem.objects.all()}
+    context = {'title': 'Sign Up', 'form':form, 'portfolio': PortfolioItem.objects.all()}
     return HttpResponse(template.render(context, request))
 
 def media(request, path, filename):
@@ -196,7 +209,7 @@ def upload(request):
 
             return redirect('/')
         template = loader.get_template('super/upload.html')
-        context = {}
+        context = {'title': 'Add Content'}
         return HttpResponse(template.render(context, request))
     else:
         return redirect('/')
@@ -366,7 +379,7 @@ def update_profile(request):
         return redirect("/")
     else:
         bio = MetaStuff.objects.all()[0].bio
-        context = {'bio':bio}
+        context = {'bio':bio, 'title': 'Update Profile'}
         template = loader.get_template('super/update_profile.html')
         return HttpResponse(template.render(context,request))
 
