@@ -17,9 +17,9 @@
                     <a href="/pitem/{{p.id}}/edit" class="btn btn-success">
                         <i class="fa fa-edit"></i> Edit
                     </a>
-                    <button title="delete portfolio item" class="btn btn-danger float-right" onclick="remove_portfolio_item('{{p.filename}}');">
+                    <a title="delete portfolio item" class="btn btn-danger float-right" href="/pitem/{{p.id}}/delete">
                         <i class='fa fa-trash'></i> Delete
-                    </button>
+                    </a>
                 </td>
             </tr>
             {% endfor %}

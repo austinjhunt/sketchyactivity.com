@@ -2,19 +2,20 @@
 from __future__ import unicode_literals
 from django.contrib.auth import authenticate, login, logout
 from django.views.decorators.csrf import csrf_exempt
-from django.views.generic import UpdateView
+from django.views.generic import UpdateView, DeleteView
 from django.shortcuts import get_object_or_404, redirect, render
 from django.template import loader
 from django.http import HttpResponse, JsonResponse
 from random import *
 from django.contrib.auth.models import User
 from django.template import loader
-import os
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.conf import settings
 from django.core.files.storage import FileSystemStorage
 from PIL import Image
 from django.views import View
 import boto3
+import os
 from botocore.client import Config
 from django.core.cache import cache
 from .models import *
@@ -220,30 +221,6 @@ def upload(request):
     else:
         return redirect('/')
 
-@csrf_exempt
-def delete(request):
-    if request.user.is_authenticated and request.user.is_superuser:
-        if request.method == "POST":
-            name = rp(request,'name') # filename;
-            PortfolioItem.objects.filter(filename=name).delete()
-            delete_session = boto3.Session(
-                aws_access_key_id=settings.AWS_ACCESS_KEY_ID,
-                aws_secret_access_key=settings.AWS_SECRET_ACCESS_KEY,
-                region_name='us-east-2').resource('s3')
-            orig = delete_session.Object(
-                'sketchyactivitys3', # bucket
-                f'media/drawings/{name}' # original drawing file
-                )
-            orig.delete()
-
-            thumb = delete_session.Object(
-                'sketchyactivitys3', # bucket
-                f'media/copied_smaller_drawings/drawings/{name}' # original drawing file
-                )
-            thumb.delete()
-            return render_to_json_response({'msg':'success'})
-    else:
-        return redirect('/')
 
 
 # SLACK
@@ -395,9 +372,6 @@ def update_profile(request):
         context = {'bio':bio, 'title': 'Update Website'}
         template = loader.get_template('super/update_profile.html')
         return HttpResponse(template.render(context,request))
-
-
-
 class CommissionsView(View):
     def get(self, request):
         return render(
@@ -415,7 +389,13 @@ class PortfolioItemEdit(UpdateView):
     fields = ['tag', 'portrait_name', 'date']
     success_url = '/'
 
-from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+class PortfolioItemDelete(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    model = PortfolioItem
+    template_name = 'super/portfolio_item_delete.html'
+    success_url = '/'
+    def test_func(self):
+        return self.request.user.is_superuser
+
 class PortfolioManage(LoginRequiredMixin, UserPassesTestMixin, View):
     template_name = 'super/manage_portfolio.html'
     def get(self,request):
@@ -423,7 +403,7 @@ class PortfolioManage(LoginRequiredMixin, UserPassesTestMixin, View):
             request=request,
             template_name=self.template_name,
             context={
-                'portfolio': PortfolioItem.objects.all()
+                'portfolio': PortfolioItem.objects.all().order_by('-date')
             }
         )
     def test_func(self):

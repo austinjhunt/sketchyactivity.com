@@ -1,22 +1,21 @@
 {% extends "master.html" %} {% load static %} {% block content %} {% load crispy_forms_tags %}
 
 <div class="container my-3">
-    <div class="row">
-        <div class="col-sm-8 col-md-8 col-lg-8 text-light">
-            <h2 class="text-light">Manage Portfolio Item {{object.portrait_name}}</h2>
-        </div>
-        <div class="col-sm-4 col-md-4 col-lg-4">
-            <button title="delete portfolio item" class="btn btn-danger" onclick="remove_portfolio_item('{{object.filename}}');">
-                <i class='fa fa-trash'></i>
-            </button>
-        </div>
-        <div class="col-sm-12 col-md-12 col-lg-12">
-            <img src="{{object.s3_copied_smaller_drawing_private_url}}" class="w-25">
-        </div>
-    </div>
+    <h2 class="text-light">Manage Portfolio Item {{object.portrait_name}}</h2>
+    <img src="{{object.s3_copied_smaller_drawing_private_url}}" class="w-25">
+
     <form method="post">
         {% csrf_token %} {{ form|crispy }}
-        <input type="submit" class="btn btn-primary" value="Update">
+        <div class="row">
+            <div class="col-sm-6 col-md-6 col-lg-6">
+                <input type="submit" class="btn btn-success" value="Update">
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-6 text-right">
+                <a title="delete portfolio item" class="btn btn-danger" href="/pitem/{{object.id}}/delete">
+                    <i class='fa fa-trash'></i> Delete
+                </a>
+            </div>
+        </div>
     </form>
 </div>
 {% include 'include/footer.html' %} {% endblock %}
