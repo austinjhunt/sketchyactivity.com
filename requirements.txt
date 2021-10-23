@@ -52,7 +52,7 @@ sqlparse==0.3.0
 stripe==2.60.0
 suds-jurko==0.6
 toml==0.10.2
-urllib3==1.25
+urllib3==1.25.6
 virtualenv==16.6.1
 Werkzeug==1.0.1
 whitenoise==5.2.0
