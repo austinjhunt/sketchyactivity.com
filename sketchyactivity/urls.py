@@ -16,7 +16,9 @@ urlpatterns = [
     path('messaging',views.slack_msging_endpoint), # messaging endpoint for slack api
     path('messaging/(\d+)', views.messaging), # slack_msging_endpoint function filters out the user id then calls this function to direct response to correct user.
     path('update_profile', views.update_profile),
-    path('pitem/<slug:id>', views.portfolio_item)
+    path('pitem/<slug:pk>/edit', views.PortfolioItemEdit.as_view(), name='portfolio-item-edit'),
+    path('pitem/<slug:id>', views.portfolio_item),
+    path('portfolio/manage', views.PortfolioManage.as_view(), name='portfolio-manage')
 ]
 if settings.DEBUG:
     urlpatterns +=  [

@@ -1,16 +1,7 @@
 {% for p in portfolio %}
 <div class="col-xs-1 col-sm-1 col-md-3 col-lg-3  ftco-animate portfolioItem" data-aos="fade-down">
-    <a
-    data-id="{{p.id}}"
-    href="{{p.s3_copied_smaller_drawing_private_url}}" class="portfolio-entry img image-popup d-flex justify-content-center align-items-center"
-    style="background-image: url({{p.s3_copied_smaller_drawing_private_url}});">
-        <div class="overlay">
-            {% if user.is_superuser %}
-            <button class="btn btn-danger float-right" onclick="remove_portfolio_item('{{p.filename}}');">
-                <i class='fa fa-trash'></i>
-            </button>
-            {% endif %}
-        </div>
+    <a data-id="{{p.id}}" href="{{p.s3_copied_smaller_drawing_private_url}}" class="portfolio-entry img image-popup d-flex justify-content-center align-items-center" style="background-image: url({{p.s3_copied_smaller_drawing_private_url}});">
+        <div class="overlay"></div>
         <div class="text text-center">
             <h3>{{ p.portrait_name }}</h3><span class="tag">{{ p.tag }}</span><br /><span class="tag">{{ p.date }}</span>
         </div>

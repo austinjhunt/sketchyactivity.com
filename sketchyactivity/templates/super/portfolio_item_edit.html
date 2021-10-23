@@ -1,0 +1,22 @@
+{% extends "master.html" %} {% load static %} {% block content %} {% load crispy_forms_tags %}
+
+<div class="container my-3">
+    <div class="row">
+        <div class="col-sm-8 col-md-8 col-lg-8 text-light">
+            <h2 class="text-light">Manage Portfolio Item {{object.portrait_name}}</h2>
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <button title="delete portfolio item" class="btn btn-danger" onclick="remove_portfolio_item('{{object.filename}}');">
+                <i class='fa fa-trash'></i>
+            </button>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <img src="{{object.s3_copied_smaller_drawing_private_url}}" class="w-25">
+        </div>
+    </div>
+    <form method="post">
+        {% csrf_token %} {{ form|crispy }}
+        <input type="submit" class="btn btn-primary" value="Update">
+    </form>
+</div>
+{% include 'include/footer.html' %} {% endblock %}

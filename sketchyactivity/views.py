@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 from django.contrib.auth import authenticate, login, logout
 from django.views.decorators.csrf import csrf_exempt
+from django.views.generic import UpdateView
 from django.shortcuts import get_object_or_404, redirect, render
 from django.template import loader
 from django.http import HttpResponse, JsonResponse
@@ -195,10 +196,14 @@ def upload(request):
             s3_drawing_private_url = ""
             s3_copied_smaller_drawing_private_url = ""
 
+            tag = rp(request, 'tag')
+            if not tag:
+                tag = 'Portrait'
+
             date = rp(request,'date')
             # create a new object in DB for naming
             new_item = PortfolioItem(
-                tag='Portrait',
+                tag=tag,
                 portrait_name=rp(request,"portraitname"),
                 filename=myfile.name,
                 date=date,
@@ -403,3 +408,23 @@ class CommissionsView(View):
                 'prices': Price.objects.all()
             }
         )
+
+class PortfolioItemEdit(UpdateView):
+    model = PortfolioItem
+    template_name = 'super/portfolio_item_edit.html'
+    fields = ['tag', 'portrait_name', 'date']
+    success_url = '/'
+
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+class PortfolioManage(LoginRequiredMixin, UserPassesTestMixin, View):
+    template_name = 'super/manage_portfolio.html'
+    def get(self,request):
+        return render(
+            request=request,
+            template_name=self.template_name,
+            context={
+                'portfolio': PortfolioItem.objects.all()
+            }
+        )
+    def test_func(self):
+        return self.request.user.is_superuser
