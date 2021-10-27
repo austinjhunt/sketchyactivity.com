@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 from django.contrib.auth import authenticate, login, logout
 from django.views.decorators.csrf import csrf_exempt
-from django.views.generic import UpdateView, DeleteView
+from django.views.generic import UpdateView, DeleteView, TemplateView
 from django.shortcuts import get_object_or_404, redirect, render
 from django.template import loader
 from django.http import HttpResponse, JsonResponse
@@ -55,8 +55,7 @@ def portfolio_item(request, id):
 
 @csrf_exempt
 def index(request):
-    bio = get_bio()
-    bio_split = get_bio_split(bio=bio)[0]
+
 
     portfolio = PortfolioItem.objects.all().order_by('-date')
     # update private urls if they need to be updated
@@ -74,9 +73,6 @@ def index(request):
         'featured': portfolio[0],
         'title': 'Austin Hunt Portraiture',
         'portfolio': portfolio,
-        'bio_1': bio_split[0],
-        'bio_2': bio_split[-1],
-        'bio': bio,
         'private_video_url': cache.get('updated_private_video_url')
         }
 
@@ -408,3 +404,11 @@ class PortfolioManage(LoginRequiredMixin, UserPassesTestMixin, View):
         )
     def test_func(self):
         return self.request.user.is_superuser
+
+class AboutView(TemplateView):
+    template_name = 'about.html'
+
+    def get_context_data(self, **kwargs):
+        data = super().get_context_data(**kwargs)
+        data['bio'] = get_bio()
+        return data

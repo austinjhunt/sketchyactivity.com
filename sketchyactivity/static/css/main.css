@@ -569,43 +569,6 @@ textarea {
     position: relative;
 }
 
-#bio_desktop {
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr 1fr;
-    height: fit-content;
-    padding-left: 5%;
-    padding-right: 5%;
-    padding-top: 3%;
-    padding-bottom: 3%;
-}
-
-#bio_mobile {
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: 1fr;
-    height: fit-content;
-    padding-left: 4%;
-    padding-right: 4%;
-    padding-top: 2%;
-    padding-bottom: 2%;
-}
-
-.bio_header {
-    font-size: 10em;
-    font-weight: 700;
-    color: white;
-    display: grid;
-    align-content: center;
-    max-height: 98vh;
-}
-
-.bio_content {
-    font-size: 1.6em;
-    text-align: right;
-    color: white;
-}
-
 .black_text {
     color: black;
 }

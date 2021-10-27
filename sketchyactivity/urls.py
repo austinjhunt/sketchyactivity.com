@@ -7,6 +7,7 @@ urlpatterns = [
     path('', views.index, name='home'),
     path('media/<slug:path>/<slug:filename>', views.media, name='media'),
     path('commissions', views.CommissionsView.as_view(),name='commissions'),
+    path('about', views.AboutView.as_view(), name='about'),
     path('notify', views.notify,name='notify'),
     path('upload', views.upload,name='upload'),
     path('logout', views.site_logout,name='logout'),
