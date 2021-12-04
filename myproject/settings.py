@@ -17,7 +17,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '__d%ysb=p9yjd2(zkn!fzlk95)swp&=lp!lr-ws+cqqxqx$6uk'
 DEBUG = True
 ALLOWED_HOSTS = ['www.sketchyactivity.com','sketchyactivity.com','127.0.0.1:8000','localhost:8000']
-
+ADMINS = [('Austin Hunt', 'huntaj@g.cofc.edu')]
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
