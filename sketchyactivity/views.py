@@ -378,13 +378,15 @@ def update_profile(request):
 class CommissionsView(View):
     def get(self, request):
         prices = Price.objects.all()
+        unqiue_sizes = prices.order_by('size').distinct().values_list('size', flat=True)
+        unique_sizes = sorted(unqiue_sizes, key=lambda el: float(el.split('x')[0]))
         return render(
             request,
             'commissions.html',
             context={
                 'title': 'Austin Hunt Portraiture Commissions',
                 'prices': prices,
-                'unique_sizes': prices.order_by('size').distinct().values_list('size', flat=True),
+                'unique_sizes':  unique_sizes,
                 'unique_num_subjects': prices.order_by('num_subjects').distinct().values_list('num_subjects', flat=True),
                 'sale':  MetaStuff.objects.all()[0].sale,
                 'sale_amount':  MetaStuff.objects.all()[0].sale_amount
