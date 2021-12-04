@@ -1,6 +1,6 @@
 
 from django.db import models
-
+from django.utils.translation import gettext_lazy as _
 # Create your models here.
 
 from django.contrib.auth.models import User
@@ -19,7 +19,10 @@ class MetaStuff(models.Model):
     website_title = models.CharField(max_length=128,default="")
     website_description = models.TextField(default="")
     website_keywords = models.TextField(default="")
-
+    sale = models.BooleanField(default=False)
+    sale_amount = models.FloatField(default=0)
+    sale_start = models.DateField(auto_now=True)
+    sale_end = models.DateField(auto_now=True)
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     phone = models.CharField(max_length=20)
@@ -27,3 +30,15 @@ class UserProfile(models.Model):
 class Price(models.Model):
     amount = models.FloatField(default=0)
     description = models.TextField(default="")
+
+    size = models.CharField(max_length=100, default='8.5x12in')
+    num_subjects = models.IntegerField(default=1)
+    class DrawingStyle(models.TextChoices):
+        TRADITIONAL = 'TR', _('Traditional')
+        DIGITAL = 'DI', _('Digital')
+
+    style = models.CharField(
+        max_length=2,
+        choices=DrawingStyle.choices,
+        default=DrawingStyle.TRADITIONAL
+    )

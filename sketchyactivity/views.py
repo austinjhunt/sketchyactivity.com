@@ -355,11 +355,16 @@ def update_profile(request):
         website_title = request.POST.get('website_title','')
         website_description = request.POST.get('website_description','')
         website_keywords = request.POST.get('website_keywords','')
-
+        sale = True if request.POST.get('commission_sale', None) else False
+        sale_amount = request.POST.get('commission_sale_amount', 0)
+        print('sale = ', sale)
+        print('sale amoount = ', sale_amount)
         ms = MetaStuff.objects.all()[0]
         ms.website_title = website_title
         ms.website_description = website_description
         ms.website_keywords = website_keywords
+        ms.sale = sale
+        ms.sale_amount = sale_amount
         ms.bio = bio
         ms.save()
         return redirect("/")
@@ -368,14 +373,21 @@ def update_profile(request):
         context = {'bio':bio, 'title': 'Update Website'}
         template = loader.get_template('super/update_profile.html')
         return HttpResponse(template.render(context,request))
+
+
 class CommissionsView(View):
     def get(self, request):
+        prices = Price.objects.all()
         return render(
             request,
             'commissions.html',
             context={
                 'title': 'Austin Hunt Portraiture Commissions',
-                'prices': Price.objects.all()
+                'prices': prices,
+                'unique_sizes': prices.order_by('size').distinct().values_list('size', flat=True),
+                'unique_num_subjects': prices.order_by('num_subjects').distinct().values_list('num_subjects', flat=True),
+                'sale':  MetaStuff.objects.all()[0].sale,
+                'sale_amount':  MetaStuff.objects.all()[0].sale_amount
             }
         )
 

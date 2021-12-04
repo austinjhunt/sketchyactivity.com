@@ -1,8 +1,11 @@
+{% load pricing %}
 <div class="container text-center" id="commissions">
     <h1 class="pricing-header mt-2 mb-2">commissions</h1>
     <div class="prices-container text-center">
         <h2 class="text-light">PORTRAITS MAKE GREAT GIFTS! <i class="fa fa-gift"></i> <i class="fa fa-smile"></i></h2>
-        <h3 class="text-light">40% OFF UNTIL DECEMBER 31<sup>st</sup>
+        <h3 class="text-light">
+            <strong style="color:rgb(50, 98, 231) ">{{meta.sale_amount|to_pretty_percent}}</strong> OFF UNTIL
+            <strong style="color:red">{{meta.sale_end}}</strong>
         </h3>
         <table style="margin:2rem auto" class="m-0-auto table border-white table-striped">
             <thead class="thead-dark">
@@ -16,42 +19,23 @@
                 </tr>
                 <tr>
                     <th></th>
-                    <th>1</th>
-                    <th>2</th>
-                    <th>3</th>
+                    {% for ns in unique_num_subjects %}
+                    <th></th>
+                    {% endfor %}
                 </tr>
             </thead>
             <tbody class="bg-light">
+                {% for s in unique_sizes %}
                 <tr>
-                    <td>8.5x11in</td>
-                    <td><strike>$100</strike> $60</td>
-                    <td><strike>$160</strike> $96</td>
-                    <td><strike>$220</strike> $132</td>
+                    <td>{{s}}</td>
+                    {% for ns in unique_num_subjects %}
+                    <td>
+                        {% with price=s|get_price:ns %} {% if sale %}
+                        <strike style='color:red'>${{price}}</strike> ${{price|on_sale:sale_amount}} {% else %} ${{price}} {% endif %} {% endwith %}
+                    </td>
+                    {% endfor %}
                 </tr>
-                <tr>
-                    <td>11x17in</td>
-                    <td><strike>$150</strike> $90</td>
-                    <td><strike>$220</strike> $132</td>
-                    <td><strike>$290</strike> $174</td>
-                </tr>
-                <tr>
-                    <td>17x22in</td>
-                    <td><strike>$200</strike> $120</td>
-                    <td><strike>$280</strike> $168</td>
-                    <td><strike>$360</strike> $216</td>
-                </tr>
-                <tr>
-                    <td>22x34in</td>
-                    <td><strike>$250</strike> $150</td>
-                    <td><strike>$340</strike> $204</td>
-                    <td><strike>$430</strike> $258</td>
-                </tr>
-                <tr>
-                    <td>34x44in</td>
-                    <td><strike>$300</strike> $180</td>
-                    <td><strike>$400</strike> $240</td>
-                    <td><strike>$500</strike> $300</td>
-                </tr>
+                {% endfor %}
             </tbody>
         </table>
         <table style="margin:2rem auto" class="m-0-auto table border-white table-striped">
@@ -60,7 +44,11 @@
                     <th colspan="4" class="text-uppercase">digital drawing commissions</th>
                 </tr>
                 <tr class="bg-light">
-                    <td colspan="4"><strike>$100</strike> $60 * (# subjects)</td>
+                    <td colspan="4">
+                        {% with price=100 %} {% if meta.sale %}
+                        <strike style='color:red'>${{price}}</strike> ${{ price|on_sale:sale_amount}} times (number of people to draw)</td>
+                    {% else %} {% endif %} {% endwith %}
+
                 </tr>
             </thead>
             <tbody>
