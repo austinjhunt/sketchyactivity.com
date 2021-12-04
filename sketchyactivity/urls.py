@@ -3,6 +3,7 @@ from django.views.static import serve
 from django.conf.urls import url
 from . import views
 from django.conf import settings
+
 urlpatterns = [
     path('', views.index, name='home'),
     path('media/<slug:path>/<slug:filename>', views.media, name='media'),
@@ -21,9 +22,14 @@ urlpatterns = [
     path('pitem/<slug:id>', views.portfolio_item, name='portfolio-item'),
     path('portfolio/manage', views.PortfolioManage.as_view(), name='portfolio-manage')
 ]
-if settings.DEBUG:
-    urlpatterns +=  [
+urlpatterns +=  [
         url(r'^media/(?P<path>.*)$', serve, {
             'document_root': settings.MEDIA_ROOT,
         }),
-    ]
+]
+# if settings.DEBUG:
+#     urlpatterns +=  [
+#         url(r'^media/(?P<path>.*)$', serve, {
+#             'document_root': settings.MEDIA_ROOT,
+#         }),
+#     ]

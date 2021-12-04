@@ -15,8 +15,8 @@ import django_heroku
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '__d%ysb=p9yjd2(zkn!fzlk95)swp&=lp!lr-ws+cqqxqx$6uk'
-DEBUG = False
-ALLOWED_HOSTS = ['www.sketchyactivity.com','sketchyactivity.com','127.0.0.1','localhost']
+DEBUG = True
+ALLOWED_HOSTS = ['www.sketchyactivity.com','sketchyactivity.com','127.0.0.1:8000','localhost:8000']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -144,6 +144,8 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'compressor.finders.CompressorFinder',
 )
+
+COLLECTSTATIC = 1
 
 COMPRESS_ENABLED = True
 COMPRESS_ROOT = STATIC_ROOT

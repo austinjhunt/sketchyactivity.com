@@ -377,6 +377,7 @@ def update_profile(request):
 
 class CommissionsView(View):
     def get(self, request):
+        print('GET')
         prices = Price.objects.all()
         unqiue_sizes = prices.order_by('size').distinct().values_list('size', flat=True)
         unique_sizes = sorted(unqiue_sizes, key=lambda el: float(el.split('x')[0]))
