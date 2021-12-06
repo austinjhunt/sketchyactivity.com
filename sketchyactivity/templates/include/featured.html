@@ -2,14 +2,14 @@
 
 <div class="container my-4 outer-border bg-dark border rounded p-4 featured text-center">
     <div class="row ">
-        <div class="col-sm-12 col-md-8 col-lg-8">
+        <div class="col-sm-12 col-md-7 col-lg-7">
             <h2 class="text-light">Recent Work</h2>
             <hr/>
             <h3 class="text-light">{{featured.portrait_name}}</h3>
             <h4 class="text-light">{{featured.tag}}</h4>
             <h5 class="text-light">{{featured.date}}</h5>
         </div>
-        <div class="col-sm-12 col-md-4 col-lg-4">
+        <div class="col-sm-12 col-md-5 col-lg-5">
             <a href="{{featured.s3_copied_smaller_drawing_private_url}}" title="{{featured.portrait_name}}">
                 <img class="w-100 rounded" src="{{featured.s3_copied_smaller_drawing_private_url}}" alt="{{featured.portrait_name}} - {{featured.tag}}" />
             </a>
