@@ -357,14 +357,14 @@ def update_profile(request):
         website_keywords = request.POST.get('website_keywords','')
         sale = True if request.POST.get('commission_sale', None) else False
         sale_amount = request.POST.get('commission_sale_amount', 0)
-        print('sale = ', sale)
-        print('sale amoount = ', sale_amount)
+        sale_end = request.POST.get('commission_sale_end','')
         ms = MetaStuff.objects.all()[0]
         ms.website_title = website_title
         ms.website_description = website_description
         ms.website_keywords = website_keywords
         ms.sale = sale
         ms.sale_amount = sale_amount
+        ms.sale_end = datetime.datetime.strptime(sale_end, '%Y-%m-%d').date()
         ms.bio = bio
         ms.save()
         return redirect("/")

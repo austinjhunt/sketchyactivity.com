@@ -21,8 +21,8 @@ class MetaStuff(models.Model):
     website_keywords = models.TextField(default="")
     sale = models.BooleanField(default=False)
     sale_amount = models.FloatField(default=0)
-    sale_start = models.DateField(auto_now=True)
-    sale_end = models.DateField(auto_now=True)
+    sale_start = models.DateField()
+    sale_end = models.DateField()
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     phone = models.CharField(max_length=20)

@@ -3,10 +3,12 @@
     <h1 class="pricing-header mt-2 mb-2">commissions</h1>
     <div class="prices-container text-center">
         <h2 class="text-light">PORTRAITS MAKE GREAT GIFTS! <i class="fa fa-gift"></i> <i class="fa fa-smile"></i></h2>
+        {% if meta.sale %}
         <h3 class="text-light">
             <strong style="color:rgb(50, 98, 231) ">{{meta.sale_amount|to_pretty_percent}}</strong> OFF UNTIL
             <strong style="color:red">{{meta.sale_end}}</strong>
         </h3>
+        {% endif %}
         <table style="margin:2rem auto" class="m-0-auto table border-white table-striped">
             <thead class="thead-dark">
                 <tr>
