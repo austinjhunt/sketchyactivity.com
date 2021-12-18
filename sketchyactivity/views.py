@@ -427,3 +427,20 @@ class AboutView(TemplateView):
         data = super().get_context_data(**kwargs)
         data['bio'] = get_bio()
         return data
+
+import google_auth_oauthlib
+
+class NestRedirectEndpoint(View):
+    def get(self, request):
+        state = request.GET.get('state')
+        # flow = google_auth_oauthlib.flow.Flow.from_client_secrets_file(
+        #     'client_secret.json',
+        #     scopes=[s3_client]
+        # )
+        print(request.GET)
+        print(request.POST)
+        return render(
+            request,
+            template_name='index.html',
+            context={}
+        )

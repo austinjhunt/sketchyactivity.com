@@ -23,4 +23,8 @@ urlpatterns = [
     url(r'^media/(?P<path>.*)$', serve, {
             'document_root': settings.MEDIA_ROOT,
         }),
+
+
+    # Google developer
+    path('nest-redirect', views.NestRedirectEndpoint.as_view(), name='nest-redirect')
 ]
