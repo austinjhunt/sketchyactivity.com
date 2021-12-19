@@ -442,7 +442,7 @@ class NestAuthorize(View):
         # for the OAuth 2.0 client, which you configured in the API Console. If this
         # value doesn't match an authorized URI, you will get a 'redirect_uri_mismatch'
         # error.
-        flow.redirect_uri = reverse('nest-callback')
+        flow.redirect_uri = request.build_absolute_uri(reverse('nest-callback'))
 
         authorization_url, state = flow.authorization_url(
             # Enable offline access so that you can refresh an access token without
@@ -475,7 +475,7 @@ class NestCallback(View):
         # Create flow instance to manage the OAuth 2.0 Authorization Grant Flow steps.
         flow = google_auth_oauthlib.flow.Flow.from_client_secrets_file(
             settings.NEST_CLIENT_SECRETS_FILE, scopes=settings.NEST_SCOPES, state=state)
-        flow.redirect_uri = reverse('nest-callback')
+        flow.redirect_uri = request.build_absolute_uri(reverse('nest-callback'))
 
         # Use the authorization server's response to fetch the OAuth 2.0 tokens.
         authorization_response = request.build_absolute_uri()

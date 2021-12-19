@@ -25,6 +25,6 @@ urlpatterns = [
         }),
     # Google developer
     path('nest-authorize', views.NestAuthorize.as_view(), name='nest-authorize'),
-    path('nest-redirect', views.NestCallback.as_view(), name='nest-callback'),
+    path('nest-callback', views.NestCallback.as_view(), name='nest-callback'),
     path('nest-camera', views.NestCamera.as_view(), name='nest-camera')
 ]
