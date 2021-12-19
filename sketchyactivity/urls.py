@@ -23,8 +23,8 @@ urlpatterns = [
     url(r'^media/(?P<path>.*)$', serve, {
             'document_root': settings.MEDIA_ROOT,
         }),
-
-
     # Google developer
-    path('nest-redirect', views.NestRedirectEndpoint.as_view(), name='nest-redirect')
+    path('nest-authorize', views.NestAuthorize.as_view(), name='nest-authorize'),
+    path('nest-redirect', views.NestCallback.as_view(), name='nest-callback'),
+    path('nest-camera', views.NestCamera.as_view(), name='nest-camera')
 ]

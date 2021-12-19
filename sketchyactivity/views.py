@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 from django.contrib.auth import authenticate, login, logout
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import UpdateView, DeleteView, TemplateView
-from django.shortcuts import get_object_or_404, redirect, render
+from django.shortcuts import redirect, render
 from django.template import loader
 from django.http import HttpResponse, JsonResponse
 from random import *
@@ -11,6 +11,7 @@ from django.contrib.auth.models import User
 from django.template import loader
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.conf import settings
+from django.urls import reverse
 from django.core.files.storage import FileSystemStorage
 from PIL import Image
 from django.views import View
@@ -22,7 +23,6 @@ from .models import *
 from .customclasses import *
 from .forms import *
 from .util import *
-
 s3_client = boto3.client(
     's3',
     aws_access_key_id=settings.AWS_ACCESS_KEY_ID,
@@ -430,17 +430,68 @@ class AboutView(TemplateView):
 
 import google_auth_oauthlib
 
-class NestRedirectEndpoint(View):
+
+class NestAuthorize(View):
     def get(self, request):
-        state = request.GET.get('state')
-        # flow = google_auth_oauthlib.flow.Flow.from_client_secrets_file(
-        #     'client_secret.json',
-        #     scopes=[s3_client]
-        # )
-        print(request.GET)
-        print(request.POST)
-        return render(
-            request,
-            template_name='index.html',
-            context={}
+
+        # Create flow instance to manage the OAuth 2.0 Authorization Grant Flow steps.
+        flow = google_auth_oauthlib.flow.Flow.from_client_secrets_file(
+            settings.NEST_CLIENT_SECRETS_FILE, scopes=settings.NEST_SCOPES)
+
+        # The URI created here must exactly match one of the authorized redirect URIs
+        # for the OAuth 2.0 client, which you configured in the API Console. If this
+        # value doesn't match an authorized URI, you will get a 'redirect_uri_mismatch'
+        # error.
+        flow.redirect_uri = reverse('nest-callback')
+
+        authorization_url, state = flow.authorization_url(
+            # Enable offline access so that you can refresh an access token without
+            # re-prompting the user for permission. Recommended for web server apps.
+            access_type='offline',
+            # Enable incremental authorization. Recommended as a best practice.
+            include_granted_scopes='true')
+
+        # Store the state so the callback can verify the auth server response.
+        request.session['state'] = state
+
+        return redirect(authorization_url)
+
+def credentials_to_dict(self, credentials):
+    return {
+        'token': credentials.token,
+        'refresh_token': credentials.refresh_token,
+        'token_uri': credentials.token_uri,
+        'client_id': credentials.client_id,
+        'client_secret': credentials.client_secret,
+        'scopes': credentials.scopes
+        }
+class NestCallback(View):
+    def get(self, request):
+        # Specify the state when creating the flow in the callback so that it can
+        # verified in the authorization server response.
+        state = ''
+        if 'state' in request.session:
+            state = request.session['state']
+        # Create flow instance to manage the OAuth 2.0 Authorization Grant Flow steps.
+        flow = google_auth_oauthlib.flow.Flow.from_client_secrets_file(
+            settings.NEST_CLIENT_SECRETS_FILE, scopes=settings.NEST_SCOPES, state=state)
+        flow.redirect_uri = reverse('nest-callback')
+
+        # Use the authorization server's response to fetch the OAuth 2.0 tokens.
+        authorization_response = request.build_absolute_uri()
+        flow.fetch_token(authorization_response=authorization_response)
+        credentials = flow.credentials
+        request.session['credentials'] = credentials_to_dict(credentials)
+
+        return redirect(reverse('nest-camera'))
+import google
+class NestCamera(View):
+    def get(self, request):
+        if 'credentials' not in request.session:
+            return redirect(reverse('nest-authorize'))
+        # Load creds from session
+        credentials = google.oauth2.credentials.Credentials(
+            **request.session['credentials']
         )
+        print(credentials)
+        return JsonResponse(credentials_to_dict(credentials))
