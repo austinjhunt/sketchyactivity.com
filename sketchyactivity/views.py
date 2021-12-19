@@ -456,7 +456,7 @@ class NestAuthorize(View):
 
         return redirect(authorization_url)
 
-def credentials_to_dict(self, credentials):
+def credentials_to_dict(credentials):
     return {
         'token': credentials.token,
         'refresh_token': credentials.refresh_token,
