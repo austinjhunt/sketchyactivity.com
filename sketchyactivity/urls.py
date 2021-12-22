@@ -1,10 +1,23 @@
 from django.urls import path
 from django.views.static import serve
-from django.conf.urls import url
+from django.conf.urls import url, include
 from . import views
 from django.conf import settings
+from rest_framework import routers
+
+# Django Rest Framework
+router = routers.DefaultRouter()
+router.register(r'portfolio', views.PortfolioView, 'portfolio')
+router.register(r'meta', views.MetaStuffView, 'meta')
+router.register(r'user', views.UserProfileView, 'user')
+router.register(r'price', views.PriceView, 'price')
+router.register(r'size', views.UniqueCommissionSizesView, 'size')
+
 urlpatterns = [
     path('', views.index, name='home'),
+    # DRF
+    path('api/', include(router.urls)),
+
     path('media/<slug:path>/<slug:filename>', views.media, name='media'),
     path('commissions', views.CommissionsView.as_view(),name='commissions'),
     path('about', views.AboutView.as_view(), name='about'),
@@ -23,8 +36,4 @@ urlpatterns = [
     url(r'^media/(?P<path>.*)$', serve, {
             'document_root': settings.MEDIA_ROOT,
         }),
-    # Google developer
-    path('nest-authorize', views.NestAuthorize.as_view(), name='nest-authorize'),
-    path('nest-callback', views.NestCallback.as_view(), name='nest-callback'),
-    path('nest-camera', views.NestCamera.as_view(), name='nest-camera')
 ]

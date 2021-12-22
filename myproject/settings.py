@@ -16,7 +16,13 @@ import django_heroku
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '__d%ysb=p9yjd2(zkn!fzlk95)swp&=lp!lr-ws+cqqxqx$6uk'
 DEBUG = True
-ALLOWED_HOSTS = ['www.sketchyactivity.com','sketchyactivity.com','127.0.0.1:8000','localhost:8000']
+ALLOWED_HOSTS = [
+  'www.sketchyactivity.com',
+  'sketchyactivity.com',
+  'localhost:8000',
+  'localhost:3000', # react client
+  ]
+
 ADMINS = [('Austin Hunt', 'huntaj@g.cofc.edu')]
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -30,11 +36,22 @@ INSTALLED_APPS = [
     'cssmin',
     'jsmin',
     'storages',
-    'crispy_forms'
+    'crispy_forms',
+    'rest_framework',
+    'corsheaders',
+    'rest_framework.authtoken',
 ]
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+    ]
+}
+
 MIDDLEWARE = [
+  'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -43,6 +60,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
+
 ]
 
 #SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
@@ -72,18 +90,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'myproject.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/2.1/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'd10dclbdpcriqg',
-#         'USER': 'gzpgbkerdqzzzm',
-#         'PASSWORD': '4aab4367879fc84288d2338c18fc5e441628053eb9f664786aa9e8426866cc47',
-#         'HOST': 'ec2-184-73-249-9.compute-1.amazonaws.com',
-#     }
-# }
 
 # To use remote Heroku db
 
@@ -226,3 +232,9 @@ def get_cache():
     }
 
 CACHES = get_cache()
+CORS_ORIGIN_WHITELIST = [
+    "https://sketchyactivity.com",
+    "https://www.sketchyactivity.com",
+    "http://localhost:3000",
+    "http://127.0.0.1:3000"
+]

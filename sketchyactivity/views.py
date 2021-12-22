@@ -23,6 +23,7 @@ from .models import *
 from .customclasses import *
 from .forms import *
 from .util import *
+
 s3_client = boto3.client(
     's3',
     aws_access_key_id=settings.AWS_ACCESS_KEY_ID,
@@ -55,8 +56,6 @@ def portfolio_item(request, id):
 
 @csrf_exempt
 def index(request):
-
-
     portfolio = PortfolioItem.objects.all().order_by('-date')
     # update private urls if they need to be updated
     if not cache.get('updated_private_video_url'):
@@ -428,70 +427,55 @@ class AboutView(TemplateView):
         data['bio'] = get_bio()
         return data
 
-import google_auth_oauthlib
 
 
-class NestAuthorize(View):
-    def get(self, request):
+from rest_framework import viewsets
+from rest_framework.permissions import IsAdminUser
+from .serializers import *
+from rest_framework.response import Response
 
-        # Create flow instance to manage the OAuth 2.0 Authorization Grant Flow steps.
-        flow = google_auth_oauthlib.flow.Flow.from_client_secrets_file(
-            settings.NEST_CLIENT_SECRETS_FILE, scopes=settings.NEST_SCOPES)
+### REST
 
-        # The URI created here must exactly match one of the authorized redirect URIs
-        # for the OAuth 2.0 client, which you configured in the API Console. If this
-        # value doesn't match an authorized URI, you will get a 'redirect_uri_mismatch'
-        # error.
-        flow.redirect_uri = request.build_absolute_uri(reverse('nest-callback'))
+def get_updated_portfolio():
+    portfolio = PortfolioItem.objects.all().order_by('-date')
+    # update private urls if they need to be updated
+    if not cache.get('updated_private_video_url'):
+        private_video_url = update_private_video_url(s3_client)
+        cache.set('updated_private_video_url', private_video_url, timeout=302400)# half the max expiration time of the private urls for the media files in s3.
+    if not cache.get('updated_private_urls'):
+        print("Updating private urls for portfolio...")
+        update_private_urls_full_portfolio(portfolio,s3_client)
+        print("Setting cache.updated_private_urls ")
+        cache.set('updated_private_urls', 'is_updated',timeout=302400) # half the max expiration time of the private urls for the media files in s3.
+    else:
+        print("Cache updated_private_urls is set already")
+    return portfolio
 
-        authorization_url, state = flow.authorization_url(
-            # Enable offline access so that you can refresh an access token without
-            # re-prompting the user for permission. Recommended for web server apps.
-            access_type='offline',
-            # Enable incremental authorization. Recommended as a best practice.
-            include_granted_scopes='true')
+class PortfolioView(viewsets.ModelViewSet):
+    serializer_class = PortfolioItemSerializer
+    queryset = get_updated_portfolio()
+    permission_classes = [IsAdminUser]
 
-        # Store the state so the callback can verify the auth server response.
-        request.session['state'] = state
+class MetaStuffView(viewsets.ModelViewSet):
+    serializer_class = MetaStuffSerializer
+    queryset = MetaStuff.objects.all()
+    permission_classes = [IsAdminUser]
 
-        return redirect(authorization_url)
+class UserProfileView(viewsets.ModelViewSet):
+    serializer_class = UserProfileSerializer
+    queryset = UserProfile.objects.all()
+    permission_classes = [IsAdminUser]
 
-def credentials_to_dict(credentials):
-    return {
-        'token': credentials.token,
-        'refresh_token': credentials.refresh_token,
-        'token_uri': credentials.token_uri,
-        'client_id': credentials.client_id,
-        'client_secret': credentials.client_secret,
-        'scopes': credentials.scopes
-        }
-class NestCallback(View):
-    def get(self, request):
-        # Specify the state when creating the flow in the callback so that it can
-        # verified in the authorization server response.
-        state = ''
-        if 'state' in request.session:
-            state = request.session['state']
-        # Create flow instance to manage the OAuth 2.0 Authorization Grant Flow steps.
-        flow = google_auth_oauthlib.flow.Flow.from_client_secrets_file(
-            settings.NEST_CLIENT_SECRETS_FILE, scopes=settings.NEST_SCOPES, state=state)
-        flow.redirect_uri = request.build_absolute_uri(reverse('nest-callback'))
+class PriceView(viewsets.ModelViewSet):
+    serializer_class = PriceSerializer
+    queryset = Price.objects.all()
+    permission_classes = [IsAdminUser]
 
-        # Use the authorization server's response to fetch the OAuth 2.0 tokens.
-        authorization_response = request.build_absolute_uri()
-        flow.fetch_token(authorization_response=authorization_response)
-        credentials = flow.credentials
-        request.session['credentials'] = credentials_to_dict(credentials)
-
-        return redirect(reverse('nest-camera'))
-import google
-class NestCamera(View):
-    def get(self, request):
-        if 'credentials' not in request.session:
-            return redirect(reverse('nest-authorize'))
-        # Load creds from session
-        credentials = google.oauth2.credentials.Credentials(
-            **request.session['credentials']
-        )
-        print(credentials)
-        return JsonResponse(credentials_to_dict(credentials))
+class UniqueCommissionSizesView(viewsets.ViewSet):
+    serializer_class = PriceSerializer
+    permission_classes = [IsAdminUser]
+    def list(self, request):
+        prices = Price.objects.all()
+        unqiue_sizes = prices.order_by('size').distinct().values_list('size', flat=True)
+        unique_sizes = sorted(unqiue_sizes, key=lambda el: float(el.split('x')[0]))
+        return Response(unique_sizes)

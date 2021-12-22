@@ -3,3 +3,4 @@ venv
 sketchyactivity_media/**
 sketchyactivity/__pycache__
 start-dev.sh
+node_modules

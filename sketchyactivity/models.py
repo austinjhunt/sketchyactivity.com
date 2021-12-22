@@ -26,7 +26,6 @@ class MetaStuff(models.Model):
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     phone = models.CharField(max_length=20)
-
 class Price(models.Model):
     amount = models.FloatField(default=0)
     description = models.TextField(default="")
