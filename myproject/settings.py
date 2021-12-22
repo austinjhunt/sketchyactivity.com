@@ -181,11 +181,6 @@ PRIVATE_MEDIA_STORAGE = 'sketchyactivity.storage_backends.PrivateMediaStorage'
 MEDIA_ROOT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),'sketchyactivity','media')
 django_heroku.settings(locals())
 
-
-# Google Nest
-NEST_CLIENT_SECRETS_FILE = os.path.join(BASE_DIR, 'credentials.json')
-NEST_SCOPES = ['https://www.googleapis.com/auth/sdm.service']
-
 def get_cache():
   import os
   try:
