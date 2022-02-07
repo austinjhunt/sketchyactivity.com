@@ -1,53 +1,116 @@
-<nav class="navbar navbar-expand-lg navbar-dark" style="background-color:black">
-    <a class="navbar-brand" href="/">Austin Hunt Portraiture</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapse-menu" aria-controls="collapse-menu" aria-expanded="false" aria-label="Toggle navigation">
+<nav
+  class="navbar navbar-expand-lg navbar-dark"
+  style="background-color: black"
+>
+  <a class="navbar-brand" href="/">AJH.</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#collapse-menu"
+    aria-controls="collapse-menu"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
     <span class="navbar-toggler-icon"></span>
   </button>
 
-    <div class="collapse navbar-collapse" id="collapse-menu">
-        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-            {% if user.is_authenticated %}
-            <li class="nav-item">
-                <a class="nav-link disabled text-white" href="#">Welcome, {{ user.first_name }}!</a>
-            </li>
-            {% if user.is_superuser %}
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="manageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Manage
-            </a>
-                <div class="dropdown-menu" aria-labelledby="manageDropdown">
-                    <a class="dropdown-item" href="/upload"><i class="fa fa-upload"></i> Add Content</a>
-                    <a class="dropdown-item" href="/update_profile"><i class="fa fa-edit"></i> Edit Profile</a>
-                    <a class="dropdown-item" href="/portfolio/manage"><i class="fa fa-edit"></i> Manage Portfolio Items</a>
-                </div>
-            </li>
-            {% endif %}
-            <li class="nav-item">
-                <a class="nav-link" href="/logout"><i class="fa fa-sign-out-alt"></i> Sign Out</a>
-            </li>
-            {% else %}
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="accountDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Account
-            </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="accountDropdown">
-                    <a class="dropdown-item" href="/login"><i class="fa fa-sign-in-alt"></i> Sign In</a>
-                    <a class="dropdown-item" href="/signup"><i class="fa fa-user-plus"></i> Create Account</a>
-                </div>
-            </li>
-            {% endif %}
-            <li class="nav-item">
-                <a class="nav-link" href="/about">About the Artist</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Support
-          </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/commissions"><i class='fa fa-palette'></i> Commissions</a>
-                    <a class="dropdown-item" rel="noopener" target="_blank" href="https://www.redbubble.com/people/austinjhunt/shop"><i class='fa fa-store'></i> Redbubble</a>
-                </div>
-            </li>
-        </ul>
-    </div>
+  <div class="collapse navbar-collapse" id="collapse-menu">
+    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+      {% if user.is_authenticated %}
+      <li class="nav-item">
+        <a class="nav-link disabled text-white" href="#"
+          >Welcome, {{ user.first_name }}!</a
+        >
+      </li>
+      {% if user.is_superuser %}
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          id="manageDropdown"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Manage
+        </a>
+        <div class="dropdown-menu" aria-labelledby="manageDropdown">
+          <a class="dropdown-item" href="/upload"
+            ><i class="fa fa-upload"></i> Add Content</a
+          >
+          <a class="dropdown-item" href="/update_profile"
+            ><i class="fa fa-edit"></i> Edit Profile</a
+          >
+          <a class="dropdown-item" href="/portfolio/manage"
+            ><i class="fa fa-edit"></i> Manage Portfolio Items</a
+          >
+        </div>
+      </li>
+      {% endif %}
+      <li class="nav-item">
+        <a class="nav-link" href="/logout"
+          ><i class="fa fa-sign-out-alt"></i> Sign Out</a
+        >
+      </li>
+      {% else %}
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          id="accountDropdown"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Account
+        </a>
+        <div
+          class="dropdown-menu dropdown-menu-right"
+          aria-labelledby="accountDropdown"
+        >
+          <a class="dropdown-item" href="/login"
+            ><i class="fa fa-sign-in-alt"></i> Sign In</a
+          >
+          <a class="dropdown-item" href="/signup"
+            ><i class="fa fa-user-plus"></i> Create Account</a
+          >
+        </div>
+      </li>
+      {% endif %}
+      <li class="nav-item">
+        <a class="nav-link" href="/about">About the Artist</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          id="navbarDropdown"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Support
+        </a>
+        <div
+          class="dropdown-menu dropdown-menu-right"
+          aria-labelledby="navbarDropdown"
+        >
+          <a class="dropdown-item" href="/commissions"
+            ><i class="fa fa-palette"></i> Commissions</a
+          >
+          <a
+            class="dropdown-item"
+            rel="noopener"
+            target="_blank"
+            href="https://www.redbubble.com/people/austinjhunt/shop"
+            ><i class="fa fa-store"></i> Redbubble</a
+          >
+        </div>
+      </li>
+    </ul>
+  </div>
 </nav>

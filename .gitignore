@@ -1,4 +1,6 @@
 venv
+venvwin
+venvubu
 **/__pycache__/**
 sketchyactivity_media/**
 sketchyactivity/__pycache__
