@@ -8,9 +8,14 @@
 {% include 'include/navigation.html' %}
 
 <body class="bg-black">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TT97Z48" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <!-- For Facebook sharing -->
     <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v11.0" nonce="1N5FRI6Q"></script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v11.0"
+        nonce="1N5FRI6Q"></script>
     {% block content %} {% endblock %} {% include 'include/javascript.html' %}
 </body>
 
