@@ -18,6 +18,7 @@ SECRET_KEY = '__d%ysb=p9yjd2(zkn!fzlk95)swp&=lp!lr-ws+cqqxqx$6uk'
 DEBUG = True
 ALLOWED_HOSTS = [
   'www.sketchyactivity.com',
+  'austinjhunt.com',
   'sketchyactivity.com',
   'localhost:8000',
   'localhost:3000', # react client
