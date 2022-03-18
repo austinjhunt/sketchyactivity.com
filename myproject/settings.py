@@ -19,6 +19,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
   'www.sketchyactivity.com',
   'austinjhunt.com',
+  'austinjhunt.github.io',
   'sketchyactivity.com',
   'localhost:8000',
   'localhost:3000', # react client
