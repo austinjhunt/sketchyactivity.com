@@ -4,6 +4,8 @@ from django.conf.urls import url, include
 from . import views
 from django.conf import settings
 from rest_framework import routers
+from rest_framework.authtoken import views as authtokenviews
+
 
 # Django Rest Framework
 router = routers.DefaultRouter()
@@ -17,6 +19,7 @@ urlpatterns = [
     path('', views.index, name='home'),
     # DRF
     path('api/', include(router.urls)),
+    path('api/obtain-auth-token/', authtokenviews.obtain_auth_token),
 
     path('media/<slug:path>/<slug:filename>', views.media, name='media'),
     path('commissions', views.CommissionsView.as_view(),name='commissions'),
