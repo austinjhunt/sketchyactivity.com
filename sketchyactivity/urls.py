@@ -18,9 +18,9 @@ router.register(r'size', views.UniqueCommissionSizesView, 'size')
 urlpatterns = [
     path('', views.index, name='home'),
     # DRF
-    path('api/', include(router.urls)),
     path('api/obtain-auth-token/', authtokenviews.obtain_auth_token),
-
+    path('api/', include(router.urls)),
+      
     path('media/<slug:path>/<slug:filename>', views.media, name='media'),
     path('commissions', views.CommissionsView.as_view(),name='commissions'),
     path('about', views.AboutView.as_view(), name='about'),
