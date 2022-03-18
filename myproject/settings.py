@@ -232,6 +232,8 @@ CACHES = get_cache()
 CORS_ORIGIN_WHITELIST = [
     "https://sketchyactivity.com",
     "https://www.sketchyactivity.com",
+    "https://austinjhunt.com",
+    "https://austinjhunt.github.io",
     "http://localhost:3000",
     "http://127.0.0.1:3000"
 ]
