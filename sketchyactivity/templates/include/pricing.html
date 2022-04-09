@@ -12,27 +12,27 @@
         <table style="margin:2rem auto" class="m-0-auto table border-white table-striped">
             <thead class="thead-dark">
                 <tr>
-                    <th colspan="4" class="text-uppercase">traditional drawing (pen &amp; paper) commissions</th>
+                    <th colspan="{{traditional_unique_num_subjects|length|add:1}}" class="text-uppercase">traditional drawing (pen &amp; paper) commissions</th>
                 </tr>
                 <tr>
 
                     <th>size</th>
-                    <th colspan="3">how many people?</th>
+                    <th colspan="{{traditional_unique_num_subjects|length}}">how many people?</th>
                 </tr>
                 <tr>
                     <th></th>
-                    {% for ns in unique_num_subjects %}
+                    {% for ns in traditional_unique_num_subjects %}
                     <th>{{ns}}</th>
                     {% endfor %}
                 </tr>
             </thead>
             <tbody class="bg-light">
-                {% for s in unique_sizes %}
+                {% for s in traditional_unique_sizes %}
                 <tr>
                     <td>{{s}}</td>
-                    {% for ns in unique_num_subjects %}
+                    {% for ns in traditional_unique_num_subjects %}
                     <td>
-                        {% with price=s|get_price:ns %} {% if sale %}
+                        {% with price=s|get_traditional_price:ns %} {% if sale %}
                         <strike style='color:red'>${{price}}</strike> ${{price|on_sale:sale_amount}} {% else %} ${{price}} {% endif %} {% endwith %}
                     </td>
                     {% endfor %}
@@ -43,15 +43,31 @@
         <table style="margin:2rem auto" class="m-0-auto table border-white table-striped">
             <thead class="thead-dark">
                 <tr>
-                    <th colspan="4" class="text-uppercase">digital drawing commissions</th>
+                    <th colspan="2" class="text-uppercase">digital drawing commissions</th>
                 </tr>
-                <tr class="bg-light">
-                    <td colspan="4">
-                        {% with price=100 %} {% if meta.sale %}
-                        <strike style='color:red'>${{price}}</strike> ${{ price|on_sale:sale_amount}} times (number of people to draw)</td>
-                    {% else %} {% endif %} {% endwith %}
+                <tr>
+                    <th class="text-uppercase">how many people?</th>
+                    <th class="text-uppercase">price</th>
+                </tr>
+            </thead>
+            <tbody class="bg-light">
+                {% for ns in digital_unique_num_subjects %}
+                    <tr>
+                        <td>{{ns}}</td>
+                        <td>
+                            {% with price=ns|get_digital_price %}
+                                {% if sale %}
+                                <strike style='color:red'>${{price}}</strike> ${{price|on_sale:sale_amount}}
+                                {% else %}
+                                ${{price}}
+                            {% endif %}
 
-                </tr>
+                            {% endwith %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+
             </thead>
             <tbody>
             </tbody>
@@ -64,30 +80,30 @@
         text-align: center;
         padding: 10px;
     }
-    
+
     .pricing-header {
         color: white;
         font-size: 3em;
         font-weight: 600;
         text-decoration: underline;
     }
-    
+
     .prices-container {
         padding: 10px;
         text-align: center;
     }
-    
+
     .prices-container .price {
         font-size: 1.1em;
         font-weight: 400;
         line-height: 1;
         margin: 8px;
     }
-    
+
     .price-description {
         color: white;
     }
-    
+
     .price-description a {
         color: lightblue;
         font-size: 1.1em;

@@ -377,17 +377,24 @@ def update_profile(request):
 class CommissionsView(View):
     def get(self, request):
         print('GET')
-        prices = Price.objects.all()
-        unqiue_sizes = prices.order_by('size').distinct().values_list('size', flat=True)
-        unique_sizes = sorted(unqiue_sizes, key=lambda el: float(el.split('x')[0]))
+        traditional_prices = Price.objects.filter(style='TR')
+        traditional_unique_sizes = traditional_prices.order_by('size').distinct().values_list('size', flat=True)
+        traditional_unique_sizes = sorted(traditional_unique_sizes, key=lambda el: float(el.split('x')[0]))
+        traditional_unique_num_subjects = traditional_prices.order_by('num_subjects').distinct().values_list('num_subjects', flat=True)
+
+        digital_prices = Price.objects.filter(style='DI')
+        digital_unique_num_subjects = digital_prices.order_by('num_subjects').distinct().values_list('num_subjects', flat=True)
         return render(
             request,
             'commissions.html',
             context={
                 'title': 'Austin Hunt Portraiture Commissions',
-                'prices': prices,
-                'unique_sizes':  unique_sizes,
-                'unique_num_subjects': prices.order_by('num_subjects').distinct().values_list('num_subjects', flat=True),
+                'traditional_prices': traditional_prices,
+                'traditional_unique_sizes':  traditional_unique_sizes,
+                'traditional_unique_num_subjects':  traditional_unique_num_subjects ,
+                'sale':  MetaStuff.objects.all()[0].sale,
+                'digital_prices': traditional_prices,
+                'digital_unique_num_subjects':  digital_unique_num_subjects ,
                 'sale':  MetaStuff.objects.all()[0].sale,
                 'sale_amount':  MetaStuff.objects.all()[0].sale_amount
             }
@@ -476,6 +483,10 @@ class UniqueCommissionSizesView(viewsets.ViewSet):
     permission_classes = [IsAdminUser]
     def list(self, request):
         prices = Price.objects.all()
-        unqiue_sizes = prices.order_by('size').distinct().values_list('size', flat=True)
+        # traditional
+        traditional_prices = prices.filter(style='TR')
+        for p in traditional_prices:
+            print(f'{p.style} - {p.amount} - {p.description}')
+        unqiue_sizes = traditional_prices.order_by('size').distinct().values_list('size', flat=True)
         unique_sizes = sorted(unqiue_sizes, key=lambda el: float(el.split('x')[0]))
         return Response(unique_sizes)
