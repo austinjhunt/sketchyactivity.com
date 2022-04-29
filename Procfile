@@ -1,1 +1,1 @@
-web: gunicorn myproject.wsgi --log-level debug
+web: env LD_LIBRARY_PATH=/usr/local/lib gunicorn myproject.wsgi --log-level debug
