@@ -1,3 +1,4 @@
+let CSRF_TOKEN;
 AOS.init({
   duration: 800,
   easing: "slide",
@@ -21,6 +22,13 @@ $(document).ready(function () {
       });
     };
     fullHeight();
+
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip();
+    });
+    $(".toast").toast({
+      delay: 3000,
+    });
 
     // Scrollax
     $.Scrollax();
@@ -60,7 +68,6 @@ $(document).ready(function () {
     mobileMenuOutsideClick();
     var contentWayPoint = function () {
       var i = 0;
-      console.log("Content waypoint!");
       $(".ftco-animate").waypoint(
         function (direction) {
           if (direction === "down" && !$(this).hasClass("ftco-animated")) {
@@ -278,9 +285,112 @@ if (page == "home") {
 function isScrolledIntoView(elem) {
   var docViewTop = $(window).scrollTop();
   var docViewBottom = docViewTop + $(window).height();
-
   var elemTop = $(elem).offset().top;
   var elemBottom = elemTop + $(elem).height();
-
   return elemBottom <= docViewBottom && elemTop >= docViewTop;
 }
+
+let updateCartBadgeNumber = (newItemCount) => {
+  // update the badge number in the cart in the navigation
+  // to reflect current number of items in the cart
+  let cartBadge = document.querySelector(".cart-badge");
+  if (newItemCount == 0) {
+    // hide badge
+    cartBadge.classList.add("d-none");
+  } else {
+    // show with new number
+    cartBadge.textContent = newItemCount;
+    cartBadge.classList.remove("d-none");
+  }
+};
+
+let removeProductFromCheckoutTable = (productId) => {
+  let row = document.querySelector(`tr[data-productid='${productId}'`);
+  removeFadeOut(row, 1000);
+};
+
+function removeFadeOut(el, speed) {
+  var seconds = speed / 1000;
+  el.style.transition = "opacity " + seconds + "s ease";
+
+  el.style.opacity = 0;
+  setTimeout(function () {
+    el.parentNode.removeChild(el);
+  }, speed);
+}
+
+let removeFromCart = (btn, productId) => {
+  fetch("/remove-from-cart/", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "X-CSRFToken": CSRF_TOKEN,
+    },
+    body: JSON.stringify({ productId: productId }),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      document.querySelector(".toast-title").textContent =
+        "Item removed from cart";
+      document.querySelector(".toast-body").textContent = data["result"];
+      if ("totalCartItems" in data) {
+        let totalCartItems = parseInt(data["totalCartItems"]);
+        updateCartBadgeNumber(totalCartItems);
+      }
+      if ("cartTotalPrice" in data) {
+        let cartTotalPrice = data["cartTotalPrice"];
+        document.querySelector(
+          "td.cart-total-price"
+        ).textContent = `$${cartTotalPrice}`;
+      }
+
+      removeProductFromCheckoutTable(productId);
+      $("#toast").toast("show");
+    });
+};
+
+let showAddToCartModal = (data) => {
+  let modal = document.querySelector(".commission-reference-image-modal");
+  let form = modal.querySelector("form");
+  // prepopulate what's already been selected into the modal form
+  form.querySelector("input#type").value = data["type"];
+  form.querySelector("input#price").value = data["price"];
+  form.querySelector("input#numSubjects").value = data["numSubjects"];
+  if (data["type"] == "digital") {
+    // size is irrelevant for digital art
+    form.querySelector("input#size").setAttribute("disabled", true);
+    form.querySelector("input#size").setAttribute("required", false);
+  } else {
+    form.querySelector("input#size").setAttribute("disabled", false);
+    form.querySelector("input#size").setAttribute("required", true);
+    form.querySelector("input#size").value = data["size"];
+  }
+  form.querySelectorAll("input").forEach((el, i) => {
+    el.setAttribute("readonly", true);
+  });
+  $("#commission-reference-image-modal").modal("show");
+};
+
+let addToCart = (data) => {
+  fetch("/add-to-cart/", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "X-CSRFToken": CSRF_TOKEN,
+    },
+    body: JSON.stringify(data),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      document.querySelector(".toast-title").textContent =
+        "New item added to cart";
+      document.querySelector(".toast-body").textContent = data["result"];
+      if ("totalCartItems" in data) {
+        let totalCartItems = parseInt(data["totalCartItems"]);
+        updateCartBadgeNumber(totalCartItems);
+      }
+      $("#toast").toast("show");
+    });
+};

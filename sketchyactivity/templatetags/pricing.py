@@ -18,7 +18,6 @@ def get_digital_price(num_subjects):
 def to_pretty_percent(decimal_sale):
     return f'{decimal_sale * 100}%'
 
-
 register.filter('on_sale', on_sale)
 register.filter('get_traditional_price', get_traditional_price)
 register.filter('get_digital_price', get_digital_price)

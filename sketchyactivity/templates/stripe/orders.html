@@ -1,0 +1,46 @@
+{% extends 'master.html' %}
+{% block content %}
+<div class="container">
+
+    {% if orders.count > 0 %}
+    <h1 class="text-light">
+        Drawings You've Commissioned
+    </h1>
+    <table class="table table-light table-striped text-center">
+        <thead>
+            <th>Item</th>
+            <th>Reference Image</th>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Commissioned</th>
+        </thead>
+        <tbody>
+            {% for o in orders %}
+                <tr>
+                    <td>{{o.product.name}}</td>
+                    <td>
+                        {% if o.product.s3_reference_image_url %}
+                            <img class="reference-image-preview" src="{{o.product.s3_reference_image_url}}" alt="{{o.product.name}} reference">
+                        {% else %}
+                            <span>No reference image</span>
+                        {% endif %}
+                    </td>
+                    <td>{{o.product.type}}</td>
+                    <td>{{o.product.description}}</td>
+                    <td>${{o.product.price}}</td>
+                    <td>{{o.timestamp}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <h1 class="text-light">You have not yet commissioned any drawings.</h1>
+    <h2 class="text-light">
+        If you'd like to commission me, you can choose items from the
+        <a href="{% url 'commissions' %}" title="commissions">commissions page.</a>
+      </h2>
+    {% endif %}
+
+</div>
+{% endblock %}

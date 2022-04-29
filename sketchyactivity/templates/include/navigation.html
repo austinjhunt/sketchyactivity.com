@@ -111,6 +111,41 @@
           >
         </div>
       </li>
+      {% if user.is_authenticated %}
+      <li class="nav-item position-relative">
+        <a class="nav-link position-relative" title="check out" href="{% url 'checkout' %}">
+          My c-Art
+          <i class="fa fa-shopping-cart"></i>
+          <span class="cart-badge badge-danger {% if cart_items.count == 0 %} d-none {% endif %}">{{cart_items.count}}</span>
+          <style>
+            .cart-badge{
+              padding: 3px 5px 2px;
+              position: absolute;
+              top: 0px;
+              right: 0px;
+              display: inline-block;
+              min-width: 10px;
+              font-size: 12px;
+              font-weight: bold;
+              color: #ffffff;
+              line-height: 1;
+              vertical-align: baseline;
+              white-space: nowrap;
+              text-align: center;
+              border-radius: 10px;
+          }
+          .badge-danger {
+              background-color: #db5565;
+          }
+          </style>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" title="my commissions" href="{% url 'orders' %}">
+          My Commissions
+        </a>
+      </li>
+      {% endif %}
     </ul>
   </div>
 </nav>
