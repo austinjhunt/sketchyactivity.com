@@ -1,7 +1,9 @@
 from django.views.decorators.csrf import csrf_exempt
+from django.views.generic import View
 from django.core.files.storage import FileSystemStorage
-from ..models import PortfolioItem, MetaStuff
+from ..models import PortfolioItem, MetaStuff, Product, Purchase
 from django.shortcuts import render, redirect
+from django.contrib.auth.mixins import LoginRequiredMixin
 from .s3 import s3_client
 from .util import resize_image, rp, update_private_url_single
 import datetime
@@ -63,8 +65,6 @@ def upload(request):
         return redirect('/')
 
 
-
-
 def update_profile(request):
     """ View for updating profile, starting for now just with bio """
     if request.method == "POST":
@@ -73,15 +73,18 @@ def update_profile(request):
         website_description = request.POST.get('website_description','')
         website_keywords = request.POST.get('website_keywords','')
         sale = True if request.POST.get('commission_sale', None) else False
-        sale_amount = request.POST.get('commission_sale_amount', 0)
-        sale_end = request.POST.get('commission_sale_end','')
         ms = MetaStuff.objects.all()[0]
         ms.website_title = website_title
         ms.website_description = website_description
         ms.website_keywords = website_keywords
         ms.sale = sale
+        sale_amount = request.POST.get('commission_sale_amount', 0)
+        sale_end = request.POST.get('commission_sale_end','')
         ms.sale_amount = sale_amount
-        ms.sale_end = datetime.datetime.strptime(sale_end, '%Y-%m-%d').date()
+        if sale:
+            ms.sale_end = datetime.datetime.strptime(sale_end, '%Y-%m-%d').date()
+        else:
+            ms.sale_end = datetime.datetime.now().date()
         ms.bio = bio
         ms.save()
         return redirect("/")
@@ -91,3 +94,46 @@ def update_profile(request):
             request=request,
             template_name='super/update_profile.html',
             context={'bio':bio, 'title': 'Update Website'})
+
+class ManageOrders(View, LoginRequiredMixin):
+    def get(self, request):
+        if not request.user.is_superuser:
+            return redirect('/')
+        all_orders = Purchase.objects.all()
+        return render(
+            request=request,
+            template_name='super/manage_orders.html',
+            context={'orders': all_orders}
+        )
+
+class UpdateOrder(View,LoginRequiredMixin):
+    def get(self, request, id):
+        if not request.user.is_authenticated:
+            return redirect('/')
+        return render(
+            request=request,
+            template_name='super/manage_order.html',
+            context={
+                'order': Purchase.objects.get(id=id),
+                'status_choices': Product.CommissionStatus.choices}
+        )
+    def post(self, request, id):
+        if not request.user.is_superuser:
+            return redirect('/')
+        try:
+            ''' update status and completion date (if complete) of order (i.e. product
+            associated with order) '''
+            status_choice = request.POST.get('status-choice', None)
+            completion_date = request.POST.get('completion-date', None)
+            if not completion_date:
+                completion_date = None
+            if not status_choice:
+                status_choice = "NS"
+            order = Purchase.objects.get(id=id)
+            product = order.product
+            product.status = status_choice
+            product.completion_date = completion_date
+            product.save()
+        except Exception as e:
+            print(e)
+        return self.get(request,id)

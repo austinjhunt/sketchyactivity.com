@@ -33,6 +33,16 @@ class Product(models.Model):
     price = models.FloatField()
     reference_image_filename = models.CharField(default='', max_length=100)
     s3_reference_image_url = models.URLField(max_length=500,default="")
+    class CommissionStatus(models.TextChoices):
+        NOT_STARTED = 'NS', _('Not Started Yet')
+        IN_PROGRESS = 'IP', _('In Progress')
+        COMPLETE = 'CMPLT', _('Complete')
+    status = models.CharField(
+        max_length=10,
+        choices=CommissionStatus.choices,
+        default=CommissionStatus.NOT_STARTED
+    )
+    completion_date = models.DateField(null=True,blank=True)
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)

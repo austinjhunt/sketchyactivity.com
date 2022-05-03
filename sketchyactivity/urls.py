@@ -36,6 +36,8 @@ urlpatterns = [
     path('pitem/<slug:pk>/delete', views.PortfolioItemDelete.as_view(), name='portfolio-item-delete'),
     path('pitem/<slug:id>', views.portfolio_item, name='portfolio-item'),
     path('portfolio/manage', views.PortfolioManage.as_view(), name='portfolio-manage'),
+    path('orders/manage/<slug:id>', views.UpdateOrder.as_view(), name='manage-order'),
+    path('orders/manage', views.ManageOrders.as_view(), name='manage-orders'),
     url(r'^media/(?P<path>.*)$', serve, {
             'document_root': settings.MEDIA_ROOT,
         }),

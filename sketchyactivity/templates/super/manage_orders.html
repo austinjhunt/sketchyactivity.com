@@ -3,23 +3,25 @@
 <div class="container-fluid">
 
     {% if orders.count > 0 %}
-    <h1 class="text-light">
-        Drawings You've Commissioned
-    </h1>
+    <h1 class="text-light">Manage Commissions</h1>
+    <hr/>
     <table class="table table-light table-striped text-center">
         <thead>
+            <th>Requestor</th>
             <th>Item</th>
             <th>Reference Image</th>
             <th>Type</th>
             <th>Description</th>
             <th>Price</th>
-            <th>Commissioned</th>
+            <th>Order Date</th>
             <th>Status</th>
             <th>Completed On</th>
+            <th>Options</th>
         </thead>
         <tbody>
             {% for o in orders %}
                 <tr>
+                    <td>{{o.user_profile.user.username}}</td>
                     <td>{{o.product.name}}</td>
                     <td>
                         {% if o.product.s3_reference_image_url %}
@@ -32,13 +34,20 @@
                     <td>{{o.product.description}}</td>
                     <td>${{o.product.price}}</td>
                     <td>{{o.timestamp}}</td>
-                    <td>{{o.product.get_status_display}}</td>
+                    <td>
+                        {{o.product.get_status_display}}</td>
                     <td>
                         {% if o.product.status == 'CMPLT' %}
                             {{o.product.completion_date}}
                         {% else %}
                             Not Complete
                         {% endif %}
+                    </td>
+                    <td>
+                        <a class="btn btn-sm btn-secondary"
+                        href="{% url 'manage-order' o.id %}" title="manage order {{o.id}}">
+                            <i class="fa fa-edit"></i> Update
+                        </a>
                     </td>
                 </tr>
             {% endfor %}

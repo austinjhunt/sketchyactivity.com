@@ -19,19 +19,10 @@ logger = logging.getLogger('stripe-integration')
 class AddToCartView(View, LoginRequiredMixin):
     def post(self, request):
         profile = UserProfile.objects.get(user=request.user)
-        print(profile)
-        print(request.FILES)
-        print(request.POST)
-        print(f'profile: {profile}')
-        print(request.FILES)
-        print(request.POST)
         if request.FILES.get('referenceImage', None) \
              and request.POST.get('type') and request.POST.get('price') \
                 and request.POST.get('numSubjects'):
-            print('condition satisfied')
             reference_image_file = request.FILES.get('referenceImage')
-            print('reference image file')
-            print(reference_image_file)
             fs = FileSystemStorage(location='', file_permissions_mode=0o655)
             filename = fs.save(reference_image_file.name, reference_image_file)
             response = s3_client.upload_file(
@@ -42,9 +33,7 @@ class AddToCartView(View, LoginRequiredMixin):
                     'ACL': 'private'
                 }
             )
-            print(f'Response from S3: {response}')
             commission_name = reference_image_file.name
-            print(f'Commission name: {commission_name}')
             try:
                 os.remove(filename)
             except Exception as e:
@@ -56,8 +45,6 @@ class AddToCartView(View, LoginRequiredMixin):
                 description = f'Traditional Drawing, {request.POST.get("size")}, {request.POST.get("numSubjects")} subjects'
             elif type == 'Digital':
                 description = f'Digital Drawing, {request.POST.get("numSubjects")} subjects'
-            print(f'{price},{type},{description}')
-            print('saving new product')
             new_product = Product(
                 name=commission_name,
                 description=description,
@@ -67,8 +54,6 @@ class AddToCartView(View, LoginRequiredMixin):
                 s3_reference_image_url=s3_reference_image_url
             )
             new_product.save()
-            print(new_product.id)
-
             update_private_url_product_reference_image(new_product, s3_client)
             cart = profile.cart
             cart.add(new_product)
