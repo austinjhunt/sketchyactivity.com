@@ -13,6 +13,6 @@ def s3context(request):
         'base_media_url':'',
         'preview_image': main_preview_image,
         'page_load_count': request.session.get('page_load_count'),
-        'meta': MetaStuff.objects.all()[0],
+        'meta': MetaStuff.objects.first(),
         'cart_items': cart_items
         }

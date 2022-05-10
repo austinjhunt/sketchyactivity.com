@@ -5,7 +5,7 @@ from django.utils.translation import gettext_lazy as _
 from django.dispatch import receiver
 from django.db.models.signals import post_save
 from django.contrib.auth.models import User
-
+import datetime
 class PortfolioItem(models.Model):
     tag = models.CharField(default='',max_length=100)
     filename = models.CharField(default='',max_length=100)
@@ -24,6 +24,11 @@ class MetaStuff(models.Model):
     sale_amount = models.FloatField(default=0)
     sale_start = models.DateField()
     sale_end = models.DateField()
+
+    def sale_still_active(self):
+        # current date is on or after sale_start and before or on sale_end
+        today = datetime.datetime.today().date()
+        return  today >= self.sale_start and today <= self.sale_end # sale active
 
 class Product(models.Model):
     """ Products that a user adds to their cart """

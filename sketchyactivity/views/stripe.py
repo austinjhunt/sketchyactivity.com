@@ -1,12 +1,14 @@
+from datetime import date
 from django.views.generic import View
 from django.http import JsonResponse
 from django.contrib.auth.mixins import LoginRequiredMixin
-from ..models import Price, Purchase, UserProfile, Product
+from ..models import MetaStuff, Price, Purchase, UserProfile, Product
 from django.shortcuts import redirect, render
 from .util import get_total_price_from_cart
 import stripe
 import json
 import logging
+import datetime
 from django.utils import timezone
 from django.conf import settings
 from django.core.files.storage import FileSystemStorage
@@ -68,6 +70,10 @@ class AddToCartView(View, LoginRequiredMixin):
                 size=size,
                 num_subjects=numSubjects
             ).amount
+            ms = MetaStuff.objects.first()
+            if ms.sale and ms.sale_still_active():
+                price = price * (1 - ms.sale_amount)
+
             # the above prevents front end user from manipulating the price directly.
             new_product = Product(
                 name=commission_name,
