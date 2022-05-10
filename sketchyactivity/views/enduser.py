@@ -32,7 +32,8 @@ class HomeView(View):
             context={
                 'featured': portfolio[0],
                 'title': 'Austin Hunt Portraiture',
-                'portfolio': portfolio,
+                'portfolio1': portfolio[:4],
+                'portfolio2': portfolio[4:],
                 'private_video_url': cache.get('updated_private_video_url')
                 }
         )
