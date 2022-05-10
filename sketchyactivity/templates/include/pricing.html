@@ -1,6 +1,6 @@
 {% load pricing %}
 <div class="container text-center" id="commissions">
-    <h1 class="pricing-header mt-2 mb-2">commissions</h1>
+    <h1 class="pricing-header mt-2 mb-2">commission me</h1>
     <div class="prices-container text-center">
         <h2 class="text-light">PORTRAITS MAKE GREAT GIFTS! <i class="fa fa-gift"></i> <i class="fa fa-smile"></i></h2>
          {% if meta.sale %}
@@ -9,7 +9,26 @@
             <strong style="color:red">{{meta.sale_end}}</strong>
         </h3>
         {% endif %}
-        <h4>You can click on one of the items to add it to your cart!</h4>
+        {% if user.is_authenticated %}
+            <p class="text-light my-2" style="font-size: 1.2rem;">
+                You can click on one of the items to add it to your cart!
+                For example, if you want an 8.5x12 inch drawing of one person,
+                click the top left button and upload the image you want me to draw,
+                then submit! Then, you can find the item in
+                <a href="{% url 'checkout' %}">your cart</a>, where you can check out
+                with a card! You can also get to your cart by clicking the Profile
+                dropdown in the top navigation. If you have anything in your cart, there
+                will be a little red badge indicating how many items are in there.</p>
+            <p class="text-light my-2" style="font-size: 1.2rem;" >
+                On your <a href="{% url 'orders' %}">My Commissions</a> page (also in the Profile dropdown), you can view a record of all commissions
+                you've requested, and you can even monitor the status of active commissions!</p>
+        {% else %}
+        <p class="text-light my-2" style="font-size: 1.2rem;">
+                It looks like you're not logged in. If you would like to commission me for a custom
+                drawing, please <a href="{% url 'signup' %}">create a free account</a> and then come back to this page.
+                Having an account means you can pay with card, keep a record of your commissions, and even monitor the status of your commissions.
+        </p>
+        {% endif %}
         <table style="margin:2rem auto" class="m-0-auto table border-white table-striped">
             <thead class="thead-dark">
                 <tr>
@@ -36,7 +55,7 @@
                         {% with price=s|get_traditional_price:ns %}
                             {% if sale %}
                                 {% if user.is_authenticated %}
-                                <button type="button" class="btn btn-dark" data-toggle="tooltip" data-placement="top" title="Add to cart" onclick="showAddToCartModal({type: 'traditional', numSubjects: '{{ns}}', size: '{{s}}', price: '{{price|on_sale:sale_amount}}'})">
+                                <button type="button" class="btn btn-dark" data-toggle="tooltip" data-placement="top" title="Add to cart" onclick="showAddToCartModal({style: 'traditional', numSubjects: '{{ns}}', size: '{{s}}', price: '{{price|on_sale:sale_amount}}'})">
                                     <strike style='color:red'>${{price}}</strike> ${{price|on_sale:sale_amount}}
                                 </button>
                                 {% else %}
@@ -44,7 +63,7 @@
                                 {% endif %}
                             {% else %}
                                 {% if user.is_authenticated %}
-                                <button type="button" class="btn btn-dark" data-toggle="tooltip" data-placement="top" title="Add to cart" onclick="showAddToCartModal({type: 'traditional', numSubjects: '{{ns}}',  size: '{{s}}', price: '{{price}}'})">${{price}}</button>
+                                <button type="button" class="btn btn-dark" data-toggle="tooltip" data-placement="top" title="Add to cart" onclick="showAddToCartModal({style: 'traditional', numSubjects: '{{ns}}',  size: '{{s}}', price: '{{price}}'})">${{price}}</button>
                                 {% else %}
                                 ${{price}}
                                 {% endif %}
@@ -74,7 +93,7 @@
                             {% with price=ns|get_digital_price %}
                                 {% if sale %}
                                     {% if user.is_authenticated %}
-                                    <button type="button" class="btn btn-dark" data-toggle="tooltip" data-placement="top" title="Add to cart" onclick="showAddToCartModal({type: 'digital', numSubjects: '{{ns}}', price: '{{price|on_sale:sale_amount}}'})">
+                                    <button type="button" class="btn btn-dark" data-toggle="tooltip" data-placement="top" title="Add to cart" onclick="showAddToCartModal({style: 'digital', numSubjects: '{{ns}}', price: '{{price|on_sale:sale_amount}}'})">
                                         <strike style='color:red'>${{price}}</strike> ${{price|on_sale:sale_amount}}
                                     </button>
                                     {% else %}
@@ -82,7 +101,7 @@
                                     {% endif %}
                                 {% else %}
                                     {% if user.is_authenticated %}
-                                        <button type="button" class="btn btn-dark" data-toggle="tooltip" data-placement="top" title="Add to cart" onclick="showAddToCartModal({type: 'digital', numSubjects: '{{ns}}', price: '{{price}}'})">
+                                        <button type="button" class="btn btn-dark" data-toggle="tooltip" data-placement="top" title="Add to cart" onclick="showAddToCartModal({style: 'digital', numSubjects: '{{ns}}', price: '{{price}}'})">
                                             ${{price}}
                                         </button>
                                     {% else %}

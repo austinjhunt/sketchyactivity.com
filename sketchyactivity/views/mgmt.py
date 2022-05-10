@@ -5,7 +5,7 @@ from ..models import PortfolioItem, MetaStuff, Product, Purchase
 from django.shortcuts import render, redirect
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .s3 import s3_client
-from .util import resize_image, rp, update_private_url_single
+from .util import resize_image, rp, update_private_url_single, update_private_url_product_reference_image
 import datetime
 import os
 
@@ -100,6 +100,8 @@ class ManageOrders(View, LoginRequiredMixin):
         if not request.user.is_superuser:
             return redirect('/')
         all_orders = Purchase.objects.all()
+        for o in all_orders:
+            update_private_url_product_reference_image(item=o.product, s3_client=s3_client)
         return render(
             request=request,
             template_name='super/manage_orders.html',

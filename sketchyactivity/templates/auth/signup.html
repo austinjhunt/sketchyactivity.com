@@ -1,15 +1,14 @@
 {% extends "master.html" %}
 {% load static %}
 {% block content %}
-<div class="signupformcontainer">
+<div class="bg-black position-relative pt-5 text-center">
     <br /><br /><br />
-    <div class="blackcontainer">
-        <h1>Sign Up</h1>
-        <h2>stay updated on new work</h2>
-        <form class="loginform" method="post" action="/signup">
+    <div class="bg-black position-relative">
+        <h2 class="text-light font-weight-bold">Create a SketchyActivity Account</h2>
+        <form class="loginform" method="post" action="{% url 'signup' %}">
             {% csrf_token %}
             {{ form.as_table }}
-            <input style="background:red; color: white;" type="submit" value="Submit">
+            <input style="background:rgba(68, 8, 8, 0.875); color: white; font-size: 1.2rem" type="submit" value="Submit">
         </form>
     </div>
 </div><!-- END COLORLIB-PAGE -->

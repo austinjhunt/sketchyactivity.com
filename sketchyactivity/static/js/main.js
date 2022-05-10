@@ -272,11 +272,6 @@ if (page == "home") {
     url: "/notify",
   });
 } else if (page == "login" || page == "signup") {
-  // set html and body to full height
-  $("html").css({ height: "100%" });
-  $("body").css({ height: "100%" });
-  if (page == "login") $(".loginformcontainer").css({ height: "100%" });
-  else $(".signupformcontainer").css({ height: "100%" });
 } else if (page == "messaging") {
   $("html").css({ height: "100%" });
   $("body").css({ height: "100%" });
@@ -354,15 +349,15 @@ let showAddToCartModal = (data) => {
   let modal = document.querySelector(".commission-reference-image-modal");
   let form = modal.querySelector("form");
   // prepopulate what's already been selected into the modal form
-  form.querySelector("input#type").value = data["type"];
+  form.querySelector("input#style").value = data["style"];
   form.querySelector("input#price").value = data["price"];
   form.querySelector("input#numSubjects").value = data["numSubjects"];
-  if (data["type"] == "digital") {
+  if (data["style"] == "digital") {
     // size is irrelevant for digital art
     form.querySelector("input#size").setAttribute("disabled", true);
-    form.querySelector("input#size").setAttribute("required", false);
+    form.querySelector("input#size").removeAttribute("required");
   } else {
-    form.querySelector("input#size").setAttribute("disabled", false);
+    form.querySelector("input#size").removeAttribute("disabled");
     form.querySelector("input#size").setAttribute("required", true);
     form.querySelector("input#size").value = data["size"];
   }

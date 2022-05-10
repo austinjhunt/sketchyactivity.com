@@ -33,7 +33,8 @@ class HomeView(View):
                 'featured': portfolio[0],
                 'title': 'Austin Hunt Portraiture',
                 'portfolio1': portfolio[:4],
-                'portfolio2': portfolio[4:],
+                'portfolio2': portfolio[4:8],
+                'portfolio3': portfolio[8:],
                 'private_video_url': cache.get('updated_private_video_url')
                 }
         )

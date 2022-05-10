@@ -1,11 +1,11 @@
 {% extends "master.html" %} {% block content %}
-<div class="loginformcontainer">
+<div class="bg-black position-relative pt-5 text-center">
     <br/><br/><br/>
-    <div class="blackcontainer">
-        <h1 style="font-size:4vh; margin-bottom: 3px;">Log In</h1>
-        <form class="loginform" method="post" action="/login">
+    <div class="bg-black position-relative">
+        <h2 class="text-light font-weight-bold">Log In to SketchyActivity</h2>
+        <form class="loginform" method="post" action="{% url 'login' %}">
             {% csrf_token %} {{ form.as_table }}
-            <input style="background:red; color: white;" type="submit" value="Submit">
+            <input style=" background:rgba(68, 8, 8, 0.875); font-size: 1.2rem; color: white;" type="submit" value="Submit">
         </form>
     </div>
 </div>

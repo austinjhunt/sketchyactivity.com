@@ -63,6 +63,7 @@ class Purchase(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     user_profile = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
     timestamp = models.DateTimeField(auto_created=True) # save as now when purchase created
+
 class Price(models.Model):
     amount = models.FloatField(default=0)
     description = models.TextField(default="")

@@ -355,9 +355,9 @@ let showAddToCartModal = (data) => {
   if (data["style"] == "digital") {
     // size is irrelevant for digital art
     form.querySelector("input#size").setAttribute("disabled", true);
-    form.querySelector("input#size").removeAttribute("required");
+    form.querySelector("input#size").setAttribute("required", false);
   } else {
-    form.querySelector("input#size").removeAttribute("disabled");
+    form.querySelector("input#size").setAttribute("disabled", false);
     form.querySelector("input#size").setAttribute("required", true);
     form.querySelector("input#size").value = data["size"];
   }

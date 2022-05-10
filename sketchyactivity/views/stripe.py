@@ -1,7 +1,7 @@
 from django.views.generic import View
 from django.http import JsonResponse
 from django.contrib.auth.mixins import LoginRequiredMixin
-from ..models import Purchase, UserProfile, Product
+from ..models import Price, Purchase, UserProfile, Product
 from django.shortcuts import redirect, render
 from .util import get_total_price_from_cart
 import stripe
@@ -20,8 +20,24 @@ class AddToCartView(View, LoginRequiredMixin):
     def post(self, request):
         profile = UserProfile.objects.get(user=request.user)
         if request.FILES.get('referenceImage', None) \
-             and request.POST.get('type') and request.POST.get('price') \
+             and request.POST.get('style') and request.POST.get('price') \
                 and request.POST.get('numSubjects'):
+            style = request.POST.get('style').capitalize()
+            print(f'style={style}')
+            numSubjects = int(request.POST.get("numSubjects"))
+            print(f'numSubjects={numSubjects}')
+            if style == 'Traditional':
+                print('traditional, getting size')
+                size = request.POST.get("size")
+                print(f'size={size}')
+                description = f'Traditional Drawing, {size}, {numSubjects} subjects'
+            elif style == 'Digital':
+                size = 'n/a'
+                print(f'size=n/a')
+                description = f'Digital Drawing, {numSubjects} subjects'
+            else:
+                print(f'style=AAA{style}AAA')
+            ## save the reference image file
             reference_image_file = request.FILES.get('referenceImage')
             fs = FileSystemStorage(location='', file_permissions_mode=0o655)
             filename = fs.save(reference_image_file.name, reference_image_file)
@@ -39,16 +55,24 @@ class AddToCartView(View, LoginRequiredMixin):
             except Exception as e:
                 logger.error(e)
             s3_reference_image_url = ""
-            price = round(float(request.POST.get('price')), 2)
-            type = request.POST.get('type').capitalize()
-            if type == 'Traditional':
-                description = f'Traditional Drawing, {request.POST.get("size")}, {request.POST.get("numSubjects")} subjects'
-            elif type == 'Digital':
-                description = f'Digital Drawing, {request.POST.get("numSubjects")} subjects'
+            ## end saving reference image file
+
+            # calculate the price based on the selection
+            style_map = {
+                'Traditional': 'TR',
+                'Digital': 'DI'
+            }
+            print(f'searching for price with style, size, num_subjects = ({style},{size},{numSubjects})')
+            price = Price.objects.get(
+                style=style_map[style],
+                size=size,
+                num_subjects=numSubjects
+            ).amount
+            # the above prevents front end user from manipulating the price directly.
             new_product = Product(
                 name=commission_name,
                 description=description,
-                type=type,
+                type=style,
                 price=price,
                 reference_image_filename=commission_name,
                 s3_reference_image_url=s3_reference_image_url
@@ -108,6 +132,8 @@ class ClearCartView(View, LoginRequiredMixin):
 class CheckoutView(View, LoginRequiredMixin):
     def get(self, request):
         cart = UserProfile.objects.get(user=request.user).cart
+        for order_item in cart.all():
+            update_private_url_product_reference_image(order_item, s3_client)
         total = get_total_price_from_cart(cart)
         return render(
             request=request,
@@ -144,6 +170,8 @@ class OrdersView(View, LoginRequiredMixin):
     def get(self, request):
         profile = UserProfile.objects.get(user=request.user)
         orders = Purchase.objects.filter(user_profile=profile)
+        for order in orders:
+            update_private_url_product_reference_image(order.product, s3_client)
         return render(
             request=request,
             template_name='stripe/orders.html',

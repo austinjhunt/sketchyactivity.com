@@ -11,6 +11,7 @@ import logging
 logger = logging.getLogger('sketchyactivity')
 MAX_EXPIRATION_ONE_WEEK_SECS = 604800
 
+
 def get_bio():
     """ Get bio from meta stuff model """
     return MetaStuff.objects.all()[0].bio
