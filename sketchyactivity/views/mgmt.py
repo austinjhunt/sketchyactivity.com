@@ -5,7 +5,7 @@ from ..models import PortfolioItem, MetaStuff, Product, Purchase
 from django.shortcuts import render, redirect
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .s3 import s3_client
-from .util import resize_image, rp, update_private_url_single, update_private_url_product_reference_image
+from .util import resize_image, rp, update_private_url_profile_image, update_private_url_single, update_private_url_product_reference_image
 import datetime
 import os
 
@@ -64,11 +64,42 @@ def upload(request):
     else:
         return redirect('/')
 
+def update_profile_image(request): 
+    """ Update profile image """
+    if request.method == "POST": 
+        ms = MetaStuff.objects.first()
+        profile_image_file = request.FILES['profile_image_file']
+        fs = FileSystemStorage(location='', file_permissions_mode=0o655)
+        filename = fs.save(profile_image_file.name, profile_image_file) 
+        if ms.profile_image_filename:
+            # Delete existing profile photo if exists before uploading new one 
+            s3_client.delete_object(
+                Bucket='sketchyactivitys3', 
+                Key=f'media/admin/{ms.profile_image_filename}'
+            )
+        response1 = s3_client.upload_file(
+            filename,
+            'sketchyactivitys3',
+            f'media/admin/{profile_image_file.name}',
+            ExtraArgs={
+                'ACL':'private'
+            }
+        ) 
+        ms.profile_image_filename = profile_image_file.name 
+        ms.profiel_image_private_url = ""
+        update_private_url_profile_image(ms, s3_client=s3_client)
+        return redirect('about')
+    elif request.method == "GET": 
+        return render(
+            request=request,
+            template_name='super/update_profile_image.html',
+            context={}
+        )
 
 def update_profile(request):
     """ View for updating profile, starting for now just with bio """
     if request.method == "POST":
-        bio = request.POST.get('bio','')
+        bio = request.POST.get('bio','') 
         website_title = request.POST.get('website_title','')
         website_description = request.POST.get('website_description','')
         website_keywords = request.POST.get('website_keywords','')
@@ -85,8 +116,8 @@ def update_profile(request):
             ms.sale_end = datetime.datetime.strptime(sale_end, '%Y-%m-%d').date()
         else:
             ms.sale_end = datetime.datetime.now().date()
-        ms.bio = bio
-        ms.save()
+        ms.bio = bio 
+        ms.save() 
         return redirect("/")
     else:
         bio = MetaStuff.objects.all()[0].bio

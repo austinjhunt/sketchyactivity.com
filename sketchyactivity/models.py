@@ -17,6 +17,8 @@ class PortfolioItem(models.Model):
 
 class MetaStuff(models.Model):
     bio = models.TextField(default='')
+    profile_image_filename = models.CharField(default='', max_length=100)
+    profile_image_private_url = models.URLField(max_length=500, default="")
     website_title = models.CharField(max_length=128,default="")
     website_description = models.TextField(default="")
     website_keywords = models.TextField(default="")

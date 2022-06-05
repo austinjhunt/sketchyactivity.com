@@ -85,6 +85,15 @@ def update_private_url_single(item,s3_client):
                                                 ExpiresIn=MAX_EXPIRATION_ONE_WEEK_SECS)
     item.save()
 
+def update_private_url_profile_image(item,s3_client):
+    """ Update the private URL for the profile image stored in media/admin/."""
+    item.profile_image_private_url = s3_client.generate_presigned_url('get_object',
+                                                Params={
+                                                    'Bucket': 'sketchyactivitys3',
+                                                    'Key': f'media/admin/{item.profile_image_filename}'},
+                                                ExpiresIn=MAX_EXPIRATION_ONE_WEEK_SECS) 
+    item.save()
+
 def update_private_url_product_reference_image(item, s3_client):
     """ Update the private reference image URL for single Product """
     logger.info('getting reference image s3 private url')

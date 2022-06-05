@@ -97,4 +97,5 @@ class AboutView(TemplateView):
     def get_context_data(self, **kwargs):
         data = super().get_context_data(**kwargs)
         data['bio'] = get_bio()
+        data['profile_image'] = MetaStuff.objects.first().profile_image_private_url
         return data

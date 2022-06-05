@@ -25,7 +25,10 @@
             <i class="fa fa-cash-register"></i> Manage Commissions
           </a>
           <a class="dropdown-item" href="{% url 'update-profile' %}"><i class="fa fa-edit"></i> Edit Profile</a>
-          <a class="dropdown-item" href="{% url 'portfolio-manage' %}"><i class="fa fa-edit"></i> Manage Portfolio Items</a>
+          <a class="dropdown-item" href="{% url 'update-profile-image' %}"><i class="fa fa-edit"></i> Edit Profile
+            Image</a>
+          <a class="dropdown-item" href="{% url 'portfolio-manage' %}"><i class="fa fa-edit"></i> Manage Portfolio
+            Items</a>
         </div>
       </li>
       {% endif %}
@@ -55,8 +58,8 @@
         <a class="nav-link" href="{% url 'commissions' %}">Commission Me</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" rel="noopener" target="_blank"
-        href="https://www.redbubble.com/people/austinjhunt/shop"> <i class="fa fa-tshirt"></i> Merch</a>
+        <a class="nav-link" rel="noopener" target="_blank" href="https://www.redbubble.com/people/austinjhunt/shop"> <i
+            class="fa fa-tshirt"></i> Merch</a>
       </li>
 
       {% if user.is_authenticated %}
