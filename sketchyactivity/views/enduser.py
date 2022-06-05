@@ -66,10 +66,9 @@ class CommissionsView(View):
             amount = digital.amount if not sale_active else  ms.get_sale_price(original_price=digital.amount)
 
             drawing_choices.append({
-                'value': f'di-{traditional.num_subjects}',
+                'value': f'di-{digital.num_subjects}',
                 'display_name': f'Digital | {digital.num_subjects} {people_person_string} | {amount}'
-            }) 
-        print(drawing_choices)
+            })  
         return render(
             request,
             'commissions.html',
