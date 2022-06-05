@@ -82,6 +82,7 @@ class Purchase(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     user_profile = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
     timestamp = models.DateTimeField(auto_created=True) # save as now when purchase created
+    test = models.BooleanField(default=False) # indicate whether this was used for testing
 
 class Price(models.Model):
     amount = models.FloatField(default=0)

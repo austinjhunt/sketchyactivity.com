@@ -269,5 +269,11 @@ CORS_ORIGIN_WHITELIST = [
 ]
 
 # Stripe Payment settings
-STRIPE_API_KEY = os.environ.get('STRIPE_API_KEY')
-STRIPE_PUBLISHABLE_KEY = os.environ.get('STRIPE_PUBLISHABLE_KEY')
+# see these docs for testing/simulating payments with Stripe https://stripe.com/docs/testing
+STRIPE_TEST_MODE = int(os.environ.get('STRIPE_TEST_MODE','0'))
+if STRIPE_TEST_MODE:
+    STRIPE_API_KEY = os.environ.get('STRIPE_TEST_API_KEY')
+    STRIPE_PUBLISHABLE_KEY = os.environ.get('STRIPE_TEST_PUBLISHABLE_KEY')
+else:
+    STRIPE_API_KEY = os.environ.get('STRIPE_API_KEY')
+    STRIPE_PUBLISHABLE_KEY = os.environ.get('STRIPE_PUBLISHABLE_KEY')

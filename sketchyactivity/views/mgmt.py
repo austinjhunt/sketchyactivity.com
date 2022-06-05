@@ -1,3 +1,4 @@
+from operator import is_
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import View
 from django.core.files.storage import FileSystemStorage
@@ -158,6 +159,10 @@ class UpdateOrder(View,LoginRequiredMixin):
             associated with order) '''
             status_choice = request.POST.get('status-choice', None)
             completion_date = request.POST.get('completion-date', None)
+            is_test_purchase = request.POST.get('is-test-purchase', False) 
+            if is_test_purchase:
+                is_test_purchase = True
+            print(is_test_purchase) 
             if not completion_date:
                 completion_date = None
             if not status_choice:
@@ -165,8 +170,10 @@ class UpdateOrder(View,LoginRequiredMixin):
             order = Purchase.objects.get(id=id)
             product = order.product
             product.status = status_choice
-            product.completion_date = completion_date
+            product.completion_date = completion_date 
             product.save()
+            order.test = is_test_purchase
+            order.save()
         except Exception as e:
             print(e)
         return self.get(request,id)
