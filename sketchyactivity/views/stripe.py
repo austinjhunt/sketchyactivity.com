@@ -19,101 +19,92 @@ import os
 logger = logging.getLogger('stripe-integration')
 
 class AddToCartView(View, LoginRequiredMixin):
-    def post(self, request):
+
+    def save_new_product(self, request): 
+        size_style_price_choice = request.POST.get('size-style-price-choice')
+        commission_name = request.POST.get('commission-name')
+        _split = size_style_price_choice.split('-')
+        style = _split[0]
+        if style == 'tr': # traditional. format: tr-WxHin-numSubjects
+            size = _split[1]
+            num_subjects = _split[2] 
+            description = f'Traditional Drawing, {size}, {num_subjects} subjects'
+        elif style == 'di': # digital. no size. di-numSubjects
+            num_subjects = _split[1]
+            size = 'n/a'
+            description = f'Digital Drawing, {num_subjects} subjects'
+        reference_image_filename = request.FILES.get('referenceImage').name 
+        s3_reference_image_url = ""  
+        # get current price based on selection
+        # prevents front end user from manipulating the price directly.
+        price = Price.objects.get(
+            style=style.upper(),
+            size=size,
+            num_subjects=num_subjects
+        ).amount
+        ms = MetaStuff.objects.first()
+        if ms.sale_still_active():
+            price = ms.get_sale_price(original_price=price)  
+        new_product = Product(
+            name=commission_name,
+            description=description,
+            type=style,
+            price=price,
+            reference_image_filename=reference_image_filename,
+            s3_reference_image_url=s3_reference_image_url
+        )
+        new_product.save()
+        return new_product
+
+    def save_reference_image(self, request): 
+        ## save the reference image file
+        reference_image_file = request.FILES.get('referenceImage')
+        fs = FileSystemStorage(location='', file_permissions_mode=0o655)
+        filename = fs.save(reference_image_file.name, reference_image_file)
+        response = s3_client.upload_file(
+            filename,
+            'sketchyactivitys3',
+            f'media/commission-reference-images/{reference_image_file.name}',
+            ExtraArgs={
+                'ACL': 'private'
+            }
+        ) 
+        try:
+            os.remove(filename)
+        except Exception as e:
+            logger.error(e) 
+        return response 
+
+    def post(self, request): 
         profile = UserProfile.objects.get(user=request.user)
         if request.FILES.get('referenceImage', None) \
-             and request.POST.get('style') and request.POST.get('price') \
-                and request.POST.get('numSubjects'):
-            style = request.POST.get('style').capitalize()
-            print(f'style={style}')
-            numSubjects = int(request.POST.get("numSubjects"))
-            print(f'numSubjects={numSubjects}')
-            if style == 'Traditional':
-                print('traditional, getting size')
-                size = request.POST.get("size")
-                print(f'size={size}')
-                description = f'Traditional Drawing, {size}, {numSubjects} subjects'
-            elif style == 'Digital':
-                size = 'n/a'
-                print(f'size=n/a')
-                description = f'Digital Drawing, {numSubjects} subjects'
-            else:
-                print(f'style=AAA{style}AAA')
-            ## save the reference image file
-            reference_image_file = request.FILES.get('referenceImage')
-            fs = FileSystemStorage(location='', file_permissions_mode=0o655)
-            filename = fs.save(reference_image_file.name, reference_image_file)
-            response = s3_client.upload_file(
-                filename,
-                'sketchyactivitys3',
-                f'media/commission-reference-images/{reference_image_file.name}',
-                ExtraArgs={
-                    'ACL': 'private'
-                }
-            )
-            commission_name = reference_image_file.name
-            try:
-                os.remove(filename)
-            except Exception as e:
-                logger.error(e)
-            s3_reference_image_url = ""
-            ## end saving reference image file
-
-            # calculate the price based on the selection
-            style_map = {
-                'Traditional': 'TR',
-                'Digital': 'DI'
-            }
-            print(f'searching for price with style, size, num_subjects = ({style},{size},{numSubjects})')
-            price = Price.objects.get(
-                style=style_map[style],
-                size=size,
-                num_subjects=numSubjects
-            ).amount
-            ms = MetaStuff.objects.first()
-            if ms.sale and ms.sale_still_active():
-                price = price * (1 - ms.sale_amount)
-
-            # the above prevents front end user from manipulating the price directly.
-            new_product = Product(
-                name=commission_name,
-                description=description,
-                type=style,
-                price=price,
-                reference_image_filename=commission_name,
-                s3_reference_image_url=s3_reference_image_url
-            )
-            new_product.save()
+            and request.POST.get('size-style-price-choice', None) \
+            and request.POST.get('size-style-price-choice') != 'null' \
+            and request.POST.get('commission-name', None): 
+            self.save_reference_image(request=request)
+            new_product = self.save_new_product(request=request)
             update_private_url_product_reference_image(new_product, s3_client)
             cart = profile.cart
             cart.add(new_product)
             profile.save()
-        # this is triggered from the commissions page only;
-        # allow the user to stay on that page
-        return redirect('commissions')
-
+            return redirect('checkout')
+        else:
+            return redirect('commissions')
+ 
 
 class RemoveFromCartView(View, LoginRequiredMixin):
-    def post(self, request):
-        data = json.loads(request.body.decode())
+    def get(self, request, product_id): 
         profile = UserProfile.objects.get(user=request.user)
-        try:
-            productId = data['productId']
+        try: 
             cart = profile.cart
-            productToRemove = Product.objects.get(id=productId)
+            productToRemove = Product.objects.get(id=product_id)
             description, price = productToRemove.description, productToRemove.price
-            cart.remove(Product.objects.get(id=productId))
+            cart.remove(Product.objects.get(id=product_id))
             productToRemove.delete()
-            profile.save()
-            response = {
-                'result': f'{description} (${price}) removed from cart',
-                'totalCartItems': cart.count(),
-                'cartTotalPrice': get_total_price_from_cart(cart)
-                }
+            profile.save() 
         except Exception as e:
-            logger.error(e)
-            response = {'result': f'Error: {e}' }
-        return JsonResponse(response)
+            logger.error(e) 
+        return redirect('commissions')
 
 class ClearCartView(View, LoginRequiredMixin):
     def post(self, request):

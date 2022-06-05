@@ -45,7 +45,7 @@ urlpatterns = [
 
     path('checkout', views.CheckoutView.as_view(), name='checkout'),
     path('add-to-cart/', views.AddToCartView.as_view(),name='add-to-cart'),
-    path('remove-from-cart/', views.RemoveFromCartView.as_view(),name='remove-from-cart'),
+    path('remove-from-cart/<slug:product_id>', views.RemoveFromCartView.as_view(),name='remove-from-cart'),
     path('clear-cart/', views.ClearCartView.as_view(), name='clear-cart'),
     path('create-payment-intent/', views.CreatePaymentIntentView.as_view(), name='create-payment-intent'),
     path('payment-complete', views.PaymentCompleteView.as_view(), name='payment-complete'),

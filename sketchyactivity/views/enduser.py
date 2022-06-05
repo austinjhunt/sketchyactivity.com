@@ -38,10 +38,11 @@ class HomeView(View):
                 'private_video_url': cache.get('updated_private_video_url')
                 }
         )
-
+ 
 class CommissionsView(View):
-    def get(self, request):
-        print('GET')
+    def get(self, request):  
+        ms = MetaStuff.objects.first()
+        sale_active = ms.sale_still_active() 
         traditional_prices = Price.objects.filter(style='TR')
         traditional_unique_sizes = traditional_prices.order_by('size').distinct().values_list('size', flat=True)
         traditional_unique_sizes = sorted(traditional_unique_sizes, key=lambda el: float(el.split('x')[0]))
@@ -49,11 +50,32 @@ class CommissionsView(View):
 
         digital_prices = Price.objects.filter(style='DI')
         digital_unique_num_subjects = digital_prices.order_by('num_subjects').distinct().values_list('num_subjects', flat=True)
+        
+        drawing_choices = []
+
+        for traditional in Price.objects.filter(style='TR'):
+            people_person_string = 'people' if traditional.num_subjects > 1 else 'person'
+            amount = traditional.amount if not sale_active else ms.get_sale_price(original_price=traditional.amount)
+            
+            drawing_choices.append({
+                'value': f'tr-{traditional.size}-{traditional.num_subjects}',
+                'display_name': f'Ballpoint Pen | {traditional.size} | {traditional.num_subjects} {people_person_string} | ${amount}'
+            })
+        for digital in Price.objects.filter(style='DI'):
+            people_person_string = 'people' if digital.num_subjects > 1 else 'person' 
+            amount = digital.amount if not sale_active else  ms.get_sale_price(original_price=digital.amount)
+
+            drawing_choices.append({
+                'value': f'di-{traditional.num_subjects}',
+                'display_name': f'Digital | {digital.num_subjects} {people_person_string} | {amount}'
+            }) 
+        print(drawing_choices)
         return render(
             request,
             'commissions.html',
             context={
                 'title': 'Austin Hunt Portraiture Commissions',
+                'drawing_choices': drawing_choices,
                 'traditional_prices': traditional_prices,
                 'traditional_unique_sizes':  traditional_unique_sizes,
                 'traditional_unique_num_subjects':  traditional_unique_num_subjects ,

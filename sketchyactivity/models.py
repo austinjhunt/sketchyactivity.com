@@ -5,7 +5,13 @@ from django.utils.translation import gettext_lazy as _
 from django.dispatch import receiver
 from django.db.models.signals import post_save
 from django.contrib.auth.models import User
+import boto3
+from botocore.client import Config
+from django.conf import settings
 import datetime
+import logging 
+logger = logging.getLogger('sketchyactivity')
+
 class PortfolioItem(models.Model):
     tag = models.CharField(default='',max_length=100)
     filename = models.CharField(default='',max_length=100)
@@ -30,7 +36,11 @@ class MetaStuff(models.Model):
     def sale_still_active(self):
         # current date is on or after sale_start and before or on sale_end
         today = datetime.datetime.today().date()
-        return  today >= self.sale_start and today <= self.sale_end # sale active
+        return self.sale and today >= self.sale_start and today <= self.sale_end # sale active
+
+    def get_sale_price(self, original_price):
+        """ return the sale price of an item given original price """
+        return round(original_price * (1 - self.sale_amount), 2)
 
 class Product(models.Model):
     """ Products that a user adds to their cart """
@@ -50,6 +60,8 @@ class Product(models.Model):
         default=CommissionStatus.NOT_STARTED
     )
     completion_date = models.DateField(null=True,blank=True)
+
+ 
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -86,3 +98,47 @@ class Price(models.Model):
         choices=DrawingStyle.choices,
         default=DrawingStyle.TRADITIONAL
     )
+
+## Receivers / listeners
+@receiver(models.signals.post_delete, sender=Product)
+def auto_delete_commission_reference_image_on_product_delete(sender, instance, **kwargs):
+    """ When product is deleted, automatically use S3 client to delete S3 file corresponding 
+    to product (the reference image) """ 
+    s3_client = boto3.client(
+        's3',
+        aws_access_key_id=settings.AWS_ACCESS_KEY_ID,
+        aws_secret_access_key=settings.AWS_SECRET_ACCESS_KEY,
+        region_name='us-east-2',
+        config=Config(signature_version='s3v4'))
+    try:
+        s3_client.delete_object(
+            Bucket='sketchyactivitys3', 
+            Key=f'media/commission-reference-images/{instance.reference_image_filename}'
+        )
+    except Exception as e: 
+        logger.error(str(e))
+
+@receiver(models.signals.post_delete, sender=PortfolioItem)
+def auto_delete_image_files_on_portfolio_item_delete(sender, instance, **kwargs):
+    """ When product is deleted, automatically use S3 client to delete S3 file corresponding 
+    to product (the reference image) """ 
+    s3_client = boto3.client(
+        's3',
+        aws_access_key_id=settings.AWS_ACCESS_KEY_ID,
+        aws_secret_access_key=settings.AWS_SECRET_ACCESS_KEY,
+        region_name='us-east-2',
+        config=Config(signature_version='s3v4'))
+    try:
+        s3_client.delete_object(
+            Bucket='sketchyactivitys3', 
+            Key=f'media/drawings/{instance.filename}'
+        )
+    except Exception as e: 
+        logger.error(str(e))
+    try:
+        s3_client.delete_object(
+            Bucket='sketchyactivitys3', 
+            Key=f'media/copied_smaller_drawings/{instance.filename}'
+        )
+    except Exception as e: 
+        logger.error(str(e))

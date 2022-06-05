@@ -18,62 +18,76 @@
   </h2>
   {% else %}
   <div>
-    <h2 class="text-light mb-3"> Checkout </h2>
-    <table class="w-100 table table-light table-striped rounded text-center">
-      <thead class="rounded">
-        <tr>
-          <th>Item</th>
-          <th>Reference</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Price (USD)</th>
-          <th>Options</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for item in cart_items %}
-          <tr data-productid="{{item.id}}">
-            <td>{{item.name}}</td>
-            <td>
-              <img class="reference-image-preview" src="{{item.s3_reference_image_url}}" alt="{{item.name}} reference">
-            </td>
-            <td>{{item.type}}</td>
-            <td>{{item.description}}</td>
-            <td>${{item.price}}</td>
-            <td>
-              <button onclick="removeFromCart(this,'{{item.id}}')" class="btn btn-danger">
-                <i class="fa fa-times"></i> Remove
-              </button>
-            </td>
-          </tr>
-        {% endfor %}
-      </tbody>
-      <tfoot>
-        <tr>
-          <td colspan="3" class="text-center">Total</td>
-          <td class="cart-total-price">${{total|convert_stripe_price_to_userfriendly_price}}</td>
-          <td></td>
-        </tr>
-      </tfoot>
-    </table>
+    <h3 class="text-light mb-3"> Checkout </h3>
+    <div class="row my-4">
+      {% for item in cart_items %}
+      <div class="cart-item-card card text-center col-xs-12 col-md-3 ">
+        <img class="reference-image-preview card-img-top" src="{{item.s3_reference_image_url}}"
+          alt="{{item.name}} reference" style="width: fit-content; margin:0 auto;">
+        <div class="card-body">
+          <h5 class="card-title">{{item.name}}, ${{item.price}}</h5>
+          <p class="card-text text-dark">{{item.description}}</p>
+          <a href="{% url 'remove-from-cart' item.id %}" title="remove from cart" class="btn btn-danger">Remove</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
 
-    <h4 class="font-weight-bold my-3">Billing</h4>
-    <div class="card mx-5">
+
+
+    <h4 class="text-light mt-3 mb-1 cart-total">Commission Total: ${{total|convert_stripe_price_to_userfriendly_price}}
+    </h4>
+    <style>
+      .cart-item-card:hover {
+        transform: rotate(5deg);
+        transition: 0.1s linear;
+      }
+
+      .cart-total {
+        border-right: 2px solid red;
+        animation: control-width 3s steps(28) 0s both, blink 1s infinite;
+        overflow: hidden;
+        width: 350px;
+        white-space: nowrap;
+      }
+
+      @keyframes control-width {
+        from {
+          width: 0;
+        }
+
+        to {
+          width: 350px;
+        }
+      }
+
+      @keyframes blink {
+        from {
+          border-right-color: var(--main-color);
+        }
+
+        to {
+          border-right-color: transparent;
+        }
+      }
+    </style>
+    <h4 class="font-weight-bold my-3 text-light">Billing</h4>
+    <div class="card">
       <div class="card-body">
         <div class="sr-root">
           <div class="sr-main">
             <form id="payment-form" class="sr-payment-form">
               {% csrf_token %}
-                <div class="sr-combo-inputs-row">
-                  <div class="sr-input sr-card-element" id="card-element"></div>
+              <div class="sr-combo-inputs-row">
+                <div class="sr-input sr-card-element" id="card-element"></div>
+              </div>
+              <div class="sr-field-error" id="card-errors" role="alert"></div>
+              <button id="submit" class="btn">
+                <div class="spinner-border  spinner-border-sm text-light hidden" id="spinner" role="status">
+                  <span class="sr-only">Loading...</span>
                 </div>
-                <div class="sr-field-error" id="card-errors" role="alert"></div>
-                <button id="submit" class="btn">
-                  <div class="spinner-border  spinner-border-sm text-light hidden" id="spinner" role="status">
-                    <span class="sr-only">Loading...</span>
-                  </div>
-                  <span id="button-text">Pay</span><span id="order-amount"></span>
-                </button>
+                <span id="button-text">Pay</span><span id="order-amount"></span>
+              </button>
             </form>
             <div class="sr-result hidden">
               <p>Payment completed<br></p>
@@ -88,165 +102,165 @@
 
     <form id="payload" class="hidden" action="/payment-complete" method="post">
       {% csrf_token %}
-      <input id ="data-payload" type="hidden" name="payload"/>
+      <input id="data-payload" type="hidden" name="payload" />
     </form>
 
   </div>
   {% endif %}
 </div>
 <script>
-/* Begin stripe payment processing  */
+  /* Begin stripe payment processing  */
 
-let StripeCheckoutPageProcess = () => {
-  let orderData = {
-    items: [{ id: "products" }],
-    currency: "usd",
-  };
-
-  // Disable the button until we have Stripe set up on the page
-  document.getElementById("submit").disabled = true;
-
-  fetch("/create-payment-intent/", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "X-CSRFToken": "{{csrf_token}}",
-    },
-    body: JSON.stringify(orderData),
-  })
-    .then(function (result) {
-      return result.json();
-    })
-    .then(function (data) {
-      if ('error' in data){
-        console.log(`Error at /create-payment-intent/: ${data["error"]}`);
-        return {'error': data['error']};
-      }
-      else {return setupElements(data);}
-    })
-    .then((data) => {
-      // if setupElements was just executed
-      if ('stripe' in data && 'card' in data && 'clientSecret' in data){
-        let stripe = data['stripe'];
-        let card = data['card'];
-        let clientSecret = data['clientSecret'];
-        document.getElementById("submit").disabled = false;
-        // Handle form submission
-        let form = document.getElementById("payment-form");
-        form.addEventListener("submit", function (event) {
-          event.preventDefault();
-          // Initiate payment when the submit button is clicked
-          pay(stripe, card, clientSecret);
-        });
-      }
-    });
-
-  // Set up Stripe.js and Elements to use in checkout form
-  let setupElements = function (data) {
-    stripe = Stripe(data.publishableKey);
-    let elements = stripe.elements();
-    let style = {
-      base: {
-        color: "#32325d",
-        fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
-        fontSmoothing: "antialiased",
-        fontSize: "16px",
-        "::placeholder": {
-          color: "#aab7c4",
-        },
-      },
-      invalid: {
-        color: "#fa755a",
-        iconColor: "#fa755a",
-      },
+  let StripeCheckoutPageProcess = () => {
+    let orderData = {
+      items: [{ id: "products" }],
+      currency: "usd",
     };
 
-    let card = elements.create("card", { style: style });
-    card.mount("#card-element");
+    // Disable the button until we have Stripe set up on the page
+    document.getElementById("submit").disabled = true;
 
-    return {
-      stripe: stripe,
-      card: card,
-      clientSecret: data.clientSecret,
-    };
-  };
-
-  /*
-   * Calls stripe.confirmCardPayment which creates a pop-up modal to
-   * prompt the user to enter extra authentication details without leaving your page
-   */
-  let pay = (stripe, card, clientSecret) => {
-    changeLoadingState(true);
-    // Initiate the payment; if auth required, confirmCardPayment auto displays a modal
-    stripe
-      .confirmCardPayment(clientSecret, {
-        payment_method: {
-          card: card,
-        },
+    fetch("/create-payment-intent/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "X-CSRFToken": "{{csrf_token}}",
+      },
+      body: JSON.stringify(orderData),
+    })
+      .then(function (result) {
+        return result.json();
       })
-      .then((result) => {
-        console.log('pay result');
-        console.log(result);
-        if (result.error) {
-          // Show error to your customer
-          showError(result.error.message);
-        } else {
-          // The payment has been processed!
-          orderComplete(clientSecret);
+      .then(function (data) {
+        if ('error' in data) {
+          console.log(`Error at /create-payment-intent/: ${data["error"]}`);
+          return { 'error': data['error'] };
+        }
+        else { return setupElements(data); }
+      })
+      .then((data) => {
+        // if setupElements was just executed
+        if ('stripe' in data && 'card' in data && 'clientSecret' in data) {
+          let stripe = data['stripe'];
+          let card = data['card'];
+          let clientSecret = data['clientSecret'];
+          document.getElementById("submit").disabled = false;
+          // Handle form submission
+          let form = document.getElementById("payment-form");
+          form.addEventListener("submit", function (event) {
+            event.preventDefault();
+            // Initiate payment when the submit button is clicked
+            pay(stripe, card, clientSecret);
+          });
         }
       });
-  };
 
-  /* ------- Post-payment helpers ------- */
-  /* Shows a success / error message when the payment is complete */
-  var orderComplete = function (clientSecret) {
-    console.log('orderComplete')
-    // Just for the purpose of the sample, show the PaymentIntent response object
-    stripe.retrievePaymentIntent(clientSecret).then((result) => {
-      console.log(`result:`);
-      console.log(result);
-      var paymentIntent = result.paymentIntent;
-      console.log('paymentINtent');
-      console.log(paymentIntent);
-      var paymentIntentJson = JSON.stringify(paymentIntent);
-      console.log('paymentIntentJson');
-      console.log(paymentIntentJson);
+    // Set up Stripe.js and Elements to use in checkout form
+    let setupElements = function (data) {
+      stripe = Stripe(data.publishableKey);
+      let elements = stripe.elements();
+      let style = {
+        base: {
+          color: "#32325d",
+          fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+          fontSmoothing: "antialiased",
+          fontSize: "12px",
+          "::placeholder": {
+            color: "#aab7c4",
+          },
+        },
+        invalid: {
+          color: "#fa755a",
+          iconColor: "#fa755a",
+        },
+      };
 
-      // post data and show new page
-      var form2 = document.getElementById("payload");
-      var input = document.getElementById("data-payload");
-      input.value = paymentIntentJson;
-      // this POSTs to /payment-complete which saves the purchases and clears the cart
-      // and redirects to orders page
-      form2.submit();
+      let card = elements.create("card", { style: style });
+      card.mount("#card-element");
+
+      return {
+        stripe: stripe,
+        card: card,
+        clientSecret: data.clientSecret,
+      };
+    };
+
+    /*
+     * Calls stripe.confirmCardPayment which creates a pop-up modal to
+     * prompt the user to enter extra authentication details without leaving your page
+     */
+    let pay = (stripe, card, clientSecret) => {
+      changeLoadingState(true);
+      // Initiate the payment; if auth required, confirmCardPayment auto displays a modal
+      stripe
+        .confirmCardPayment(clientSecret, {
+          payment_method: {
+            card: card,
+          },
+        })
+        .then((result) => {
+          console.log('pay result');
+          console.log(result);
+          if (result.error) {
+            // Show error to your customer
+            showError(result.error.message);
+          } else {
+            // The payment has been processed!
+            orderComplete(clientSecret);
+          }
+        });
+    };
+
+    /* ------- Post-payment helpers ------- */
+    /* Shows a success / error message when the payment is complete */
+    var orderComplete = function (clientSecret) {
+      console.log('orderComplete')
+      // Just for the purpose of the sample, show the PaymentIntent response object
+      stripe.retrievePaymentIntent(clientSecret).then((result) => {
+        console.log(`result:`);
+        console.log(result);
+        var paymentIntent = result.paymentIntent;
+        console.log('paymentINtent');
+        console.log(paymentIntent);
+        var paymentIntentJson = JSON.stringify(paymentIntent);
+        console.log('paymentIntentJson');
+        console.log(paymentIntentJson);
+
+        // post data and show new page
+        var form2 = document.getElementById("payload");
+        var input = document.getElementById("data-payload");
+        input.value = paymentIntentJson;
+        // this POSTs to /payment-complete which saves the purchases and clears the cart
+        // and redirects to orders page
+        form2.submit();
+        changeLoadingState(false);
+      });
+    };
+
+
+    var showError = function (errorMsgText) {
       changeLoadingState(false);
-    });
-  };
+      var errorMsg = document.querySelector(".sr-field-error");
+      errorMsg.textContent = errorMsgText;
+      setTimeout(function () {
+        errorMsg.textContent = "";
+      }, 4000);
+    };
 
-
-  var showError = function (errorMsgText) {
-    changeLoadingState(false);
-    var errorMsg = document.querySelector(".sr-field-error");
-    errorMsg.textContent = errorMsgText;
-    setTimeout(function () {
-      errorMsg.textContent = "";
-    }, 4000);
+    // Show a spinner on payment submission
+    var changeLoadingState = function (isLoading) {
+      if (isLoading) {
+        document.getElementById("submit").disabled = true;
+        document.querySelector("#spinner").classList.remove("hidden");
+        document.querySelector("#button-text").classList.add("hidden");
+      } else {
+        document.getElementById("submit").disabled = false;
+        document.querySelector("#spinner").classList.add("hidden");
+        document.querySelector("#button-text").classList.remove("hidden");
+      }
+    };
   };
-
-  // Show a spinner on payment submission
-  var changeLoadingState = function (isLoading) {
-    if (isLoading) {
-      document.getElementById("submit").disabled = true;
-      document.querySelector("#spinner").classList.remove("hidden");
-      document.querySelector("#button-text").classList.add("hidden");
-    } else {
-      document.getElementById("submit").disabled = false;
-      document.querySelector("#spinner").classList.add("hidden");
-      document.querySelector("#button-text").classList.remove("hidden");
-    }
-  };
-};
-StripeCheckoutPageProcess();
+  StripeCheckoutPageProcess();
 /* end stripe payment processing */
 </script>
 {% endblock %}

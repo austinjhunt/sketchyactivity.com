@@ -314,37 +314,6 @@ function removeFadeOut(el, speed) {
   }, speed);
 }
 
-let removeFromCart = (btn, productId) => {
-  fetch("/remove-from-cart/", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "X-CSRFToken": CSRF_TOKEN,
-    },
-    body: JSON.stringify({ productId: productId }),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-      document.querySelector(".toast-title").textContent =
-        "Item removed from cart";
-      document.querySelector(".toast-body").textContent = data["result"];
-      if ("totalCartItems" in data) {
-        let totalCartItems = parseInt(data["totalCartItems"]);
-        updateCartBadgeNumber(totalCartItems);
-      }
-      if ("cartTotalPrice" in data) {
-        let cartTotalPrice = data["cartTotalPrice"];
-        document.querySelector(
-          "td.cart-total-price"
-        ).textContent = `$${cartTotalPrice}`;
-      }
-
-      removeProductFromCheckoutTable(productId);
-      $("#toast").toast("show");
-    });
-};
-
 let showAddToCartModal = (data) => {
   let modal = document.querySelector(".commission-reference-image-modal");
   let form = modal.querySelector("form");

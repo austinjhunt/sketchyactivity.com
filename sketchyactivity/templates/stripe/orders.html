@@ -6,50 +6,47 @@
     <h1 class="text-light">
         Drawings You've Commissioned
     </h1>
-    <table class="table table-light table-striped text-center">
-        <thead>
-            <th>Item</th>
-            <th>Reference Image</th>
-            <th>Type</th>
-            <th>Description</th>
-            <th>Price</th>
-            <th>Commissioned</th>
-            <th>Status</th>
-            <th>Completed On</th>
-        </thead>
-        <tbody>
-            {% for o in orders %}
-                <tr>
-                    <td>{{o.product.name}}</td>
-                    <td>
-                        {% if o.product.s3_reference_image_url %}
-                            <img class="reference-image-preview" src="{{o.product.s3_reference_image_url}}" alt="{{o.product.name}} reference">
-                        {% else %}
-                            <span>No reference image</span>
-                        {% endif %}
-                    </td>
-                    <td>{{o.product.type}}</td>
-                    <td>{{o.product.description}}</td>
-                    <td>${{o.product.price}}</td>
-                    <td>{{o.timestamp}}</td>
-                    <td>{{o.product.get_status_display}}</td>
-                    <td>
-                        {% if o.product.status == 'CMPLT' %}
+    <div class="row my-4">
+        {% for o in orders %}
+        <div class=" col-xs-12 col-md-3 ">
+            <div class="cart-item-card card m-1 text-center ">
+                {% if o.product.s3_reference_image_url %}
+                <img class="reference-image-preview card-img-top" src="{{o.product.s3_reference_image_url}}"
+                    alt="{{item.name}} reference" style="width: fit-content; margin:0 auto;">
+                {% else %}
+                <span>No reference image</span>
+                {% endif %}
+
+                <div class="card-body text-left">
+                    <h5 class="card-title">{{o.product.name}}, ${{o.product.price}}</h5>
+                    <p class="card-text text-dark text-left">
+                        <span>{{o.product.description}}</span><br />
+                        <span>Commissioned on {{o.timestamp}}</span><br />
+                        <span>Status: {{o.product.get_status_display}}</span><br />
+                        <span>Completed on: {% if o.product.status == 'CMPLT' %}
                             {{o.product.completion_date}}
-                        {% else %}
+                            {% else %}
                             Not Complete
-                        {% endif %}
-                    </td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+                            {% endif %}</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+    </div>
+    <style>
+        .cart-item-card:hover {
+            transform: rotate(5deg);
+            transition: 0.1s linear;
+        }
+    </style>
     {% else %}
     <h1 class="text-light">You have not yet commissioned any drawings.</h1>
     <h2 class="text-light">
         If you'd like to commission me, you can choose items from the
         <a href="{% url 'commissions' %}" title="commissions">commissions page.</a>
-      </h2>
+    </h2>
     {% endif %}
 
 </div>

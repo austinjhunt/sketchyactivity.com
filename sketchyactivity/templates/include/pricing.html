@@ -1,158 +1,65 @@
 {% load pricing %}
-<div class="container text-center" id="commissions">
-    <h1 class="pricing-header mt-2 mb-2">commission me</h1>
-    <div class="prices-container text-center">
-        <h2 class="text-light">PORTRAITS MAKE GREAT GIFTS! <i class="fa fa-gift"></i> <i class="fa fa-smile"></i></h2>
-         {% if meta.sale %}
-        <h3 class="text-light">
-            <strong style="color:rgb(50, 98, 231) ">{{meta.sale_amount|to_pretty_percent}}</strong> OFF UNTIL
-            <strong style="color:red">{{meta.sale_end}}</strong>
-        </h3>
-        {% endif %}
-        {% if user.is_authenticated %}
-            <p class="text-light my-2" style="font-size: 1.2rem;">
-                You can click on one of the items to add it to your cart!
-                For example, if you want an 8.5x12 inch drawing of one person,
-                click the top left button and upload the image you want me to draw,
-                then submit! Then, you can find the item in
-                <a href="{% url 'checkout' %}">your cart</a>, where you can check out
-                with a card! You can also get to your cart by clicking the Profile
-                dropdown in the top navigation. If you have anything in your cart, there
-                will be a little red badge indicating how many items are in there.</p>
-            <p class="text-light my-2" style="font-size: 1.2rem;" >
-                On your <a href="{% url 'orders' %}">My Commissions</a> page (also in the Profile dropdown), you can view a record of all commissions
-                you've requested, and you can even monitor the status of active commissions!</p>
-        {% else %}
-        <p class="text-light my-2" style="font-size: 1.2rem;">
-                It looks like you're not logged in. If you would like to commission me for a custom
-                drawing, please <a href="{% url 'signup' %}">create a free account</a> and then come back to this page.
-                Having an account means you can pay with card, keep a record of your commissions, and even monitor the status of your commissions.
-        </p>
-        {% endif %}
-        <table style="margin:2rem auto" class="m-0-auto table border-white table-striped">
-            <thead class="thead-dark">
-                <tr>
-                    <th colspan="{{traditional_unique_num_subjects|length|add:1}}" class="text-uppercase">traditional drawing (pen &amp; paper) commissions</th>
-                </tr>
-                <tr>
 
-                    <th>size</th>
-                    <th colspan="{{traditional_unique_num_subjects|length}}">how many people?</th>
-                </tr>
-                <tr>
-                    <th></th>
-                    {% for ns in traditional_unique_num_subjects %}
-                    <th>{{ns}}</th>
-                    {% endfor %}
-                </tr>
-            </thead>
-            <tbody class="bg-light">
-                {% for s in traditional_unique_sizes %}
-                <tr>
-                    <td>{{s}}</td>
-                    {% for ns in traditional_unique_num_subjects %}
-                    <td>
-                        {% with price=s|get_traditional_price:ns %}
-                            {% if sale %}
-                                {% if user.is_authenticated %}
-                                <button type="button" class="btn btn-dark" data-toggle="tooltip" data-placement="top" title="Add to cart" onclick="showAddToCartModal({style: 'traditional', numSubjects: '{{ns}}', size: '{{s}}', price: '{{price|on_sale:sale_amount}}'})">
-                                    <strike style='color:red'>${{price}}</strike> ${{price|on_sale:sale_amount}}
-                                </button>
-                                {% else %}
-                                    <strike style='color:red'>${{price}}</strike> ${{price|on_sale:sale_amount}}
-                                {% endif %}
-                            {% else %}
-                                {% if user.is_authenticated %}
-                                <button type="button" class="btn btn-dark" data-toggle="tooltip" data-placement="top" title="Add to cart" onclick="showAddToCartModal({style: 'traditional', numSubjects: '{{ns}}',  size: '{{s}}', price: '{{price}}'})">${{price}}</button>
-                                {% else %}
-                                ${{price}}
-                                {% endif %}
-                            {% endif %}
-                        {% endwith %}
-                    </td>
-                    {% endfor %}
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-        <table style="margin:2rem auto" class="m-0-auto table border-white table-striped">
-            <thead class="thead-dark">
-                <tr>
-                    <th colspan="2" class="text-uppercase">digital drawing commissions</th>
-                </tr>
-                <tr>
-                    <th class="text-uppercase">how many people?</th>
-                    <th class="text-uppercase">price</th>
-                </tr>
-            </thead>
-            <tbody class="bg-light">
-                {% for ns in digital_unique_num_subjects %}
-                    <tr>
-                        <td>{{ns}}</td>
-                        <td>
-                            {% with price=ns|get_digital_price %}
-                                {% if sale %}
-                                    {% if user.is_authenticated %}
-                                    <button type="button" class="btn btn-dark" data-toggle="tooltip" data-placement="top" title="Add to cart" onclick="showAddToCartModal({style: 'digital', numSubjects: '{{ns}}', price: '{{price|on_sale:sale_amount}}'})">
-                                        <strike style='color:red'>${{price}}</strike> ${{price|on_sale:sale_amount}}
-                                    </button>
-                                    {% else %}
-                                    <strike style='color:red'>${{price}}</strike> ${{price|on_sale:sale_amount}}
-                                    {% endif %}
-                                {% else %}
-                                    {% if user.is_authenticated %}
-                                        <button type="button" class="btn btn-dark" data-toggle="tooltip" data-placement="top" title="Add to cart" onclick="showAddToCartModal({style: 'digital', numSubjects: '{{ns}}', price: '{{price}}'})">
-                                            ${{price}}
-                                        </button>
-                                    {% else %}
-                                        ${{price}}
-                                    {% endif %}
-                                {% endif %}
-                            {% endwith %}
-                        </td>
-                    </tr>
-                {% endfor %}
-            </tbody>
+<div class="container">
+    <h1 class="text-light" style="font-size: 1.6rem">commission me</h1>
+    <h2 class="text-light">portraits make great gifts <i class="fa fa-gift"></i> <i class="fa fa-smile"></i></h2>
+    {% if meta.sale %}
+    <h3 class="text-light">
+        <strong style="color:rgb(50, 98, 231) ">{{meta.sale_amount|to_pretty_percent}}</strong> OFF UNTIL
+        <strong style="color:red">{{meta.sale_end}}</strong>
+    </h3>
+    {% endif %}
+    {% if user.is_authenticated %}
+    <p class="text-light my-2" style="font-size: 1.2rem;">
+        You can use the below dropdowns to order a custom drawing from me!
+        You can find any order you submit in <a href="{% url 'checkout' %}">your cart</a>,
+        where you can check out with a card! You can also get to your cart by clicking the Profile
+        dropdown in the top navbar. If you have anything in your cart, there
+        will be a little red badge in the navbar indicating how many items are in there.
+    </p>
+    <p class="text-light my-2" style="font-size: 1.2rem;">
+        On your <a href="{% url 'orders' %}">My Commissions</a> page (also in the Profile dropdown), you can view a
+        record of all commissions
+        you've requested, and you can even monitor the status of active commissions!</p>
+    {% else %}
+    <p class="text-light my-2" style="font-size: 1.2rem;">
+        It looks like you're not logged in. If you would like to commission me for a custom
+        drawing, please <a href="{% url 'signup' %}">create a free account</a> and then come back to this page.
+        Having an account means you can pay with card, keep a record of your commissions, and even monitor the
+        status of your commissions.
+    </p>
+    {% endif %}
 
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
-    </div>
+    <form class="my-3" action="{% url 'add-to-cart' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="size-style-price-choice">Choose Drawing Size &amp; Style</label>
+            <select required style="font-size: 1rem" class="form-control" name="size-style-price-choice"
+                id="size-style-price-choice">
+                <option value="null">Select a size &amp; style</option>
+                {% for drawing_choice in drawing_choices %}
+                <option value="{{drawing_choice.value}}">{{drawing_choice.display_name}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group referenceImageFormGroup">
+            <label for="referenceImage">
+                Please provide a reference image for the commission
+            </label>
+            <input accept="image/png, image/jpeg" id="referenceImage" name="referenceImage" class="form-control"
+                type="file" required aria-describedby="referenceImageHelp">
+        </div>
+        <div class="form-group">
+            <label for="commission-name">Commission Title</label>
+            <input class="form-control" name="commission-name" id="commission-name" required>
+            <span>Give your commissioned drawing a short descriptive name, e.g. "brother, 2007'. This will display on
+                your
+                commissions / orders page.</span>
+        </div>
+        <div class="text-center">
+            <input type="submit" class="btn btn-small btn-danger" value="Request">
+        </div>
+    </form>
+
+
 </div>
-<style>
-    .pricing-container {
-        background: black;
-        text-align: center;
-        padding: 10px;
-    }
-
-    .pricing-header {
-        color: white;
-        font-size: 3em;
-        font-weight: 600;
-        text-decoration: underline;
-    }
-
-    .prices-container {
-        padding: 10px;
-        text-align: center;
-    }
-
-    .prices-container .price {
-        font-size: 1.1em;
-        font-weight: 400;
-        line-height: 1;
-        margin: 8px;
-    }
-
-    .price-description {
-        color: white;
-    }
-
-    .price-description a {
-        color: lightblue;
-        font-size: 1.1em;
-        font-weight: 400;
-    }
-</style>
