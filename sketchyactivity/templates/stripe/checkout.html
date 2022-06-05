@@ -21,20 +21,19 @@
     <h3 class="text-light mb-3"> Checkout </h3>
     <div class="row my-4">
       {% for item in cart_items %}
-      <div class="cart-item-card card text-center col-xs-12 col-md-3 ">
-        <img class="reference-image-preview card-img-top" src="{{item.s3_reference_image_url}}"
-          alt="{{item.name}} reference" style="width: fit-content; margin:0 auto;">
-        <div class="card-body">
-          <h5 class="card-title">{{item.name}}, ${{item.price}}</h5>
-          <p class="card-text text-dark">{{item.description}}</p>
-          <a href="{% url 'remove-from-cart' item.id %}" title="remove from cart" class="btn btn-danger">Remove</a>
+      <div class="col-xs-12 col-md-3">
+        <div class="cart-item-card card text-center">
+          <img class="reference-image-preview card-img-top" src="{{item.s3_reference_image_url}}"
+            alt="{{item.name}} reference" style="width: fit-content; margin:0 auto;">
+          <div class="card-body">
+            <h5 class="card-title">{{item.name}}, ${{item.price}}</h5>
+            <p class="card-text text-dark">{{item.description}}</p>
+            <a href="{% url 'remove-from-cart' item.id %}" title="remove from cart" class="btn btn-danger">Remove</a>
+          </div>
         </div>
       </div>
       {% endfor %}
     </div>
-
-
-
     <h4 class="text-light mt-3 mb-1 cart-total">Commission Total: ${{total|convert_stripe_price_to_userfriendly_price}}
     </h4>
     <style>
