@@ -21,15 +21,6 @@
         On your <a href="{% url 'orders' %}">My Commissions</a> page (also in the Profile dropdown), you can view a
         record of all commissions
         you've requested, and you can even monitor the status of active commissions!</p>
-    {% else %}
-    <p class="text-light my-2" style="font-size: 1.2rem;">
-        It looks like you're not logged in. If you would like to commission me for a custom
-        drawing, please <a href="{% url 'signup' %}">create a free account</a> and then come back to this page.
-        Having an account means you can pay with card, keep a record of your commissions, and even monitor the
-        status of your commissions.
-    </p>
-    {% endif %}
-
     <form class="my-3" action="{% url 'add-to-cart' %}" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="form-group">
@@ -61,5 +52,13 @@
         </div>
     </form>
 
+    {% else %}
+    <p class="text-light my-2" style="font-size: 1.2rem;">
+        It looks like you're not logged in. If you would like to commission me for a custom
+        drawing, please <a href="{% url 'signup' %}">create a free account</a> and then come back to this page.
+        Having an account means you can pay with card, keep a record of your commissions, and even monitor the
+        status of your commissions.
+    </p>
+    {% endif %}
 
 </div>
