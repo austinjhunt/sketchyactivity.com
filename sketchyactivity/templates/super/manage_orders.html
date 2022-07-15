@@ -47,7 +47,7 @@
             <div class="cart-item-card card m-1 text-center ">
                 {% if o.product.s3_reference_image_url %}
                 <img class="reference-image-preview card-img-top" src="{{o.product.s3_reference_image_url}}"
-                    alt="{{item.name}} reference" style="width: fit-content; margin:0 auto;">
+                    alt="{{item.name}} reference" style="height: fit-content; margin:0 auto;">
                 {% else %}
                 <span>No reference image</span>
                 {% endif %}

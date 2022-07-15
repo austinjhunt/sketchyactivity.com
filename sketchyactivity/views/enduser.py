@@ -18,12 +18,15 @@ class HomeView(View):
         # update private urls if they need to be updated
         if not cache.get('updated_private_video_url'):
             private_video_url = update_private_video_url(s3_client)
-            cache.set('updated_private_video_url', private_video_url, timeout=302400)# half the max expiration time of the private urls for the media files in s3.
+            # half the max expiration time of the private urls for the media files in s3.
+            cache.set('updated_private_video_url',
+                      private_video_url, timeout=302400)
         if not cache.get('updated_private_urls'):
             print("Updating private urls for portfolio...")
-            update_private_urls_full_portfolio(portfolio,s3_client)
+            update_private_urls_full_portfolio(portfolio, s3_client)
             print("Setting cache.updated_private_urls ")
-            cache.set('updated_private_urls', 'is_updated',timeout=302400) # half the max expiration time of the private urls for the media files in s3.
+            # half the max expiration time of the private urls for the media files in s3.
+            cache.set('updated_private_urls', 'is_updated', timeout=302400)
         else:
             print("Cache updated_private_urls is set already")
         return render(
@@ -36,39 +39,46 @@ class HomeView(View):
                 'portfolio2': portfolio[4:8],
                 'portfolio3': portfolio[8:],
                 'private_video_url': cache.get('updated_private_video_url')
-                }
+            }
         )
- 
+
+
 class CommissionsView(View):
-    def get(self, request):  
+    def get(self, request):
         ms = MetaStuff.objects.first()
-        sale_active = ms.sale_still_active() 
+        sale_active = ms.sale_still_active()
         traditional_prices = Price.objects.filter(style='TR')
-        traditional_unique_sizes = traditional_prices.order_by('size').distinct().values_list('size', flat=True)
-        traditional_unique_sizes = sorted(traditional_unique_sizes, key=lambda el: float(el.split('x')[0]))
-        traditional_unique_num_subjects = traditional_prices.order_by('num_subjects').distinct().values_list('num_subjects', flat=True)
+        traditional_unique_sizes = traditional_prices.order_by(
+            'size').distinct().values_list('size', flat=True)
+        traditional_unique_sizes = sorted(
+            traditional_unique_sizes, key=lambda el: float(el.split('x')[0]))
+        traditional_unique_num_subjects = traditional_prices.order_by(
+            'num_subjects').distinct().values_list('num_subjects', flat=True)
 
         digital_prices = Price.objects.filter(style='DI')
-        digital_unique_num_subjects = digital_prices.order_by('num_subjects').distinct().values_list('num_subjects', flat=True)
-        
+        digital_unique_num_subjects = digital_prices.order_by(
+            'num_subjects').distinct().values_list('num_subjects', flat=True)
+
         drawing_choices = []
 
         for traditional in Price.objects.filter(style='TR'):
             people_person_string = 'people' if traditional.num_subjects > 1 else 'person'
-            amount = traditional.amount if not sale_active else ms.get_sale_price(original_price=traditional.amount)
-            
+            amount = traditional.amount if not sale_active else ms.get_sale_price(
+                original_price=traditional.amount)
+
             drawing_choices.append({
                 'value': f'tr-{traditional.size}-{traditional.num_subjects}',
                 'display_name': f'Ballpoint Pen | {traditional.size} | {traditional.num_subjects} {people_person_string} | ${amount}'
             })
         for digital in Price.objects.filter(style='DI'):
-            people_person_string = 'people' if digital.num_subjects > 1 else 'person' 
-            amount = digital.amount if not sale_active else  ms.get_sale_price(original_price=digital.amount)
+            people_person_string = 'people' if digital.num_subjects > 1 else 'person'
+            amount = digital.amount if not sale_active else ms.get_sale_price(
+                original_price=digital.amount)
 
             drawing_choices.append({
                 'value': f'di-{digital.num_subjects}',
                 'display_name': f'Digital | {digital.num_subjects} {people_person_string} | {amount}'
-            })  
+            })
         return render(
             request,
             'commissions.html',
@@ -77,14 +87,15 @@ class CommissionsView(View):
                 'drawing_choices': drawing_choices,
                 'traditional_prices': traditional_prices,
                 'traditional_unique_sizes':  traditional_unique_sizes,
-                'traditional_unique_num_subjects':  traditional_unique_num_subjects ,
+                'traditional_unique_num_subjects':  traditional_unique_num_subjects,
                 'sale':  MetaStuff.objects.all()[0].sale,
                 'digital_prices': traditional_prices,
-                'digital_unique_num_subjects':  digital_unique_num_subjects ,
+                'digital_unique_num_subjects':  digital_unique_num_subjects,
                 'sale':  MetaStuff.objects.all()[0].sale,
                 'sale_amount':  MetaStuff.objects.all()[0].sale_amount
             }
         )
+
 
 class PortfolioItemEdit(UpdateView):
     model = PortfolioItem
@@ -92,16 +103,20 @@ class PortfolioItemEdit(UpdateView):
     fields = ['tag', 'portrait_name', 'date']
     success_url = '/'
 
+
 class PortfolioItemDelete(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = PortfolioItem
     template_name = 'super/portfolio_item_delete.html'
     success_url = '/'
+
     def test_func(self):
         return self.request.user.is_superuser
 
+
 class PortfolioManage(LoginRequiredMixin, UserPassesTestMixin, View):
     template_name = 'super/manage_portfolio.html'
-    def get(self,request):
+
+    def get(self, request):
         return render(
             request=request,
             template_name=self.template_name,
@@ -109,8 +124,10 @@ class PortfolioManage(LoginRequiredMixin, UserPassesTestMixin, View):
                 'portfolio': PortfolioItem.objects.all().order_by('-date')
             }
         )
+
     def test_func(self):
         return self.request.user.is_superuser
+
 
 class AboutView(TemplateView):
     template_name = 'about.html'
@@ -118,5 +135,7 @@ class AboutView(TemplateView):
     def get_context_data(self, **kwargs):
         data = super().get_context_data(**kwargs)
         data['bio'] = get_bio()
-        data['profile_image'] = MetaStuff.objects.first().profile_image_private_url
+        ms = MetaStuff.objects.first()
+        update_private_url_profile_image(ms, s3_client=s3_client)
+        data['profile_image'] = ms.profile_image_private_url
         return data
