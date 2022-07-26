@@ -11,7 +11,7 @@ from django.core.cache import cache
 def get_updated_portfolio(limit=None):
     portfolio = PortfolioItem.objects.all().order_by('-date')
     if limit:
-        portfolio = portfolio[:limit]
+        portfolio = portfolio[:int(limit)]
     # update private urls if they need to be updated
     if not cache.get('updated_private_video_url'):
         private_video_url = update_private_video_url(s3_client)
