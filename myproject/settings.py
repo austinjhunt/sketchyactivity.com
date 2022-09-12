@@ -10,20 +10,21 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
-import os, dj_database_url
+import os
+import dj_database_url
 import django_heroku
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '__d%ysb=p9yjd2(zkn!fzlk95)swp&=lp!lr-ws+cqqxqx$6uk'
-DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = [
-  'www.sketchyactivity.com',
-  'austinjhunt.com',
-  'austinjhunt.github.io',
-  'sketchyactivity.com',
-  'localhost:8000',
-  'localhost:3000', # react client
-  ]
+    'www.sketchyactivity.com',
+    'austinjhunt.com',
+    'austinjhunt.github.io',
+    'sketchyactivity.com',
+    'localhost:8000',
+    'localhost:3000',  # react client
+]
 
 ADMINS = [('Austin Hunt', 'huntaj@g.cofc.edu')]
 INSTALLED_APPS = [
@@ -53,7 +54,7 @@ REST_FRAMEWORK = {
 }
 
 MIDDLEWARE = [
-  'corsheaders.middleware.CorsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -166,9 +167,9 @@ USE_TZ = True
 # BEGIN OLD WEBFACTION CONFIG
 # STATIC_URL = '/static/'
 # STATIC_ROOT = '/home/huntajoseph/webapps/sketchyactivity_static'
-#STATICFILES_DIRS = [
+# STATICFILES_DIRS = [
 #os.path.join(BASE_DIR, 'sketchyactivity/static'),
-#]
+# ]
 # END OLD WEBFACTION CONFIG
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -193,9 +194,9 @@ COMPRESS_CSS_FILTERS = ["compressor.filters.cssmin.CSSMinFilter"]
 
 USE_S3 = os.getenv('USE_S3') == 'TRUE'
 # aws settings
-AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID','')
-AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY','')
-AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME','')
+AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID', '')
+AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY', '')
+AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME', '')
 AWS_DEFAULT_ACL = 'public-read'
 AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
 AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
@@ -210,53 +211,56 @@ PRIVATE_MEDIA_LOCATION = 'media'
 PRIVATE_MEDIA_STORAGE = 'sketchyactivity.storage_backends.PrivateMediaStorage'
 
 
-MEDIA_ROOT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),'sketchyactivity','media')
+MEDIA_ROOT = os.path.join(os.path.dirname(os.path.dirname(
+    os.path.abspath(__file__))), 'sketchyactivity', 'media')
 django_heroku.settings(locals())
 
+
 def get_cache():
-  import os
-  try:
-    servers = os.environ['MEMCACHIER_SERVERS']
-    username = os.environ['MEMCACHIER_USERNAME']
-    password = os.environ['MEMCACHIER_PASSWORD']
-    return {
-      'default': {
-        'BACKEND': 'django.core.cache.backends.memcached.PyLibMCCache',
-        # TIMEOUT is not the connection timeout! It's the default expiration
-        # timeout that should be applied to keys! Setting it to `None`
-        # disables expiration.
-        'TIMEOUT': 302400,
-        'LOCATION': servers,
-        'OPTIONS': {
-          'binary': True,
-          'username': username,
-          'password': password,
-          'behaviors': {
-            # Enable faster IO
-            'no_block': True,
-            'tcp_nodelay': True,
-            # Keep connection alive
-            'tcp_keepalive': True,
-            # Timeout settings
-            'connect_timeout': 2000, # ms
-            'send_timeout': 750 * 1000, # us
-            'receive_timeout': 750 * 1000, # us
-            '_poll_timeout': 2000, # ms
-            # Better failover
-            'ketama': True,
-            'remove_failed': 1,
-            'retry_timeout': 2,
-            'dead_timeout': 30,
-          }
+    import os
+    try:
+        servers = os.environ['MEMCACHIER_SERVERS']
+        username = os.environ['MEMCACHIER_USERNAME']
+        password = os.environ['MEMCACHIER_PASSWORD']
+        return {
+            'default': {
+                'BACKEND': 'django.core.cache.backends.memcached.PyLibMCCache',
+                # TIMEOUT is not the connection timeout! It's the default expiration
+                # timeout that should be applied to keys! Setting it to `None`
+                # disables expiration.
+                'TIMEOUT': 302400,
+                'LOCATION': servers,
+                'OPTIONS': {
+                    'binary': True,
+                    'username': username,
+                    'password': password,
+                    'behaviors': {
+                        # Enable faster IO
+                        'no_block': True,
+                        'tcp_nodelay': True,
+                        # Keep connection alive
+                        'tcp_keepalive': True,
+                        # Timeout settings
+                        'connect_timeout': 2000,  # ms
+                        'send_timeout': 750 * 1000,  # us
+                        'receive_timeout': 750 * 1000,  # us
+                        '_poll_timeout': 2000,  # ms
+                        # Better failover
+                        'ketama': True,
+                        'remove_failed': 1,
+                        'retry_timeout': 2,
+                        'dead_timeout': 30,
+                    }
+                }
+            }
         }
-      }
-    }
-  except:
-    return {
-      'default': {
-        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache'
-      }
-    }
+    except:
+        return {
+            'default': {
+                'BACKEND': 'django.core.cache.backends.locmem.LocMemCache'
+            }
+        }
+
 
 CACHES = get_cache()
 CORS_ORIGIN_WHITELIST = [
@@ -270,7 +274,7 @@ CORS_ORIGIN_WHITELIST = [
 
 # Stripe Payment settings
 # see these docs for testing/simulating payments with Stripe https://stripe.com/docs/testing
-STRIPE_TEST_MODE = int(os.environ.get('STRIPE_TEST_MODE','0'))
+STRIPE_TEST_MODE = int(os.environ.get('STRIPE_TEST_MODE', '0'))
 if STRIPE_TEST_MODE:
     STRIPE_API_KEY = os.environ.get('STRIPE_TEST_API_KEY')
     STRIPE_PUBLISHABLE_KEY = os.environ.get('STRIPE_TEST_PUBLISHABLE_KEY')
