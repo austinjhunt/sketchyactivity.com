@@ -13,7 +13,6 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 import os
 import dj_database_url
 import django_heroku
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '__d%ysb=p9yjd2(zkn!fzlk95)swp&=lp!lr-ws+cqqxqx$6uk'
 DEBUG = False
@@ -23,6 +22,14 @@ ALLOWED_HOSTS = [
     'austinjhunt.github.io',
     'sketchyactivity.com',
     'localhost:8000',
+]
+CORS_ORIGIN_WHITELIST = [
+    "https://sketchyactivity.com",
+    "https://www.sketchyactivity.com",
+    "https://austinjhunt.com",
+    "https://austinjhunt.github.io",
+    "http://localhost:3000",
+    "http://127.0.0.1:3000"
 ]
 
 ADMINS = [('Austin Hunt', 'huntaj@g.cofc.edu')]
@@ -128,8 +135,6 @@ LOGGING = {
 DATABASES = {
     'default': dj_database_url.config(conn_max_age=600)
 }
-
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -150,40 +155,25 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'EST'
-
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
 
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/2.1/howto/static-files/
-# BEGIN OLD WEBFACTION CONFIG
-# STATIC_URL = '/static/'
-# STATIC_ROOT = '/home/huntajoseph/webapps/sketchyactivity_static'
-# STATICFILES_DIRS = [
-#os.path.join(BASE_DIR, 'sketchyactivity/static'),
-# ]
-# END OLD WEBFACTION CONFIG
+django_heroku.settings(locals(), staticfiles=False)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.9/howto/static-files/
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
-# Extra places for collectstatic to find static files.
+
+# Enable WhiteNoise's GZip compression of static assets.
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'compressor.finders.CompressorFinder',
 )
-
 COLLECTSTATIC = 1
-
 COMPRESS_ENABLED = True
 COMPRESS_ROOT = STATIC_ROOT
 COMPRESS_OFFLINE = True
@@ -191,7 +181,6 @@ COMPRESS_OUTPUT_DIR = 'sketchyactivity'
 COMPRESS_CSS_FILTERS = ["compressor.filters.cssmin.CSSMinFilter"]
 
 USE_S3 = os.getenv('USE_S3') == 'TRUE'
-# aws settings
 AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID', '')
 AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY', '')
 AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME', '')
@@ -200,17 +189,13 @@ AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
 AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
 AWS_S3_REGION_NAME = 'us-east-2'
 AWS_S3_SIGNATURE_VERSION = 's3v4'
-
-#PUBLIC_MEDIA_LOCATION = 'media'
-#PUBLIC_MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
-#MEDIA_ROOT = MEDIA_URL
-# Private S3 settings
 PRIVATE_MEDIA_LOCATION = 'media'
 PRIVATE_MEDIA_STORAGE = 'sketchyactivity.storage_backends.PrivateMediaStorage'
 
 
 MEDIA_ROOT = os.path.join(os.path.dirname(os.path.dirname(
     os.path.abspath(__file__))), 'sketchyactivity', 'media')
+
 
 def get_cache():
     import os
@@ -259,14 +244,6 @@ def get_cache():
 
 
 CACHES = get_cache()
-CORS_ORIGIN_WHITELIST = [
-    "https://sketchyactivity.com",
-    "https://www.sketchyactivity.com",
-    "https://austinjhunt.com",
-    "https://austinjhunt.github.io",
-    "http://localhost:3000",
-    "http://127.0.0.1:3000"
-]
 
 # Stripe Payment settings
 # see these docs for testing/simulating payments with Stripe https://stripe.com/docs/testing
@@ -277,6 +254,3 @@ if STRIPE_TEST_MODE:
 else:
     STRIPE_API_KEY = os.environ.get('STRIPE_API_KEY')
     STRIPE_PUBLISHABLE_KEY = os.environ.get('STRIPE_PUBLISHABLE_KEY')
-
-
-django_heroku.settings(locals(), staticfiles=False)
