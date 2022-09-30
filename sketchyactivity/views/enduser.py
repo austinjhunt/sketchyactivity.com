@@ -14,7 +14,8 @@ from .s3 import s3_client
 class HomeView(View):
     @csrf_exempt
     def get(self, request):
-        portfolio = PortfolioItem.objects.all().order_by('-date')
+        print('hello')
+        portfolio = PortfolioItem.objects.order_by('-date').all()
         # update private urls if they need to be updated
         if not cache.get('updated_private_video_url'):
             private_video_url = update_private_video_url(s3_client)
@@ -23,12 +24,14 @@ class HomeView(View):
                       private_video_url, timeout=302400)
         if not cache.get('updated_private_urls'):
             print("Updating private urls for portfolio...")
+            print(portfolio.count())
             update_private_urls_full_portfolio(portfolio, s3_client)
             print("Setting cache.updated_private_urls ")
             # half the max expiration time of the private urls for the media files in s3.
             cache.set('updated_private_urls', 'is_updated', timeout=302400)
         else:
             print("Cache updated_private_urls is set already")
+        print('returning')
         return render(
             request=request,
             template_name='index.html',

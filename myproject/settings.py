@@ -23,7 +23,6 @@ ALLOWED_HOSTS = [
     'austinjhunt.github.io',
     'sketchyactivity.com',
     'localhost:8000',
-    'localhost:3000',  # react client
 ]
 
 ADMINS = [('Austin Hunt', 'huntaj@g.cofc.edu')]
@@ -126,11 +125,10 @@ LOGGING = {
 
 # To use remote Heroku db
 
-DATABASES = {}
-DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+DATABASES = {
+    'default': dj_database_url.config(conn_max_age=600)
+}
 
-# Password validation
-# https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -213,8 +211,6 @@ PRIVATE_MEDIA_STORAGE = 'sketchyactivity.storage_backends.PrivateMediaStorage'
 
 MEDIA_ROOT = os.path.join(os.path.dirname(os.path.dirname(
     os.path.abspath(__file__))), 'sketchyactivity', 'media')
-django_heroku.settings(locals())
-
 
 def get_cache():
     import os
@@ -281,3 +277,6 @@ if STRIPE_TEST_MODE:
 else:
     STRIPE_API_KEY = os.environ.get('STRIPE_API_KEY')
     STRIPE_PUBLISHABLE_KEY = os.environ.get('STRIPE_PUBLISHABLE_KEY')
+
+
+django_heroku.settings(locals(), staticfiles=False)
