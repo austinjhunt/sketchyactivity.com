@@ -11,8 +11,8 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
-import dj_database_url
-import django_heroku
+from dotenv import load_dotenv
+load_dotenv()
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '__d%ysb=p9yjd2(zkn!fzlk95)swp&=lp!lr-ws+cqqxqx$6uk'
 DEBUG = False
@@ -21,7 +21,7 @@ ALLOWED_HOSTS = [
     'austinjhunt.com',
     'austinjhunt.github.io',
     'sketchyactivity.com',
-    'localhost:8000',
+    'localhost',
 ]
 CORS_ORIGIN_WHITELIST = [
     "https://sketchyactivity.com",
@@ -31,7 +31,6 @@ CORS_ORIGIN_WHITELIST = [
     "http://localhost:3000",
     "http://127.0.0.1:3000"
 ]
-
 ADMINS = [('Austin Hunt', 'huntaj@g.cofc.edu')]
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -71,10 +70,6 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
 
 ]
-
-#SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-#SECURE_SSL_REDIRECT = True
-
 ROOT_URLCONF = 'myproject.urls'
 APPEND_SLASH = True
 
@@ -129,12 +124,17 @@ LOGGING = {
     },
 }
 
-
-# To use remote Heroku db
-
 DATABASES = {
-    'default': dj_database_url.config(conn_max_age=600)
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv('DATABASE_NAME'),
+        'USER': os.getenv('DATABASE_USERNAME'),
+        'PASSWORD': os.getenv('DATABASE_PASSWORD'),
+        'HOST': os.getenv('DATABASE_HOST'),
+        'PORT': '5432',
+    }
 }
+
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -160,14 +160,11 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
-django_heroku.settings(locals(), staticfiles=False)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
-
 # Enable WhiteNoise's GZip compression of static assets.
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
