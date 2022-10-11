@@ -1,0 +1,28 @@
+version: "3.9"
+
+services:
+  db:
+    container_name: sketchyactivity_db
+    image: postgres
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+
+  web:
+    container_name: sketchyactivity_web
+    image: sketchyactivity_web
+    command: python manage.py collectstatic --noinput && python manage.py compress && python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/src
+    ports:
+      - "8000:8"
+    depends_on:
+      - db
+  nginx:
+    container_name: sketchyactivity_nginx
+    build: ./nginx/.
+    image: nginx
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./nginx/ssl:/etc/ssl/certs/nginx
