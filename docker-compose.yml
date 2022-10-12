@@ -6,13 +6,15 @@ services:
     image: postgres
     volumes:
       - ./data/db:/var/lib/postgresql/data
-
+    env_file: .env
   web:
     container_name: sketchyactivity_web
     image: sketchyactivity_web
+    build: .
     command: python manage.py collectstatic --noinput && python manage.py compress && python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/src
+    env_file: .env
     ports:
       - "8000:8"
     depends_on:
@@ -25,4 +27,4 @@ services:
       - 80:80
       - 443:443
     volumes:
-      - ./nginx/ssl:/etc/ssl/certs/nginx
+      - /etc/ssl/certs:/etc/ssl/certs
