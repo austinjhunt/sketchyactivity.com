@@ -15,8 +15,8 @@ services:
     volumes:
       - .:/src
     env_file: .env
-    ports:
-      - "8000:8"
+    expose:
+      - 8000
     depends_on:
       - db
   nginx:
