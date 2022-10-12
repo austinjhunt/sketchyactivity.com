@@ -7,3 +7,4 @@ sketchyactivity/__pycache__
 start-dev.sh
 node_modules
 .env
+data
