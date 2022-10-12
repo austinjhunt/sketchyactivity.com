@@ -7,18 +7,27 @@ services:
     volumes:
       - ./data/db:/var/lib/postgresql/data
     env_file: .env
+    networks:
+      - dbnet
+    expose:
+      - 5432
+    restart: unless-stopped
   web:
     container_name: sketchyactivity_web
     image: austinjhunt/sketchyactivity_web
     build: .
-    command: python manage.py collectstatic --noinput && python manage.py compress && python manage.py runserver 0.0.0.0:8000
+    command: bash -c "sleep 24 && python manage.py makemigrations && python manage.py migrate && python manage.py collectstatic --no-input && python manage.py compress && gunicorn myproject.wsgi:application --bind 0.0.0.0:8000"
     volumes:
-      - .:/src
+      - "/opt/sketchyactivity/staticfiles:/src/staticfiles"
     env_file: .env
     expose:
       - 8000
     depends_on:
       - db
+    networks:
+      - dbnet
+      - webnet
+
   nginx:
     container_name: sketchyactivity_nginx
     build: ./nginx/.
@@ -28,3 +37,15 @@ services:
       - 443:443
     volumes:
       - /etc/ssl/certs:/etc/ssl/certs
+      - /opt/sketchyactivity/staticfiles:/var/www/staticfiles
+    depends_on:
+      - web
+    networks:
+      - webnet
+    command: [nginx-debug, "-g", "daemon off;"]
+    restart: unless-stopped
+networks:
+  webnet:
+    driver: bridge
+  dbnet:
+    driver: bridge
