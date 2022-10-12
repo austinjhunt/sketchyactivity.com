@@ -6,6 +6,6 @@ RUN apt update
 RUN apt install -y libmemcached-dev
 RUN pip install pylibmc
 WORKDIR /src
-COPY requirements.txt /src/
+COPY web/requirements.txt /src/
 RUN pip install -r requirements.txt
-COPY . /src/
+COPY web/. /src/
