@@ -1,6 +1,6 @@
-from operator import is_
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import View
+from django.http import JsonResponse
 from django.core.files.storage import FileSystemStorage
 from ..models import PortfolioItem, MetaStuff, Product, Purchase
 from django.shortcuts import render, redirect
@@ -9,8 +9,11 @@ from .s3 import s3_client
 from .util import resize_image, rp, update_private_url_profile_image, update_private_url_single, update_private_url_product_reference_image
 import datetime
 import os
+import json
 
 # Super mods.
+
+
 @csrf_exempt
 def upload(request):
     if request.user.is_authenticated and request.user.is_superuser:
@@ -27,7 +30,7 @@ def upload(request):
                 'sketchyactivitys3',
                 f'media/drawings/{myfile.name}',
                 ExtraArgs={
-                    'ACL':'private'
+                    'ACL': 'private'
                 }
             )
             resize_path = f'/tmp/{filename}'
@@ -36,8 +39,8 @@ def upload(request):
                 resize_path,
                 'sketchyactivitys3',
                 f'media/copied_smaller_drawings/{myfile.name}',
-                ExtraArgs={'ACL':'private'}
-                )
+                ExtraArgs={'ACL': 'private'}
+            )
             os.remove(filename)
             # Initialize private urls to empty strings
             s3_drawing_private_url = ""
@@ -47,11 +50,11 @@ def upload(request):
             if not tag:
                 tag = 'Portrait'
 
-            date = rp(request,'date')
+            date = rp(request, 'date')
             # create a new object in DB for naming
             new_item = PortfolioItem(
                 tag=tag,
-                portrait_name=rp(request,"portraitname"),
+                portrait_name=rp(request, "portraitname"),
                 filename=myfile.name,
                 date=date,
                 s3_drawing_private_url=s3_drawing_private_url,
@@ -65,17 +68,18 @@ def upload(request):
     else:
         return redirect('/')
 
-def update_profile_image(request): 
+
+def update_profile_image(request):
     """ Update profile image """
-    if request.method == "POST": 
+    if request.method == "POST":
         ms = MetaStuff.objects.first()
         profile_image_file = request.FILES['profile_image_file']
         fs = FileSystemStorage(location='', file_permissions_mode=0o655)
-        filename = fs.save(profile_image_file.name, profile_image_file) 
+        filename = fs.save(profile_image_file.name, profile_image_file)
         if ms.profile_image_filename:
-            # Delete existing profile photo if exists before uploading new one 
+            # Delete existing profile photo if exists before uploading new one
             s3_client.delete_object(
-                Bucket='sketchyactivitys3', 
+                Bucket='sketchyactivitys3',
                 Key=f'media/admin/{ms.profile_image_filename}'
             )
         response1 = s3_client.upload_file(
@@ -83,27 +87,28 @@ def update_profile_image(request):
             'sketchyactivitys3',
             f'media/admin/{profile_image_file.name}',
             ExtraArgs={
-                'ACL':'private'
+                'ACL': 'private'
             }
-        ) 
-        ms.profile_image_filename = profile_image_file.name 
+        )
+        ms.profile_image_filename = profile_image_file.name
         ms.profiel_image_private_url = ""
         update_private_url_profile_image(ms, s3_client=s3_client)
         return redirect('about')
-    elif request.method == "GET": 
+    elif request.method == "GET":
         return render(
             request=request,
             template_name='super/update_profile_image.html',
             context={}
         )
 
+
 def update_profile(request):
     """ View for updating profile, starting for now just with bio """
     if request.method == "POST":
-        bio = request.POST.get('bio','') 
-        website_title = request.POST.get('website_title','')
-        website_description = request.POST.get('website_description','')
-        website_keywords = request.POST.get('website_keywords','')
+        bio = request.POST.get('bio', '')
+        website_title = request.POST.get('website_title', '')
+        website_description = request.POST.get('website_description', '')
+        website_keywords = request.POST.get('website_keywords', '')
         sale = True if request.POST.get('commission_sale', None) else False
         ms = MetaStuff.objects.all()[0]
         ms.website_title = website_title
@@ -111,21 +116,23 @@ def update_profile(request):
         ms.website_keywords = website_keywords
         ms.sale = sale
         sale_amount = request.POST.get('commission_sale_amount', 0)
-        sale_end = request.POST.get('commission_sale_end','')
+        sale_end = request.POST.get('commission_sale_end', '')
         ms.sale_amount = sale_amount
         if sale:
-            ms.sale_end = datetime.datetime.strptime(sale_end, '%Y-%m-%d').date()
+            ms.sale_end = datetime.datetime.strptime(
+                sale_end, '%Y-%m-%d').date()
         else:
             ms.sale_end = datetime.datetime.now().date()
-        ms.bio = bio 
-        ms.save() 
+        ms.bio = bio
+        ms.save()
         return redirect("/")
     else:
         bio = MetaStuff.objects.all()[0].bio
         return render(
             request=request,
             template_name='super/update_profile.html',
-            context={'bio':bio, 'title': 'Update Website'})
+            context={'bio': bio, 'title': 'Update Website'})
+
 
 class ManageOrders(View, LoginRequiredMixin):
     def get(self, request):
@@ -133,14 +140,15 @@ class ManageOrders(View, LoginRequiredMixin):
             return redirect('/')
         all_orders = Purchase.objects.all()
         for o in all_orders:
-            update_private_url_product_reference_image(item=o.product, s3_client=s3_client)
+            update_private_url_product_reference_image(
+                item=o.product, s3_client=s3_client)
         return render(
             request=request,
             template_name='super/manage_orders.html',
             context={'orders': all_orders}
         )
 
-class UpdateOrder(View,LoginRequiredMixin):
+class UpdateOrder(View, LoginRequiredMixin):
     def get(self, request, id):
         if not request.user.is_authenticated:
             return redirect('/')
@@ -151,6 +159,7 @@ class UpdateOrder(View,LoginRequiredMixin):
                 'order': Purchase.objects.get(id=id),
                 'status_choices': Product.CommissionStatus.choices}
         )
+
     def post(self, request, id):
         if not request.user.is_superuser:
             return redirect('/')
@@ -159,10 +168,10 @@ class UpdateOrder(View,LoginRequiredMixin):
             associated with order) '''
             status_choice = request.POST.get('status-choice', None)
             completion_date = request.POST.get('completion-date', None)
-            is_test_purchase = request.POST.get('is-test-purchase', False) 
+            is_test_purchase = request.POST.get('is-test-purchase', False)
             if is_test_purchase:
                 is_test_purchase = True
-            print(is_test_purchase) 
+            print(is_test_purchase)
             if not completion_date:
                 completion_date = None
             if not status_choice:
@@ -170,10 +179,10 @@ class UpdateOrder(View,LoginRequiredMixin):
             order = Purchase.objects.get(id=id)
             product = order.product
             product.status = status_choice
-            product.completion_date = completion_date 
+            product.completion_date = completion_date
             product.save()
             order.test = is_test_purchase
             order.save()
         except Exception as e:
             print(e)
-        return self.get(request,id)
+        return self.get(request, id)
