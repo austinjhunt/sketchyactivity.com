@@ -4,7 +4,6 @@ services:
   db:
     container_name: sketchyactivity_db
     image: postgres:14
-    build: ./data/.
     volumes:
       - ./data/db:/var/lib/postgresql/data
       - ./data/init:/docker-entrypoint-initdb.d
