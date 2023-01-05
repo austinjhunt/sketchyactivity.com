@@ -13,14 +13,17 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PRODUCTION = bool(int(os.environ.get('PRODUCTION', '0')))
+DEBUG = False
 
 if not PRODUCTION:
     from dotenv import load_dotenv
     env_file = os.path.join(os.path.dirname(
         os.path.dirname(os.path.dirname(__file__))), '.env')
+    print(f'DEV: using .env file: {env_file}')
     load_dotenv(env_file)
+    DEBUG = True
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
-DEBUG = False
+
 ALLOWED_HOSTS = [
     'www.sketchyactivity.com',
     'austinjhunt.com',
