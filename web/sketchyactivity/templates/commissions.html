@@ -1,21 +1,111 @@
 {% extends "master.html" %}
 {% load static %}
+{% load pricing %}
 {% block content %}
 
-{% include 'include/pricing.html' %}
-<!--
-    <div id="commission_me_container" class="text-center p-3">
-    <a href="mailto:huntaj@g.cofc.edu?subject=SketchyActivity Commission&Body=Hi Austin,%0dI just saw your site,
-    sketchyactivity.com and clicked the Commission Me link! I'd like to commission you for ___DESCRIBE COMMISSION__.%0dBest,%0dYOUR NAME"
-        class="btn btn-lg text-light commission-me-button heartbeat">
-        EMAIL ME
-    </a>
+
+<div class="container py-3">
+    <h2 class="text-light">commission me here! portraits make great gifts <i class="fa fa-gift"></i> <i
+            class="fa fa-smile"></i></h2>
+    {% if meta.sale %}
+    <h3 class="text-light">
+        <strong style="color:rgb(50, 98, 231) ">{{meta.sale_amount|to_pretty_percent}}</strong> OFF UNTIL
+        <strong style="color:red">{{meta.sale_end}}</strong>
+    </h3>
+    {% endif %}
+    {% if user.is_authenticated %}
+    <p class="text-light my-2">
+        You can use the below form to order a custom drawing from me!
+        You can find any order you submit in <a href="{% url 'checkout' %}">your cart</a>,
+        where you can check out with a card! You can also get to your cart by clicking the Profile
+        dropdown in the top navbar. If you have anything in your cart, there
+        will be a little red badge in the navbar indicating how many items are in there.
+    </p>
+
+    <div class="commission-prices">
+        <table class="table table-dark table-striped w-100 text-center">
+            <thead>
+                <tr>
+                    <th>Commission Prices</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for drawing_choice in drawing_choices %}
+                <tr>
+                    <td>
+                        {{drawing_choice.display_name}}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <p class="text-light my-2">
+        On your <a href="{% url 'orders' %}">My Commissions</a> page (also in the Profile dropdown), you can view a
+        record of all commissions
+        you've requested, and you can even monitor the status of active commissions!</p>
+    <form class="my-3" action="{% url 'add-to-cart' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="size-style-price-choice">Choose Drawing Size &amp; Style</label>
+            <select required style="font-size: 1rem" class="form-control" name="size-style-price-choice"
+                id="size-style-price-choice">
+                <option value="null">Select a size &amp; style</option>
+                {% for drawing_choice in drawing_choices %}
+                <option value="{{drawing_choice.value}}">{{drawing_choice.display_name}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group referenceImageFormGroup">
+            <label for="referenceImage">
+                Please provide a reference image for the commission
+            </label>
+            <input accept="image/png, image/jpeg" id="referenceImage" name="referenceImage" class="form-control"
+                type="file" required aria-describedby="referenceImageHelp">
+        </div>
+        <div class="form-group">
+            <label for="commission-name">Commission Title</label>
+            <input class="form-control" name="commission-name" id="commission-name" required>
+            <span>Give your commissioned drawing a short descriptive name, e.g. "brother, 2007'. This will display on
+                your
+                commissions / orders page.</span>
+        </div>
+        <div class="text-center">
+            <input type="submit" class="btn btn-small btn-danger" value="Request">
+        </div>
+    </form>
+
+    {% else %}
+    <p class="text-light my-2" style="font-size: 1.2rem;">
+        It looks like you're not logged in. If you would like to commission me for a custom
+        drawing, please <a href="{% url 'signup' %}">create a free account</a> and then come back to this page.
+        Having an account means you can pay with card, keep a record of your commissions, and even monitor the
+        status of your commissions.
+    </p>
+    <div class="commission-prices">
+        <table class="table table-dark table-striped w-100 text-center">
+            <thead>
+                <tr>
+                    <th>Commission Prices</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for drawing_choice in drawing_choices %}
+                <tr>
+                    <td>
+                        {{drawing_choice.display_name}}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% endif %}
+
 </div>
- -->
 
 
 <script>
     var page = "commissions";
 </script>
-
 {% endblock %}
