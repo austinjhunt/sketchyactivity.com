@@ -3,8 +3,7 @@ version: "3.9"
 services:
   db:
     container_name: sketchyactivity_db
-    image: postgres
-    build: ./data/.
+    image: postgres:14
     volumes:
       - ./data/db:/var/lib/postgresql/data
       - ./data/init:/docker-entrypoint-initdb.d
@@ -13,6 +12,8 @@ services:
       - dbnet
     expose:
       - 5432
+    ports:
+      - 5432:5432
     restart: unless-stopped
 
   web:
@@ -59,6 +60,7 @@ services:
       - webnet
     command: [nginx-debug, "-g", "daemon off;"]
     restart: unless-stopped
+
 networks:
   cachenet:
     driver: bridge

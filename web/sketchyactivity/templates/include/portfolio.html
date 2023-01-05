@@ -1,5 +1,5 @@
-{% for p in portfolio1 %}
-<div class="col-xs-1 col-sm-1 col-md-3 col-lg-3  ftco-animate portfolioItem" data-aos="fade-down">
+{% for p in portfolio %}
+<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3  ftco-animate portfolioItem" data-portfolio-item-id="{{p.id}}" data-aos="fade-down">
     <a data-id="{{p.id}}" href="{{p.s3_copied_smaller_drawing_private_url}}" class="portfolio-entry img image-popup d-flex justify-content-center align-items-center" style="background-image: url({{p.s3_copied_smaller_drawing_private_url}});">
         <div class="overlay"></div>
         <div class="text text-center">
@@ -8,41 +8,46 @@
     </a>
 </div>
 {% endfor %}
-<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ftco-animate portfolioItem" data-aos="fade-down">
-    <a href="https://www.redbubble.com/people/austinjhunt/shop" class="portfolio-entry img d-flex justify-content-center align-items-center" >
+<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 text-center">
+    {% with next_pg=pg|add:1 %}
+    <a href="{% url 'home' pg=next_pg %}" class="text-entry img d-flex justify-content-center align-items-center" >
         <div class="text text-center">
-            <h3>Merch</h3><span class="tag">t-shirts, stickers, posters &amp; more</span><br />
+            <h3 class="text-light">View More Work</h3><span class="tag">see more hand-drawn portraits</span><br />
         </div>
     </a>
-</div>
-{% for p in portfolio2 %}
-<div class="col-xs-1 col-sm-1 col-md-3 col-lg-3  ftco-animate portfolioItem" data-aos="fade-down">
-    <a data-id="{{p.id}}" href="{{p.s3_copied_smaller_drawing_private_url}}" class="portfolio-entry img image-popup d-flex justify-content-center align-items-center" style="background-image: url({{p.s3_copied_smaller_drawing_private_url}});">
-        <div class="overlay"></div>
-        <div class="text text-center">
-            <h3>{{ p.portrait_name }}</h3><span class="tag">{{ p.tag }}</span><br /><span class="tag">{{ p.date }}</span>
-        </div>
-    </a>
-</div>
-{% endfor %}
-<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ftco-animate portfolioItem" data-aos="fade-down">
-        <a href="{% url 'commissions' %}" class="portfolio-entry img d-flex justify-content-center align-items-center" >
+    {% endwith %}
+    {% if pg > 0 %}
+        {% with prev_pg=pg|add:"-1" %}
+        <a href="{% url 'home' pg=prev_pg %}" class="text-entry img d-flex justify-content-center align-items-center" >
             <div class="text text-center">
-                <h3>Commission Me</h3><span class="tag">Get a custom drawing!</span><br/><span class="tag"> Card payment is available with a free account!</span><br />
+                <h3 class="text-light">View Previous Page</h3><span class="tag">see previous hand-drawn portraits</span><br />
+            </div>
+        </a>
+        {% endwith %}
+    {% endif %}
+</div>
+<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 text-center">
+    <a href="https://www.redbubble.com/people/austinjhunt/shop" class="text-entry img d-flex justify-content-center align-items-center" >
+        <div class="text text-center">
+            <h3 class="text-light">Merch</h3><span class="tag">t-shirts, stickers, posters &amp; more</span><br />
+        </div>
+    </a>
+</div>
+<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 text-center">
+        <a href="{% url 'commissions' %}" class="text-entry img d-flex justify-content-center align-items-center" >
+            <div class="text text-center">
+                <h3 class="text-light">Commission Me</h3><span class="tag">Get a custom drawing!</span><br/><span class="tag"> Card payment is available with a free account!</span><br />
             </div>
         </a>
 </div>
-{% for p in portfolio3 %}
-<div class="col-xs-1 col-sm-1 col-md-3 col-lg-3  ftco-animate portfolioItem" data-aos="fade-down">
-    <a data-id="{{p.id}}" href="{{p.s3_copied_smaller_drawing_private_url}}" class="portfolio-entry img image-popup d-flex justify-content-center align-items-center" style="background-image: url({{p.s3_copied_smaller_drawing_private_url}});">
-        <div class="overlay"></div>
-        <div class="text text-center">
-            <h3>{{ p.portrait_name }}</h3><span class="tag">{{ p.tag }}</span><br /><span class="tag">{{ p.date }}</span>
-        </div>
-    </a>
-</div>
-{% endfor %}
 <style>
+    .text-entry {
+        height: 280px;
+        display: block;
+        z-index: 0;
+        position: relative;
+        color: whitesmoke;
+    }
     .portfolioItem .overlay .btn {
         z-index: 20;
         width: 25%;

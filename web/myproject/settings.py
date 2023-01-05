@@ -11,10 +11,19 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
-
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SECRET_KEY = '__d%ysb=p9yjd2(zkn!fzlk95)swp&=lp!lr-ws+cqqxqx$6uk'
+PRODUCTION = bool(int(os.environ.get('PRODUCTION', '0')))
 DEBUG = False
+
+if not PRODUCTION:
+    from dotenv import load_dotenv
+    env_file = os.path.join(os.path.dirname(
+        os.path.dirname(os.path.dirname(__file__))), '.env')
+    print(f'DEV: using .env file: {env_file}')
+    load_dotenv(env_file)
+    DEBUG = True
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
+
 ALLOWED_HOSTS = [
     'www.sketchyactivity.com',
     'austinjhunt.com',
@@ -123,13 +132,15 @@ LOGGING = {
     },
 }
 
+DB_HOST = os.getenv('POSTGRES_HOST_PROD') if PRODUCTION else os.getenv(
+    'POSTGRES_HOST_DEV')
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': os.getenv('POSTGRES_DB'),
         'USER': os.getenv('POSTGRES_USER'),
         'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
-        'HOST': os.getenv('POSTGRES_HOST'),
+        'HOST': DB_HOST,
         'PORT': '5432',
     }
 }
@@ -189,13 +200,13 @@ PRIVATE_MEDIA_STORAGE = 'sketchyactivity.storage_backends.PrivateMediaStorage'
 
 MEDIA_ROOT = os.path.join(os.path.dirname(os.path.dirname(
     os.path.abspath(__file__))), 'sketchyactivity', 'media')
-
-CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
-        'LOCATION': 'cache:11211',
+if PRODUCTION:
+    CACHES = {
+        'default': {
+            'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+            'LOCATION': 'cache:11211',
+        }
     }
-}
 
 # Stripe Payment settings
 # see these docs for testing/simulating payments with Stripe https://stripe.com/docs/testing
@@ -203,6 +214,12 @@ STRIPE_TEST_MODE = int(os.environ.get('STRIPE_TEST_MODE', '0'))
 if STRIPE_TEST_MODE:
     STRIPE_API_KEY = os.environ.get('STRIPE_TEST_API_KEY')
     STRIPE_PUBLISHABLE_KEY = os.environ.get('STRIPE_TEST_PUBLISHABLE_KEY')
+    STRIPE_TEST_CARD_NUMBER_SUCCESS = os.environ.get(
+        'STRIPE_TEST_CARD_NUMBER_SUCCESS')
+    STRIPE_TEST_CARD_NUMBER_FAILED = os.environ.get(
+        'STRIPE_TEST_CARD_NUMBER_FAILED')
+    STRIPE_TEST_CARD_NUMBER_3DS_AUTH_NEEDED = os.environ.get(
+        'STRIPE_TEST_CARD_NUMBER_3DS_AUTH_NEEDED')
 else:
     STRIPE_API_KEY = os.environ.get('STRIPE_API_KEY')
     STRIPE_PUBLISHABLE_KEY = os.environ.get('STRIPE_PUBLISHABLE_KEY')

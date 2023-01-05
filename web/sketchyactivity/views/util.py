@@ -98,6 +98,7 @@ def update_private_url_single(item, s3_client):
                                                                                       'Key': f'media/copied_smaller_drawings/{item.filename}'},
                                                                                   ExpiresIn=MAX_EXPIRATION_ONE_WEEK_SECS)
     item.save()
+    return item.s3_drawing_private_url, item.s3_copied_smaller_drawing_private_url
 
 
 def update_private_url_profile_image(item, s3_client):
@@ -132,8 +133,6 @@ def update_private_video_url(s3_client):
 
 
 def update_private_urls_full_portfolio(portfolio=None, s3_client=None):
-    print(f'Helo')
-    print(portfolio.count())
     if portfolio:
         for p in portfolio:
             update_private_url_single(p, s3_client)
@@ -159,17 +158,22 @@ def resize_image(image_path, resized_path):
 
 @csrf_exempt
 def notify(request):
-    """ Send a notification that someone is viewing site to Slack channel. If auth, include username. else, Someone."""
-    if not isauth(request):
-        webhook_url = "https://hooks.slack.com/services/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"  # Webhook URL
-        text = {"text": "Someone is viewing your site!"}
-        headers = {'Content-Type': 'application/json'}
-        r = requests.post(webhook_url, data=json.dumps(text), headers=headers)
-    elif isauth(request):
-        # post to slack with username
-        webhook_url = "https://hooks.slack.com/services/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"  # Webhook URL
-        text = {"text": request.user.first_name + " " +
-                request.user.last_name + " is viewing your site!"}
-        headers = {'Content-Type': 'application/json'}
-        r = requests.post(webhook_url, data=json.dumps(text), headers=headers)
+    """ Send a notification that someone is viewing site (if new session) to Slack channel.
+    If auth, include username. else, Someone."""
+    if not 'slack_notified' in request.session:
+        if not isauth(request):
+            webhook_url = "https://hooks.slack.com/services/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"  # Webhook URL
+            text = {"text": "Someone is viewing your site!"}
+            headers = {'Content-Type': 'application/json'}
+            r = requests.post(
+                webhook_url, data=json.dumps(text), headers=headers)
+        elif isauth(request):
+            # post to slack with username
+            webhook_url = "https://hooks.slack.com/services/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"  # Webhook URL
+            text = {"text": request.user.first_name + " " +
+                    request.user.last_name + " is viewing your site!"}
+            headers = {'Content-Type': 'application/json'}
+            r = requests.post(
+                webhook_url, data=json.dumps(text), headers=headers)
+        request.session['slack_notified'] = True
     return render_to_json_response({})

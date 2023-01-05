@@ -1,8 +1,7 @@
 {% load pricing %}
 
-<div class="container">
-    <h1 class="text-light" style="font-size: 1.6rem">commission me</h1>
-    <h2 class="text-light">portraits make great gifts <i class="fa fa-gift"></i> <i class="fa fa-smile"></i></h2>
+<div class="container py-3">
+    <h2 class="text-light">commission me here! portraits make great gifts <i class="fa fa-gift"></i> <i class="fa fa-smile"></i></h2>
     {% if meta.sale %}
     <h3 class="text-light">
         <strong style="color:rgb(50, 98, 231) ">{{meta.sale_amount|to_pretty_percent}}</strong> OFF UNTIL
@@ -10,14 +9,14 @@
     </h3>
     {% endif %}
     {% if user.is_authenticated %}
-    <p class="text-light my-2" style="font-size: 1.2rem;">
+    <p class="text-light my-2" >
         You can use the below form to order a custom drawing from me!
         You can find any order you submit in <a href="{% url 'checkout' %}">your cart</a>,
         where you can check out with a card! You can also get to your cart by clicking the Profile
         dropdown in the top navbar. If you have anything in your cart, there
         will be a little red badge in the navbar indicating how many items are in there.
     </p>
-    <p class="text-light my-2" style="font-size: 1.2rem;">
+    <p class="text-light my-2">
         On your <a href="{% url 'orders' %}">My Commissions</a> page (also in the Profile dropdown), you can view a
         record of all commissions
         you've requested, and you can even monitor the status of active commissions!</p>

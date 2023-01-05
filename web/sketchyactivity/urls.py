@@ -12,7 +12,9 @@ router.register(r'price', views.PriceView, 'price')
 router.register(r'size', views.UniqueCommissionSizesView, 'size')
 
 urlpatterns = [
+    path('<int:pg>', views.HomeView.as_view(), name='home'),
     path('', views.HomeView.as_view(), name='home'),
+
     # DRF
     path('api/obtain-auth-token/', authtokenviews.obtain_auth_token),
     path('api/', include(router.urls)),
@@ -25,6 +27,7 @@ urlpatterns = [
     path('login', views.site_login, name='login'),
     path('signup', views.site_signup, name='signup'),
     path('update_profile', views.update_profile, name='update-profile'),
+
     path('update_profile_image', views.update_profile_image,
          name='update-profile-image'),
     path('pitem/<slug:pk>/edit', views.PortfolioItemEdit.as_view(),
