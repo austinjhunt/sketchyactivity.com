@@ -6,9 +6,8 @@
 
 <div class="container text-light">
   {% if cart_items.count == 0 %}
-  <h1 class="text-light">You have no items in your cart.</h1>
   <h2 class="text-light">
-    If you'd like to commission me, you can choose items from the
+    You have no items in your cart. If you'd like to commission me, you can choose items from the
     <a href="{% url 'commissions' %}" title="commissions">commissions page.</a>
   </h2>
   <h2 class="text-light">
@@ -23,8 +22,8 @@
       {% for item in cart_items %}
       <div class="col-xs-12 col-md-3">
         <div class="cart-item-card card text-center">
-          <img class="reference-image-preview card-img-top" src="{{item.s3_reference_image_url}}"
-            alt="{{item.name}} reference" style="width: fit-content; margin:0 auto;">
+          <img  src="{{item.s3_reference_image_url}}"
+            alt="{{item.name}} reference" style="max-width: 100%; max-height: 250px; margin:0 auto;">
           <div class="card-body">
             <h5 class="card-title">{{item.name}}, ${{item.price}}</h5>
             <p class="card-text text-dark">{{item.description}}</p>
@@ -34,53 +33,20 @@
       </div>
       {% endfor %}
     </div>
-    <h4 class="text-light mt-3 mb-1 cart-total">Commission Total: ${{total|convert_stripe_price_to_userfriendly_price}}
-    </h4>
-    <style>
-      .cart-item-card:hover {
-        transform: rotate(5deg);
-        transition: 0.1s linear;
-      }
 
-      .cart-total {
-        border-right: 2px solid red;
-        animation: control-width 3s steps(28) 0s both, blink 1s infinite;
-        overflow: hidden;
-        width: 350px;
-        white-space: nowrap;
-      }
-
-      @keyframes control-width {
-        from {
-          width: 0;
-        }
-
-        to {
-          width: 350px;
-        }
-      }
-
-      @keyframes blink {
-        from {
-          border-right-color: var(--main-color);
-        }
-
-        to {
-          border-right-color: transparent;
-        }
-      }
-    </style>
     <h4 class="font-weight-bold my-3 text-light">Billing</h4>
+    <h5 class="text-light mt-3 mb-1 cart-total">Commission Total: ${{total|convert_stripe_price_to_userfriendly_price}}
+    </h5>
     <div class="card">
       <div class="card-body">
         <div class="sr-root">
           <div class="sr-main">
-            <form id="payment-form" class="sr-payment-form">
+            <form id="payment-form" class="sr-payment-form text-dark">
               {% csrf_token %}
               <div class="sr-combo-inputs-row">
                 <div class="sr-input sr-card-element" id="card-element"></div>
               </div>
-              <div class="sr-field-error" id="card-errors" role="alert"></div>
+              <div class="sr-field-error text-danger" id="card-errors" role="alert"></div>
               <button id="submit" class="btn">
                 <div class="spinner-border  spinner-border-sm text-light hidden" id="spinner" role="status">
                   <span class="sr-only">Loading...</span>
@@ -243,7 +209,7 @@
       errorMsg.textContent = errorMsgText;
       setTimeout(function () {
         errorMsg.textContent = "";
-      }, 4000);
+      }, 10000);
     };
 
     // Show a spinner on payment submission

@@ -1,7 +1,7 @@
 {% extends 'master.html' %}
 {% block content %}
 <div class="container">
-    <h1 class="text-light">Managing Order {{order.id}}</h1>
+    <h2 class="text-light">Managing Order {{order.id}}</h2>
     <p class="text-light">"{{order.product.name}}", commissioned on {{order.timestamp}} by
         {{order.user_profile.user.username}}</p>
     <form class="bg-light" action="{% url 'manage-order' order.id %}" method="post">
