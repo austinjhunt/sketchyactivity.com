@@ -160,7 +160,7 @@ def resize_image(image_path, resized_path):
 def notify(request):
     """ Send a notification that someone is viewing site (if new session) to Slack channel.
     If auth, include username. else, Someone."""
-    if not 'slack_notified' in request.session:
+    if not 'existing_session' in request.session:
         if not isauth(request):
             webhook_url = "https://hooks.slack.com/services/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"  # Webhook URL
             text = {"text": "Someone is viewing your site!"}
@@ -175,5 +175,5 @@ def notify(request):
             headers = {'Content-Type': 'application/json'}
             r = requests.post(
                 webhook_url, data=json.dumps(text), headers=headers)
-        request.session['slack_notified'] = True
+        request.session['existing_session'] = True
     return render_to_json_response({})

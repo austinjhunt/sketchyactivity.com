@@ -358,3 +358,7 @@ let addToCart = (data) => {
       $("#toast").toast("show");
     });
 };
+
+let closeRedbubblePrompt = () => {
+  document.querySelector(".redbubble-prompt").classList.add("d-none");
+};
