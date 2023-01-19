@@ -14,18 +14,7 @@
         <button onclick="closeRedbubblePrompt()" class="btn btn-danger p-2">
             <i class="fa fa-times"></i>
         </button>
-        <h3 class="text-light">Want some art?</h3>
-        <p class="text-light">Click the button below to access my shop, a colorful concoction of
-            galactic vibes and digital portrait drawings in the forms of stickers,
-            hats, prints, and more that'll make your friends say "wow, you're really cool!"
-            Also, don't tell anyone I told you this but the shop has <b>big sales</b> all
-            the time, and I upload new designs every week! Thank you so much for visiting!
-            You can find this same link in the top navigation menu.
-        </p>
-        <div class="text-center">
-            <a class="btn btn-primary" href="https://austinjhunt.redbubble.com" target="_blank">Blast Off to the Art
-                Shop</a>
-        </div>
+        {{ meta.promo_message_html |safe }}
     </div>
 </div>
 {% endif %}
