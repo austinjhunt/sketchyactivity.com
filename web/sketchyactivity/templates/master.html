@@ -8,6 +8,17 @@
 {% include 'include/navigation.html' %}
 {% include 'include/toast.html' %}
 
+{% if  show_redubble_prompt %}
+<div class="redbubble-prompt position-fixed">
+    <div class="container">
+        <button onclick="closeRedbubblePrompt()" class="btn btn-danger p-2">
+            <i class="fa fa-times"></i>
+        </button>
+        {{ meta.promo_message_html |safe }}
+    </div>
+</div>
+{% endif %}
+
 <body class="bg-black">
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TT97Z48" height="0" width="0"
@@ -17,7 +28,9 @@
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v11.0"
         nonce="1N5FRI6Q"></script>
-    {% block content %} {% endblock %} {% include 'include/javascript.html' %}
+    {% block content %} {% endblock %}
+    {% include 'include/footer.html' %}
+    {% include 'include/javascript.html' %}
     <script>
         CSRF_TOKEN = "{{csrf_token}}";
     </script>
