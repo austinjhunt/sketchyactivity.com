@@ -16,6 +16,17 @@ services:
       - 5432:5432
     restart: unless-stopped
 
+  express_api:
+    build: .
+    image: austinjhunt/express_api
+    expose:
+      - "3001"
+    volumes:
+      - ./express-api-secret:/usr/src/app/secret
+    environment:
+      - NODE_ENV=production
+      - PORT=3001
+
   web:
     container_name: sketchyactivity_web
     image: austinjhunt/sketchyactivity_web
