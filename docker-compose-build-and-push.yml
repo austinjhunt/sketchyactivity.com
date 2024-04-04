@@ -22,6 +22,8 @@ services:
     environment:
       - NODE_ENV=production
       - PORT=3001
+    networks:
+      - webnet
 
   web:
     container_name: sketchyactivity_web
@@ -57,6 +59,7 @@ services:
       - 443:443 
     depends_on:
       - web
+      - express_api
     networks:
       - webnet
     command: [nginx-debug, "-g", "daemon off;"]

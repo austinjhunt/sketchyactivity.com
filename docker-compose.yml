@@ -26,7 +26,9 @@ services:
     environment:
       - NODE_ENV=production
       - PORT=3001
-
+    networks:
+      - webnet
+    
   web:
     container_name: sketchyactivity_web
     image: austinjhunt/sketchyactivity_web
@@ -67,6 +69,7 @@ services:
       - /opt/sketchyactivity/staticfiles:/var/www/staticfiles
     depends_on:
       - web
+      - express_api
     networks:
       - webnet
     command: [nginx-debug, "-g", "daemon off;"]
