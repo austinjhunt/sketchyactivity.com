@@ -1,0 +1,71 @@
+# This version does not have any path references (env_files or volumes) to local files
+# so that we can run build and push the images to Docker Hub without error 
+version: "3.9"
+
+services:
+  db:
+    container_name: sketchyactivity_db
+    image: postgres:14  
+    networks:
+      - dbnet
+    expose:
+      - 5432
+    ports:
+      - 5432:5432
+    restart: unless-stopped
+
+  express_api:
+    build: .
+    image: austinjhunt/express_api
+    expose:
+      - "3001" 
+    environment:
+      - NODE_ENV=production
+      - PORT=3001
+
+  web:
+    container_name: sketchyactivity_web
+    image: austinjhunt/sketchyactivity_web
+    build: .
+    command: bash -c "sleep 24 && python manage.py makemigrations && python manage.py migrate && python manage.py collectstatic --no-input && python manage.py compress && gunicorn myproject.wsgi:application --bind 0.0.0.0:8000"
+    expose:
+      - 8000
+    depends_on:
+      - db
+      - cache
+    networks:
+      - dbnet
+      - webnet
+      - cachenet
+
+  cache:
+    container_name: sketchyactivity_cache
+    image: memcached
+    ports:
+      - "11211:11211"
+    entrypoint:
+      - memcached
+      - -m 64
+    networks:
+      - cachenet
+  nginx:
+    container_name: sketchyactivity_nginx
+    build: ./nginx/.
+    image: austinjhunt/sketchyactivity_nginx
+    ports:
+      - 80:80
+      - 443:443 
+    depends_on:
+      - web
+    networks:
+      - webnet
+    command: [nginx-debug, "-g", "daemon off;"]
+    restart: unless-stopped
+
+networks:
+  cachenet:
+    driver: bridge
+  webnet:
+    driver: bridge
+  dbnet:
+    driver: bridge
