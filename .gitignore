@@ -1,10 +1,13 @@
 venv
 venvwin
+.venv
 venvubu
 **/__pycache__/**
+media
 sketchyactivity_media/**
 sketchyactivity/__pycache__
 start-dev.sh
 node_modules
 .env
 data
+__pycache__

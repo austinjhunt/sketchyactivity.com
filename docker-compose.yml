@@ -20,7 +20,7 @@ services:
     container_name: sketchyactivity_web
     image: austinjhunt/sketchyactivity_web
     build: .
-    command: bash -c "sleep 24 && python manage.py makemigrations && python manage.py migrate && python manage.py collectstatic --no-input && python manage.py compress && gunicorn myproject.wsgi:application --bind 0.0.0.0:8000"
+    command: bash -c "sleep 24 && python manage.py makemigrations && python manage.py migrate && python manage.py collectstatic --no-input && python manage.py compress && gunicorn sketchyactivitybackend.wsgi:application --bind 0.0.0.0:8000"
     volumes:
       - "/opt/sketchyactivity/staticfiles:/src/staticfiles"
     env_file: .env

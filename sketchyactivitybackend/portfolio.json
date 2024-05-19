@@ -1,0 +1,1235 @@
+[
+  {
+    "id": 280,
+    "tag": "collection",
+    "filename": "favs.png",
+    "portrait_name": "favorites",
+    "date": "2023-03-15",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/favs.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240517%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240517T143018Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=036abffa779b0406f4303e9b3e6a0ab25498015ae1149183f297709e61d7a0d8",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/favs.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240517%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240517T143018Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=78f0e1061623b2e6042dbd1e7c3cc0a7f4295c290fc0617e2dae90fa530fd724"
+  },
+  {
+    "id": 282,
+    "tag": "portrait",
+    "filename": "JohnJordanCommissionSmall.png",
+    "portrait_name": "john & jordan",
+    "date": "2023-03-14",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/JohnJordanCommissionSmall.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240517%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240517T143018Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=39b0e43ee720500dc9c867f20ee9ff17c21af26f119f2063e85944f1c6b771a8",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/JohnJordanCommissionSmall.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240517%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240517T143018Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=8e7715591a74a483421312bba321ee75b53a4e64d852a64dc9f3d929d1043959"
+  },
+  {
+    "id": 281,
+    "tag": "portrait",
+    "filename": "charlieputh.png",
+    "portrait_name": "charlie puth",
+    "date": "2023-02-26",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/charlieputh.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240517%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240517T143018Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=bf7b2133682c497a2e0f3577287f5629ec3214c57ac4d14ca7d68608ecb8c34a",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/charlieputh.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240517%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240517T143018Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=ba674066886c79616e370b1f4a594febb680ee96a146e8a48865b7bc7ae76f7e"
+  },
+  {
+    "id": 276,
+    "tag": "Portrait",
+    "filename": "FC7560C0-C8E6-4934-9AF4-CD34DDF7EB9B.jpeg",
+    "portrait_name": "Bailey",
+    "date": "2023-02-01",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/FC7560C0-C8E6-4934-9AF4-CD34DDF7EB9B.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240517%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240517T143018Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=d12447ffcff3b5ec2a5cd4537effbd6adb7abfe314383debb93a84ad7432c105",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/FC7560C0-C8E6-4934-9AF4-CD34DDF7EB9B.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240517%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240517T143018Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=c1aa902d503b878e10765f17b48218008ed21d7f52b99169cde20784f3713e6c"
+  },
+  {
+    "id": 283,
+    "tag": "portrait",
+    "filename": "wednesday.jpg",
+    "portrait_name": "wednesday",
+    "date": "2023-01-30",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/wednesday.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240517%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240517T143018Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=535e826637f0f9a33de362620b3cce2b13a97f3cce185030e70240f7a024b395",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/wednesday.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240517%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240517T143018Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=441d6ac8346b5921ab71c064f8ff0ee976744538215a623ef876e2ba0f660880"
+  },
+  {
+    "id": 275,
+    "tag": "Portrait",
+    "filename": "202DF011-8891-44C0-B270-A72A5C49224C.jpeg",
+    "portrait_name": "Wednesday WIP ",
+    "date": "2023-01-30",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/202DF011-8891-44C0-B270-A72A5C49224C.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240517%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240517T143018Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=082605064da0db52cf7981f04e2df3e474489c216fcfcef9ba6dc2ac3a367061",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/202DF011-8891-44C0-B270-A72A5C49224C.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240517%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240517T143018Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=b3d31dc8b4645cd64ec58d34c8bf660bc69fdc658fab9870920e37ca4cefb056"
+  },
+  {
+    "id": 274,
+    "tag": "Ballpoint Portrait",
+    "filename": "B04AD7D4-95A9-4A50-9588-D6487FE06C48.jpeg",
+    "portrait_name": "Wednesday WIP 3",
+    "date": "2023-01-20",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/B04AD7D4-95A9-4A50-9588-D6487FE06C48.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T143105Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=4ac60086cb317c08b9d714688c8eef4cb76db912f83be9afc45a50831232b1f7",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/B04AD7D4-95A9-4A50-9588-D6487FE06C48.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T143105Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=93f31367f756fce80d12d4f46cd17c667aff1614834d6c7d9260494de136a40a"
+  },
+  {
+    "id": 273,
+    "tag": "Ballpoint Portrait",
+    "filename": "33937278-2689-47B6-9BBF-E10F519767B7.jpeg",
+    "portrait_name": "Wednesday WIP 2",
+    "date": "2023-01-20",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/33937278-2689-47B6-9BBF-E10F519767B7.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T143105Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=4eb4d83624145f0a66d727e8d42093f203495f3b67be636996ea71c8942cfc37",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/33937278-2689-47B6-9BBF-E10F519767B7.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T143105Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=656cf28f2a6e09dc5d5aa15832627e9c22794cc547f57ff5850d1f279bbacb5b"
+  },
+  {
+    "id": 272,
+    "tag": "Ballpoint Portrait",
+    "filename": "5D7F2B46-1EF3-475A-B3D8-0CC4D06FA103.jpeg",
+    "portrait_name": "Wednesday WIP 1",
+    "date": "2023-01-19",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/5D7F2B46-1EF3-475A-B3D8-0CC4D06FA103.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T012924Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=e7250fdcee1d445b34d0020814070d5373599b3785b0e3003684291cd959ccfa",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/5D7F2B46-1EF3-475A-B3D8-0CC4D06FA103.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T012924Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=0169a54dbcc009d6fdabad1eb9168879d3964924da7a9d4b3928927aba8c7e2a"
+  },
+  {
+    "id": 258,
+    "tag": "Portrait, Musician, R&B",
+    "filename": "Mahalia.png",
+    "portrait_name": "Mahalia",
+    "date": "2022-10-21",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/Mahalia.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T012924Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=88fd22c7f49976992be9f6432894dc62465644c9c248e7f5e93c6f54f2afe1be",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/Mahalia.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T012924Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=a08496c334e6609828191754e45cd03a1e7f5b0957540262822441a4bc2fa7b8"
+  },
+  {
+    "id": 257,
+    "tag": "Portrait, Musician, Singer, Songwriter, Icelandic, Jazz",
+    "filename": "laufeywithbackground.png",
+    "portrait_name": "Laufey",
+    "date": "2022-10-20",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/laufeywithbackground.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T012924Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=757a10802254c42fa34b1da389e7ba6f3c6b9949c3aacd06239f65e9e1851dc0",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/laufeywithbackground.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T012924Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=86981660acfe255ae89755ca7f2baf8812f2961bfe750bbd0f007b740a220f1d"
+  },
+  {
+    "id": 255,
+    "tag": "Portrait, Musician, WIP",
+    "filename": "844D2222-A516-4695-B53A-4D9836743532.png",
+    "portrait_name": "Charlie Puth WIP 3",
+    "date": "2022-10-19",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/844D2222-A516-4695-B53A-4D9836743532.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T012924Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=a533e1e596bc6a46c27cef40674c30fb5fd0c8cd27cffc5862efd89bc545a0c7",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/844D2222-A516-4695-B53A-4D9836743532.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T012924Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=d4b41ab4b1530dd5746c8111988245254f33cc1c9365fadc33402d00ab1eba69"
+  },
+  {
+    "id": 254,
+    "tag": "Portrait, Freestyle Rapper",
+    "filename": "Hmack.png",
+    "portrait_name": "Harry Mack",
+    "date": "2022-10-17",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/Hmack.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T012924Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=1a1277206306a6d174f162a9ea1ff604e0bb2abe105ed1aa0dc3020bc2e939dd",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/Hmack.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T012924Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=f4e338f32962b1c7c27031d2b506fd73f5a64518566e3e00631f204aaf5c9ac6"
+  },
+  {
+    "id": 253,
+    "tag": "Portrait, WIP, Musician",
+    "filename": "538626A9-3EA6-4D7A-87CB-BADCD251B054.png",
+    "portrait_name": "Charlie Puth WIP 2",
+    "date": "2022-10-17",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/538626A9-3EA6-4D7A-87CB-BADCD251B054.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T012924Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=66d2f2dc264b8343cbd8b176e6af2b6b7cf4b4890d4d473de50d38aa0f02a1e2",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/538626A9-3EA6-4D7A-87CB-BADCD251B054.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T012924Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=06a74a2c81706c8bfd3c88ce9b7e7dc0fecd9752d649544fa584a887fbcb3cd2"
+  },
+  {
+    "id": 252,
+    "tag": "Portrait, Musician",
+    "filename": "DEE988DE-933B-4641-895A-AE4AC4D857AB.png",
+    "portrait_name": "Charlie Puth WIP",
+    "date": "2022-10-15",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/DEE988DE-933B-4641-895A-AE4AC4D857AB.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T012924Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=77cc734129f9656654091b9237ba9dd0538e73485f40df421554c768c41caff1",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/DEE988DE-933B-4641-895A-AE4AC4D857AB.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T012924Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=435cf297dc5ef9effc03276139a7e0f959d6f9d517b32761912602e86cd6b845"
+  },
+  {
+    "id": 245,
+    "tag": "self",
+    "filename": "self-portrait.jpg",
+    "portrait_name": "Self Portrait",
+    "date": "2022-08-23",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/self-portrait.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T012924Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=97b516bdc187c83e04ddfcf4a5dde8c1b048a60ddb3220488cc18badc5c909b7",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/self-portrait.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T012924Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=fa37273d833503dc421db501c71d6f145557e282516cda61685f5c319681b641"
+  },
+  {
+    "id": 246,
+    "tag": "Portrait",
+    "filename": "bob-ross.jpg",
+    "portrait_name": "Bob Ross",
+    "date": "2022-08-22",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/bob-ross.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240513%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240513T002737Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=5c7d74ea6c738d513eb7355e9be9b10ab09200340af368f9248b366eb414748c",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/bob-ross.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240513%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240513T002737Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=a2dd00a786be37f4b3dd5e59e58ec99f306c948603865e700952bd4ec363335f"
+  },
+  {
+    "id": 249,
+    "tag": "Sketch",
+    "filename": "balloon-heads.jpg",
+    "portrait_name": "Balloon Heads",
+    "date": "2022-08-19",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/balloon-heads.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240513%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240513T002737Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=bc592daca3c8cdb946d2ea19c2b59dd12d4912fc1aabb382ce34c62e4554b4fc",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/balloon-heads.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240513%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240513T002737Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=7944e5960f64b25b1a3054dfc56d6d61fd01aaec1f83e33e006bcb396dc5c1e2"
+  },
+  {
+    "id": 247,
+    "tag": "Portrait, Musician",
+    "filename": "pedro.jpg",
+    "portrait_name": "Pedro",
+    "date": "2022-08-18",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/pedro.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240513%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240513T002737Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=35ee019a65887150006a19fec78e81a731b3ce1129540a9b7c10bcdb132607a2",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/pedro.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240513%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240513T002737Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=c2a3b7481514f3afa2ad0a07fd6da66c24b1d932dfce92c6c620bbe07e278b57"
+  },
+  {
+    "id": 244,
+    "tag": "musician",
+    "filename": "aaron-frazer.jpg",
+    "portrait_name": "Aaron Frazer - Love Is What You Make It",
+    "date": "2022-08-17",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/aaron-frazer.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240513%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240513T002737Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=44334fe0f27cc8ae3186664f86cb36cda7fffd8536ef1d5a5df2e8d7719d2aaa",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/aaron-frazer.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240513%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240513T002737Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=a657064f94dd2efbdd80fbc453098e5ee92dbba66b0a4f53b9b8eb8be632ecae"
+  },
+  {
+    "id": 248,
+    "tag": "Fun Drawing",
+    "filename": "astronaut.jpg",
+    "portrait_name": "Astronaut - Stay Rooted",
+    "date": "2022-08-17",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/astronaut.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240513%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240513T002737Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=7462bb9c1be13cf9441f05123aaf3181661451d5ea0ef3d1c877bd0007417e63",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/astronaut.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240513%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240513T002737Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=b387f88227fe2496ff1de74a0ff5f5b810d04b72283062f04ab2f25332c555a7"
+  },
+  {
+    "id": 251,
+    "tag": "Sketch",
+    "filename": "statue-study.jpg",
+    "portrait_name": "Profile Study - Statue",
+    "date": "2022-08-16",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/statue-study.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240513%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240513T002737Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=d324ed9f301e1759876cb51fe1a5e09d94aeb1b4c527152a11d94fda4db4c1fc",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/statue-study.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240513%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240513T002737Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=0f1cc2ad2f6cbe4b5db43faeee949908054d4b3878cf3a89c13c449d3045ef80"
+  },
+  {
+    "id": 250,
+    "tag": "Sketch",
+    "filename": "facial-structure-study.jpg",
+    "portrait_name": "Facial Structure Study",
+    "date": "2022-08-16",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/facial-structure-study.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240513%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240513T002737Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=f7ecac9d078534d17fbf32e6d1ca7d8a416e02628bf6409f429e78cce6d5d462",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/facial-structure-study.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240513%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240513T002737Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=32fad2e97f689f57f3d86055e5e7736c43eb8ddb78b0df171b44ea053598fc99"
+  },
+  {
+    "id": 243,
+    "tag": "Portrait",
+    "filename": "Scan 1.jpeg",
+    "portrait_name": "Susan Commission",
+    "date": "2022-05-16",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/Scan%201.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240513%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240513T002737Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=013129e2404f6b1cdd21a4e699546e15b0c3bf36b03d26680d103fb886f386a6",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/Scan%201.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240513%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240513T002737Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=739c5d535ccfe4f94e5043ea2cd88df7c07af97172b88d7b10e8a5140b64c0be"
+  },
+  {
+    "id": 242,
+    "tag": "Portrait",
+    "filename": "ACDA4327-1C20-4DF2-8109-C1C29719EEB1.jpeg",
+    "portrait_name": "Commission WIP",
+    "date": "2022-05-15",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/ACDA4327-1C20-4DF2-8109-C1C29719EEB1.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240514%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240514T165115Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=ce77c2c5b188d0c355ba0e1ef7cd26379aadbd7b2110fdd6a8d23a92b3e76bfe",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/ACDA4327-1C20-4DF2-8109-C1C29719EEB1.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240514%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240514T165115Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=70948d64200d14165cefcbee8b0ddee3af4fe14ae463e53b23f9ba6520d8764d"
+  },
+  {
+    "id": 241,
+    "tag": "Portrait",
+    "filename": "jed-parents.jpeg",
+    "portrait_name": "Holly Commission 3",
+    "date": "2022-05-03",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/jed-parents.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240514%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240514T165115Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=3dcd2345af5ba57f09c7b43d32e9d1d54eacbd0d71256e17bcf8a2e76c999ad8",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/jed-parents.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240514%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240514T165115Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=d9fec9956903a01fa05c7cb579d36ae99d0406f2bfab50e56b1ff9e5faae87c7"
+  },
+  {
+    "id": 239,
+    "tag": "Portrait",
+    "filename": "jed-and-parents.jpeg",
+    "portrait_name": "Holly Commission 2",
+    "date": "2022-05-01",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/jed-and-parents.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240514%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240514T165115Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=081852fcf318f06ab725bc788081fceb2f2a92d9b6681f8f4df4ff1ebe85b2c7",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/jed-and-parents.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240514%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240514T165115Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=24f958e400a1b82074b03f4f1ed04ed8d0503818b66e6e79c4cb27597b0aec02"
+  },
+  {
+    "id": 240,
+    "tag": "Portrait",
+    "filename": "holly-don-carol-heath.jpeg",
+    "portrait_name": "Holly Commission 1 ",
+    "date": "2022-04-30",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/holly-don-carol-heath.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240514%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240514T165115Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=0e288aa86ae5bc8a419937096dfea86e44e3f56b23f367bd49dbcfc5e13d527d",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/holly-don-carol-heath.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240514%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240514T165115Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=650fc9e4f9cb1d3ebe397262bf5c0ea23c05225809ef28cc2818c6e9c3842c07"
+  },
+  {
+    "id": 237,
+    "tag": "Portrait",
+    "filename": "1D093DFE-1403-431C-A6F1-3885F6878DDE.jpeg",
+    "portrait_name": "Holly Commission 1 ",
+    "date": "2022-04-20",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/1D093DFE-1403-431C-A6F1-3885F6878DDE.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240514%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240514T165115Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=dc944297a933dca9a3db313f0a2d84cdaa9c26381b5b31e44ae4a96a11e250db",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/1D093DFE-1403-431C-A6F1-3885F6878DDE.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240514%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240514T165115Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=089aec3f6d7cb28479a39943b9a822a7893b87382a9759d2cf24eff615880baf"
+  },
+  {
+    "id": 236,
+    "tag": "Portrait",
+    "filename": "A124AA5A-6B17-4674-8202-D27930D3D97D.jpeg",
+    "portrait_name": "Holly Commission 1 WIP",
+    "date": "2022-04-19",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/A124AA5A-6B17-4674-8202-D27930D3D97D.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240514%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240514T165115Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=978f99ba6f5aa539ca65ecd5fa200a7485c917079eb974431cd402d737b90195",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/A124AA5A-6B17-4674-8202-D27930D3D97D.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240514%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240514T165115Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=8197baf27b2f863c3c7df3e9c7c705767042c6268e44b30caf3c0ce7655e98bd"
+  },
+  {
+    "id": 201,
+    "tag": "Ballpoint pen portrait ",
+    "filename": "A9F641FA-7A1F-4068-8232-904C6DD08E4A.jpeg",
+    "portrait_name": "Common",
+    "date": "2022-01-15",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/A9F641FA-7A1F-4068-8232-904C6DD08E4A.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240514%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240514T165115Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=70ffdac146ad187461ac6a82a2f1f9ddfe858aa53084278122ff03ee4db82df3",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/A9F641FA-7A1F-4068-8232-904C6DD08E4A.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240514%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240514T165115Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=b5cc7b2ba586fdd42522a416284d4d3f1bc85f8d83e8c9cb847c644ccc5eccc6"
+  },
+  {
+    "id": 200,
+    "tag": "Portrait - Bic ballpoint ",
+    "filename": "D35F09BE-54E9-462A-B39F-ED05705F624B.jpeg",
+    "portrait_name": "Lifehouse",
+    "date": "2022-01-09",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/D35F09BE-54E9-462A-B39F-ED05705F624B.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240514%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240514T165115Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=eb13091eb79af270982216aeb2c4e50ef0520d761e5faa05032c2b00d1417259",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/D35F09BE-54E9-462A-B39F-ED05705F624B.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240514%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240514T165115Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=438083c7cd48fdb0a05229ec8687c1bbaf14d4ec4cd38ad3ec92d8b3c539f833"
+  },
+  {
+    "id": 199,
+    "tag": "Traditional Portrait",
+    "filename": "68A6879F-E211-4FDF-BD6A-6A7917EB0693.jpeg",
+    "portrait_name": "Moe",
+    "date": "2021-12-22",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/68A6879F-E211-4FDF-BD6A-6A7917EB0693.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T034136Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=9dd374b4d7a4957e615fd14120beddae75a176b3d6527001dbe6c47016bcdf60",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/68A6879F-E211-4FDF-BD6A-6A7917EB0693.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T034136Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=837acb3b06e3fd494cd95edb5ecc07d7b6004eee4646b80cd84b95b72b877f4e"
+  },
+  {
+    "id": 198,
+    "tag": "Digitized Portrait",
+    "filename": "05F1E43F-7949-4AE1-9404-4E4CFB3215FE.png",
+    "portrait_name": "Saba",
+    "date": "2021-12-05",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/05F1E43F-7949-4AE1-9404-4E4CFB3215FE.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T034136Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=3ad09eaf8e41ab642fad36b967adfc037bc59e1cc6ea97a2f89a73330fae7835",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/05F1E43F-7949-4AE1-9404-4E4CFB3215FE.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T034136Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=ad4255bd98d64ff6b04b0926afd181e342a8afdd97c68daac12f1538bc2b2914"
+  },
+  {
+    "id": 194,
+    "tag": "Portrait",
+    "filename": "jorja.jpg",
+    "portrait_name": "Jorja Smith Digitized",
+    "date": "2021-11-26",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/jorja.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T034136Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=a349f0cb0d6a9761263b15a28a6065cfbdc93b251efe9737c4ba8ff2c93c04a5",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/jorja.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T034136Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=42b21272e8ab1caaa224e734b407b33c5c767d97a114ee441762362e1d29384c"
+  },
+  {
+    "id": 195,
+    "tag": "Portrait",
+    "filename": "masego.jpg",
+    "portrait_name": "Masego Digitized",
+    "date": "2021-11-25",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/masego.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T034136Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=0e48dd44833a726825e97e43d645be64429359aa8506c879c68365b8ac46f971",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/masego.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T034136Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=2a8e3d069dee6ccc50a01b953398ac9731918b34812e222e0d5a50626137e578"
+  },
+  {
+    "id": 196,
+    "tag": "Portrait",
+    "filename": "harnett.jpg",
+    "portrait_name": "Sin\u00e9ad Harnett Digitized",
+    "date": "2021-11-24",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/harnett.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T034136Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=0a3bd49124493a24dad462bd1e4c1a4dbd7825b768ea0a167601052bd500378a",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/harnett.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T034136Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=ab589f30ce575671d5efebd397319cc6ae18c0529c04803ffd3cd248685388a5"
+  },
+  {
+    "id": 197,
+    "tag": "Portrait",
+    "filename": "rebillet.jpg",
+    "portrait_name": "Marc Rebillet Liquified",
+    "date": "2021-11-23",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/rebillet.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T034136Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=df3c93ec8265056e21515c5a0848728cbe01e654004cbc6a9754f1da7082ddc1",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/rebillet.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T034136Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=d1e46c9a8dcb44e53dc6c2dd15df51c958d42721b7ab808d301ae07ed2adb07e"
+  },
+  {
+    "id": 182,
+    "tag": "T-Shirt Design",
+    "filename": "VanderbiltCSTshirtDesign.jpg",
+    "portrait_name": "Vanderbilt CS T-Shirt Design Contest",
+    "date": "2021-10-20",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/VanderbiltCSTshirtDesign.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T034136Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=5d56b5c64c2733667c54136491c07b5eba017eb3c5694263a47a97e93a18bd7b",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/VanderbiltCSTshirtDesign.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T034136Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=a6b45beb4935d42f3d0be6b5f72194d398dc9627f28a3b942e1bf0e8d339afad"
+  },
+  {
+    "id": 179,
+    "tag": "Portrait",
+    "filename": "BA2A17E5-8123-4594-8557-257265C88E04.jpeg",
+    "portrait_name": "Jacob Collier",
+    "date": "2021-10-03",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/BA2A17E5-8123-4594-8557-257265C88E04.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T034136Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=e85f46860715c302aaf421a10995bf6ca859749c0b8f3e4b33a7505081c4397c",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/BA2A17E5-8123-4594-8557-257265C88E04.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T034136Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=9f9ac68d3ef3e3e6ed9570a8cbaa9ac5a1c39ac4b2148b5209b79d6739a1300b"
+  },
+  {
+    "id": 178,
+    "tag": "Portrait",
+    "filename": "2E01E11C-91BA-4961-8C2A-A66039BFA4A7.jpeg",
+    "portrait_name": "Jacob & Allison Commission",
+    "date": "2021-09-05",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/2E01E11C-91BA-4961-8C2A-A66039BFA4A7.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T210659Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=f2a0ab85b19e582f0fd0bc2cb0781e5dde5ebd3f0aa2286861ca13d4ff5de8f5",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/2E01E11C-91BA-4961-8C2A-A66039BFA4A7.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T210659Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=499e3c6b01dab2bb3607c9046eca7a02061e4fb2e6cee92bdbed6167b1396b0e"
+  },
+  {
+    "id": 177,
+    "tag": "Portrait",
+    "filename": "08198E1F-1580-41C8-8EAE-BA6724804907.jpeg",
+    "portrait_name": "Commission WIP 2",
+    "date": "2021-09-01",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/08198E1F-1580-41C8-8EAE-BA6724804907.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T210659Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=898c256f61e3ed9074fc51a348a9f2153f11932d4f7f7fa792d355b5f537cdd9",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/08198E1F-1580-41C8-8EAE-BA6724804907.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T210659Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=d1c32b74ddb95262e92bbae5a79c1021969f50d17a7154df0026e44ca6146ee4"
+  },
+  {
+    "id": 176,
+    "tag": "Portrait",
+    "filename": "06C70067-6C73-497A-BF4E-DE9DDE726E66.jpeg",
+    "portrait_name": "Commission WIP",
+    "date": "2021-08-31",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/06C70067-6C73-497A-BF4E-DE9DDE726E66.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T210659Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=50949077542d43e46dee4dbbad3e86359cd868c9fb39ab7199071fd11e57f204",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/06C70067-6C73-497A-BF4E-DE9DDE726E66.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T210659Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=2a7cf2664d6690e29d1a3be49d99776717803b970a59d74e4fde8a6c3840653c"
+  },
+  {
+    "id": 144,
+    "tag": "Portrait",
+    "filename": "boburnham.JPG",
+    "portrait_name": "Bo Burnham",
+    "date": "2021-07-24",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/boburnham.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T210659Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=0ede9430e6d84012244bff14309987a6b7e0de8a3c90a0f6ef63b37c29e76693",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/boburnham.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T210659Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=c795ac38bc3fd28c490b2a172316e8083c975d9bf76b655cd568bb1dae6c1d93"
+  },
+  {
+    "id": 142,
+    "tag": "Portrait",
+    "filename": "9F360DB9-2136-4113-A65D-409CD3009592.jpeg",
+    "portrait_name": "Bo WIP 2",
+    "date": "2021-07-23",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/9F360DB9-2136-4113-A65D-409CD3009592.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T210659Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=9940e74c4e7991169d2acdd7a976fb96808184fac69a5f6d09c2763a2092bb9d",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/9F360DB9-2136-4113-A65D-409CD3009592.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T210659Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=89dae1b305384a7fdf7c41c94db21bfb2d1b381ea477d40aeac439bdc9a44bdf"
+  },
+  {
+    "id": 141,
+    "tag": "Portrait",
+    "filename": "D3908B05-AC4C-4832-AD16-FE33E8CDA44D.jpeg",
+    "portrait_name": "Bo WIP",
+    "date": "2021-07-22",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/D3908B05-AC4C-4832-AD16-FE33E8CDA44D.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T210659Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=364b709cee6b9056103564e67d13b934ec052bd41c8a4457d851aab96feb59cb",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/D3908B05-AC4C-4832-AD16-FE33E8CDA44D.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T210659Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=bb229abd35f7ff7d15f1103bc24f0ccb693b6220ea54ad04f27057ad602a8729"
+  },
+  {
+    "id": 140,
+    "tag": "Portrait",
+    "filename": "802531D3-46BC-402D-840B-CA1B00CF0459.jpeg",
+    "portrait_name": "Billy Eichner",
+    "date": "2021-07-18",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/802531D3-46BC-402D-840B-CA1B00CF0459.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T210659Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=51883a26c5f90c2f97c589bcc6ab4d6ccd0434d62284debe9cfede25ef6dab5d",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/802531D3-46BC-402D-840B-CA1B00CF0459.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T210659Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=ef0a9be1f1776a4e6155840d4b8641a40de55124e081d9a516a748dd57664d18"
+  },
+  {
+    "id": 139,
+    "tag": "Portrait",
+    "filename": "30E85707-9EE0-4FF5-8C0C-478112A219FF.jpeg",
+    "portrait_name": "Marc Rebillet",
+    "date": "2021-07-05",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/30E85707-9EE0-4FF5-8C0C-478112A219FF.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T210659Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=2fccf6b1424dd4539f510e7cc9d7f0e4249030b1be5d366c351a6c81d61d5d7c",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/30E85707-9EE0-4FF5-8C0C-478112A219FF.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T210659Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=03ca18b6e151ad2fa5b8b7801f8aa54b84c11cbbd06cfb93c2f4ff3684475448"
+  },
+  {
+    "id": 138,
+    "tag": "Portrait",
+    "filename": "1964A95C-3E29-46E7-8412-29E7B06D9B4C.jpeg",
+    "portrait_name": "Marc Rebillet WIP",
+    "date": "2021-07-04",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/1964A95C-3E29-46E7-8412-29E7B06D9B4C.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T124848Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=98e71fe1f9e5c112ccbcdc60e94867539d6f0462f31dd8232696ae93e249d3a7",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/1964A95C-3E29-46E7-8412-29E7B06D9B4C.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T124848Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=630b28c583f8d3ff0604e1121bd70621ce80e853bc4b58783376e76c08135d85"
+  },
+  {
+    "id": 137,
+    "tag": "Portrait",
+    "filename": "9D305605-7F0E-44DA-8A81-A1A9BCA9A7FA.png",
+    "portrait_name": "Harry Mack",
+    "date": "2021-06-04",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/9D305605-7F0E-44DA-8A81-A1A9BCA9A7FA.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T124848Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=cb17c0cd3ecdf0938f10ace441fe2e3f9395c04e86a3e0ea6e196d1d3dc008c8",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/9D305605-7F0E-44DA-8A81-A1A9BCA9A7FA.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T124848Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=c75b836fd541b69d3e14fcf31603405aa7e0227a0c86cc08194f65c2c0e2ef72"
+  },
+  {
+    "id": 136,
+    "tag": "Portrait",
+    "filename": "E43F9478-7328-40B2-9EEE-66B788AA017F.jpeg",
+    "portrait_name": "Jolie",
+    "date": "2021-04-21",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/E43F9478-7328-40B2-9EEE-66B788AA017F.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T124848Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=519f3f06defd9423de3028e28c3118d0dbff57c4820475b5073750159470805c",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/E43F9478-7328-40B2-9EEE-66B788AA017F.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T124848Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=9f5671fad571ef00230bde33e898ca9e582a309815ab79d1f96703ccd897cf57"
+  },
+  {
+    "id": 134,
+    "tag": "Portrait",
+    "filename": "89A49099-7245-48BC-943E-8329443BB863.jpeg",
+    "portrait_name": "Jorja Smith",
+    "date": "2021-04-17",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/89A49099-7245-48BC-943E-8329443BB863.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T124848Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=f7192703d72e4dcad726e9db35331f55d7e2eba0d9ce29b1e4c90004f2aa5680",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/89A49099-7245-48BC-943E-8329443BB863.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T124848Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=9419af773a3fe6f59a728339d730e16b48234af2391f0067ad1896636f86ef72"
+  },
+  {
+    "id": 133,
+    "tag": "Portrait",
+    "filename": "E160305D-313A-4F56-8E51-CED8F31F0DBE.jpeg",
+    "portrait_name": "Jorja Smith, Work in Progress",
+    "date": "2021-04-16",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/E160305D-313A-4F56-8E51-CED8F31F0DBE.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T124848Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=de7733a371368175cabe0fe90627e0e19d822bafb3f1c77a7d4878073cda256f",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/E160305D-313A-4F56-8E51-CED8F31F0DBE.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T124848Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=79c76abf056eacae50796a5518712c94b7772dd1575af442347fdbfdca0f03f2"
+  },
+  {
+    "id": 131,
+    "tag": "Portrait",
+    "filename": "E2FE24C6-F7FD-486D-BE15-449328DA09EA.jpeg",
+    "portrait_name": "commission",
+    "date": "2020-12-18",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/E2FE24C6-F7FD-486D-BE15-449328DA09EA.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T124848Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=af9b3cfb5dcabe93407372bcd265dc3eaa158aa24f38fd9af4dfd51bd578cd75",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/E2FE24C6-F7FD-486D-BE15-449328DA09EA.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T124848Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=af9819604219030a123aaef9a4923c0fae20bc2d5a07088d0636f7b1e12e1269"
+  },
+  {
+    "id": 135,
+    "tag": "Portrait",
+    "filename": "792C2282-310F-4B6B-8C6B-2076594E6601.jpeg",
+    "portrait_name": "Sinead Harnett with Background",
+    "date": "2020-11-23",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/792C2282-310F-4B6B-8C6B-2076594E6601.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T124848Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=3988b8b51165358979cdb64e2c0969c944f35ab606f187f3982d64aa68e07a4a",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/792C2282-310F-4B6B-8C6B-2076594E6601.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T124848Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=1e6a03155abaaa7715f7b2e2758f661290c6adcdf4b2ee307aecddc9571eee6e"
+  },
+  {
+    "id": 130,
+    "tag": "Portrait",
+    "filename": "31D9F4E5-DE84-4DA0-90D6-45C76500B3DB.jpeg",
+    "portrait_name": "Sinead Harnett, No background",
+    "date": "2020-11-22",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/31D9F4E5-DE84-4DA0-90D6-45C76500B3DB.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T124848Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=c3c116e7fe505dea8092a9e628d64b7c956d7c87459fdadd3e071dbf6bd236a6",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/31D9F4E5-DE84-4DA0-90D6-45C76500B3DB.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T124848Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=b5dff95264e1a1af627cf726b7d3ddd33f7820c00580f7395409c2209b67f10c"
+  },
+  {
+    "id": 128,
+    "tag": "Portrait",
+    "filename": "00EA9810-7E5A-4A09-8A6C-FA72E680051F.jpeg",
+    "portrait_name": "jumbled",
+    "date": "2020-11-01",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/00EA9810-7E5A-4A09-8A6C-FA72E680051F.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240518%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240518T024137Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=2251f38c21bf716111b98798d1e868f5d32d07ed562a2faca60051c7b9b65e7d",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/00EA9810-7E5A-4A09-8A6C-FA72E680051F.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240518%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240518T024137Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=0b2c8108a89b7992cede9e70beaef59bde1390b3a83b6a95f2c13b22d826a769"
+  },
+  {
+    "id": 126,
+    "tag": "Portrait",
+    "filename": "124BD67C-3970-4563-A8B9-7DF09B24112F.png",
+    "portrait_name": "Don\u2019t Bee Stupid",
+    "date": "2020-08-09",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/124BD67C-3970-4563-A8B9-7DF09B24112F.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240518%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240518T024137Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=612987f455834978d2c5850df9c3dc5232caa27fe2d0cc67d7918254c1cae875",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/124BD67C-3970-4563-A8B9-7DF09B24112F.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240518%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240518T024137Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=61b5a134e6e05d6ac014d7861b9bb03238c10b38a75e3b6100d0eae56d574e2a"
+  },
+  {
+    "id": 127,
+    "tag": "Portrait",
+    "filename": "03E79EB3-1151-4D35-BB8E-F35F91FB0757.jpeg",
+    "portrait_name": "Keifer",
+    "date": "2020-08-09",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/03E79EB3-1151-4D35-BB8E-F35F91FB0757.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240518%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240518T024137Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=bd0f0049bc2c79feb9e5715857baa016b3edad6737bd0c7ade7f418f74e9e095",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/03E79EB3-1151-4D35-BB8E-F35F91FB0757.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240518%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240518T024137Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=d6a252d8af6876f936848456614206cc19f1028343337093ab0f911815639d3b"
+  },
+  {
+    "id": 125,
+    "tag": "Portrait",
+    "filename": "C4886541-8A72-4CBE-B52A-A0A25645EDEF.jpeg",
+    "portrait_name": "Sinatra",
+    "date": "2020-08-08",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/C4886541-8A72-4CBE-B52A-A0A25645EDEF.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240518%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240518T024137Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=2bf4b325110fd8c474bafed5d75746fbce0cff2d0181ba9f982f6a7f46115ab4",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/C4886541-8A72-4CBE-B52A-A0A25645EDEF.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240518%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240518T024137Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=4fa9f075495797f91915e45251cfcd926ee4c901819575c54cb03dcd7158ece1"
+  },
+  {
+    "id": 106,
+    "tag": "Portrait",
+    "filename": "holes.jpg",
+    "portrait_name": "Tired of Digging",
+    "date": "2020-08-05",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/holes.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240518%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240518T024137Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=b88722c47b6569a8a98111593a01728713a5e0552e4b121aa56e7e62b08fa6b7",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/holes.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240518%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240518T024137Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=5c9e8a550cf7b8c7e673de2a7b1901224f79a8f840906aa656c7d7e23647de8f"
+  },
+  {
+    "id": 104,
+    "tag": "Portrait",
+    "filename": "logo.jpg",
+    "portrait_name": "Logo Portrait",
+    "date": "2020-08-05",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/logo.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240518%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240518T024137Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=d20bdea00ae6d1c5debd56dfd7f9cee6f155f26a560d08f4ae6638fcb91683fb",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/logo.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240518%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240518T024137Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=e706f082cb2cdf62c7e639917dd2f797c8e60f21ba0f83e3ce3cacb6c20ee99e"
+  },
+  {
+    "id": 97,
+    "tag": "Portrait",
+    "filename": "D13A3595-33AB-44EB-840C-27E312905F90.jpeg",
+    "portrait_name": "Ella Fitzgerald",
+    "date": "2020-07-29",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/D13A3595-33AB-44EB-840C-27E312905F90.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240518%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240518T024137Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=afbab913d8e1464ff74c613e87f964fc3773afa0e00447b8e0a76cc7fedfd230",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/D13A3595-33AB-44EB-840C-27E312905F90.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240518%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240518T024137Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=1178bf416fd914151d1ca1d0dcabc8bba5555a92acd7a80652f05708b425aa04"
+  },
+  {
+    "id": 96,
+    "tag": "Portrait",
+    "filename": "0E928623-FE43-42BD-8068-8DC271663136.jpeg",
+    "portrait_name": "Laufey",
+    "date": "2020-07-26",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/0E928623-FE43-42BD-8068-8DC271663136.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240518%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240518T024137Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=ff2606426f7690ff1a2b7b98a2be217f93aa79a547115247a4ae586c8f0ae670",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/0E928623-FE43-42BD-8068-8DC271663136.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240518%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240518T024137Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=8ba0f9ec2e53f25c0660f28248249d3827473031f7171b75f760db5d71e318aa"
+  },
+  {
+    "id": 95,
+    "tag": "Portrait",
+    "filename": "B8C1E7EA-AA07-4EC6-A235-8DEC0BBC40F3.jpeg",
+    "portrait_name": "quick sketch, single line",
+    "date": "2020-07-19",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/B8C1E7EA-AA07-4EC6-A235-8DEC0BBC40F3.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T053516Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=0ce36ccfbf200c3c687ee31b0dd34a2ccd5c4ad5d9edd88508b4bc3ac2de03fe",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/B8C1E7EA-AA07-4EC6-A235-8DEC0BBC40F3.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T053516Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=c98379b537b6ca57ce41e72dc34490a50f8e821ced558083f2d23134cf39dce5"
+  },
+  {
+    "id": 94,
+    "tag": "Portrait",
+    "filename": "A904E9D7-5C4D-456A-A7F5-6DC1F89B5210.jpeg",
+    "portrait_name": "Mochi - Jasmine Commission",
+    "date": "2020-06-30",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/A904E9D7-5C4D-456A-A7F5-6DC1F89B5210.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T053516Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=86a976883a8940286f2e19e2418563c56e8ca51671727246f34b58d2a22e60aa",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/A904E9D7-5C4D-456A-A7F5-6DC1F89B5210.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T053516Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=d04b569e74f0debf0b2b6436672b48308d36c8f4de14610649e1aceb034bf9db"
+  },
+  {
+    "id": 93,
+    "tag": "Portrait",
+    "filename": "2418CFC0-550E-4581-BC83-4E8B63DE4613.jpeg",
+    "portrait_name": "Steven Commission",
+    "date": "2020-06-30",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/2418CFC0-550E-4581-BC83-4E8B63DE4613.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T053516Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=27e516ce618054c0b3d3e349ef4caabeed8d6c008d7793ce153846a69d394743",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/2418CFC0-550E-4581-BC83-4E8B63DE4613.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T053516Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=fb8eb2f7fe8e84f43fcabe1a05b3151cea8b717ca3363e0ecb0b364f22757011"
+  },
+  {
+    "id": 92,
+    "tag": "Portrait",
+    "filename": "27FD4C6E-299A-4FF9-9330-C54D7D51A148.jpeg",
+    "portrait_name": "Grandparents ",
+    "date": "2020-06-21",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/27FD4C6E-299A-4FF9-9330-C54D7D51A148.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T053516Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=0d671386429b091dd2972315ebdfd0aaf066909f2186cd971b4a550bee61b667",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/27FD4C6E-299A-4FF9-9330-C54D7D51A148.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T053516Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=a51e42e348d1778c51de7c3b52b90012af53e3ab6e90656cdfcee93f0e18ae8b"
+  },
+  {
+    "id": 91,
+    "tag": "Portrait",
+    "filename": "F23C3528-77BB-4E7E-90C3-E6B815F2C72F.jpeg",
+    "portrait_name": "Sarah Commission",
+    "date": "2020-06-16",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/F23C3528-77BB-4E7E-90C3-E6B815F2C72F.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T053516Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=c2b906caabf79e83e4ec85cbd38fe787d960ce88aa6bf94d0a5b677634794e9c",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/F23C3528-77BB-4E7E-90C3-E6B815F2C72F.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T053516Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=6eae8d8687e643621c0ead07eaf2faf8d5d61469a7d0d842d780e2174cda6f91"
+  },
+  {
+    "id": 87,
+    "tag": "Portrait",
+    "filename": "A1CFB8C0-A3DC-4FD6-BAAB-91E3B69C6CFC.jpeg",
+    "portrait_name": "CalebCommission",
+    "date": "2020-06-07",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/A1CFB8C0-A3DC-4FD6-BAAB-91E3B69C6CFC.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T053516Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=3ef395fe0dfd4a4deed6763cb600dedb4e827ef78a7a419ec14ff7f09c02a0d4",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/A1CFB8C0-A3DC-4FD6-BAAB-91E3B69C6CFC.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T053516Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=964d1f23c1be991a3dbbc594429f73f7d592807e2bdd148f70d9c91fd3ed95f1"
+  },
+  {
+    "id": 89,
+    "tag": "Portrait",
+    "filename": "AE1DD7EE-868C-45CA-91B0-59C17DDE0A37.jpeg",
+    "portrait_name": "Ashley",
+    "date": "2020-06-04",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/AE1DD7EE-868C-45CA-91B0-59C17DDE0A37.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T053516Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=d3131a442edb3968f9e934e7c161bae74c7940dc54b481a442af679ad343834e",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/AE1DD7EE-868C-45CA-91B0-59C17DDE0A37.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T053516Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=e8085a4fecf493a4571392cd26509d7ad306458c348b1f151e195be762318dc1"
+  },
+  {
+    "id": 85,
+    "tag": "Portrait",
+    "filename": "E9706502-1369-41DC-B70A-E1792F09BB73.jpeg",
+    "portrait_name": "Quarantine Mood",
+    "date": "2020-05-30",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/E9706502-1369-41DC-B70A-E1792F09BB73.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240513%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240513T124628Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=ac82fed9ce29e6243c11a2b5cb610d4ccf143db6eab8984d2483ec20fbda56b2",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/E9706502-1369-41DC-B70A-E1792F09BB73.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240513%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240513T124628Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=2791158d26f823f587fe29a33d475c238ced7b983d2d823a834b5c479d90c3b9"
+  },
+  {
+    "id": 86,
+    "tag": "Portrait",
+    "filename": "CB2810C0-5E96-4DDC-A556-16573C45B11E.jpeg",
+    "portrait_name": "Commission ",
+    "date": "2020-05-30",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/CB2810C0-5E96-4DDC-A556-16573C45B11E.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T011329Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=213c637ac7c4dbfd303591edf01fd494c1a07aec0bbe762a15b47773f4b92205",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/CB2810C0-5E96-4DDC-A556-16573C45B11E.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T011329Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=c8de4564702612ed5a848f6225dba5c538bd2d1f43f632839ecc70954af12e67"
+  },
+  {
+    "id": 84,
+    "tag": "Portrait",
+    "filename": "22F442E4-4C6F-4DC6-BF96-C55C50012799.jpeg",
+    "portrait_name": "NonReference 2",
+    "date": "2020-05-29",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/22F442E4-4C6F-4DC6-BF96-C55C50012799.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T011329Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=9005241fcc33abbd1cdfc9aa6c2e4d7af5fd1148fb62d25f715e1440051383a5",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/22F442E4-4C6F-4DC6-BF96-C55C50012799.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T011329Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=1807e9e8db46231cf2087f84e57f5f3d9711d32b587ab49c3cf96ea960241405"
+  },
+  {
+    "id": 83,
+    "tag": "Portrait",
+    "filename": "5ADF2200-17CF-4239-B6C5-323DCEC97A75.jpeg",
+    "portrait_name": "Goorin Guy",
+    "date": "2020-05-28",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/5ADF2200-17CF-4239-B6C5-323DCEC97A75.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T011329Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=cefb500fa87c46886813bf1875a9b5c3547bde5ccabe5bf8feafa5fad8fa4d6c",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/5ADF2200-17CF-4239-B6C5-323DCEC97A75.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T011329Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=28a4e0bd9779bc95b1577087021ac8d1f3b5b65744d2bd1c24d79feda6d84800"
+  },
+  {
+    "id": 82,
+    "tag": "Portrait",
+    "filename": "CFD4E19C-8FF3-4DA1-99DA-B106D772D282.jpeg",
+    "portrait_name": "Childish Gambino",
+    "date": "2020-05-24",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/CFD4E19C-8FF3-4DA1-99DA-B106D772D282.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T011329Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=c1bf142c6c49ae2bcaa9b8d78484818c85a31423b08e7afb130b0fedc4e2d378",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/CFD4E19C-8FF3-4DA1-99DA-B106D772D282.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T011329Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=12e6da16875e392dbab627ac9774784875c6728415fd395e2d7dec09e658f3d3"
+  },
+  {
+    "id": 81,
+    "tag": "Portrait",
+    "filename": "465A35F6-BBD8-4923-A5F1-032A2F17C74C.jpeg",
+    "portrait_name": "ThereseCuratolo",
+    "date": "2020-04-01",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/465A35F6-BBD8-4923-A5F1-032A2F17C74C.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T011329Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=9beb4c04a053e08c598be6cee5fd8a8cb48fef0e9bd5cc4adb8a9731359db0f7",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/465A35F6-BBD8-4923-A5F1-032A2F17C74C.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T011329Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=c537aa2448968d5dc8b5742083c35ebb6bb0a55024bb87d4a69d110a10e5d0ed"
+  },
+  {
+    "id": 80,
+    "tag": "Portrait",
+    "filename": "DF9D7DEB-4F3E-4EDA-8F60-EADA63CAD0E5.png",
+    "portrait_name": "Commission Final",
+    "date": "2020-03-10",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/DF9D7DEB-4F3E-4EDA-8F60-EADA63CAD0E5.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T011329Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=f5d9fda21629fa0e6ea1626b7ae570aa133649b9302e58b62c4e2f9d1ff0428f",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/DF9D7DEB-4F3E-4EDA-8F60-EADA63CAD0E5.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T011329Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=6125e3758a0e659322de8971fdd3c655f7ede92f308f6c6431b42049c5115a1a"
+  },
+  {
+    "id": 79,
+    "tag": "Portrait",
+    "filename": "B6B16289-6AA4-43B1-9CDA-8DAE3D920626.png",
+    "portrait_name": "Commission WIP",
+    "date": "2020-03-06",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/B6B16289-6AA4-43B1-9CDA-8DAE3D920626.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T011329Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=9c451863c07310d9d670e4dc55e3ddba166ffa81c09611bbdaf365ee52fca65d",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/B6B16289-6AA4-43B1-9CDA-8DAE3D920626.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T011329Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=b9ae1b96c8fd0b4abf27ec9d10d85b3d4ceeb4ad4d2252e9a456185afd3aff14"
+  },
+  {
+    "id": 77,
+    "tag": "Portrait",
+    "filename": "22F2B2B2-24C5-415D-9350-90C6C8C441AE.jpeg",
+    "portrait_name": "Childish Gambino WIP",
+    "date": "2020-02-05",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/22F2B2B2-24C5-415D-9350-90C6C8C441AE.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T011329Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=1943838a9e97638628415ae13c7373080f4ce118fffc15cda0fdb72f06b68379",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/22F2B2B2-24C5-415D-9350-90C6C8C441AE.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T011329Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=d90128f6c65f418cdb86d5bbfdf04c33537b87931b7605412998da452c908893"
+  },
+  {
+    "id": 75,
+    "tag": "Portrait",
+    "filename": "6ADCB312-B9B4-492E-9B95-640C85143389.jpeg",
+    "portrait_name": "Kobe Bryant",
+    "date": "2020-01-26",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/6ADCB312-B9B4-492E-9B95-640C85143389.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240512%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240512T221802Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=3fee0f3e2a40f729eac010182cbecd91ff3c55b6d7a3d6b22a0b2e0a535dbcce",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/6ADCB312-B9B4-492E-9B95-640C85143389.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240512%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240512T221802Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=0529efc18349e441325f7175b4c7584d442d91eb8f49c5443553f84cbd342912"
+  },
+  {
+    "id": 76,
+    "tag": "Portrait",
+    "filename": "5D7BB748-DD76-4C60-A4B8-BB758E6E7B23.jpeg",
+    "portrait_name": "Bernie Version 2",
+    "date": "2020-01-25",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/5D7BB748-DD76-4C60-A4B8-BB758E6E7B23.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240512%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240512T221802Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=0f54f4e7ca5277dde10c1be4caebc94b616f521f4a9c9f38bd584a32bba2c7f2",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/5D7BB748-DD76-4C60-A4B8-BB758E6E7B23.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240512%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240512T221802Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=b81f588a6e8bc1bf30552a14516d4b687d1ef3f28350272b0614946febf1c08e"
+  },
+  {
+    "id": 74,
+    "tag": "Portrait",
+    "filename": "1FCCFBD4-E498-4CC6-AD81-40CE32861B3E.jpeg",
+    "portrait_name": "Bernie",
+    "date": "2020-01-24",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/1FCCFBD4-E498-4CC6-AD81-40CE32861B3E.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240512%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240512T221802Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=083d40a1fe5c4b418f9e9c72192fb8576eec723859e8bee3e4bfc08d2d6974db",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/1FCCFBD4-E498-4CC6-AD81-40CE32861B3E.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240512%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240512T221802Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=d080c78dbf4eed3c15e85419ed2d5c70f30974e7cfe45ad24ed82a3925c83e00"
+  },
+  {
+    "id": 73,
+    "tag": "Portrait",
+    "filename": "80BDCB9C-9D6A-44D5-96BE-03F0E812211C.jpeg",
+    "portrait_name": "Shia",
+    "date": "2020-01-21",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/80BDCB9C-9D6A-44D5-96BE-03F0E812211C.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240512%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240512T221802Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=4ed1c2f295fdc93d757172e40bcb6cc3c9508f6fab078082678ffa0ed8144424",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/80BDCB9C-9D6A-44D5-96BE-03F0E812211C.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240512%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240512T221802Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=a8f981582a6fd4d84589ef75594437a93e85443e465626adcde7674e5315cfc1"
+  },
+  {
+    "id": 72,
+    "tag": "Portrait",
+    "filename": "F0B34D27-131C-4954-8D48-149B371DC811.jpeg",
+    "portrait_name": "Tom Misch",
+    "date": "2020-01-20",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/F0B34D27-131C-4954-8D48-149B371DC811.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240512%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240512T221802Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=71432f60ba98e70c378cc4c21fce9b7751147aa3aee5e40dec150fd963619af0",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/F0B34D27-131C-4954-8D48-149B371DC811.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240512%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240512T221802Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=dfef91f66cf9430d8a89e5b96b646a3ed88c7c138e0303c5788264cfc5213b6a"
+  },
+  {
+    "id": 71,
+    "tag": "Portrait",
+    "filename": "2ECB9B58-B886-44C7-BB0B-336F6396D465.jpeg",
+    "portrait_name": "Joe Burrow",
+    "date": "2020-01-19",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/2ECB9B58-B886-44C7-BB0B-336F6396D465.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240512%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240512T221802Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=b1629700dfeca0dc90b784790d872562955d0e58b4c3cb764e07e860c9be4720",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/2ECB9B58-B886-44C7-BB0B-336F6396D465.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240512%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240512T221802Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=af0a58c42ce06ba4bd0075ff1feb37ab751f92908584031aa2c20b72acabfaab"
+  },
+  {
+    "id": 67,
+    "tag": "Portrait",
+    "filename": "E4144820-C8E3-435A-B0D0-DF1CA12C951E.jpeg",
+    "portrait_name": "Haley & Weston",
+    "date": "2020-01-19",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/E4144820-C8E3-435A-B0D0-DF1CA12C951E.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240513%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240513T070158Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=53d54a4fb4d977a09916ceae718766ad9a5ef260e094c29071453794864851bb",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/E4144820-C8E3-435A-B0D0-DF1CA12C951E.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240513%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240513T070158Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=32df3154f0689db61f93f41c6cc425b80450e2d1920cf8051599aef2c15460d4"
+  },
+  {
+    "id": 70,
+    "tag": "Portrait",
+    "filename": "ACD720C5-B114-4B22-8D22-169A15055DE8.jpeg",
+    "portrait_name": "Joe Burrow",
+    "date": "2020-01-19",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/ACD720C5-B114-4B22-8D22-169A15055DE8.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240512%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240512T221802Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=ac21da1072a3520b647cbf4623542fe586ce4e0e2eb7b0361affa66698be7b6d",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/ACD720C5-B114-4B22-8D22-169A15055DE8.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240512%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240512T221802Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=46ca7a0ee77318b6030d3d4d269b50c16a2a257aec69a11271c95883947ae06c"
+  },
+  {
+    "id": 68,
+    "tag": "Portrait",
+    "filename": "B125286B-30BC-45E1-A89D-7F752B7DE807.jpeg",
+    "portrait_name": "Recolored Haley & Weston",
+    "date": "2020-01-19",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/B125286B-30BC-45E1-A89D-7F752B7DE807.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T152916Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=eb1ae078b41c7fa959fa4c4b95f3c9486a0ad1a3e802f85986b2c0c3aa201697",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/B125286B-30BC-45E1-A89D-7F752B7DE807.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T152916Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=cd52736c2154cd8aa4d9e2019ed8c49941e65b17f4d4c9bde464c062a956f62a"
+  },
+  {
+    "id": 65,
+    "tag": "Portrait",
+    "filename": "E6F37700-DC89-4557-9606-1E5910AFCFA1.jpeg",
+    "portrait_name": "Smino",
+    "date": "2020-01-17",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/E6F37700-DC89-4557-9606-1E5910AFCFA1.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T152916Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=fd70df0f497add0d83baa250cde18ba35630030776c963440d0058613053a7fe",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/E6F37700-DC89-4557-9606-1E5910AFCFA1.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T152916Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=8433b96629e867e04eea2d7ed98d0a1287594cb996792295a653dd18fab7171e"
+  },
+  {
+    "id": 63,
+    "tag": "Portrait",
+    "filename": "BEF4CC2A-7064-4CB9-B576-F6690B12CA15.JPG",
+    "portrait_name": "Commission",
+    "date": "2019-11-20",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/BEF4CC2A-7064-4CB9-B576-F6690B12CA15.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T152916Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=9e09b5d3ee94eaa616dcddcdde7bb081a7894690cac537fd2cd2629ab376cca7",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/BEF4CC2A-7064-4CB9-B576-F6690B12CA15.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T152916Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=80a93c25e764459d44a8c93284e386a09bd9751209bd527f9263c678e91db0db"
+  },
+  {
+    "id": 55,
+    "tag": "Portrait",
+    "filename": "8AEC3509-F986-49BF-8C39-02735665A3B1.jpeg",
+    "portrait_name": "Bill Withers Final",
+    "date": "2019-09-26",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/8AEC3509-F986-49BF-8C39-02735665A3B1.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T152916Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=72013959ba55de14f90320dea2a1210bd4c202df86deb8e3352894db5b6c9bbe",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/8AEC3509-F986-49BF-8C39-02735665A3B1.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T152916Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=1ad3b809b7ae3b8ace97ded3481d3c88e6e0c94c63d5aedad065e30ab3b1e2c6"
+  },
+  {
+    "id": 53,
+    "tag": "Portrait",
+    "filename": "C95D0D42-82A1-4B42-8C0E-8DCEA9C1EA7C.jpeg",
+    "portrait_name": "Bill Withers (WIP)",
+    "date": "2019-09-03",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/C95D0D42-82A1-4B42-8C0E-8DCEA9C1EA7C.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T152916Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=9bb1e00465a9b0f620874577972be9d2ece6795c3254932ba86f6ab64c3bc77f",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/C95D0D42-82A1-4B42-8C0E-8DCEA9C1EA7C.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T152916Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=2a637ba58050ca214ccc9e52c261ccc6562262513839c22418f46a1b8619731f"
+  },
+  {
+    "id": 60,
+    "tag": "Portrait",
+    "filename": "182FD13F-FE7A-4CED-AB1F-9E37C98A4829.jpeg",
+    "portrait_name": "Don Draper",
+    "date": "2019-07-29",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/182FD13F-FE7A-4CED-AB1F-9E37C98A4829.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T152916Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=21718169fc4de0f19c92f3843ee877123d18bdce15f324613dd83542392bd5df",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/182FD13F-FE7A-4CED-AB1F-9E37C98A4829.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T152916Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=8b2074bfd42ea079ebdb3adbdc2d54eb0d4cf1bd52dcd06966762378c6d00ad1"
+  },
+  {
+    "id": 62,
+    "tag": "Portrait",
+    "filename": "7D047832-596D-4D71-9EC7-161DA3155DC7.jpeg",
+    "portrait_name": "Mac Miller",
+    "date": "2019-07-23",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/7D047832-596D-4D71-9EC7-161DA3155DC7.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T152916Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=ef79875068c1aa6ffbff60cb01c0d9e28c1ea86efabcc901ecc00f1e9fec747f",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/7D047832-596D-4D71-9EC7-161DA3155DC7.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T152916Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=85a4096658a79370e64cacf8caabb737dcbfafab3cce181c91b7afa291044712"
+  },
+  {
+    "id": 1,
+    "tag": "Portrait",
+    "filename": "khalidsketch.jpg",
+    "portrait_name": "Khalid",
+    "date": "2019-07-22",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/khalidsketch.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T152916Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=303bb746b2307c999266bc2a44994a13bbc3e0f3b46e0e24c59d5c78a8e06083",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/khalidsketch.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240516%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240516T152916Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=516532579f00cf6f904712d16494ce9708602c50236c83f0c7c265f44d72e7e0"
+  },
+  {
+    "id": 2,
+    "tag": "Portrait",
+    "filename": "Saba.JPG",
+    "portrait_name": "Saba",
+    "date": "2019-07-16",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/Saba.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040635Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=4e93db78f8e9c3fbe69338b6597178db154361ce6bf0401b645bc9873994609b",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/Saba.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040635Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=ab3daaa41299cd37b8b2770fa910b9714facc3bfedc1f4d30de517467fae1452"
+  },
+  {
+    "id": 61,
+    "tag": "Portrait",
+    "filename": "80D7DDAA-210C-408F-BBA8-886E50DF825F.jpeg",
+    "portrait_name": "Ongo Gablogian, The Art Collector",
+    "date": "2019-05-23",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/80D7DDAA-210C-408F-BBA8-886E50DF825F.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040635Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=263ea69a7edf0f3364e95b3243c9849d632e62d850057fd967ef2b53e6ea6f6a",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/80D7DDAA-210C-408F-BBA8-886E50DF825F.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040635Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=21b578dd8a132aeb26c363c1027c5e3dea10af52f6955bc622afb5ee22742bec"
+  },
+  {
+    "id": 31,
+    "tag": "Portrait",
+    "filename": "daviadrawing.jpg",
+    "portrait_name": "Davia",
+    "date": "2019-02-14",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/daviadrawing.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040635Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=152c843e935984f5b585fd983c553c0202df842fe842a70ba9b2c20472ab408d",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/daviadrawing.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040635Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=a983fcd107118c4cb62fe32283ef308e14896818a9a89a9ee1dac7803103bd9d"
+  },
+  {
+    "id": 28,
+    "tag": "Portrait",
+    "filename": "familyportrait.JPG",
+    "portrait_name": "Family",
+    "date": "2018-12-27",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/familyportrait.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040635Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=0e380eea48f7c1015c89248fa3a1aca045248c81126340d3268fb7b400444c74",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/familyportrait.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040635Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=721ea29307c681dd161938c73d1feb0b42a41151a93e773cecff9ea694b6066f"
+  },
+  {
+    "id": 34,
+    "tag": "Portrait",
+    "filename": "chrisfinal.JPG",
+    "portrait_name": "Chris",
+    "date": "2018-06-20",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/chrisfinal.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040635Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=7e4a8ec294e1d06a9abbd71a4152c040a70b80b2ec16daa9d3e2e153ca825951",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/chrisfinal.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040635Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=d866c940bdcb9d60769674ddf63022d1621752af97d37890bd0ca453cf51771a"
+  },
+  {
+    "id": 3,
+    "tag": "Portrait",
+    "filename": "sarahfinal.JPG",
+    "portrait_name": "Sarah",
+    "date": "2018-02-26",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/sarahfinal.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040635Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=4baece5f436997e4983b5f4626008d23ad5c9d9cb768c797ad23a871411e8f40",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/sarahfinal.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040635Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=143d07b6939775143f8fde0c2000facd364721cf9e0ba83f47774a16ca0b7b44"
+  },
+  {
+    "id": 4,
+    "tag": "Portrait",
+    "filename": "masegodrawingnew.JPG",
+    "portrait_name": "Masego",
+    "date": "2018-02-07",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/masegodrawingnew.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040635Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=02b047b5cbd0749cad7bdd9e17ec5a7906982e227e4df983f63f8db5c5497464",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/masegodrawingnew.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040635Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=b5e49dfcef3e8a691de62b1f9d1a91b7218cddcf63e3f24948ce5061665c6607"
+  },
+  {
+    "id": 18,
+    "tag": "Portrait",
+    "filename": "presley.JPG",
+    "portrait_name": "Presley",
+    "date": "2017-09-02",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/presley.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040635Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=7851b74dcb481b13c882f2f128b66af1252fe1e57e72c685b45eb5ec4c456606",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/presley.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040635Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=018839eba3958d48f7260abb92d181dc1e7899e2cacb8ea6bba7bec66b81cc46"
+  },
+  {
+    "id": 6,
+    "tag": "Portrait",
+    "filename": "jennalynn.JPG",
+    "portrait_name": "Jenna",
+    "date": "2017-05-22",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/jennalynn.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240512%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240512T212058Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=038c92e28c94c2e24558536a222ba6eba7cd4eb201c4130db8e505c938456ff8",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/jennalynn.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240512%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240512T212058Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=d25fea941c5914fb050d588e69b039d71d156122ed56545f370e6ae4dc776d93"
+  },
+  {
+    "id": 24,
+    "tag": "Portrait",
+    "filename": "jill.png",
+    "portrait_name": "Jill",
+    "date": "2017-05-03",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/jill.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240512%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240512T212058Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=a570b40ef9270c43ce7a0bb8988d50763297e58f7d3d1274e9bd4177dd18a93f",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/jill.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240512%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240512T212058Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=faaee729f8335c33cf7eeab170b46ee8774165fb54e71c3c9be3e9f3cd1e7a26"
+  },
+  {
+    "id": 21,
+    "tag": "Portrait",
+    "filename": "sarahdixon.png",
+    "portrait_name": "Sarah",
+    "date": "2017-03-05",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/sarahdixon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240512%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240512T212058Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=cb9c09331cc44d085e30e48584e9fccac3687ddee2d74784a1c40cc6c17b9c56",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/sarahdixon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240512%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240512T212058Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=0d7564a8f1abb2a919ec04f2b2a982da1555625090096a305b64abd8e3aa9928"
+  },
+  {
+    "id": 25,
+    "tag": "Portrait",
+    "filename": "anonymous.JPG",
+    "portrait_name": "Anonymous",
+    "date": "2017-02-05",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/anonymous.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240512%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240512T212058Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=56e5a0807a13ad73569cffe8e438501141d9ee6626b34901982819df86a6b775",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/anonymous.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240512%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240512T212058Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=ad9966acdc1f90b9e9f6c9c980e87dcb75a3c60670498eb5c2ef644eb7c0bc8c"
+  },
+  {
+    "id": 193,
+    "tag": "Portrait",
+    "filename": "16388154_10206104809977910_2455543300432040193_n.jpg",
+    "portrait_name": "Anonymous - WIP",
+    "date": "2017-02-04",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/16388154_10206104809977910_2455543300432040193_n.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240512%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240512T212058Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=f939de13a50a30bd67e1b7660fcded976f48935188e0a22e231d202d80a04f22",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/16388154_10206104809977910_2455543300432040193_n.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240512%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240512T212058Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=1cd602ea5b5d6769ae8d3cf2de32645c2d7ee222409fee79b740f59f7f9e980d"
+  },
+  {
+    "id": 9,
+    "tag": "Portrait",
+    "filename": "johncommission.JPG",
+    "portrait_name": "John",
+    "date": "2017-01-15",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/johncommission.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240512%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240512T212058Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=891cef65b6cac44a66e4c6a4b7cd9250ec650ed1097ba674d0e879e7d4e9cac5",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/johncommission.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240512%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240512T212058Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=e2730e343c271009c9a8369b00f9ed126529d66296dd696fd675f6efa901b6e0"
+  },
+  {
+    "id": 192,
+    "tag": "Portrait",
+    "filename": "15977028_10205953033863602_7725233875174916251_n.jpg",
+    "portrait_name": "John WIP 3",
+    "date": "2017-01-14",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/15977028_10205953033863602_7725233875174916251_n.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240512%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240512T212058Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=446d0f49b32da3c4eccc879170336cac688730d8365f1c43b612bff5941b6e02",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/15977028_10205953033863602_7725233875174916251_n.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240512%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240512T212058Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=cf272318998a6327c80cd0da51ad4213e18f253173617c4f9e0d775bcc978707"
+  },
+  {
+    "id": 191,
+    "tag": "Portrait",
+    "filename": "15895115_10205953033623596_1942069978035326581_n.jpg",
+    "portrait_name": "John WIP 2",
+    "date": "2017-01-14",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/15895115_10205953033623596_1942069978035326581_n.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240512%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240512T212058Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=f0c663992fa9cf47b17bf9164d73b9fe42522f06fab4f2a4174e80b0e7e6b261",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/15895115_10205953033623596_1942069978035326581_n.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240512%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240512T212058Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=ec9ffe00460dd3ec2b9d1c8649cdbe33072fdefd22615afebad0a73f112bb74b"
+  },
+  {
+    "id": 190,
+    "tag": "Portrait",
+    "filename": "15965880_10205953033383590_6405610811936829926_n.jpg",
+    "portrait_name": "John WIP",
+    "date": "2017-01-13",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/15965880_10205953033383590_6405610811936829926_n.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040644Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=47d3d558d67a1d19d182f5cfdd3554242482d49582c790741277b1359828399a",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/15965880_10205953033383590_6405610811936829926_n.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040644Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=98f093e73104cb16ca17d9ad6e81410ef437cbc5846146a0206d87ac795a83ca"
+  },
+  {
+    "id": 29,
+    "tag": "Portrait",
+    "filename": "boycommission.JPG",
+    "portrait_name": "Gavin",
+    "date": "2017-01-05",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/boycommission.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040644Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=1edafec1aa9fcec2b0aa9c57839aa2635751f470e7ad8991cd3cd95998784606",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/boycommission.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040644Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=13c37228aeefc5a687cba0b6c1f1093d03204cc23efd1d14ea1dd5b595ac1eed"
+  },
+  {
+    "id": 14,
+    "tag": "Portrait",
+    "filename": "kevinhart.JPG",
+    "portrait_name": "Kevin Hart",
+    "date": "2017-01-01",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/kevinhart.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040644Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=6d57a059ef9f9e50bf76aa8015f54c4488e0104f556b5314696d234da874932a",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/kevinhart.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040644Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=e5188e6df9ae7c3bad104eb9f936ce45858794dfda505a0836009dc19af7aef7"
+  },
+  {
+    "id": 26,
+    "tag": "Portrait",
+    "filename": "vienna.JPG",
+    "portrait_name": "Vienna",
+    "date": "2016-12-26",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/vienna.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040644Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=5fbcc5a79a34c86433691d15902d6180a680a7b12727474a5806cffe74d59918",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/vienna.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040644Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=765662c35b0e8e3e5aad8216d9046231109726fb167e5fc567e0f78850eb46b7"
+  },
+  {
+    "id": 188,
+    "tag": "Portrait",
+    "filename": "15732651_10205854740486329_6791410135187720902_o.jpg",
+    "portrait_name": "Vienna WIP 2",
+    "date": "2016-12-25",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/15732651_10205854740486329_6791410135187720902_o.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040644Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=d15a794f538939080119637d0771d0c7da0355fba518182f6ba73c8b5e957f4e",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/15732651_10205854740486329_6791410135187720902_o.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040644Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=dbd0041541a2967febcd440b699ba1acafd9e90c4a3b8d33668fe3bb712e922c"
+  },
+  {
+    "id": 189,
+    "tag": "Portrait",
+    "filename": "15676161_10205855920195821_8288845793379575609_o.jpg",
+    "portrait_name": "Vienna WIP 3",
+    "date": "2016-12-25",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/15676161_10205855920195821_8288845793379575609_o.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040644Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=7c037c66f55a938b3af6e6c30f398d5e47997edc415ca0f00e04733b7ade6921",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/15676161_10205855920195821_8288845793379575609_o.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040644Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=c201c4cfec02f7232af33f3365c9aa247559b8136aa96b3e5dba36ddf6e3ce77"
+  },
+  {
+    "id": 187,
+    "tag": "Portrait",
+    "filename": "15676036_10205854029188547_7606040104068522585_o.jpg",
+    "portrait_name": "Vienna WIP ",
+    "date": "2016-12-24",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/15676036_10205854029188547_7606040104068522585_o.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040644Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=79064bb52c237185b6d2432ed97e7f8219d951b0df046976f08924b0db3ea16b",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/15676036_10205854029188547_7606040104068522585_o.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040644Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=1dc32db48441d31bcb4fdcb5a761db61355ad3ee5eb4295a7495bcd209626ee0"
+  },
+  {
+    "id": 30,
+    "tag": "Portrait",
+    "filename": "zander.JPG",
+    "portrait_name": "Zander",
+    "date": "2016-12-22",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/zander.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040644Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=92a4c678ed71dd9b116fa03aba85b88972c967e58ccaa9e282124a5eacfa0114",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/zander.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040644Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=54978003d23a7cc35b46c06f7fa127b9f0d4f38d79dbf188718f3b492d13e7e5"
+  },
+  {
+    "id": 13,
+    "tag": "Portrait",
+    "filename": "self.jpg",
+    "portrait_name": "Self",
+    "date": "2016-11-26",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/self.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040647Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=c6dd95c1e48354366f25d6de5c51a0216bb82a90670c5f99d6d612134e977bd0",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/self.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040647Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=24de82358927c437cdfb5f6427b49ef3923a8c038f3d71a953dd90a7699eb1f7"
+  },
+  {
+    "id": 8,
+    "tag": "Portrait",
+    "filename": "luke.JPG",
+    "portrait_name": "Luke",
+    "date": "2016-11-12",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/luke.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040647Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=f5f7da73e2ad6c8a6422ad3d8e0c59319cb416e704ff74fe707604e83d7e8757",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/luke.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040647Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=ca6280940f0158bdd334125583de5976ce8d7e0810863fa17e79b29166fc18cd"
+  },
+  {
+    "id": 12,
+    "tag": "Portrait",
+    "filename": "john.JPG",
+    "portrait_name": "John",
+    "date": "2016-11-11",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/john.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040647Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=d8a0874cf9f094b3766e249451a6f136ab5c20451c0ae941bd965107db155e11",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/john.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040647Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=6d004489ee9be1272c7be7b232d1804d74d38a064d56317ef6235202d5cef637"
+  },
+  {
+    "id": 7,
+    "tag": "Portrait",
+    "filename": "kevin.JPG",
+    "portrait_name": "Kevin",
+    "date": "2016-11-09",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/kevin.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040647Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=ddc52557be82cd8e0579264310eb843ba58e4ed6a2b98b16d0a58e7d0b32073f",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/kevin.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040647Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=807945ed88196914935e91165864048eb25a92ca80dd1bc3cdc6d0dd0007bac2"
+  },
+  {
+    "id": 22,
+    "tag": "Portrait",
+    "filename": "emily.JPG",
+    "portrait_name": "Emily",
+    "date": "2016-10-09",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/emily.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040647Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=6ed20ac31b73015fd4a58f170eb52f6037b00688780c21aeae486bdd916331a3",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/emily.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040647Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=5e6758eca26a4776c52bab951a29ffa9a746651accc5412f7a1c50347f8a6252"
+  },
+  {
+    "id": 20,
+    "tag": "Portrait",
+    "filename": "lgc.JPG",
+    "portrait_name": "Cousins",
+    "date": "2016-10-08",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/lgc.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040647Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=e1c8315110125877cd18736cd9fdd69515ffd2457bc759fa695ad3866fd87b4d",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/lgc.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040647Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=2cc69244683ba0cc09f4a2fd5236170a1aa12c5e46bf2359aa603bd41c4ab0a7"
+  },
+  {
+    "id": 15,
+    "tag": "Portrait",
+    "filename": "bailey.JPG",
+    "portrait_name": "Bailey",
+    "date": "2016-09-29",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/bailey.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040647Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=dc2f089afa510362dd8eeccce71380646aad767db95c43ad7ccc4b1a4b9bf729",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/bailey.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040647Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=b96765144a5712726b5dd873f32f4d1cffc9d5de95cda041fad3cc6cef876193"
+  },
+  {
+    "id": 16,
+    "tag": "Portrait",
+    "filename": "pat.JPG",
+    "portrait_name": "Pat",
+    "date": "2016-09-10",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/pat.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040647Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=595c0d02c43bc94cfb5e56e8160c1dd265b681b682b5ac091e77ef36f9fb3054",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/pat.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040647Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=e5c8fd0a9332934532bbcb37cfa027cd9a03a7597a70b64c6b3ee86cb5e7bb2e"
+  },
+  {
+    "id": 10,
+    "tag": "Portrait",
+    "filename": "cassidy.JPG",
+    "portrait_name": "Cassidy",
+    "date": "2016-08-29",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/cassidy.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040651Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=fd3c178a659b45340bdf0726af607547396b8622b1ff87c8d78ae68834b571d5",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/cassidy.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040651Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=fde7703aedd3ee7f75265b068baff67e5c5fb329cfcd9d851b3310dec5b38378"
+  },
+  {
+    "id": 11,
+    "tag": "Portrait",
+    "filename": "lane.JPG",
+    "portrait_name": "Lane",
+    "date": "2016-08-28",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/lane.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040651Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=58594bec91406605bdf0767986a77a19dba3e11055e309f48873e8882f79fb36",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/lane.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040651Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=67ec5226272b9fff0201b4ddec0991acf2d8b15a034a0b8484ba4a6935235080"
+  },
+  {
+    "id": 23,
+    "tag": "Portrait",
+    "filename": "krystallized.JPG",
+    "portrait_name": "Krystallized",
+    "date": "2016-05-22",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/krystallized.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040651Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=728df1c05d92c9dc5da2e0b562aba1afbf6d05d3122b4043992a73393d108356",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/krystallized.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040651Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=7bf753eb273377941aa4e54ceb6f59be1a7cd9552cdec864b29fbb1d1195b386"
+  },
+  {
+    "id": 17,
+    "tag": "Portrait",
+    "filename": "freshmanyearfam.JPG",
+    "portrait_name": "Freshman",
+    "date": "2016-02-04",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/freshmanyearfam.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040651Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=ccb19f0b4c2e7993756093e1730cec4f467acdfd9655b5b8a2ad07e1f4511fd7",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/freshmanyearfam.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040651Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=b3017382207c11088c7be281126ecd559e25259b455349c722cb8f457ccd6bbb"
+  },
+  {
+    "id": 35,
+    "tag": "Portrait",
+    "filename": "connor.JPG",
+    "portrait_name": "Connor",
+    "date": "2016-01-01",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/connor.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040651Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=b49903dea1c2029eb983553ac5144b98dda3bffcfcccacd9fb104b0c50919841",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/connor.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040651Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=1cfd1b841acf2769b29dfe65eab75ae83a297427693d1e22f8fa198dcddfd7a2"
+  },
+  {
+    "id": 19,
+    "tag": "Portrait",
+    "filename": "cougarclyde.JPG",
+    "portrait_name": "Cougar",
+    "date": "2015-11-06",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/cougarclyde.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040651Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=13c503f766bfadadd2317bac32c06a44626a5bc8fddc68ba4c7b5014ed100dcb",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/cougarclyde.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040651Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=b14339fb94eba0c4b1e45c15d4be4326a3d33c129f42866f54f4d6ba27739ca0"
+  },
+  {
+    "id": 33,
+    "tag": "Portrait",
+    "filename": "SOA.JPG",
+    "portrait_name": "SOA",
+    "date": "2015-11-01",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/SOA.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040651Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=6b59a08db6c0ce0523b28673c89efa954ba7a485e62c49b83642a8cfcf0c79b9",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/SOA.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040651Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=d5f6a6a0465a451fc2b063b12c8f90a889c4f0c13a9b1e10d165896eeff241fa"
+  },
+  {
+    "id": 27,
+    "tag": "Portrait",
+    "filename": "brbajessie.JPG",
+    "portrait_name": "Jessie",
+    "date": "2014-01-01",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/brbajessie.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040651Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=635738cb269774eedbc59a2d0cb22b8003662cc6384f53fdae97b3b0d08d657a",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/brbajessie.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240515%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240515T040651Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=f5f1de194cdcd6920e9a944657a2583b3d01ed93b1963335f3b44721dac0a7d4"
+  },
+  {
+    "id": 32,
+    "tag": "Portrait",
+    "filename": "brbawalt.JPG",
+    "portrait_name": "Walt",
+    "date": "2014-01-01",
+    "s3_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/drawings/brbawalt.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240517%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240517T105152Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=ed27946195eba2927be8806b040e7b8dc4d9f6fb991603ab29f3e79e2b742f0a",
+    "s3_copied_smaller_drawing_private_url": "https://sketchyactivitys3.s3.amazonaws.com/media/copied_smaller_drawings/brbawalt.JPG?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWDTAGLLHXMOED4H7%2F20240517%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20240517T105152Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=bf02e5bbc1888160bd3a91404467c981784f0d39978690b65bd30c34b15fc3b0"
+  }
+]
