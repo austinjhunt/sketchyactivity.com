@@ -19,10 +19,9 @@ DEBUG = False
 
 if not PRODUCTION:
     env_file = os.path.join(BASE_DIR, '.env')
-    print(env_file)
-    print(f'DEV: using .env file: {env_file}')
     load_dotenv(env_file)
     DEBUG = True
+
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 
 ALLOWED_HOSTS = [
@@ -41,6 +40,7 @@ CORS_ORIGIN_WHITELIST = [
     "http://127.0.0.1:3000"
 ]
 ADMINS = [('Austin Hunt', 'huntaj@g.cofc.edu')]
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -180,7 +180,6 @@ AWS_S3_REGION_NAME = 'us-east-2'
 AWS_S3_SIGNATURE_VERSION = 's3v4'
 PRIVATE_MEDIA_LOCATION = 'media'
 PRIVATE_MEDIA_STORAGE = 'sketchyactivity.storage_backends.PrivateMediaStorage'
-
 
 MEDIA_ROOT = os.path.join(os.path.dirname(os.path.dirname(
     os.path.abspath(__file__))), 'sketchyactivity', 'media')
