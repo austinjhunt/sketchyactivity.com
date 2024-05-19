@@ -1,13 +1,11 @@
+# This version does not have any path references (env_files or volumes) to local files
+# so that we can run build and push the images to Docker Hub without error 
 version: "3.9"
 
 services:
   db:
     container_name: sketchyactivity_db
-    image: postgres:14
-    volumes:
-      - ./data/db:/var/lib/postgresql/data
-      - ./data/init:/docker-entrypoint-initdb.d
-    env_file: .env
+    image: postgres:14  
     networks:
       - dbnet
     expose:
@@ -20,23 +18,18 @@ services:
     build: .
     image: austinjhunt/express_api
     expose:
-      - "3001"
-    volumes:
-      - ./express-api-secret:/usr/src/app/secret
+      - "3001" 
     environment:
       - NODE_ENV=production
       - PORT=3001
     networks:
       - webnet
-    
+
   web:
     container_name: sketchyactivity_web
     image: austinjhunt/sketchyactivity_web
     build: .
-    command: bash -c "sleep 24 && python manage.py makemigrations && python manage.py migrate && python manage.py collectstatic --no-input && python manage.py compress && gunicorn sketchyactivitybackend.wsgi:application --bind 0.0.0.0:8000"
-    volumes:
-      - "/opt/sketchyactivity/staticfiles:/src/staticfiles"
-    env_file: .env
+    command: bash -c "sleep 24 && python manage.py makemigrations && python manage.py migrate && python manage.py collectstatic --no-input && python manage.py compress && gunicorn myproject.wsgi:application --bind 0.0.0.0:8000"
     expose:
       - 8000
     depends_on:
@@ -63,10 +56,7 @@ services:
     image: austinjhunt/sketchyactivity_nginx
     ports:
       - 80:80
-      - 443:443
-    volumes:
-      - /etc/ssl/certs:/etc/ssl/certs
-      - /opt/sketchyactivity/staticfiles:/var/www/staticfiles
+      - 443:443 
     depends_on:
       - web
       - express_api
