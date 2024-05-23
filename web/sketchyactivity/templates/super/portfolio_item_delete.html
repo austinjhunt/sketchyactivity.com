@@ -1,9 +1,0 @@
-{% extends 'master.html' %} {% block content %}
-<div class="container my-3">
-    <form method="post">{% csrf_token %}
-        <p>Are you sure you want to delete "{{ object.portrait_name }}"?</p>
-        <input type="submit" value="Confirm">
-    </form>
-</div>
-
-{% endblock %}
