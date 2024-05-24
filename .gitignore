@@ -1,0 +1,5 @@
+*.py
+.env
+venv
+media 
+*.json 
