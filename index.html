@@ -2,551 +2,618 @@
 <html>
 
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description"
-    content="Welcome to sketchyactivity! I'm Austin, a professional S.C. portrait artist of 10+ years. I'm happy to answer any questions you may have about my process or pricing. Feel free to reach out to me via Instagram DM or email! Commission a unique, personalized, realistic portrait drawing today." />
-  <meta charset="utf-8" />
-  <link rel="icon" href="/favicon.png" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <!-- keywords -->
-  <meta name="keywords"
-    content="sketchyactivity, sketchy activity, drawing, portrait, artist, father's day, art gift, draw, sketch, digital art, commission, drawing commission, commission a drawing, commission a portrait, commission digital drawing, procreate, realistic drawing, realistic portrait, ballpoint drawing, ballpoint pen drawing, ballpoint portrait, ballpoint pen portrait" />
-  <title>Austin Hunt Portraiture</title>
-  <!-- Import MUI CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mui/material@5.5.2/dist/material-ui.min.css" />
-  <!-- Import MUI Icons -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
-  <style>
-    /* colors */
-    :root {
-      --primary: #205085;
-      --secondary: #b42e2e;
-      --tertiary: #f0f0f0;
-      --bg: #f0f0f0;
-    }
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description"
+        content="Welcome to sketchyactivity! I'm Austin, a professional S.C. portrait artist of 10+ years. I'm happy to answer any questions you may have about my process or pricing. Feel free to reach out to me via Instagram DM or email! Commission a unique, personalized, realistic portrait drawing today." />
+    <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.png" />
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <!-- keywords -->
+    <meta name="keywords"
+        content="sketchyactivity, sketchy activity, drawing, portrait, artist, father's day, art gift, draw, sketch, digital art, commission, drawing commission, commission a drawing, commission a portrait, commission digital drawing, procreate, realistic drawing, realistic portrait, ballpoint drawing, ballpoint pen drawing, ballpoint portrait, ballpoint pen portrait" />
+    <title>Austin Hunt Portraiture</title>
+    <!-- Import MUI CSS -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@mui/material@5.5.2/dist/material-ui.min.css" />
+    <!-- Import MUI Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+        rel="stylesheet">
+    <style>
+        /* colors */
+        :root {
+            --primary: #205085;
+            --secondary: #b42e2e;
+            --tertiary: #f0f0f0;
+            --bg: #f0f0f0;
+        }
 
-    body {
-      font-family: "Manrope", sans-serif;
-      font-optical-sizing: auto;
-      font-weight: 500;
-      font-style: normal;
-      padding: 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      background-color: var(--bg);
-      color: var(--primary)
-    }
+        body {
+            font-family: "Manrope", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 500;
+            font-style: normal;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: var(--bg);
+            color: var(--primary)
+        }
 
-    h1 {
-      font-size: 1.3rem;
-    }
+        h1 {
+            font-size: 1.3rem;
+        }
 
-    a {
-      color: var(--secondary);
-    }
+        a {
+            color: var(--secondary);
+        }
 
 
-    .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-      max-width: 1400px;
-      gap: 2rem;
-    }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 1400px;
+            gap: 2rem;
+        }
 
-    .box {
-      background-color: white;
-      padding: 20px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      border-radius: 8px;
-      width: 100%;
-      height: fit-content;
-    }
+        .box {
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            width: 100%;
+            height: fit-content;
+        }
 
-    #portfolio-images-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-    }
+        #portfolio-images-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
 
-    .carousel-item {
-      text-align: center;
-      overflow-y: hidden;
-    }
+        .carousel-item {
+            text-align: center;
+            overflow-y: hidden;
+        }
 
-    #portfolio-images-container .img-box {
-      border-radius: 8px;
-      margin: 0 auto;
-      margin-bottom: 40px;
-    }
+        #portfolio-images-container .img-box {
+            border-radius: 8px;
+            margin: 0 auto;
+            margin-bottom: 40px;
+        }
 
-    .img-box img {
-      width: 100%;
-      border-radius: 8px;
-      max-height: 500px;
-      object-fit: cover;
-    }
+        .img-box img {
+            width: 100%;
+            border-radius: 8px;
+            max-height: 500px;
+            object-fit: cover;
+        }
 
-    /* desktop, reduce image width */
-    @media (min-width: 768px) {
-      .img-box img {
-        max-width: 500px;
-      }
-    }
+        /* desktop, reduce image width */
+        @media (min-width: 768px) {
+            .img-box img {
+                max-width: 500px;
+            }
+        }
 
-    .img-box p {
-      text-align: center;
-    }
+        .img-box p {
+            text-align: center;
+        }
 
-    .carousel-indicators li {
-      color: var(--primary);
-      background-color: var(--primary);
-    }
+        .carousel-indicators li {
+            color: var(--primary);
+            background-color: var(--primary);
+        }
 
-    .carousel-indicators li.active {
-      color: var(--secondary);
-      background-color: var(--secondary);
-    }
+        .carousel-indicators li.active {
+            color: var(--secondary);
+            background-color: var(--secondary);
+        }
 
-    .box.profile-image {
-      width: fit-content;
-      padding: 2rem;
-      border-radius: 50%;
-    }
+        .box.profile-image {
+            width: fit-content;
+            padding: 2rem;
+            border-radius: 50%;
+        }
 
-    .section {
-      margin-bottom: 10px;
-    }
+        .section {
+            margin-bottom: 10px;
+        }
 
-    h2 {
-      margin-bottom: 5px;
-      margin-top: 5px;
-    }
+        h2 {
+            margin-bottom: 5px;
+            margin-top: 5px;
+        }
 
-    .section-title {
-      display: flex;
-      align-items: center;
-      margin-bottom: 10px;
-    }
+        .section-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
 
-    .section-title .material-icons {
-      margin-right: 10px;
-      margin-bottom: 5px;
-    }
+        .section-title .material-icons {
+            margin-right: 10px;
+            margin-bottom: 5px;
+        }
 
-    .carousel-control-next-icon,
-    .carousel-control-prev-icon {
-      width: 50px !important;
-      height: 50px !important;
-      background-color: var(--primary) !important;
-      border-radius: 1rem !important;
-    }
-  </style>
+        .carousel-control-next-icon,
+        .carousel-control-prev-icon {
+            width: 50px !important;
+            height: 50px !important;
+            background-color: var(--primary) !important;
+            border-radius: 1rem !important;
+        }
+    </style>
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-VK5CC186E6"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() { dataLayer.push(arguments); }
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-VK5CC186E6');
+    gtag('config', 'G-VK5CC186E6');
 </script>
 
 <body>
-  <!-- display about the artist, link to /commissions.html, and link to DM via either email or IG -->
-  <div class="container">
-    <div class="box profile-image"><img src="/favicon.png" alt="Austin Hunt"
-        style="display: block; margin: 0 auto; width: 100%; max-width: 300px; border-radius: 50%; margin-bottom: 10px;" />
+    <!-- display about the artist, link to /commissions.html, and link to DM via either email or IG -->
+    <div class="container">
+        <div class="box profile-image"><img src="/favicon.png" alt="Austin Hunt"
+                style="display: block; margin: 0 auto; width: 100%; max-width: 300px; border-radius: 50%; margin-bottom: 10px;" />
+        </div>
+        <div class="box">
+            <h1>@sketchyactivity - Austin Hunt Portraiture</h1>
+            <div class="section">
+                <!-- centered image -->
+
+            </div>
+            <div class="section">
+                <h2>About the artist</h2>
+                <p>Welcome! I'm Austin, a professional S.C. portrait artist of 10+ years. I'm happy
+                    to answer
+                    any questions you may have about my process or pricing. The easiest way to reach
+                    me is on <a href="https://instagram.com/sketchyactivity" target="_blank"
+                        onclick="gtag('event', 'click_ig_link_conversion');">Instagram
+                        @sketchyactivity</a> or <a href="mailto:austinsketches@gmail.com"
+                        target="_blank" onclick="gtag('event', 'click_email_link_conversion');">via
+                        email at austinsketches@gmail.com</a>. Feel free
+                    to reach out! I'm currently open to commissions so you can request a unique,
+                    personalized, realistic portrait
+                    drawing today.
+                </p>
+            </div>
+        </div>
+        <div class="box">
+            <!-- portfolio -->
+            <div class="section">
+                <div class="section-title">
+                    <span class="material-icons">collections</span>
+                    <h2>Portfolio</h2>
+                </div>
+
+
+                <div id="portfolio-images-container" class="carousel slide">
+                    <ol class="carousel-indicators">
+                    </ol>
+                    <div class="carousel-inner">
+                        <script>
+                            // pull dates from pitems.json
+                            let images = [
+                                {
+                                    "filename": "commission.jpg",
+                                    "portrait_name": "Anonymous",
+                                    "date": "2024-04-28"
+                                },
+                                {
+                                    "filename": "tim.jpg",
+                                    "portrait_name": "Tim",
+                                    "date": "2024-05-06",
+                                },
+                                {
+                                    "filename": "mom.jpg",
+                                    "portrait_name": "Mom",
+                                    "date": "2024-05-04",
+                                },
+                                {
+                                    "filename": "aaron-frazer.jpg",
+                                    "portrait_name": "Aaron Frazer - Love Is What You Make It",
+                                    "date": "2022-08-17",
+                                },
+                                {
+                                    "filename": "bill-withers.jpeg",
+                                    "portrait_name": "Bill Withers",
+                                    "date": "2019-09-26",
+                                },
+                                {
+                                    "filename": "charlie.png",
+                                    "portrait_name": "Charlie Puth",
+                                    "date": "2023-02-26",
+                                },
+                                {
+                                    "filename": "jill.png",
+                                    "portrait_name": "Jill Conway",
+                                    "date": "2017-05-03",
+                                },
+                                {
+                                    "filename": "john-jordan.png",
+                                    "portrait_name": "John & Jordan",
+                                    "date": "2023-03-14",
+                                },
+                                {
+                                    "filename": "jorja.jpeg",
+                                    "portrait_name": "Jorja Smith",
+                                    "date": "2021-04-17"
+                                },
+                                {
+                                    "filename": "lane.JPG",
+                                    "portrait_name": "Lane",
+                                    "date": "2016-08-28"
+                                },
+                                {
+                                    "filename": "mahalia.png",
+                                    "portrait_name": "Mahalia",
+                                    "date": "2022-10-21"
+                                },
+                                {
+                                    "filename": "moe.jpeg",
+                                    "portrait_name": "Moe",
+                                    "date": "2021-12-22"
+                                },
+                                {
+                                    "filename": "presley.JPG",
+                                    "portrait_name": "Presley",
+                                    "date": "2017-09-02",
+                                },
+                                {
+                                    "filename": "sarahfinal.JPG",
+                                    "portrait_name": "Sarah",
+                                    "date": "2018-02-26",
+                                },
+                                {
+                                    "filename": "sinead-harnett.jpeg",
+                                    "portrait_name": "Sinead Harnett",
+                                    "date": "2020-11-23",
+                                },
+                                {
+                                    "filename": "therese-curatolo.jpeg",
+                                    "portrait_name": "Therese Curatolo",
+                                    "date": "2020-04-01",
+                                },
+                                {
+                                    "filename": "wednesday.jpg",
+                                    "portrait_name": "Wednesday",
+                                    "date": "2023-01-30",
+                                },
+                                {
+                                    "filename": "bernie.jpeg",
+                                    "portrait_name": "Bernie",
+                                    "date": "2020-01-25",
+                                },
+                                {
+                                    "filename": "boburnham.JPG",
+                                    "portrait_name": "Bo Burnham",
+                                    "date": "2021-07-24",
+                                },
+                                {
+                                    "filename": "don-draper.jpeg",
+                                    "portrait_name": "Don Draper",
+                                    "date": "2019-07-29",
+                                },
+                                {
+                                    "filename": "johncommission.JPG",
+                                    "portrait_name": "John",
+                                    "date": "2017-01-15",
+                                },
+                                {
+                                    "filename": "jolie.jpeg",
+                                    "portrait_name": "Jolie",
+                                    "date": "2021-04-21",
+                                },
+                                {
+                                    "filename": "kevin.JPG",
+                                    "portrait_name": "Kevin",
+                                    "date": "2016-11-09",
+                                },
+                                {
+                                    "filename": "laufey.png",
+                                    "portrait_name": "Laufey",
+                                    "date": "2022-10-20",
+                                },
+                                {
+                                    "filename": "masego.JPG",
+                                    "portrait_name": "Masego",
+                                    "date": "2018-02-07",
+                                },
+                                {
+                                    "filename": "ongo.jpeg",
+                                    "portrait_name": "Ongo",
+                                    "date": "2019-05-23",
+                                },
+                                {
+                                    "filename": "Saba.JPG",
+                                    "portrait_name": "Saba",
+                                    "date": "2021-12-05",
+                                },
+                                {
+                                    "filename": "vienna.JPG",
+                                    "portrait_name": "Vienna",
+                                    "date": "2016-12-26",
+                                }
+                            ]
+                            // sort in reverse chronological order
+                            images = images.sort((a, b) => new Date(b.date) - new Date(a.date))
+                            images.forEach((image, index) => {
+                                const carouselItem = document.createElement('div');
+                                carouselItem.classList.add('carousel-item');
+
+                                const imgBox = document.createElement('div');
+                                imgBox.classList.add('img-box');
+                                const img = document.createElement('img');
+                                img.src = `/img/${image.filename}`;
+                                img.alt = image.portrait_name;
+                                imgBox.appendChild(img);
+                                // add name 
+                                const description = document.createElement('p');
+                                description.innerText = `${image.portrait_name}, ${new Date(image.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}`;
+                                imgBox.appendChild(description);
+                                if (index === 0) {
+                                    carouselItem.classList.add('active');
+                                }
+                                carouselItem.appendChild(imgBox);
+                                document.querySelector('.carousel-inner').appendChild(carouselItem);
+
+
+                                // add carousel indicators
+                                const indicator = document.createElement('li');
+                                indicator.setAttribute('data-target', '#portfolio-images-container');
+                                indicator.setAttribute('data-slide-to', index);
+                                if (index === 0) {
+                                    indicator.classList.add('active');
+                                }
+                                document.querySelector('.carousel-indicators').appendChild(indicator);
+                            });
+                        </script>
+                    </div>
+                    <a class="carousel-control-prev" href="#portfolio-images-container"
+                        role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#portfolio-images-container"
+                        role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+
+                <p>You can find more of my work on <a href="https://instagram.com/sketchyactivity"
+                        onclick="gtag('event', 'click_ig_link_conversion');" target="_blank">IG
+                        @sketchyactivity</a></p>
+
+            </div>
+        </div>
+        <div class="box">
+            <div class="section">
+                <div class="section-title">
+                    <span class="material-icons">info</span>
+                    <h2>Commission Rules</h2>
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-title">
+                    <span class="material-icons">brush</span>
+                    <h3>What I Will Draw</h3>
+                </div>
+                <ul>
+                    <li>People (my favorite!) - <strong>Ideally 1-2 people in a given
+                            drawing</strong>. If you want a larger
+                        group
+                        photo
+                        drawn, I recommend
+                        opting for a digital drawing rather than a traditional ballpoint drawing. If
+                        you prefer traditional
+                        ballpoint for a large group portrait, you will need to opt for a larger size
+                        (like 17x22in or larger) to accommodate the detail required for multiple
+                        subjects.</li>
+                    </li>
+                    <li>Animals</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <div class="section-title">
+                    <span class="material-icons">block</span>
+                    <h3>What I Won't Draw</h3>
+                </div>
+                <ul>
+                    <li>Explicit content, hate symbols</li>
+                    <li>Fantasy & cartoon characters</li>
+                    <li>Landscapes, buildings, cars, or other non-portrait subjects</li>
+                </ul>
+            </div>
+        </div>
+        <div class="box">
+            <div class="section">
+                <div class="section-title">
+                    <span class="material-icons">timer</span>
+                    <h2>Turnaround Time</h2>
+                </div>
+                <p>Turnaround time is typically 1 week for single-person 8x12 or digital portraits.
+                    Expect longer delays if
+                    requesting a drawing of more people!</p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="section">
+                <div class="section-title">
+                    <span class="material-icons">check</span>
+                    <h2>How to Commission (Request a Drawing)</h2>
+                </div>
+                <p>Send me a DM on Instagram or send me an email with the following information:</p>
+                <ul>
+                    <li>Size of drawing (4x6in, 5x5in, 5x7in, 8x10in, 11x14in, 16x20in, 20x24in,
+                        24x30in, 24x36in, or digital - size is irrelevant if you
+                        want
+                        a digital drawing)</li>
+                    <li>Reference photo(s)</li>
+                    <li>Any specific requests or details you'd like included in the drawing</li>
+                </ul>
+            </div>
+            <!-- links -->
+            <div class="section">
+                <h3>Links for Requesting a Drawing</h3>
+                <ul>
+                    <li><a id="ig-link" href="https://instagram.com/sketchyactivity" target="_blank"
+                            onclick="gtag('event', 'click_ig_link_conversion');">DM @sketchyactivity
+                            on Instagram</a>
+                    </li>
+                    <li><a href="mailto:austinsketches@gmail.com"
+                            onclick="gtag('event', 'click_email_link_conversion');">Email
+                            austinsketches@gmail.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="box">
+            <div class="section">
+                <div class="section-title">
+                    <span class="material-icons">attach_file</span>
+                    <h2>How do you get the drawing?</h2>
+                </div>
+                <p>For traditional drawings, I will send you the drawing in the mail! I cover
+                    shipping
+                    <!-- smiley face--> 😊. For digital drawings, I use Procreate, and I'll send you
+                    a high-resolution image
+                    file so that you have the ability to print the drawing on a size and material of
+                    your choice. I do not pay for printing of digital drawings.
+                </p>
+            </div>
+        </div>
+        <div class="box">
+            <!-- pricing -->
+            <div class="section" id="pricing-info">
+                <div class="section-title">
+                    <span class="material-icons">attach_money</span>
+                    <h2>Pricing &amp; Payment</h2>
+                </div>
+                <p>I do not require payment until after the drawing is complete. I accept payment
+                    via
+                    Venmo or PayPal and I'll send you my info at the time of payment. I also accept
+                    cash if you prefer
+                    to meet in person. In the pricing details, "subject" refers to a person or
+                    animal in the
+                    portrait.
+                </p>
+                <!-- sizes:  4x6in, 5x5in, 5x7in, 8x10in, 11x14in, 16x20in, 20x24in, 24x30in, 24x36in, digital -->
+                <ul id="pricing-list-traditional">
+                    <li>
+                        <strong>4x6in Traditional Drawing (ballpoint pen)</strong>
+                        <ul>
+                            <li>Base price (1 subject): $25.00</li>
+                            <li>Per additional subject: $20.00</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>5x5in Traditional Drawing (ballpoint pen)</strong>
+                        <ul>
+                            <li>Base price (1 subject): $50.00</li>
+                            <li>Per additional subject: $25.00</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>5x7in Traditional Drawing (ballpoint pen)</strong>
+                        <ul>
+                            <li>Base price (1 subject): $75.00</li>
+                            <li>Per additional subject: $35.00</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>8x10in Traditional Drawing (ballpoint pen)</strong>
+                        <ul>
+                            <li>Base price (1 subject): $100.00</li>
+                            <li>Per additional subject: $50.00</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>11x14in Traditional Drawing (ballpoint pen)</strong>
+                        <ul>
+                            <li>Base price (1 subject): $150.00</li>
+                            <li>Per additional subject: $50.00</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>16x20in Traditional Drawing (ballpoint pen)</strong>
+                        <ul>
+                            <li>Base price (1 subject): $200.00</li>
+                            <li>Per additional subject: $50.00</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>20x24in Traditional Drawing (ballpoint pen)</strong>
+                        <ul>
+                            <li>Base price (1 subject): $250.00</li>
+                            <li>Per additional subject: $50.00</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>24x30in Traditional Drawing (ballpoint pen)</strong>
+                        <ul>
+                            <li>Base price (1 subject): $300.00</li>
+                            <li>Per additional subject: $50.00</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>24x36in Traditional Drawing (ballpoint pen)</strong>
+                        <ul>
+                            <li>Base price (1 subject): $350.00</li>
+                            <li>Per additional subject: $50.00</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Digital Drawing</strong>
+                        <ul>
+                            <li>Base price (1 subject): $75.00</li>
+                            <li>Per additional subject: $50.00</li>
+                        </ul>
+                    </li>
+                </ul>
+
+
+            </div>
+        </div>
+        <div class="box">
+            <div class="section">
+                <div class="section-title">
+                    <span class="material-icons">help</span>
+                    <h2>Questions?</h2>
+                </div>
+                <p>If you have any questions, feel free to reach out to me via an Instagram DM
+                    (@sketchyactivity) or email
+                    (austinsketches@gmail.com). I'm usually quick to respond!</p>
+            </div>
+        </div>
     </div>
-    <div class="box">
-      <h1>@sketchyactivity - Austin Hunt Portraiture</h1>
-      <div class="section">
-        <!-- centered image -->
 
-      </div>
-      <div class="section">
-        <h2>About the artist</h2>
-        <p>Welcome! I'm Austin, a professional S.C. portrait artist of 10+ years. I'm happy to answer
-          any questions you may have about my process or pricing. The easiest way to reach me is on <a
-            href="https://instagram.com/sketchyactivity" target="_blank"
-            onclick="gtag('event', 'click_ig_link_conversion');">Instagram @sketchyactivity</a> or <a
-            href="mailto:austinsketches@gmail.com" target="_blank"
-            onclick="gtag('event', 'click_email_link_conversion');">via email at austinsketches@gmail.com</a>. Feel free
-          to reach out! I'm currently open to commissions so you can request a unique, personalized, realistic portrait
-          drawing today.
-        </p>
-      </div>
-    </div>
-    <div class="box">
-      <!-- portfolio -->
-      <div class="section">
-        <div class="section-title">
-          <span class="material-icons">collections</span>
-          <h2>Portfolio</h2>
-        </div>
-
-
-        <div id="portfolio-images-container" class="carousel slide">
-          <ol class="carousel-indicators">
-          </ol>
-          <div class="carousel-inner">
-            <script>
-              // pull dates from pitems.json
-              let images = [
-                {
-                  "filename": "commission.jpg",
-                  "portrait_name": "Anonymous",
-                  "date": "2024-04-28"
-                },
-                {
-                  "filename": "tim.jpg",
-                  "portrait_name": "Tim",
-                  "date": "2024-05-06",
-                },
-                {
-                  "filename": "mom.jpg",
-                  "portrait_name": "Mom",
-                  "date": "2024-05-04",
-                },
-                {
-                  "filename": "aaron-frazer.jpg",
-                  "portrait_name": "Aaron Frazer - Love Is What You Make It",
-                  "date": "2022-08-17",
-                },
-                {
-                  "filename": "bill-withers.jpeg",
-                  "portrait_name": "Bill Withers",
-                  "date": "2019-09-26",
-                },
-                {
-                  "filename": "charlie.png",
-                  "portrait_name": "Charlie Puth",
-                  "date": "2023-02-26",
-                },
-                {
-                  "filename": "jill.png",
-                  "portrait_name": "Jill Conway",
-                  "date": "2017-05-03",
-                },
-                {
-                  "filename": "john-jordan.png",
-                  "portrait_name": "John & Jordan",
-                  "date": "2023-03-14",
-                },
-                {
-                  "filename": "jorja.jpeg",
-                  "portrait_name": "Jorja Smith",
-                  "date": "2021-04-17"
-                },
-                {
-                  "filename": "lane.JPG",
-                  "portrait_name": "Lane",
-                  "date": "2016-08-28"
-                },
-                {
-                  "filename": "mahalia.png",
-                  "portrait_name": "Mahalia",
-                  "date": "2022-10-21"
-                },
-                {
-                  "filename": "moe.jpeg",
-                  "portrait_name": "Moe",
-                  "date": "2021-12-22"
-                },
-                {
-                  "filename": "presley.JPG",
-                  "portrait_name": "Presley",
-                  "date": "2017-09-02",
-                },
-                {
-                  "filename": "sarahfinal.JPG",
-                  "portrait_name": "Sarah",
-                  "date": "2018-02-26",
-                },
-                {
-                  "filename": "sinead-harnett.jpeg",
-                  "portrait_name": "Sinead Harnett",
-                  "date": "2020-11-23",
-                },
-                {
-                  "filename": "therese-curatolo.jpeg",
-                  "portrait_name": "Therese Curatolo",
-                  "date": "2020-04-01",
-                },
-                {
-                  "filename": "wednesday.jpg",
-                  "portrait_name": "Wednesday",
-                  "date": "2023-01-30",
-                },
-                {
-                  "filename": "bernie.jpeg",
-                  "portrait_name": "Bernie",
-                  "date": "2020-01-25",
-                },
-                {
-                  "filename": "boburnham.JPG",
-                  "portrait_name": "Bo Burnham",
-                  "date": "2021-07-24",
-                },
-                {
-                  "filename": "don-draper.jpeg",
-                  "portrait_name": "Don Draper",
-                  "date": "2019-07-29",
-                },
-                {
-                  "filename": "johncommission.JPG",
-                  "portrait_name": "John",
-                  "date": "2017-01-15",
-                },
-                {
-                  "filename": "jolie.jpeg",
-                  "portrait_name": "Jolie",
-                  "date": "2021-04-21",
-                },
-                {
-                  "filename": "kevin.JPG",
-                  "portrait_name": "Kevin",
-                  "date": "2016-11-09",
-                },
-                {
-                  "filename": "laufey.png",
-                  "portrait_name": "Laufey",
-                  "date": "2022-10-20",
-                },
-                {
-                  "filename": "masego.JPG",
-                  "portrait_name": "Masego",
-                  "date": "2018-02-07",
-                },
-                {
-                  "filename": "ongo.jpeg",
-                  "portrait_name": "Ongo",
-                  "date": "2019-05-23",
-                },
-                {
-                  "filename": "Saba.JPG",
-                  "portrait_name": "Saba",
-                  "date": "2021-12-05",
-                },
-                {
-                  "filename": "vienna.JPG",
-                  "portrait_name": "Vienna",
-                  "date": "2016-12-26",
-                }
-              ]
-              // sort in reverse chronological order
-              images = images.sort((a, b) => new Date(b.date) - new Date(a.date))
-              images.forEach((image, index) => {
-                const carouselItem = document.createElement('div');
-                carouselItem.classList.add('carousel-item');
-
-                const imgBox = document.createElement('div');
-                imgBox.classList.add('img-box');
-                const img = document.createElement('img');
-                img.src = `/img/${image.filename}`;
-                img.alt = image.portrait_name;
-                imgBox.appendChild(img);
-                // add name 
-                const description = document.createElement('p');
-                description.innerText = `${image.portrait_name}, ${new Date(image.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}`;
-                imgBox.appendChild(description);
-                if (index === 0) {
-                  carouselItem.classList.add('active');
-                }
-                carouselItem.appendChild(imgBox);
-                document.querySelector('.carousel-inner').appendChild(carouselItem);
-
-
-                // add carousel indicators
-                const indicator = document.createElement('li');
-                indicator.setAttribute('data-target', '#portfolio-images-container');
-                indicator.setAttribute('data-slide-to', index);
-                if (index === 0) {
-                  indicator.classList.add('active');
-                }
-                document.querySelector('.carousel-indicators').appendChild(indicator);
-              });
-            </script>
-          </div>
-          <a class="carousel-control-prev" href="#portfolio-images-container" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#portfolio-images-container" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
-
-        <p>You can find more of my work on <a href="https://instagram.com/sketchyactivity"
-            onclick="gtag('event', 'click_ig_link_conversion');" target="_blank">IG
-            @sketchyactivity</a></p>
-
-      </div>
-    </div>
-    <div class="box">
-      <div class="section">
-        <div class="section-title">
-          <span class="material-icons">info</span>
-          <h2>Commission Rules</h2>
-        </div>
-      </div>
-      <div class="section">
-        <div class="section-title">
-          <span class="material-icons">brush</span>
-          <h3>What I Will Draw</h3>
-        </div>
-        <ul>
-          <li>People (my favorite!) - <strong>Ideally 1-2 people in a given drawing</strong>. If you want a larger
-            group
-            photo
-            drawn, I recommend
-            opting for a digital drawing rather than a traditional ballpoint drawing. If you prefer traditional
-            ballpoint for a large group portrait, you will need to opt for a larger size
-            (like 17x22in or larger) to accommodate the detail required for multiple subjects.</li>
-          </li>
-          <li>Animals</li>
-        </ul>
-      </div>
-
-      <div class="section">
-        <div class="section-title">
-          <span class="material-icons">block</span>
-          <h3>What I Won't Draw</h3>
-        </div>
-        <ul>
-          <li>Explicit content, hate symbols</li>
-          <li>Fantasy & cartoon characters</li>
-          <li>Landscapes, buildings, cars, or other non-portrait subjects</li>
-        </ul>
-      </div>
-    </div>
-    <div class="box">
-      <div class="section">
-        <div class="section-title">
-          <span class="material-icons">timer</span>
-          <h2>Turnaround Time</h2>
-        </div>
-        <p>Turnaround time is typically 1 week for single-person 8x12 or digital portraits. Expect longer delays if
-          requesting a drawing of more people!</p>
-      </div>
-    </div>
-    <div class="box">
-      <div class="section">
-        <div class="section-title">
-          <span class="material-icons">check</span>
-          <h2>How to Commission (Request a Drawing)</h2>
-        </div>
-        <p>Send me a DM on Instagram or send me an email with the following information:</p>
-        <ul>
-          <li>Size of drawing (8.5x12in, 11x17in, 17x22in, 22x34in, 34x44in, or digital - size is irrelevant if you
-            want
-            a digital drawing)</li>
-          <li>Reference photo(s)</li>
-          <li>Any specific requests or details you'd like included in the drawing</li>
-        </ul>
-      </div>
-      <!-- links -->
-      <div class="section">
-        <h3>Links for Requesting a Drawing</h3>
-        <ul>
-          <li><a id="ig-link" href="https://instagram.com/sketchyactivity" target="_blank"
-              onclick="gtag('event', 'click_ig_link_conversion');">DM @sketchyactivity on Instagram</a>
-          </li>
-          <li><a href="mailto:austinsketches@gmail.com" onclick="gtag('event', 'click_email_link_conversion');">Email
-              austinsketches@gmail.com</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="box">
-      <div class="section">
-        <div class="section-title">
-          <span class="material-icons">attach_file</span>
-          <h2>How do you get the drawing?</h2>
-        </div>
-        <p>For traditional drawings, I will send you the drawing in the mail! I cover shipping
-          <!-- smiley face--> 😊. For digital drawings, I use Procreate, and I'll send you a high-resolution image
-          file so that you have the ability to print the drawing on a size and material of
-          your choice. I do not pay for printing of digital drawings.
-        </p>
-      </div>
-    </div>
-    <div class="box">
-      <!-- pricing -->
-      <div class="section" id="pricing-info">
-        <div class="section-title">
-          <span class="material-icons">attach_money</span>
-          <h2>Pricing &amp; Payment</h2>
-        </div>
-        <p>I do not require payment until after the drawing is complete. I accept payment via
-          Venmo or PayPal and I'll send you my info at the time of payment. I also accept cash if you prefer
-          to meet in person. In the pricing details, "subject" refers to a person or animal in the
-          portrait.
-        </p>
-        <h4>8.5x12in Traditional Drawings (ballpoint pen)</h4>
-        <ul id="pricing-list-traditional">
-          <li>Base price (1 subject): $100.00</li>
-          <li>Per additional subject: $50.00</li>
-        </ul>
-        <h4>11x17in Traditional Drawings (ballpoint pen)</h4>
-        <ul id="pricing-list-traditional">
-          <li>Base price (1 subject): $150.00</li>
-          <li>Per additional subject: $70.00</li>
-        </ul>
-        <h4>17x22in Traditional Drawings (ballpoint pen)</h4>
-        <ul id="pricing-list-traditional">
-          <li>Base price (1 subject): $200.00</li>
-          <li>Per additional subject: $80.00</li>
-        </ul>
-        <h4>22x34in Traditional Drawings (ballpoint pen)</h4>
-        <ul id="pricing-list-traditional">
-          <li>Base price (1 subject): $250.00</li>
-          <li>Per additional subject: $90.00</li>
-        </ul>
-        <h4>34x44in Traditional Drawings (ballpoint pen)</h4>
-        <ul id="pricing-list-traditional">
-          <li>Base price (1 subject): $300.00</li>
-          <li>Per additional subject: $100.00</li>
-        </ul>
-        <h4>Digital Drawings (Procreate)</h4>
-        <ul id="pricing-list-digital">
-          <li>Base price (1 subject): $75.00</li>
-          <li>Per additional subject: $75.00</li>
-        </ul>
-
-      </div>
-    </div>
-    <div class="box">
-      <div class="section">
-        <div class="section-title">
-          <span class="material-icons">help</span>
-          <h2>Questions?</h2>
-        </div>
-        <p>If you have any questions, feel free to reach out to me via an Instagram DM (@sketchyactivity) or email
-          (austinsketches@gmail.com). I'm usually quick to respond!</p>
-      </div>
-    </div>
-  </div>
-
-  <script src=" https://cdn.jsdelivr.net/npm/@mui/material@5.5.2/dist/material-ui.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
+    <script
+        src=" https://cdn.jsdelivr.net/npm/@mui/material@5.5.2/dist/material-ui.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
