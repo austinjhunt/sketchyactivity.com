@@ -6,6 +6,24 @@
     <meta name="description"
         content="Welcome to sketchyactivity! I'm Austin, a professional S.C. portrait artist of 10+ years. I'm happy to answer any questions you may have about my process or pricing. Feel free to reach out to me via Instagram DM or email! Commission a unique, personalized, realistic portrait drawing today." />
     <meta charset="utf-8" />
+    <!-- use /img/ajh-background.jpg as background image for social media previews -->
+    <meta property="og:image" content="/img/ajh-background.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:title" content="Austin Hunt Portraiture" />
+    <meta property="og:description"
+        content="Welcome to sketchyactivity! I'm Austin, a professional S.C. portrait artist of 10+ years. I'm happy to answer any questions you may have about my process or pricing. Feel free to reach out to me via Instagram DM or email! Commission a unique, personalized, realistic portrait drawing today." />
+    <meta property="og:url" content="https://sketchyactivity.com" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Austin Hunt Portraiture" />
+    <meta name="twitter:description"
+        content="Welcome to sketchyactivity! I'm Austin, a professional S.C. portrait artist of 10+ years. I'm happy to answer any questions you may have about my process or pricing. Feel free to reach out to me via Instagram DM or email! Commission a unique, personalized, realistic portrait drawing today." />
+    <meta name="twitter:image" content="/img/ajh-background.jpg" />
+    <meta name="twitter:site" content="@sketchyactivity" />
+    <meta name="twitter:creator" content="@sketchyactivity" />
+    <meta name="twitter:domain" content="sketchyactivity.com" />
+
     <link rel="icon" href="/favicon.png" />
     <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
@@ -33,6 +51,18 @@
             --bg: #f0f0f0;
         }
 
+        .background-image {
+            opacity: 0.5;
+            z-index: -3;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* preserve aspect ratio */
+            object-fit: cover;
+        }
+
         body {
             font-family: "Manrope", sans-serif;
             font-optical-sizing: auto;
@@ -44,7 +74,8 @@
             align-items: center;
             min-height: 100vh;
             background-color: var(--bg);
-            color: var(--primary)
+            color: var(--primary);
+            flex-direction: column;
         }
 
         h1 {
@@ -66,7 +97,7 @@
         }
 
         .box {
-            background-color: white;
+            background-color: rgba(255, 255, 255, 0.9);
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
@@ -153,6 +184,14 @@
             background-color: var(--primary) !important;
             border-radius: 1rem !important;
         }
+
+        .empty-space {
+            height: 100vh;
+            width: 100%;
+            display: block;
+            position: relative;
+            /* Add this line to give the element a visible color */
+        }
     </style>
 </head>
 <!-- Google tag (gtag.js) -->
@@ -166,6 +205,7 @@
 </script>
 
 <body>
+    <img class="background-image" src="/img/ajh-background.jpg" alt="background image" />
     <!-- display about the artist, link to /commissions.html, and link to DM via either email or IG -->
     <div class="container">
         <div class="box profile-image"><img src="/favicon.png" alt="Austin Hunt"
@@ -459,28 +499,11 @@
                     <span class="material-icons">check</span>
                     <h2>How to Commission (Request a Drawing)</h2>
                 </div>
-                <p>Send me a DM on Instagram or send me an email with the following information:</p>
-                <ul>
-                    <li>Size of drawing (4x6in, 5x5in, 5x7in, 8x10in, 11x14in, 16x20in, 20x24in,
-                        24x30in, 24x36in, or digital - size is irrelevant if you
-                        want
-                        a digital drawing)</li>
-                    <li>Reference photo(s)</li>
-                    <li>Any specific requests or details you'd like included in the drawing</li>
-                </ul>
-            </div>
-            <!-- links -->
-            <div class="section">
-                <h3>Links for Requesting a Drawing</h3>
-                <ul>
-                    <li><a id="ig-link" href="https://instagram.com/sketchyactivity" target="_blank"
-                            onclick="gtag('event', 'click_ig_link_conversion');">DM @sketchyactivity
-                            on Instagram</a>
-                    </li>
-                    <li><a href="mailto:austinsketches@gmail.com"
-                            onclick="gtag('event', 'click_email_link_conversion');">Email
-                            austinsketches@gmail.com</a></li>
-                </ul>
+                <p>You can submit this simple Google form to request a drawing: <a
+                        href="https://forms.gle/wmA2sR1HNd4REdLP8" target="_blank"
+                        onclick="gtag('event', 'click_google_form_link_conversion');">Request a
+                        Drawing Form</a>
+                </p>
             </div>
         </div>
         <div class="box">
@@ -601,6 +624,8 @@
                     (austinsketches@gmail.com). I'm usually quick to respond!</p>
             </div>
         </div>
+    </div>
+    <div class="empty-space">
     </div>
 
     <script
