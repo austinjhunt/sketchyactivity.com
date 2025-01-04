@@ -163,3 +163,48 @@ h2 {
     position: relative;
     /* Add this line to give the element a visible color */
 }
+
+/* testimonials */
+.carousel {
+    align-items: center;
+    display: flex;
+}
+
+/* styling for carousel and controls */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    height: 25px;
+    width: 25px;
+}
+
+.carousel-control-prev-icon::before,
+.carousel-control-next-icon::before {
+    color: black;
+    background-color: black;
+}
+
+.testimonial {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+    margin: 1rem;
+}
+
+.testimonial p {
+    font-size: 1.2em;
+}
+
+.carousel-inner {
+    text-align: center;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    border-radius: 10px;
+    background-color: black;
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
